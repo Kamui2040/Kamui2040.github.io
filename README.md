@@ -9,6 +9,7 @@ Static GitHub Pages gateway for the public K2040 project pages.
 - English, German, European Portuguese, Spanish, and French;
 - browser-language detection with English fallback;
 - dedicated gateway cards for Android projects and gaming mods;
+- shared navigation between the main gateway, Android Projects, and Gaming Mods pages;
 - compact, data-driven project updates;
 - a short About section and public support/profile links.
 
@@ -33,6 +34,10 @@ Each object carries its own strings for `en`, `de`, `pt-PT`, `es`, and `fr`. Eng
 
 The Gaming Mods page lists only released public projects that are approved for publication.
 
+## Navigation
+
+The main gateway, Android Projects page, and Gaming Mods page expose direct links to one another. Project-specific release pages remain the authoritative source for their own downloads and documentation.
+
 ## Banner
 
 The pages currently load the published K2040 banner from the Android Releases site. A later asset-cleanup change may copy it into this repository without changing the page layout.
@@ -40,4 +45,5 @@ The pages currently load the published K2040 banner from the Android Releases si
 ## Publication
 
 - Main gateway: `https://kamui2040.github.io/`
+- Android Projects: `https://kamui2040.github.io/K2040-Android-Releases/`
 - Gaming Mods: `https://kamui2040.github.io/gaming-mods/`
