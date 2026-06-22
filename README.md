@@ -1,6 +1,6 @@
 # K2040 Projects Front Page
 
-Initial static GitHub Pages scaffold for the `Kamui2040/Kamui2040.github.io` repository.
+Static GitHub Pages gateway for the public K2040 project pages.
 
 ## Purpose
 
@@ -8,30 +8,36 @@ Initial static GitHub Pages scaffold for the `Kamui2040/Kamui2040.github.io` rep
 - automatic and manual light/dark appearance;
 - English, German, European Portuguese, Spanish, and French;
 - browser-language detection with English fallback;
-- dedicated gateway cards for Android projects and future gaming mods;
+- dedicated gateway cards for Android projects and gaming mods;
 - compact, data-driven project updates;
 - a short About section and public support/profile links.
 
 ## Structure
 
-- `index.html` — semantic page structure and reusable templates;
+- `index.html` — main gateway structure and reusable templates;
 - `styles.css` — shared responsive light/dark design;
-- `site.js` — theme, language, project-card, and update rendering;
-- `translations.js` — interface translations;
-- `content.js` — expandable project gateway and update data.
+- `site.js` — shared theme, language, project-card, and update rendering;
+- `translations.js` — main gateway translations;
+- `content.js` — main gateway and update data;
+- `gaming-mods/index.html` — dedicated Gaming Mods page;
+- `gaming-mods/translations.js` — Gaming Mods translations;
+- `gaming-mods/content.js` — released and in-development mod data.
 
 ## Expanding the site
 
-Add a new gateway by appending one object to `K2040_CONTENT.projects`.
+Add a new gateway by appending one object to `K2040_CONTENT.projects` in the relevant `content.js` file.
 
 Add a project update by appending one object to `K2040_CONTENT.updates`.
 
 Each object carries its own strings for `en`, `de`, `pt-PT`, `es`, and `fr`. English is used as the fallback.
 
+Released gaming-mod cards link only to public official pages. Development cards do not expose private repositories or internal project files.
+
 ## Banner
 
-The initial page loads the published K2040 banner from the Android Releases site. A later asset-cleanup change may copy it into this repository without changing the page layout.
+The pages currently load the published K2040 banner from the Android Releases site. A later asset-cleanup change may copy it into this repository without changing the page layout.
 
 ## Publication
 
-Published URL: `https://kamui2040.github.io/`
+- Main gateway: `https://kamui2040.github.io/`
+- Gaming Mods: `https://kamui2040.github.io/gaming-mods/`
