@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="K2040 apps, game mods, development tools, and project updates in one place.">
+  <meta name="color-scheme" content="light dark">
+  <title>K2040 Projects</title>
+  <script src="translations.js"></script>
+  <script src="content.js"></script>
+  <script src="site.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <img
+        class="hero-image"
+        src="https://kamui2040.github.io/K2040-Android-Releases/docs/assets/kofi-header.jpg"
+        alt="K2040 projects banner showing apps, mods, tools, and the wolf mascot"
+        data-i18n-alt="hero.bannerAlt"
+      >
+      <div class="hero-copy">
+        <p class="eyebrow">K2040 Projects</p>
+        <h1 data-i18n="hero.title">Apps, Mods and Tools</h1>
+        <p data-i18n="hero.description">A central place for K2040 projects, releases, documentation, and updates.</p>
+
+        <div class="hero-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Switch to dark theme"
+          >
+            <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+            <span data-theme-label>Dark</span>
+          </button>
+
+          <label class="language-control">
+            <span class="visually-hidden" data-i18n="controls.language">Language</span>
+            <select
+              class="language-select"
+              data-language-select
+              aria-label="Language"
+              data-i18n-aria-label="controls.language"
+            >
+              <option value="en">English</option>
+              <option value="de">Deutsch</option>
+              <option value="pt-PT">Português (Portugal)</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <section class="content-section about-section">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="about.eyebrow">About me</p>
+        <h2 data-i18n="about.title">About K2040</h2>
+      </div>
+      <p class="section-copy" data-i18n="about.body">
+        I build Android apps, game mods, and development tools with a focus on practical improvements, clear documentation, and accessible design.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="projects.eyebrow">Explore</p>
+        <h2 data-i18n="projects.title">Project areas</h2>
+        <p data-i18n="projects.description">Open a dedicated project page for releases, documentation, downloads, and support.</p>
+      </div>
+      <div class="project-grid" data-project-grid></div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="updates.eyebrow">Latest</p>
+        <h2 data-i18n="updates.title">Project updates</h2>
+        <p data-i18n="updates.description">Compact notes about releases, documentation changes, and new project pages.</p>
+      </div>
+      <div class="update-list" data-update-list></div>
+    </section>
+
+    <footer>
+      <nav class="footer-links" data-i18n-aria-label="footer.linksLabel" aria-label="K2040 links">
+        <a href="https://github.com/Kamui2040" data-i18n="footer.github">GitHub</a>
+        <a href="https://ko-fi.com/k2040">Ko-fi</a>
+        <a href="https://www.instagram.com/k2040.projects/">Instagram</a>
+      </nav>
+      <p data-i18n="footer.note">Dedicated project pages remain the authoritative source for their releases and documentation.</p>
+    </footer>
+  </main>
+
+  <template id="project-card-template">
+    <article class="project-card">
+      <p class="card-label" data-project-label></p>
+      <h3 data-project-title></h3>
+      <p data-project-description></p>
+      <div class="card-footer">
+        <span class="status-badge" data-project-status></span>
+        <span class="project-action" data-project-action></span>
+      </div>
+    </article>
+  </template>
+
+  <template id="update-card-template">
+    <article class="update-card">
+      <div class="update-meta">
+        <time data-update-date></time>
+        <span data-update-category></span>
+      </div>
+      <h3 data-update-title></h3>
+      <p data-update-summary></p>
+      <a class="text-link" data-update-link></a>
+    </article>
+  </template>
+
+  <noscript>
+    <p class="noscript-message">JavaScript is required for language switching and dynamic project updates.</p>
+  </noscript>
+</body>
+</html>
