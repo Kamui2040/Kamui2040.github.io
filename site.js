@@ -116,7 +116,7 @@
     const languageSelect=document.querySelector("[data-language-select]");
     apply();
     themeButton?.addEventListener("click",()=>{const next=theme()==="dark"?"light":"dark";root.dataset.theme=next;write(themeKey,next);updateThemeButton(themeButton)});
-    languageSelect?.addEventListener("change",()=>{if(!languages.includes(languageSelect.value))return;language=languageSelect.value;write(languageKey,language);apply()});
+    languageSelect?.addEventListener("change",()=>{if(!languages.includes(languageSelect.value))return;language=languageSelect.value;write(languageKey,language);if(normalize(location.hash.slice(1)))history.replaceState(null,"",location.pathname+location.search);apply()});
     const onSystemTheme=()=>{if(!root.dataset.theme)updateThemeButton(themeButton)};
     darkQuery.addEventListener?.("change",onSystemTheme);
     if(!darkQuery.addEventListener)darkQuery.addListener?.(onSystemTheme);
