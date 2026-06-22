@@ -21,7 +21,7 @@ Static GitHub Pages gateway for the public K2040 project pages.
 - `content.js` — main gateway and update data;
 - `gaming-mods/index.html` — dedicated Gaming Mods page;
 - `gaming-mods/translations.js` — Gaming Mods translations;
-- `gaming-mods/content.js` — released and in-development mod data.
+- `gaming-mods/content.js` — released public mod data.
 
 ## Expanding the site
 
@@ -31,7 +31,7 @@ Add a project update by appending one object to `K2040_CONTENT.updates`.
 
 Each object carries its own strings for `en`, `de`, `pt-PT`, `es`, and `fr`. English is used as the fallback.
 
-Released gaming-mod cards link only to public official pages. Development cards do not expose private repositories or internal project files.
+The Gaming Mods page lists only released public projects that are approved for publication.
 
 ## Banner
 
