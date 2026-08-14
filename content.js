@@ -67,6 +67,38 @@ window.K2040_CONTENT = {
   ],
   updates: [
     {
+      id: "esca-agnellis-uptodown-0-16-0",
+      date: "2026-08-14",
+      href: "https://esca-agnellis.en.uptodown.com/android",
+      strings: {
+        en: {
+          category: "Android",
+          title: "Esca Agnellis v0.16.0 is now available on Uptodown",
+          summary: "The developer-signed v0.16.0 release is now available on Uptodown as an additional official download channel."
+        },
+        de: {
+          category: "Android",
+          title: "Esca Agnellis v0.16.0 ist jetzt auf Uptodown verfügbar",
+          summary: "Die entwicklersignierte Version v0.16.0 ist jetzt auch über Uptodown als zusätzlicher offizieller Downloadkanal verfügbar."
+        },
+        "pt-PT": {
+          category: "Android",
+          title: "Esca Agnellis v0.16.0 está agora disponível no Uptodown",
+          summary: "A versão v0.16.0 assinada pelo programador está agora também disponível no Uptodown como canal oficial adicional de transferência."
+        },
+        es: {
+          category: "Android",
+          title: "Esca Agnellis v0.16.0 ya está disponible en Uptodown",
+          summary: "La versión v0.16.0 firmada por el desarrollador ya está disponible también en Uptodown como canal oficial de descarga adicional."
+        },
+        fr: {
+          category: "Android",
+          title: "Esca Agnellis v0.16.0 est maintenant disponible sur Uptodown",
+          summary: "La version v0.16.0 signée par le développeur est désormais également disponible sur Uptodown comme canal officiel de téléchargement supplémentaire."
+        }
+      }
+    },
+    {
       id: "geojoystick-fdroid-apkpure",
       date: "2026-07-18",
       href: "https://kamui2040.github.io/K2040-Android-Releases/",
