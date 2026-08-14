@@ -131,6 +131,18 @@ window.K2040_CONTENT = {
       }
     },
     {
+      id: "esca-agnellis-0-16-0",
+      date: "2026-08-14",
+      href: "https://github.com/Kamui2040/K2040-Android-Releases/releases/tag/esca-agnellis-v0.16.0",
+      strings: {
+        en: { category: "Android", title: "Esca Agnellis v0.16.0 released", summary: "The new release adds local PDF reports and an optional companion and marks Esca Agnellis' first open-source release. GitHub is the current canonical developer-signed download." },
+        de: { category: "Android", title: "Esca Agnellis v0.16.0 veröffentlicht", summary: "Die neue Version ergänzt lokale PDF-Berichte und einen optionalen Begleiter und ist die erste quelloffene Esca-Agnellis-Version. GitHub ist derzeit der maßgebliche Entwickler-signierte Download." },
+        "pt-PT": { category: "Android", title: "Esca Agnellis v0.16.0 lançado", summary: "A nova versão adiciona relatórios PDF locais e um companheiro opcional e marca a primeira versão de código aberto do Esca Agnellis. O GitHub é atualmente a transferência canónica assinada pelo programador." },
+        es: { category: "Android", title: "Esca Agnellis v0.16.0 publicado", summary: "La nueva versión añade informes PDF locales y un acompañante opcional y es la primera versión de código abierto de Esca Agnellis. GitHub es actualmente la descarga canónica firmada por el desarrollador." },
+        fr: { category: "Android", title: "Esca Agnellis v0.16.0 publié", summary: "La nouvelle version ajoute des rapports PDF locaux et un compagnon facultatif et constitue la première version open source d’Esca Agnellis. GitHub est actuellement le téléchargement canonique signé par le développeur." }
+      }
+    },
+    {
       id: "esca-agnellis-0-15-0",
       date: "2026-06-23",
       href: "https://github.com/Kamui2040/K2040-Android-Releases/releases/tag/esca-agnellis-v0.15.0",
