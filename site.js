@@ -90,12 +90,28 @@
     }
   };
 
+  const updateTime=(update)=>{
+    const value=Date.parse(`${update?.date||""}T00:00:00Z`);
+    return Number.isNaN(value)?null:value;
+  };
+
+  const sortedUpdates=()=>[...(window.K2040_CONTENT?.updates||[])]
+    .map((update,index)=>({update,index,time:updateTime(update)}))
+    .sort((left,right)=>{
+      if(left.time===null&&right.time===null)return left.index-right.index;
+      if(left.time===null)return 1;
+      if(right.time===null)return-1;
+      if(left.time!==right.time)return right.time-left.time;
+      return left.index-right.index;
+    })
+    .map(({update})=>update);
+
   const renderUpdates=()=>{
     const list=document.querySelector("[data-update-list]");
     const template=document.querySelector("#update-card-template");
     if(!list||!template)return;
     list.replaceChildren();
-    for(const update of window.K2040_CONTENT?.updates||[]){
+    for(const update of sortedUpdates()){
       const strings=localStrings(update);
       const fragment=template.content.cloneNode(true);
       const time=fragment.querySelector("[data-update-date]");
