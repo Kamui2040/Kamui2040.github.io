@@ -10,56 +10,71 @@
   <script src="content.js"></script>
   <script src="../site.js?v=20260814c"></script>
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../navigation.css?v=20260817">
 </head>
 <body>
-  <main class="page-shell">
-    <header class="hero">
-      <img
-        class="hero-image"
-        src="https://kamui2040.github.io/K2040-Android-Releases/docs/assets/kofi-header.jpg"
-        alt="K2040 projects banner showing apps, mods, tools, and the wolf mascot"
-        data-i18n-alt="hero.bannerAlt"
-      >
-      <div class="hero-copy">
-        <p class="eyebrow">K2040 Projects</p>
-        <h1 data-i18n="hero.title">Gaming Mods</h1>
-        <p data-i18n="hero.description">Released game modifications, official download links, and compatibility information in one place.</p>
-        <div class="hero-actions">
-          <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark theme">
-            <span class="theme-toggle-icon" aria-hidden="true">☾</span>
-            <span data-theme-label>Dark</span>
-          </button>
-          <label class="language-control">
-            <span class="visually-hidden" data-i18n="controls.language">Language</span>
-            <select class="language-select" data-language-select aria-label="Language" data-i18n-aria-label="controls.language">
-              <option value="en">English</option>
-              <option value="de">Deutsch</option>
-              <option value="pt-PT">Português (Portugal)</option>
-              <option value="es">Español</option>
-              <option value="fr">Français</option>
-            </select>
-          </label>
-        </div>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="site-brand">
+        <a class="site-brand-name" href="/" aria-label="K2040 home"><strong>K2040</strong></a>
+        <a class="site-brand-section" href="/gaming-mods/" aria-current="page"><span data-i18n="footer.gaming">Gaming Mods</span></a>
       </div>
+
+      <nav class="site-nav" aria-label="Gaming Mods">
+        <a class="nav-link" href="/" data-i18n="footer.home">Home</a>
+        <a class="nav-link" href="https://kamui2040.github.io/K2040-Android-Releases/" data-i18n="footer.android">Android Projects</a>
+
+        <label class="nav-language-control">
+          <span class="visually-hidden" data-i18n="controls.language">Language</span>
+          <select class="nav-language-select" data-language-select aria-label="Language" data-i18n-aria-label="controls.language">
+            <option value="en">🇬🇧 English</option>
+            <option value="de">🇩🇪 Deutsch</option>
+            <option value="pt-PT">🇵🇹 Português</option>
+            <option value="es">🇪🇸 Español</option>
+            <option value="fr">🇫🇷 Français</option>
+          </select>
+        </label>
+
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark theme">
+          <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+          <span data-theme-label>Dark</span>
+        </button>
+      </nav>
     </header>
 
-    <section class="content-section">
-      <div class="section-heading">
-        <p class="eyebrow" data-i18n="projects.eyebrow">Released</p>
-        <h2 data-i18n="projects.title">Mod Projects</h2>
-        <p data-i18n="projects.description">Released projects open their official Nexus Mods page.</p>
-      </div>
-      <div class="project-grid" data-project-grid></div>
-    </section>
+    <main>
+      <header class="hero">
+        <img
+          class="hero-image"
+          src="https://kamui2040.github.io/K2040-Android-Releases/docs/assets/kofi-header.jpg"
+          alt="K2040 projects banner showing apps, mods, tools, and the wolf mascot"
+          data-i18n-alt="hero.bannerAlt"
+        >
+        <div class="hero-copy">
+          <p class="eyebrow">K2040 Projects</p>
+          <h1 data-i18n="hero.title">Gaming Mods</h1>
+          <p data-i18n="hero.description">Released game modifications, official download links, and compatibility information in one place.</p>
+        </div>
+      </header>
 
-    <section class="content-section">
-      <div class="section-heading">
-        <p class="eyebrow" data-i18n="updates.eyebrow">Latest</p>
-        <h2 data-i18n="updates.title">Mod Updates</h2>
-        <p data-i18n="updates.description">Published release changes and important page updates.</p>
-      </div>
-      <div class="update-list" data-update-list></div>
-    </section>
+      <section class="content-section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="projects.eyebrow">Released</p>
+          <h2 data-i18n="projects.title">Mod Projects</h2>
+          <p data-i18n="projects.description">Released projects open their official Nexus Mods page.</p>
+        </div>
+        <div class="project-grid" data-project-grid></div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="updates.eyebrow">Latest</p>
+          <h2 data-i18n="updates.title">Mod Updates</h2>
+          <p data-i18n="updates.description">Published release changes and important page updates.</p>
+        </div>
+        <div class="update-list" data-update-list></div>
+      </section>
+    </main>
 
     <footer>
       <nav class="footer-links" data-i18n-aria-label="footer.linksLabel" aria-label="K2040 links">
@@ -72,7 +87,7 @@
       </nav>
       <p data-i18n="footer.note">Official Nexus Mods pages remain the authoritative source for released files.</p>
     </footer>
-  </main>
+  </div>
 
   <template id="project-card-template">
     <article class="project-card">

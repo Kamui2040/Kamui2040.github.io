@@ -1,0 +1,219 @@
+:root {
+  --site-nav-bg: #20262d;
+  --site-nav-text: #f5f7f9;
+  --site-nav-muted: #c9d0d6;
+  --site-nav-hover: rgba(255, 255, 255, 0.09);
+  --site-nav-border: rgba(255, 255, 255, 0.1);
+}
+
+:root[data-theme="dark"] {
+  --site-nav-bg: #0f1318;
+  --site-nav-text: #f7f9fb;
+  --site-nav-muted: #c6ccd2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --site-nav-bg: #0f1318;
+    --site-nav-text: #f7f9fb;
+    --site-nav-muted: #c6ccd2;
+  }
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 2rem));
+}
+
+.site-header {
+  position: sticky;
+  top: 0.65rem;
+  z-index: 20;
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding: 0.55rem 0.65rem 0.55rem 1rem;
+  border: 1px solid var(--site-nav-border);
+  border-radius: 20px;
+  background: var(--site-nav-bg);
+  color: var(--site-nav-text);
+  box-shadow: 0 12px 30px rgba(13, 17, 22, 0.18);
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  white-space: nowrap;
+}
+
+.site-brand-name,
+.site-brand-section {
+  display: inline-flex;
+  align-items: baseline;
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-brand-name strong {
+  color: #ffffff;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+}
+
+.site-brand-section span {
+  color: var(--site-nav-muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.site-brand-section[aria-current="page"] span {
+  color: #ffffff;
+}
+
+.site-brand-name:hover strong,
+.site-brand-name:focus-visible strong {
+  color: #8fd3f4;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+}
+
+.nav-link,
+.nav-language-control,
+.site-header .theme-toggle {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  background: transparent;
+  color: var(--site-nav-text);
+  font-weight: 750;
+  text-decoration: none;
+  transition: background 140ms ease, border-color 140ms ease, transform 140ms ease;
+}
+
+.nav-link,
+.site-header .theme-toggle,
+.nav-language-select {
+  cursor: pointer;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-language-control:hover,
+.nav-language-control:focus-within,
+.site-header .theme-toggle:hover,
+.site-header .theme-toggle:focus-visible,
+.nav-link[aria-current="page"] {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: var(--site-nav-hover);
+  outline: none;
+  box-shadow: none;
+}
+
+.nav-link:active,
+.site-header .theme-toggle:active {
+  transform: translateY(1px);
+}
+
+.nav-language-control {
+  position: relative;
+  padding-right: 0.45rem;
+}
+
+.nav-language-select {
+  min-width: 0;
+  padding: 0.15rem 0.35rem;
+  border: 0;
+  background: transparent;
+  color: var(--site-nav-text);
+  font: inherit;
+  font-weight: 750;
+  outline: none;
+}
+
+.nav-language-select option {
+  background: var(--strong);
+  color: var(--text);
+}
+
+.site-header .theme-toggle {
+  padding: 0.65rem 0.8rem;
+  color: var(--site-nav-text);
+}
+
+.site-header .theme-toggle-icon {
+  width: 1.1rem;
+  text-align: center;
+}
+
+.site-brand-name:focus-visible,
+.site-brand-section:focus-visible {
+  border-radius: 7px;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(105, 185, 232, 0.3);
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    position: static;
+    align-items: stretch;
+    flex-direction: column;
+    padding: 0.8rem;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 760px) {
+  .page-shell {
+    width: min(100% - 1rem, 1180px);
+  }
+
+  .site-header {
+    border-radius: 22px;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-brand {
+    padding: 0.2rem 0.35rem;
+  }
+
+  .site-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .nav-link,
+  .nav-language-control,
+  .site-header .theme-toggle {
+    width: 100%;
+  }
+
+  .nav-language-select {
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link,
+  .site-header .theme-toggle {
+    transition: none;
+  }
+}
