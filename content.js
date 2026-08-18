@@ -67,6 +67,38 @@ window.K2040_CONTENT = {
   ],
   updates: [
     {
+      id: "geojoystick-uptodown-0-1-4",
+      date: "2026-08-18",
+      href: "https://geojoystick.en.uptodown.com/android",
+      strings: {
+        en: {
+          category: "Android",
+          title: "GeoJoystick v0.1.4 is now available on Uptodown",
+          summary: "The developer-signed v0.1.4 release is now available on Uptodown as an additional official download channel."
+        },
+        de: {
+          category: "Android",
+          title: "GeoJoystick v0.1.4 ist jetzt auf Uptodown verfügbar",
+          summary: "Die entwicklersignierte Version v0.1.4 ist jetzt auch über Uptodown als zusätzlicher offizieller Downloadkanal verfügbar."
+        },
+        "pt-PT": {
+          category: "Android",
+          title: "GeoJoystick v0.1.4 está agora disponível no Uptodown",
+          summary: "A versão v0.1.4 assinada pelo programador está agora também disponível no Uptodown como canal oficial adicional de transferência."
+        },
+        es: {
+          category: "Android",
+          title: "GeoJoystick v0.1.4 ya está disponible en Uptodown",
+          summary: "La versión v0.1.4 firmada por el desarrollador ya está disponible también en Uptodown como canal oficial de descarga adicional."
+        },
+        fr: {
+          category: "Android",
+          title: "GeoJoystick v0.1.4 est maintenant disponible sur Uptodown",
+          summary: "La version v0.1.4 signée par le développeur est désormais également disponible sur Uptodown comme canal officiel de téléchargement supplémentaire."
+        }
+      }
+    },
+    {
       id: "esca-agnellis-uptodown-0-16-0",
       date: "2026-08-14",
       href: "https://esca-agnellis.en.uptodown.com/android",
