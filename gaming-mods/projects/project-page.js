@@ -74,7 +74,20 @@
         "Includes conditions for attachment-dependent options to reduce invalid menu choices.",
         "Shows a notification after the quick-menu injection completes successfully."
       ],
-      changelog: ["1.0 — Current published release. Nexus Mods does not list detailed changelog notes for this project."]
+      changelog: [
+        "31 May 2026 — AER15 compatibility patch uploaded.",
+        "29 May 2026 — MEC-R7 compatibility patch uploaded.",
+        "29 May 2026 — HK 45C Mk24 compatibility patch uploaded.",
+        "29 May 2026 — X12 Plasmacaster compatibility patch uploaded.",
+        "29 May 2026 — Aquila compatibility patch uploaded.",
+        "29 May 2026 — DKS-501 Redux compatibility patch uploaded.",
+        "29 May 2026 — ACR-W17 compatibility patch uploaded.",
+        "28 May 2026 — DKS-501 Unofficial Update Vanilla compatibility patch uploaded.",
+        "28 May 2026 — DKS-501 compatibility patch uploaded.",
+        "28 May 2026 — .357 Cattleman Revolver compatibility patch uploaded.",
+        "28 May 2026 — MW19 FAL compatibility patch uploaded.",
+        "28 May 2026 — HK USP compatibility patch uploaded."
+      ]
     },
     "xedit-json-exporter": {
       game: "Fallout 4",
