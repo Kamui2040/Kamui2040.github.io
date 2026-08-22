@@ -7,7 +7,19 @@
       overview: "A native Linux port of FireEyeEian’s original mod menu, with released gameplay options, safe Data0 patching, and restore support.",
       nexus: "https://www.nexusmods.com/deadislandriptide/mods/31",
       github: "https://github.com/Kamui2040/DeadIsland-Riptide-Ultimate-edition-mod-menu/releases/tag/v0.1.0-dev0",
-      changelog: "The first public pre-release is available as Flatpak and AppImage packages for x86-64 Linux."
+      changelog: "The first public pre-release is available as Flatpak and AppImage packages for x86-64 Linux.",
+      screenshots: [
+        {
+          src: "../assets/dirde-ue-linux-main-window.png",
+          alt: "DIRDE UE Linux main application window showing the gameplay configuration options",
+          caption: "Main application window"
+        },
+        {
+          src: "../assets/dirde-ue-linux-about.png",
+          alt: "DIRDE UE Linux About dialog with project and attribution details",
+          caption: "About and attribution"
+        }
+      ]
     },
     "eco-aio": {
       game: "Fallout 4",
