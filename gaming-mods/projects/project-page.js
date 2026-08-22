@@ -42,7 +42,7 @@
   window.K2040_PROJECT = { screenshots: project.screenshots || [] };
 
   const setText = (selector, value) => { const element = document.querySelector(selector); if (element) element.textContent = value; };
-  const addLink = (container, href, label) => { if (!container || !href) return; const link = document.createElement("a"); link.className = "text-link"; link.href = href; link.textContent = label; container.append(link); };
+  const addLink = (container, href, label, brand) => { if (!container || !href) return; const link = document.createElement("a"); link.className = "text-link"; link.href = href; link.textContent = label; if (brand) link.dataset.brand = brand; container.append(link); };
 
   document.addEventListener("DOMContentLoaded", () => {
     document.title = `${project.title} · K2040 Gaming Mods`;
@@ -55,10 +55,10 @@
     if (art && project.image) { const image = document.createElement("img"); image.src = project.image; image.alt = `${project.title} project artwork`; art.append(image); }
     const downloads = document.querySelector("[data-project-downloads]");
     const links = document.querySelector("[data-project-links]");
-    addLink(downloads, project.nexus, "Nexus Mods");
-    addLink(downloads, project.github, "GitHub release");
-    addLink(links, project.nexus, "Open Nexus Mods");
-    addLink(links, project.github, "Open GitHub release");
+    addLink(downloads, project.nexus, "Nexus Mods", "nexus");
+    addLink(downloads, project.github, "GitHub release", "github");
+    addLink(links, project.nexus, "Open Nexus Mods", "nexus");
+    addLink(links, project.github, "Open GitHub release", "github");
     const nexus = document.querySelector("[data-project-nexus]");
     if (nexus) nexus.href = project.nexus;
   });
