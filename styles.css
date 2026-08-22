@@ -50,3 +50,9 @@
 .project-card--visual .project-card-art img{object-position:center top}
 .featured-game-art-placeholder{overflow:hidden}
 .featured-game-art-placeholder img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+
+/* Keep card content and actions on a shared baseline despite different description lengths. */
+.project-card--visual{height:100%}.project-card--visual .project-card-art{flex:0 0 49%;height:49%}.project-card--visual .project-card-copy{height:51%;overflow:hidden}.project-card--visual .project-card-copy>p:not(.card-label){display:-webkit-box;min-height:3.6em;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:3}
+
+/* Footer destinations use the same restrained underline state as the main navigation. */
+.footer-links a{border-color:transparent;border-bottom-color:#00d9e5;background:linear-gradient(180deg,rgba(0,217,229,.08),transparent);box-shadow:inset 0 -2px 0 #00d9e5,0 0 10px rgba(0,217,229,.08)}.footer-links a:hover,.footer-links a:focus-visible{border-color:transparent;border-bottom-color:#00f0f2;background:linear-gradient(180deg,rgba(0,217,229,.14),transparent);box-shadow:inset 0 -2px 0 #00f0f2,0 0 12px rgba(0,217,229,.16)}
