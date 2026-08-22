@@ -1,77 +1,73 @@
-/* Page-specific responsive and theme corrections.
-   Keep this file scoped so the shared base styles can serve the gateway and Gaming Mods
-   without one hero or navigation layout leaking into the other. */
+/* Responsive behavior for the shared K2040 gateway and Gaming Mods pages. */
 
-/* The main project gateway uses a stacked image + copy hero, not the cinematic Gaming Mods hero. */
-.projects-home-page .hero {
-  min-height: 0;
-  background: var(--surface);
-  color: var(--text);
-}
-
-.projects-home-page .hero::after {
-  display: none;
-}
-
-.projects-home-page .hero-copy {
-  display: block;
-  min-height: 0;
-  max-width: none;
-  color: var(--text);
-}
-
-.projects-home-page .hero .eyebrow {
-  width: auto;
-  padding: 0;
-  border-radius: 0;
-  background: transparent;
-  color: var(--accentText);
-  letter-spacing: .12em;
-}
-
-.projects-home-page .hero h1 {
-  font-size: clamp(2.2rem, 7vw, 4.6rem);
-  line-height: .98;
-}
-
-.projects-home-page .hero-copy > p:not(.eyebrow) {
-  color: var(--muted);
-}
-
-/* Dark artwork is limited to the media slot; text surfaces continue to follow the selected theme. */
-.project-card--visual {
-  background: var(--strong);
-}
-
-.project-variant {
-  background: linear-gradient(145deg, var(--strong), var(--surface));
-}
-
-.gaming-mods-page .text-link,
-.gaming-mods-page .hero .text-link,
-.gaming-mods-page .hero .text-link:first-child,
-.gaming-mods-page .project-action,
-.project-detail-page .text-link,
-.project-detail-page .project-action {
-  background: linear-gradient(180deg, rgba(0, 217, 229, .09), var(--strong));
-  color: var(--accentText);
-}
-
-.gaming-mods-page .text-link:hover,
-.gaming-mods-page .text-link:focus-visible,
-.gaming-mods-page .hero .text-link:hover,
-.gaming-mods-page .hero .text-link:focus-visible,
-.gaming-mods-page .project-card:hover .project-action,
-.gaming-mods-page .project-card:focus-visible .project-action,
-.project-detail-page .text-link:hover,
-.project-detail-page .text-link:focus-visible {
-  background: linear-gradient(180deg, rgba(0, 217, 229, .16), var(--surface));
-  color: var(--text);
+@media (max-width: 900px) {
+  .project-grid:has(.project-card--artwork),
+  .project-grid:has(.project-card--visual) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 760px) {
-  /* On phones the Gaming Mods landing hero becomes a compact stacked banner.
-     This preserves the full landscape artwork instead of cropping it into a 560px-tall viewport. */
+  .page-shell {
+    width: min(100% - 1rem, 1100px);
+    padding-top: .5rem;
+  }
+
+  :where(.hero, .content-section, footer, .project-detail-hero) {
+    clip-path: polygon(0 10px, 10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+
+  :where(.hero, .content-section, footer, .project-detail-hero, .project-card, .update-card, .featured-game-art-placeholder, .screenshot-grid figure)::before {
+    inset: 5px;
+  }
+
+  .hero-image {
+    aspect-ratio: 16 / 8;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .theme-toggle,
+  .language-control,
+  .language-select {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-project-layout,
+  .screenshot-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .screenshot-dialog {
+    padding: .5rem;
+  }
+
+  .screenshot-dialog-close {
+    top: .8rem;
+    right: .8rem;
+  }
+
+  .project-detail-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .project-detail-art {
+    min-height: 260px;
+  }
+
+  .project-variant-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* The Gaming Mods landing hero becomes a compact image + copy stack on phones. */
   .gaming-mods-page .hero {
     min-height: 0;
   }
@@ -100,7 +96,7 @@
     padding: 1.4rem;
   }
 
-  /* Wide project headers also stack on phones: complete artwork first, readable HTML copy second. */
+  /* Wide project headers show the complete artwork above readable HTML copy. */
   .project-detail-hero--wide-art {
     display: grid;
     min-height: 0;
@@ -140,7 +136,7 @@
 }
 
 @media (max-width: 620px) {
-  /* Seven Gaming Mods controls fit into two predictable rows instead of five uneven rows. */
+  /* Seven Gaming Mods controls fit into two predictable rows. */
   .gaming-mods-page .site-nav,
   .project-detail-page .site-nav {
     grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -185,8 +181,21 @@
   }
 }
 
+@media (max-width: 560px) {
+  .project-grid:has(.project-card--artwork),
+  .project-grid:has(.project-card--visual) {
+    grid-template-columns: 1fr;
+  }
+
+  .gaming-mods-page .featured-project-actions .text-link,
+  .project-detail-page .featured-project-actions .text-link,
+  .project-detail-page .project-link-grid .text-link,
+  .project-detail-page .project-variant .text-link {
+    width: 100%;
+  }
+}
+
 @media (max-width: 360px) {
-  /* Very narrow phones fall back to two columns rather than clipping translated labels. */
   .gaming-mods-page .site-nav,
   .project-detail-page .site-nav {
     grid-template-columns: repeat(2, minmax(0, 1fr));
