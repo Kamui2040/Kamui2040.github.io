@@ -19,3 +19,6 @@
 .hero{border-color:color-mix(in srgb,var(--border) 72%,var(--accent));box-shadow:0 0 0 1px rgba(105,185,232,.1),0 20px 44px rgba(0,0,0,.22),inset 0 1px 0 rgba(183,225,247,.12)}
 .hero::before{z-index:3}
 @media(max-width:760px){:where(.hero,.content-section,footer,.project-detail-hero){clip-path:polygon(0 10px,10px 0,calc(100% - 10px) 0,100% 10px,100% calc(100% - 10px),calc(100% - 10px) 100%,10px 100%,0 calc(100% - 10px))}}
+
+/* Cards and media frames use the same angular panel system. Controls remain rounded. */
+:where(.project-card,.update-card,.featured-game-art-placeholder,.screenshot-grid figure){border-radius:0;clip-path:polygon(0 10px,10px 0,calc(100% - 10px) 0,100% 10px,100% calc(100% - 10px),calc(100% - 10px) 100%,10px 100%,0 calc(100% - 10px))}

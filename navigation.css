@@ -244,3 +244,6 @@
   .project-menu-games{border-right:0}
   .project-menu-mods{margin-top:.55rem;padding:.65rem;border:1px solid var(--site-nav-border);border-radius:16px;background:var(--site-nav-bg);box-shadow:0 16px 34px rgba(13,17,22,.28)}
 }
+
+/* Structural navigation frames match the angular page panels. */
+.site-header,.menu-panel,.project-menu-mods{border-radius:0;clip-path:polygon(0 10px,10px 0,calc(100% - 10px) 0,100% 10px,100% calc(100% - 10px),calc(100% - 10px) 100%,10px 100%,0 calc(100% - 10px))}
