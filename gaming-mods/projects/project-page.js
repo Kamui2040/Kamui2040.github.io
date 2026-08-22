@@ -200,7 +200,7 @@
         const action = document.createElement("a"); action.className = "text-link"; action.href = variant.nexus; action.textContent = "Open Nexus Mods"; action.dataset.brand = "nexus";
         const heading = document.createElement("h4"); heading.textContent = "Changelog";
         const changelog = document.createElement("ul"); changelog.className = "detail-list";
-        changelog.replaceChildren(...variant.changelog.map((entry) => { const line = document.createElement("li"); line.textContent = entry; return line; }));
+        changelog.replaceChildren(...variant.changelog.slice(0, 5).map((entry) => { const line = document.createElement("li"); line.textContent = entry; return line; }));
         item.append(title, description, action, heading, changelog);
         return item;
       }));
