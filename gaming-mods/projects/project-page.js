@@ -43,7 +43,21 @@
       overview: "A single installer for the released ECO Quick Menu compatibility patch collection.",
       image: "../assets/fallout-4-eco-quick-menu-aio.png",
       nexus: "https://www.nexusmods.com/fallout4/mods/105461",
-      changelog: ["See the Nexus Mods page for the current release notes and files."]
+      features: [
+        "Adds quick-menu compatibility support for supported Fallout 4 weapon mods through one all-in-one installer.",
+        "FOMOD installer detects supported active weapons in the load order.",
+        "All patches are ESL-flagged ESP files.",
+        "Removes unnecessary edits and reorganizes menus for a more consistent workflow.",
+        "Includes conditions for attachment-dependent options to reduce invalid menu choices.",
+        "Shows a notification after the quick-menu injection completes successfully."
+      ],
+      changelog: [
+        "1.0.1.11 — Added AER15 support and its MEC-R7 variant; split DKS-501 and AER15 variants into separate groups.",
+        "1.0.0.9 — Added a patch for the H&K 45C Mk24.",
+        "1.0.0.8 — Added patches for AQUILA and the X12 Plasmacaster.",
+        "1.0.0.6 — Added patches for DKS-501 Redux and ACR-W17.",
+        "1.0.0.4 — Initial release with patches for the HK USP, DKS-501, .357 Cattleman Revolver, and MW19 FAL."
+      ]
     },
     "eco-single": {
       game: "Fallout 4",
@@ -52,7 +66,15 @@
       overview: "Choose individual optional compatibility patches for supported Fallout 4 weapon mods.",
       image: "../assets/fallout-4-eco-quick-menu-single-patches.png",
       nexus: "https://www.nexusmods.com/fallout4/mods/105464",
-      changelog: ["See the Nexus Mods page for the current release notes and files."]
+      features: [
+        "Provides individual optional patches that add weapon-specific quick-menu support.",
+        "All patches are ESL-flagged ESP files.",
+        "Lets players install only the patches for the weapons they use.",
+        "Uses streamlined edits and reorganized menus for a more consistent workflow.",
+        "Includes conditions for attachment-dependent options to reduce invalid menu choices.",
+        "Shows a notification after the quick-menu injection completes successfully."
+      ],
+      changelog: ["1.0 — Current published release. Nexus Mods does not list detailed changelog notes for this project."]
     },
     "xedit-json-exporter": {
       game: "Fallout 4",
@@ -61,7 +83,18 @@
       overview: "A generic xEdit/FO4Edit script that exports selected records or complete plugin trees to readable JSON.",
       image: "../assets/fallout-4-xedit-json-exporter.png",
       nexus: "https://www.nexusmods.com/fallout4/mods/105775",
-      changelog: ["See the Nexus Mods page for the current release notes and files."]
+      features: [
+        "Exports a complete plugin or selected records from xEdit to structured JSON.",
+        "Read-only processing for ESP, ESL, and ESM files.",
+        "Preserves the hierarchy shown in xEdit, including records, fields, subrecords, arrays, and nested elements.",
+        "Creates filenames with exported record signatures when exporting selected records.",
+        "Adds a summary of record types and counts for use by people and external tooling.",
+        "Automatically names the output from the plugin and selected records when no filename is supplied."
+      ],
+      changelog: [
+        "1.5 — Fixed full-plugin automatic naming so ESP, ESL, and ESM exports do not append every exported signature.",
+        "1.4 — First public version."
+      ]
     }
   };
   const id = new URLSearchParams(location.search).get("project");
