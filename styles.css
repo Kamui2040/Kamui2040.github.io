@@ -33,3 +33,7 @@
 
 /* Angular technical controls for actions and destination links. */
 .theme-toggle,.language-select,.footer-links a,.project-action,.text-link{border-radius:0;clip-path:polygon(0 8px,8px 0,calc(100% - 8px) 0,100% 8px,100% calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,0 calc(100% - 8px))}
+
+/* Preserve full screenshots in the gallery instead of cropping them to a card ratio. */
+.screenshot-open{display:grid;place-items:center;background:#071018}
+.screenshot-grid img{height:auto;aspect-ratio:auto;object-fit:contain;object-position:center}
