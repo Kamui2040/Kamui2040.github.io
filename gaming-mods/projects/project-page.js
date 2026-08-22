@@ -6,6 +6,7 @@
       description: "Native Linux port of the Ultimate Edition Mod Menu.",
       overview: "A native Linux port of FireEyeEian’s original mod menu, with released gameplay options, safe Data0 patching, and restore support.",
       nexus: "https://www.nexusmods.com/deadislandriptide/mods/31",
+      originalNexus: "https://www.nexusmods.com/deadislandriptide/mods/3",
       github: "https://github.com/Kamui2040/DeadIsland-Riptide-Ultimate-edition-mod-menu/releases/tag/v0.1.0-dev0",
       changelog: [
         "0.1.0.dev0 — First public pre-release of the native Linux port of FireEyeEian’s Dead Island Riptide Ultimate Edition mod menu."
@@ -87,6 +88,7 @@
     addLink(downloads, project.nexus, "Nexus Mods", "nexus");
     addLink(downloads, project.github, "GitHub release", "github");
     addLink(links, project.nexus, "Open Nexus Mods", "nexus");
+    addLink(links, project.originalNexus, "Open original mod", "nexus");
     addLink(links, project.github, "Open GitHub release", "github");
     const nexus = document.querySelector("[data-project-nexus]");
     if (nexus) nexus.href = project.nexus;
