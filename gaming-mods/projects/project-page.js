@@ -5,6 +5,7 @@
       title: "DIRDE UE Linux 0.1.0",
       description: "Native Linux port of the Ultimate Edition Mod Menu.",
       image: "../assets/dirde-ue-linux-card.png",
+      heroImage: "../assets/dirde-ue-linux-header.png",
       overview: "A native Linux port of FireEyeEian’s original mod menu, with released gameplay options, safe Data0 patching, and restore support.",
       nexus: "https://www.nexusmods.com/deadislandriptide/mods/31",
       originalNexus: "https://www.nexusmods.com/deadislandriptide/mods/3",
@@ -96,6 +97,7 @@
       description: "Export Fallout 4 plugin data from xEdit to structured JSON.",
       overview: "A generic xEdit/FO4Edit script that exports selected records or complete plugin trees to readable JSON.",
       image: "../assets/fallout-4-xedit-json-exporter-card.png",
+      heroImage: "../assets/fallout-4-xedit-json-exporter-header.png",
       nexus: "https://www.nexusmods.com/fallout4/mods/105775",
       features: [
         "Exports a complete plugin or selected records from xEdit to structured JSON.",
@@ -129,7 +131,10 @@
     const features = document.querySelector("[data-project-features-section]");
     if (features && project.features?.length) { renderList("[data-project-features]", project.features); features.hidden = false; }
     const art = document.querySelector("[data-project-hero-art]");
-    if (art && project.image) { const image = document.createElement("img"); image.src = project.image; image.alt = `${project.title} project artwork`; art.append(image); }
+    const hero = document.querySelector(".project-detail-hero");
+    const heroArtwork = project.heroImage || project.image;
+    if (hero && project.heroImage) hero.classList.add("project-detail-hero--wide-art");
+    if (art && heroArtwork) { const image = document.createElement("img"); image.src = heroArtwork; image.alt = `${project.title} project artwork`; art.append(image); }
     const downloads = document.querySelector("[data-project-downloads]");
     const links = document.querySelector("[data-project-links]");
     addLink(downloads, project.nexus, "Nexus Mods", "nexus");
