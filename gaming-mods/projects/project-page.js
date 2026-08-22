@@ -4,6 +4,7 @@
       game: "Dead Island: Riptide DE",
       title: "DIRDE UE Linux 0.1.0",
       description: "Native Linux port of the Ultimate Edition Mod Menu.",
+      image: "../assets/dirde-ue-linux-card.png",
       overview: "A native Linux port of FireEyeEian’s original mod menu, with released gameplay options, safe Data0 patching, and restore support.",
       nexus: "https://www.nexusmods.com/deadislandriptide/mods/31",
       originalNexus: "https://www.nexusmods.com/deadislandriptide/mods/3",
@@ -94,7 +95,7 @@
       title: "xEdit JSON Exporter",
       description: "Export Fallout 4 plugin data from xEdit to structured JSON.",
       overview: "A generic xEdit/FO4Edit script that exports selected records or complete plugin trees to readable JSON.",
-      image: "../assets/fallout-4-xedit-json-exporter.png",
+      image: "../assets/fallout-4-xedit-json-exporter-card.png",
       nexus: "https://www.nexusmods.com/fallout4/mods/105775",
       features: [
         "Exports a complete plugin or selected records from xEdit to structured JSON.",

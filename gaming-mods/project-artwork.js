@@ -1,8 +1,9 @@
 (() => {
   const artwork = {
+    "dirde-ue-linux": "assets/dirde-ue-linux-card.png",
     "eco-aio": "assets/fallout-4-eco-quick-menu-aio.png",
     "eco-single": "assets/fallout-4-eco-quick-menu-single-patches.png",
-    "xedit-json-exporter": "assets/fallout-4-xedit-json-exporter.png",
+    "xedit-json-exporter": "assets/fallout-4-xedit-json-exporter-card.png",
   };
   const projectPages = {
     "dirde-ue-linux": "projects/project.html?project=dirde-ue-linux",
