@@ -74,15 +74,27 @@
       const strings=localStrings(project);
       const fragment=template.content.cloneNode(true);
       const article=fragment.querySelector(".project-card");
-      fragment.querySelector("[data-project-label]").textContent=strings.label||"";
-      fragment.querySelector("[data-project-title]").textContent=strings.title||"";
-      fragment.querySelector("[data-project-description]").textContent=strings.description||"";
-      fragment.querySelector("[data-project-status]").textContent=t(project.available?"status.available":"status.planned")||"";
-      fragment.querySelector("[data-project-action]").textContent=t(project.available?"actions.open":"actions.planned")||"";
+      if(project.image){
+        article.classList.add("project-card--artwork");
+        article.replaceChildren();
+        const image=document.createElement("img");
+        image.src=project.image;
+        image.alt=`${strings.title||"Project"} project card`;
+        image.loading="lazy";
+        image.decoding="async";
+        article.append(image);
+      }else{
+        fragment.querySelector("[data-project-label]").textContent=strings.label||"";
+        fragment.querySelector("[data-project-title]").textContent=strings.title||"";
+        fragment.querySelector("[data-project-description]").textContent=strings.description||"";
+        fragment.querySelector("[data-project-status]").textContent=t(project.available?"status.available":"status.planned")||"";
+        fragment.querySelector("[data-project-action]").textContent=t(project.available?"actions.open":"actions.planned")||"";
+      }
       if(project.available&&project.href){
         const link=document.createElement("a");
         for(const attribute of article.attributes)link.setAttribute(attribute.name,attribute.value);
         link.href=project.href;
+        link.setAttribute("aria-label",strings.title||"Open project");
         link.append(...article.childNodes);
         article.replaceWith(link);
       }else article.setAttribute("aria-disabled","true");

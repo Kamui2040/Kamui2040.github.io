@@ -7,3 +7,4 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.theme-toggle,.language-select,.project-card,.footer-links a,.text-link{transition:none}}
 .hero-media{width:100%;aspect-ratio:1717/916;border-bottom:1px solid var(--border);background:var(--strong)}.hero-media img{display:block;width:100%;height:100%;object-fit:cover}
 @media(max-width:760px){.hero-media{aspect-ratio:16/9}}
+.project-card--artwork{min-height:0;padding:0;overflow:hidden;background:var(--strong)}.project-card--artwork img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}.project-grid:has(.project-card--artwork){grid-template-columns:repeat(3,minmax(0,1fr))}@media(max-width:900px){.project-grid:has(.project-card--artwork){grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.project-grid:has(.project-card--artwork){grid-template-columns:1fr}}
