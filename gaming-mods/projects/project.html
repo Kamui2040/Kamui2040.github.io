@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>K2040 Gaming Mods</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../navigation.css">
+  <script src="../translations.js"></script>
+  <script src="../content.js"></script>
+  <script src="../dirde-content.js"></script>
+  <script src="../project-artwork.js"></script>
+  <script src="project-page.js"></script>
+  <script src="../../site.js"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="site-brand">
+        <a class="site-brand-name" href="/" aria-label="K2040 home"><strong>K2040</strong></a>
+        <a class="site-brand-section" href="../"><span>Gaming Mods</span></a>
+      </div>
+      <nav class="site-nav" aria-label="Gaming Mods">
+        <a class="nav-link" href="../">Home</a>
+        <a class="nav-link" href="../#projects">Projects</a>
+        <a class="nav-link" data-project-nexus>Nexus Mods</a>
+      </nav>
+    </header>
+
+    <main>
+      <header class="project-detail-hero">
+        <div class="project-detail-art" data-project-hero-art></div>
+        <div class="project-detail-copy">
+          <p class="eyebrow" data-project-game></p>
+          <h1 data-project-title></h1>
+          <p data-project-description></p>
+          <div class="featured-project-actions" data-project-downloads></div>
+        </div>
+      </header>
+
+      <section class="content-section">
+        <div class="section-heading">
+          <p class="eyebrow">Overview</p>
+          <h2>About this project</h2>
+          <p data-project-overview></p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading">
+          <p class="eyebrow">Downloads</p>
+          <h2>Official links</h2>
+          <p>Use the official project pages for current files and installation information.</p>
+        </div>
+        <div class="project-link-grid" data-project-links></div>
+      </section>
+
+      <section class="content-section project-screenshots" hidden data-project-screenshots aria-labelledby="project-screenshots-title">
+        <div class="section-heading">
+          <p class="eyebrow">Gallery</p>
+          <h2 id="project-screenshots-title">Screenshots</h2>
+          <p>Project screenshots and interface previews.</p>
+        </div>
+        <div class="screenshot-grid" data-screenshot-grid></div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading">
+          <p class="eyebrow">Changelog</p>
+          <h2>Latest release</h2>
+          <p data-project-changelog></p>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

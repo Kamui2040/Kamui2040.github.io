@@ -133,7 +133,7 @@
       fragment.querySelector("[data-update-title]").textContent=strings.title||"";
       fragment.querySelector("[data-update-summary]").textContent=strings.summary||"";
       const link=fragment.querySelector("[data-update-link]");
-      if(update.href){link.href=update.href;link.textContent=t("actions.readMore")||"Read more"}else link.remove();
+      if(update.href){link.href=update.href;link.replaceChildren();const icon=document.createElement("span");icon.className="nexus-icon";icon.setAttribute("aria-hidden","true");icon.textContent="N";link.append(icon,"Nexus Mods")}else link.remove();
       list.append(fragment);
     }
   };

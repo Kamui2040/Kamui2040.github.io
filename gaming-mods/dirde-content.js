@@ -16,7 +16,7 @@
   window.K2040_CONTENT.updates = [{
     id: "dirde-ue-linux-release",
     date: "2026-08-22",
-    href: "https://github.com/Kamui2040/DeadIsland-Riptide-Ultimate-edition-mod-menu/releases/tag/v0.1.0-dev0",
+    href: "https://www.nexusmods.com/deadislandriptide/mods/31",
     strings: {
       en: {
         category: "Dead Island: Riptide",
@@ -24,5 +24,5 @@
         summary: "The first public pre-release of the native Linux port is now available with Flatpak and AppImage packages."
       }
     }
-  }, ...window.K2040_CONTENT.updates.filter((update) => update.id !== "dirde-ue-linux-release")];
+  }, ...window.K2040_CONTENT.updates.filter((update) => update.id !== "dirde-ue-linux-release" && update.id !== "page-launch")];
 })();
