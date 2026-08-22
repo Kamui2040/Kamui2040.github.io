@@ -67,6 +67,38 @@ window.K2040_CONTENT = {
   ],
   updates: [
     {
+      id: "dirde-ue-linux-0-1-0-dev0",
+      date: "2026-08-22",
+      href: "https://github.com/Kamui2040/DeadIsland-Riptide-Ultimate-edition-mod-menu/releases/tag/v0.1.0-dev0",
+      strings: {
+        en: {
+          category: "Gaming",
+          title: "DIRDE UE Linux 0.1.0.dev0 is now available",
+          summary: "The native Linux port of the Dead Island: Riptide Ultimate Edition mod menu is released on GitHub, with a simple GUI, 42 gameplay options, safe Data0 patching, exact restore, and Flatpak/AppImage packages."
+        },
+        de: {
+          category: "Spiele",
+          title: "DIRDE UE Linux 0.1.0.dev0 ist jetzt verfügbar",
+          summary: "Der native Linux-Port des Dead Island: Riptide Ultimate Edition Mod-Menüs ist auf GitHub erschienen – mit einfacher GUI, 42 Gameplay-Optionen, sicherem Data0-Patching, exakter Wiederherstellung sowie Flatpak- und AppImage-Paketen."
+        },
+        "pt-PT": {
+          category: "Jogos",
+          title: "DIRDE UE Linux 0.1.0.dev0 já está disponível",
+          summary: "O port nativo para Linux do menu mod Dead Island: Riptide Ultimate Edition foi lançado no GitHub, com GUI simples, 42 opções de jogo, patch seguro do Data0, restauro exato e pacotes Flatpak/AppImage."
+        },
+        es: {
+          category: "Juegos",
+          title: "DIRDE UE Linux 0.1.0.dev0 ya está disponible",
+          summary: "El port nativo para Linux del menú mod de Dead Island: Riptide Ultimate Edition ya está disponible en GitHub, con GUI sencilla, 42 opciones de juego, parcheo seguro de Data0, restauración exacta y paquetes Flatpak/AppImage."
+        },
+        fr: {
+          category: "Jeux",
+          title: "DIRDE UE Linux 0.1.0.dev0 est disponible",
+          summary: "Le port Linux natif du menu mod Dead Island: Riptide Ultimate Edition est sorti sur GitHub, avec une interface simple, 42 options de gameplay, un patch Data0 sûr, une restauration exacte et des paquets Flatpak/AppImage."
+        }
+      }
+    },
+    {
       id: "geojoystick-uptodown-0-1-4",
       date: "2026-08-18",
       href: "https://geojoystick.en.uptodown.com/android",
