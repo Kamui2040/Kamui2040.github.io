@@ -209,12 +209,7 @@
       document.querySelector("[data-project-links-section]")?.setAttribute("hidden", "");
       document.querySelector("[data-project-changelog-section]")?.setAttribute("hidden", "");
     }
-    const nexus = document.querySelector("[data-project-nexus]");
-    if (nexus && project.nexus) nexus.href = project.nexus;
-    if (nexus && project.variants?.length) {
-      nexus.href = "#project-variants";
-      nexus.textContent = "Downloads";
-      nexus.removeAttribute("data-brand");
-    }
+    const downloadsNav = document.querySelector("[data-project-downloads-nav]");
+    if (downloadsNav) downloadsNav.href = project.variants?.length ? "#project-variants" : "#project-downloads";
   });
 })();

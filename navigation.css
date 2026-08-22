@@ -165,7 +165,7 @@
   box-shadow: 0 0 0 3px rgba(105, 185, 232, 0.3);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .site-header {
     position: static;
     align-items: stretch;
@@ -236,14 +236,16 @@
 @media (min-width:1101px){
   .project-menu > .project-menu-panel{top:calc(100% + .55rem);right:auto;left:0;display:block;width:220px;overflow:visible}
   .project-menu-games{border-right:0}
-  .project-menu-mods{position:absolute;top:0;left:calc(100% + .55rem);width:280px;padding:.65rem;border:1px solid var(--site-nav-border);border-radius:16px;background:var(--site-nav-bg);box-shadow:0 16px 34px rgba(13,17,22,.28)}
+  .project-menu-mods{position:absolute;top:0;left:calc(100% + .55rem);width:280px;max-height:var(--project-menu-max-height,calc(100vh - 7rem));overflow-y:auto;padding:.65rem;border:1px solid var(--site-nav-border);border-radius:16px;background:var(--site-nav-bg);box-shadow:0 16px 34px rgba(13,17,22,.28)}
+  .project-menu.project-menu--flip > .project-menu-panel{right:0;left:auto}
+  .project-menu.project-menu--flip .project-menu-mods{right:calc(100% + .55rem);left:auto}
 }
 
 /* Narrow screens cannot safely fit a right-opening three-level cascade. */
 @media (max-width:1100px){
-  .project-menu > .project-menu-panel{display:block;width:220px;overflow:visible}
+  .project-menu > .project-menu-panel{right:0;left:auto;display:block;width:min(320px,calc(100vw - 1rem));max-height:var(--project-menu-max-height,calc(100vh - 7rem));overflow-x:hidden;overflow-y:auto}
   .project-menu-games{border-right:0}
-  .project-menu-mods{margin-top:.55rem;padding:.65rem;border:1px solid var(--site-nav-border);border-radius:16px;background:var(--site-nav-bg);box-shadow:0 16px 34px rgba(13,17,22,.28)}
+  .project-menu-mods{width:auto;margin-top:.55rem;padding:.65rem;border:1px solid var(--site-nav-border);border-radius:16px;background:var(--site-nav-bg);box-shadow:0 16px 34px rgba(13,17,22,.28)}
 }
 
 /* Structural navigation frames match the angular page panels. */
@@ -255,10 +257,10 @@
 .site-header,.menu-panel,.project-menu-mods{isolation:isolate;border-color:rgba(0,207,215,.54);box-shadow:0 0 0 1px rgba(0,130,143,.32),0 0 22px rgba(0,210,220,.08),inset 0 0 30px rgba(0,209,219,.035),0 20px 44px rgba(0,0,0,.24)}
 .site-header::before,.menu-panel::before,.project-menu-mods::before{position:absolute;z-index:3;inset:7px;pointer-events:none;content:"";border:1px solid rgba(0,183,193,.2);clip-path:polygon(0 8px,8px 0,calc(100% - 8px) 0,100% 8px,100% calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,0 calc(100% - 8px));background:linear-gradient(90deg,#00d9e5,transparent) 0 0/3.5rem 1px no-repeat,linear-gradient(180deg,#00d9e5,transparent) 0 0/1px 3.5rem no-repeat,linear-gradient(-90deg,#00d9e5,transparent) 100% 100%/3.5rem 1px no-repeat,linear-gradient(0deg,#00d9e5,transparent) 100% 100%/1px 3.5rem no-repeat}
 .nav-link,.nav-language-control,.site-header .theme-toggle,.menu>summary,.project-menu-games button,.project-menu-mods a{border-radius:0;clip-path:polygon(0 7px,7px 0,calc(100% - 7px) 0,100% 7px,100% calc(100% - 7px),calc(100% - 7px) 100%,7px 100%,0 calc(100% - 7px))}
-@media(max-width:1100px){.project-menu-mods{position:relative}}
+@media(max-width:1100px){.project-menu-mods{position:relative;top:auto;right:auto;left:auto}}
 
-/* Detail-page headers place Projects near the right edge, so the cascade flips inward. */
-@media(min-width:1101px){.project-detail-page .project-menu>.project-menu-panel{left:auto;right:0}.project-detail-page .project-menu-mods{left:auto;right:calc(100% + .55rem)}}
+/* JavaScript shifts the open cascade only when its measured bounds need viewport correction. */
+.project-menu>.project-menu-panel{transform:translateX(var(--project-menu-shift,0px))}
 
 /* Top navigation uses an understated technical active state instead of filled button blocks. */
 .site-nav>.nav-link:hover,.site-nav>.nav-link:focus-visible,.site-nav>.nav-link[aria-current="page"],.site-nav>.menu>summary:hover,.site-nav>.menu>summary:focus-visible,.site-nav>.menu[open]>summary,.site-nav>.nav-language-control:hover,.site-nav>.nav-language-control:focus-within,.site-nav>.theme-toggle:hover,.site-nav>.theme-toggle:focus-visible{border-color:transparent;border-bottom-color:#00d9e5;background:linear-gradient(180deg,rgba(0,217,229,.08),transparent);box-shadow:inset 0 -2px 0 #00d9e5,0 0 10px rgba(0,217,229,.1)}

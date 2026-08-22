@@ -87,9 +87,11 @@
   const translateStatic=()=>{
     root.lang=language;
     root.dataset.language=language;
-    document.title=t("meta.title")||"K2040 Projects";
-    const meta=document.querySelector('meta[name="description"]');
-    if(meta)meta.content=t("meta.description")||meta.content;
+    if(!document.body.classList.contains("project-detail-page")){
+      document.title=t("meta.title")||"K2040 Projects";
+      const meta=document.querySelector('meta[name="description"]');
+      if(meta)meta.content=t("meta.description")||meta.content;
+    }
     document.querySelectorAll("[data-i18n]").forEach((el)=>{const value=t(el.dataset.i18n);if(value)el.textContent=value});
     document.querySelectorAll("[data-i18n-aria-label]").forEach((el)=>{const value=t(el.dataset.i18nAriaLabel);if(value)el.setAttribute("aria-label",value)});
     document.querySelectorAll("[data-i18n-alt]").forEach((el)=>{const value=t(el.dataset.i18nAlt);if(value)el.setAttribute("alt",value)});
@@ -246,13 +248,51 @@
   const initProjectMenu=()=>{
     const menu=document.querySelector("[data-project-menu]");
     if(!menu)return;
+    const summary=menu.querySelector("summary");
+    const menuPanel=menu.querySelector(".project-menu-panel");
+    const modsPanel=menu.querySelector(".project-menu-mods");
     const buttons=[...menu.querySelectorAll("[data-project-game-button]")];
     const panels=[...menu.querySelectorAll("[data-project-game-panel]")];
+    let layoutFrame=0;
+    const updateDirection=()=>{
+      cancelAnimationFrame(layoutFrame);
+      layoutFrame=requestAnimationFrame(()=>{
+        if(!menu.open||!summary||!menuPanel||!modsPanel)return;
+        menuPanel.style.setProperty("--project-menu-shift","0px");
+        menu.classList.remove("project-menu--flip");
+        const availableHeight=Math.max(120,window.innerHeight-menuPanel.getBoundingClientRect().top-8);
+        menuPanel.style.setProperty("--project-menu-max-height",`${Math.round(availableHeight)}px`);
+        if(window.innerWidth>1100){
+          const trigger=summary.getBoundingClientRect();
+          const firstWidth=menuPanel.offsetWidth||220;
+          const secondWidth=modsPanel.offsetWidth||280;
+          const gap=9;
+          const margin=16;
+          const fitsRight=trigger.left+firstWidth+gap+secondWidth<=window.innerWidth-margin;
+          const fitsLeft=trigger.right-firstWidth-gap-secondWidth>=margin;
+          menu.classList.toggle("project-menu--flip",!fitsRight&&fitsLeft);
+        }
+        requestAnimationFrame(()=>{
+          const panelRect=menuPanel.getBoundingClientRect();
+          const modsRect=modsPanel.getBoundingClientRect();
+          const margin=8;
+          const left=Math.min(panelRect.left,modsRect.left);
+          const right=Math.max(panelRect.right,modsRect.right);
+          let shift=0;
+          if(right>window.innerWidth-margin)shift=window.innerWidth-margin-right;
+          if(left+shift<margin)shift+=margin-(left+shift);
+          menuPanel.style.setProperty("--project-menu-shift",`${Math.round(shift)}px`);
+        });
+      });
+    };
     const selectGame=(game)=>{
       buttons.forEach((button)=>button.setAttribute("aria-selected",String(button.dataset.projectGameButton===game)));
       panels.forEach((panel)=>panel.hidden=panel.dataset.projectGamePanel!==game);
+      updateDirection();
     };
     buttons.forEach((button)=>button.addEventListener("click",()=>selectGame(button.dataset.projectGameButton)));
+    menu.addEventListener("toggle",updateDirection);
+    window.addEventListener("resize",updateDirection,{passive:true});
   };
 
   const apply=()=>{translateStatic();renderProjects();renderUpdates();renderScreenshots();decorateBrandLinks();updateThemeButton(document.querySelector("[data-theme-toggle]"))};
