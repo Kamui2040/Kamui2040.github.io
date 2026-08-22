@@ -233,7 +233,7 @@
 
 /* Desktop cascade: each level opens beside its parent rather than beneath it. */
 @media (min-width:1101px){
-  .project-menu > .project-menu-panel{top:0;right:auto;left:calc(100% + .55rem);display:block;width:220px;overflow:visible}
+  .project-menu > .project-menu-panel{top:calc(100% + .55rem);right:auto;left:0;display:block;width:220px;overflow:visible}
   .project-menu-games{border-right:0}
   .project-menu-mods{position:absolute;top:0;left:calc(100% + .55rem);width:280px;padding:.65rem;border:1px solid var(--site-nav-border);border-radius:16px;background:var(--site-nav-bg);box-shadow:0 16px 34px rgba(13,17,22,.28)}
 }
