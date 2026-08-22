@@ -22,8 +22,33 @@
         <a class="site-brand-section" href="../"><span>Gaming Mods</span></a>
       </div>
       <nav class="site-nav" aria-label="Gaming Mods">
-        <a class="nav-link" href="../">Home</a>
-        <a class="nav-link" href="../#projects">Projects</a>
+        <a class="nav-link" href="../index.html">Home</a>
+        <details class="menu project-menu" data-project-menu>
+          <summary aria-label="Browse projects">
+            <span>Projects</span>
+            <span class="menu-caret" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="menu-panel project-menu-panel">
+            <div class="project-menu-games" role="tablist" aria-label="Games">
+              <p class="project-menu-label">Games</p>
+              <button type="button" role="tab" aria-selected="true" aria-controls="dead-island-projects" id="dead-island-game" data-project-game-button="dead-island">Dead Island: Riptide DE <span aria-hidden="true">›</span></button>
+              <div class="project-menu-separator" aria-hidden="true"></div>
+              <button type="button" role="tab" aria-selected="false" aria-controls="fallout-projects" id="fallout-game" data-project-game-button="fallout">Fallout 4 <span aria-hidden="true">›</span></button>
+            </div>
+            <div class="project-menu-mods">
+              <section role="tabpanel" id="dead-island-projects" aria-labelledby="dead-island-game" data-project-game-panel="dead-island">
+                <p class="project-menu-label">Dead Island: Riptide DE</p>
+                <a href="project.html?project=dirde-ue-linux"><strong>DIRDE UE Linux</strong><small>Ultimate Edition Mod Menu · Linux</small></a>
+              </section>
+              <section role="tabpanel" id="fallout-projects" aria-labelledby="fallout-game" data-project-game-panel="fallout" hidden>
+                <p class="project-menu-label">Fallout 4</p>
+                <a href="project.html?project=eco-quick-menu-additions"><strong>ECO Quick Menu Additions</strong><small>AiO installer and individual patches</small></a>
+                <div class="project-menu-separator" aria-hidden="true"></div>
+                <a href="project.html?project=xedit-json-exporter"><strong>xEdit JSON Exporter</strong><small>FO4Edit export utility</small></a>
+              </section>
+            </div>
+          </div>
+        </details>
         <a class="nav-link" data-project-nexus data-brand="nexus">Nexus Mods</a>
       </nav>
     </header>
