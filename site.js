@@ -166,6 +166,33 @@
     }
   };
 
+  let screenshotDialog;
+  let screenshotTrigger;
+  const openScreenshot=(screenshot,trigger)=>{
+    if(!screenshotDialog){
+      screenshotDialog=document.createElement("dialog");
+      screenshotDialog.className="screenshot-dialog";
+      const close=document.createElement("button");
+      close.type="button";
+      close.className="screenshot-dialog-close";
+      close.setAttribute("aria-label","Close full-screen screenshot");
+      close.textContent="×";
+      const image=document.createElement("img");
+      image.className="screenshot-dialog-image";
+      screenshotDialog.append(close,image);
+      close.addEventListener("click",()=>screenshotDialog.close());
+      screenshotDialog.addEventListener("click",(event)=>{if(event.target===screenshotDialog)screenshotDialog.close()});
+      screenshotDialog.addEventListener("close",()=>{screenshotTrigger?.focus();screenshotTrigger=null});
+      document.body.append(screenshotDialog);
+    }
+    const image=screenshotDialog.querySelector("img");
+    image.src=screenshot.src;
+    image.alt=screenshot.alt||"Project screenshot";
+    screenshotTrigger=trigger;
+    screenshotDialog.showModal();
+    screenshotDialog.querySelector("button").focus();
+  };
+
   const renderScreenshots=()=>{
     const section=document.querySelector("[data-project-screenshots]");
     const grid=document.querySelector("[data-screenshot-grid]");
@@ -180,7 +207,13 @@
       image.alt=screenshot.alt||"Project screenshot";
       image.loading="lazy";
       image.decoding="async";
-      figure.append(image);
+      const button=document.createElement("button");
+      button.type="button";
+      button.className="screenshot-open";
+      button.setAttribute("aria-label",`Open ${screenshot.caption||image.alt} full size`);
+      button.append(image);
+      button.addEventListener("click",()=>openScreenshot(screenshot,button));
+      figure.append(button);
       if(screenshot.caption){const caption=document.createElement("figcaption");caption.textContent=screenshot.caption;figure.append(caption)}
       grid.append(figure);
     }
