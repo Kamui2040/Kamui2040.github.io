@@ -32,6 +32,34 @@
     projects.push(project);
   }
   content.projects = projects;
+  const cardDescriptions = {
+    "dirde-ue-linux": {
+      en: "Native Linux port with 42 configurable gameplay options.",
+      de: "Nativer Linux Port mit 42 konfigurierbaren Gameplay-Optionen.",
+      "pt-PT": "Port nativo para Linux com 42 opções de gameplay.",
+      es: "Port nativo para Linux con 42 opciones de gameplay.",
+      fr: "Portage Linux natif avec 42 options de gameplay."
+    },
+    "eco-quick-menu-additions": {
+      en: "AiO installer and individual Quick Menu compatibility patches.",
+      de: "AiO-Installer und einzelne Quick-Menu-Kompatibilitätspatches.",
+      "pt-PT": "Instalador AiO e patches individuais para o Quick Menu.",
+      es: "Instalador AiO y parches individuales para el Quick Menu.",
+      fr: "Installateur AiO et patchs individuels pour le Quick Menu."
+    },
+    "xedit-json-exporter": {
+      en: "Export xEdit/FO4Edit records and plugins to readable JSON.",
+      de: "Exportiert xEdit-/FO4Edit-Records und Plugins als lesbares JSON.",
+      "pt-PT": "Exporta registos e plugins do xEdit/FO4Edit para JSON legível.",
+      es: "Exporta registros y plugins de xEdit/FO4Edit a JSON legible.",
+      fr: "Exporte les enregistrements et plugins xEdit/FO4Edit en JSON lisible."
+    }
+  };
+  for (const project of content.projects) {
+    const descriptions = cardDescriptions[project.id];
+    if (!descriptions) continue;
+    for (const [language, description] of Object.entries(descriptions)) project.strings[language].description = description;
+  }
   const updateCopy = {
     "xedit-json-exporter-added": {
       en: { title: "xEdit JSON Exporter added", summary: "xEdit JSON Exporter now has a dedicated project page with its official Nexus Mods link." },
