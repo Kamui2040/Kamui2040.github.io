@@ -204,4 +204,40 @@
     padding: 0.24rem 0.12rem;
     font-size: 0.66rem;
   }
+
+  /* Override the older narrow-screen fallback so the two-row grid is preserved. */
+  .gaming-mods-page .site-nav > :nth-child(1),
+  .project-detail-page .site-nav > :nth-child(1) {
+    grid-column: 1 / span 3 !important;
+  }
+
+  .gaming-mods-page .site-nav > :nth-child(2),
+  .project-detail-page .site-nav > :nth-child(2) {
+    grid-column: 4 / span 3 !important;
+  }
+
+  .gaming-mods-page .site-nav > :nth-child(3),
+  .project-detail-page .site-nav > :nth-child(3) {
+    grid-column: 7 / span 3 !important;
+  }
+
+  .gaming-mods-page .site-nav > :nth-child(4),
+  .project-detail-page .site-nav > :nth-child(4) {
+    grid-column: 10 / span 3 !important;
+  }
+
+  .gaming-mods-page .site-nav > :nth-child(5),
+  .project-detail-page .site-nav > :nth-child(5) {
+    grid-column: 7 / span 2 !important;
+  }
+
+  .gaming-mods-page .site-nav > :nth-child(6),
+  .project-detail-page .site-nav > :nth-child(6) {
+    grid-column: 9 / span 2 !important;
+  }
+
+  .gaming-mods-page .site-nav > :nth-child(7),
+  .project-detail-page .site-nav > :nth-child(7) {
+    grid-column: 11 / span 2 !important;
+  }
 }
