@@ -30,3 +30,6 @@
 
 /* Override the original rounded panel rules. */
 .hero,.content-section,footer,.project-detail-hero,.project-card,.update-card,.featured-game-art-placeholder,.screenshot-grid figure{border-radius:0}
+
+/* Angular technical controls for actions and destination links. */
+.theme-toggle,.language-select,.footer-links a,.project-action,.text-link{border-radius:0;clip-path:polygon(0 8px,8px 0,calc(100% - 8px) 0,100% 8px,100% calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,0 calc(100% - 8px))}

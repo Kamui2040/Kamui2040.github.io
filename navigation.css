@@ -246,10 +246,11 @@
 }
 
 /* Structural navigation frames match the angular page panels. */
-.site-header,.menu-panel,.project-menu-mods{border-radius:0;clip-path:polygon(0 10px,10px 0,calc(100% - 10px) 0,100% 10px,100% calc(100% - 10px),calc(100% - 10px) 100%,10px 100%,0 calc(100% - 10px))}
+.site-header{border-radius:0}
+.menu-panel,.project-menu-mods{border-radius:0;clip-path:polygon(0 10px,10px 0,calc(100% - 10px) 0,100% 10px,100% calc(100% - 10px),calc(100% - 10px) 100%,10px 100%,0 calc(100% - 10px))}
 
 /* Modern dark-cyan technical frame system. */
 .site-header,.menu-panel,.project-menu-mods{isolation:isolate;border-color:rgba(0,207,215,.54);box-shadow:0 0 0 1px rgba(0,130,143,.32),0 0 22px rgba(0,210,220,.08),inset 0 0 30px rgba(0,209,219,.035),0 20px 44px rgba(0,0,0,.24)}
 .site-header::before,.menu-panel::before,.project-menu-mods::before{position:absolute;z-index:3;inset:7px;pointer-events:none;content:"";border:1px solid rgba(0,183,193,.2);clip-path:polygon(0 8px,8px 0,calc(100% - 8px) 0,100% 8px,100% calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,0 calc(100% - 8px));background:linear-gradient(90deg,#00d9e5,transparent) 0 0/3.5rem 1px no-repeat,linear-gradient(180deg,#00d9e5,transparent) 0 0/1px 3.5rem no-repeat,linear-gradient(-90deg,#00d9e5,transparent) 100% 100%/3.5rem 1px no-repeat,linear-gradient(0deg,#00d9e5,transparent) 100% 100%/1px 3.5rem no-repeat}
-.project-menu-games button,.project-menu-mods a{border-radius:0}
+.nav-link,.nav-language-control,.site-header .theme-toggle,.menu>summary,.project-menu-games button,.project-menu-mods a{border-radius:0;clip-path:polygon(0 7px,7px 0,calc(100% - 7px) 0,100% 7px,100% calc(100% - 7px),calc(100% - 7px) 100%,7px 100%,0 calc(100% - 7px))}
 @media(max-width:1100px){.project-menu-mods{position:relative}}

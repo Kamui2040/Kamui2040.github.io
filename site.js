@@ -61,8 +61,12 @@
   const decorateBrandLink=(link)=>{
     const brand=link?.dataset.brand;
     if(!brand)return;
-    const label=link.textContent.trim();
+    const label=link.dataset.brandLabel||[...link.childNodes]
+      .filter((node)=>!(node.nodeType===1&&node.classList.contains("brand-icon")))
+      .map((node)=>node.textContent)
+      .join("").trim();
     if(!label)return;
+    link.dataset.brandLabel=label;
     link.classList.add("brand-link",`brand-link--${brand}`);
     link.replaceChildren(createBrandIcon(brand),document.createTextNode(label));
   };
