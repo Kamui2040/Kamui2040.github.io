@@ -61,10 +61,11 @@
   const decorateBrandLink=(link)=>{
     const brand=link?.dataset.brand;
     if(!brand)return;
-    const label=link.dataset.brandLabel||[...link.childNodes]
+    const currentLabel=[...link.childNodes]
       .filter((node)=>!(node.nodeType===1&&node.classList.contains("brand-icon")))
       .map((node)=>node.textContent)
       .join("").trim();
+    const label=currentLabel||link.dataset.brandLabel;
     if(!label)return;
     link.dataset.brandLabel=label;
     link.classList.add("brand-link",`brand-link--${brand}`);
@@ -125,9 +126,10 @@
       fragment.querySelector("[data-project-description]").textContent=strings.description||"";
       const meta=fragment.querySelector("[data-project-meta]");
       if(meta&&project.cardMeta?.length){
+        const tagKeys={Linux:"linux",Gameplay:"gameplay",Windows:"windows",Tools:"tools",AiO:"aio","Single patches":"singlePatches",Released:"released"};
         meta.replaceChildren(...project.cardMeta.map((item)=>{
           const tag=document.createElement("span");
-          tag.textContent=item;
+          tag.textContent=t(`tags.${tagKeys[item]||""}`)||item;
           return tag;
         }));
       }
@@ -200,7 +202,7 @@
       const close=document.createElement("button");
       close.type="button";
       close.className="screenshot-dialog-close";
-      close.setAttribute("aria-label","Close full-screen screenshot");
+      close.setAttribute("aria-label",t("detail.closeScreenshot")||"Close full-screen screenshot");
       close.textContent="×";
       const image=document.createElement("img");
       image.className="screenshot-dialog-image";
@@ -235,7 +237,7 @@
       const button=document.createElement("button");
       button.type="button";
       button.className="screenshot-open";
-      button.setAttribute("aria-label",`Open ${screenshot.caption||image.alt} full size`);
+      button.setAttribute("aria-label",`${t("detail.openFullSize")||"Open full size"}: ${screenshot.caption||image.alt}`);
       button.append(image);
       button.addEventListener("click",()=>openScreenshot(screenshot,button));
       figure.append(button);

@@ -10,10 +10,10 @@
     cardMeta: ["AiO", "Single patches", "Released"],
     strings: {
       en: { label: "Fallout 4", title: "ECO Quick Menu Additions", description: "Choose the all-in-one installer or individual optional compatibility patches." },
-      de: { label: "Fallout 4", title: "ECO Quick Menu Additions", description: "Wähle den All-in-One-Installer oder einzelne optionale Kompatibilitätspatches." },
-      "pt-PT": { label: "Fallout 4", title: "ECO Quick Menu Additions", description: "Escolha o instalador tudo-em-um ou patches de compatibilidade opcionais individuais." },
-      es: { label: "Fallout 4", title: "ECO Quick Menu Additions", description: "Elige el instalador todo en uno o parches de compatibilidad opcionales individuales." },
-      fr: { label: "Fallout 4", title: "ECO Quick Menu Additions", description: "Choisissez le programme d’installation tout-en-un ou des correctifs de compatibilité facultatifs individuels." }
+      de: { label: "Fallout 4", title: "ECO Quick Menu Additions", description: "Wähle den AiO-Installer oder einzelne optionale Kompatibilitätspatches." },
+      "pt-PT": { label: "Fallout 4", title: "ECO Quick Menu Additions", description: "Escolha o instalador AiO ou patches de compatibilidade opcionais individuais." },
+      es: { label: "Fallout 4", title: "ECO Quick Menu Additions", description: "Elige el instalador AiO o parches de compatibilidad opcionales individuales." },
+      fr: { label: "Fallout 4", title: "ECO Quick Menu Additions", description: "Choisissez l’installateur AiO ou des patchs de compatibilité individuels facultatifs." }
     }
   };
   const pages = { "dirde-ue-linux": "projects/project.html?project=dirde-ue-linux", "xedit-json-exporter": "projects/project.html?project=xedit-json-exporter" };
@@ -32,4 +32,26 @@
     projects.push(project);
   }
   content.projects = projects;
+  const updateCopy = {
+    "xedit-json-exporter-added": {
+      en: { title: "xEdit JSON Exporter added", summary: "xEdit JSON Exporter now has a dedicated project page with its official Nexus Mods link." },
+      de: { title: "xEdit JSON Exporter hinzugefügt", summary: "xEdit JSON Exporter hat jetzt eine eigene Projektseite mit dem offiziellen Nexus Mods Link." },
+      "pt-PT": { title: "xEdit JSON Exporter adicionado", summary: "O xEdit JSON Exporter tem agora uma página própria com o link oficial do Nexus Mods." },
+      es: { title: "xEdit JSON Exporter añadido", summary: "xEdit JSON Exporter ya tiene una página propia con el enlace oficial de Nexus Mods." },
+      fr: { title: "xEdit JSON Exporter ajouté", summary: "xEdit JSON Exporter dispose maintenant de sa propre page avec le lien officiel Nexus Mods." }
+    },
+    "single-patches": {
+      en: { title: "ECO Quick Menu Single Patches updated" }, de: { title: "ECO Quick Menu Single Patches aktualisiert" },
+      "pt-PT": { title: "ECO Quick Menu Single Patches atualizado" }, es: { title: "ECO Quick Menu Single Patches actualizado" }, fr: { title: "ECO Quick Menu Single Patches mis à jour" }
+    },
+    "aio-update": {
+      en: { title: "ECO Quick Menu Additions AiO updated" }, de: { title: "ECO Quick Menu Additions AiO aktualisiert" },
+      "pt-PT": { title: "ECO Quick Menu Additions AiO atualizado" }, es: { title: "ECO Quick Menu Additions AiO actualizado" }, fr: { title: "ECO Quick Menu Additions AiO mis à jour" }
+    }
+  };
+  for (const update of content.updates || []) {
+    const copy = updateCopy[update.id];
+    if (!copy) continue;
+    for (const [language, strings] of Object.entries(copy)) Object.assign(update.strings[language], strings);
+  }
 })();
