@@ -23,7 +23,34 @@
 
       <nav class="site-nav" aria-label="Gaming Mods">
         <a class="nav-link" href="/" data-i18n="footer.home">Home</a>
-        <a class="nav-link" href="https://kamui2040.github.io/K2040-Android-Releases/" data-i18n="footer.android">Android Projects</a>
+        <details class="menu project-menu" data-project-menu>
+          <summary aria-label="Browse projects">
+            <span>Projects</span>
+            <span class="menu-caret" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="menu-panel project-menu-panel">
+            <div class="project-menu-games" role="tablist" aria-label="Games">
+              <p class="project-menu-label">Games</p>
+              <button type="button" role="tab" aria-selected="true" aria-controls="dead-island-projects" id="dead-island-game" data-project-game-button="dead-island">Dead Island: Riptide DE <span aria-hidden="true">›</span></button>
+              <button type="button" role="tab" aria-selected="false" aria-controls="fallout-projects" id="fallout-game" data-project-game-button="fallout">Fallout 4 <span aria-hidden="true">›</span></button>
+            </div>
+            <div class="project-menu-mods">
+              <section role="tabpanel" id="dead-island-projects" aria-labelledby="dead-island-game" data-project-game-panel="dead-island">
+                <p class="project-menu-label">Dead Island: Riptide DE</p>
+                <a href="#dirde-release-title"><strong>DIRDE UE Linux</strong><small>Ultimate Edition Mod Menu · Linux</small></a>
+              </section>
+              <section role="tabpanel" id="fallout-projects" aria-labelledby="fallout-game" data-project-game-panel="fallout" hidden>
+                <p class="project-menu-label">Fallout 4</p>
+                <a href="https://www.nexusmods.com/fallout4/mods/105461"><strong>ECO Quick Menu Additions AiO</strong><small>Compatibility patches</small></a>
+                <a href="https://www.nexusmods.com/fallout4/mods/105464"><strong>ECO Quick Menu Single Patches</strong><small>Optional individual patches</small></a>
+                <a href="https://www.nexusmods.com/fallout4/mods/105775"><strong>xEdit JSON Exporter</strong><small>FO4Edit export utility</small></a>
+              </section>
+            </div>
+          </div>
+        </details>
+        <a class="nav-link" href="#projects">Downloads</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="https://github.com/Kamui2040">GitHub</a>
 
         <label class="nav-language-control">
           <span class="visually-hidden" data-i18n="controls.language">Language</span>
@@ -45,12 +72,7 @@
 
     <main>
       <header class="hero">
-        <img
-          class="hero-image"
-          src="https://kamui2040.github.io/K2040-Android-Releases/docs/assets/kofi-header.jpg"
-          alt="K2040 projects banner showing apps, mods, tools, and the wolf mascot"
-          data-i18n-alt="hero.bannerAlt"
-        >
+        <div class="hero-media" aria-hidden="true"></div>
         <div class="hero-copy">
           <p class="eyebrow">K2040 Projects</p>
           <h1 data-i18n="hero.title">Gaming Mods</h1>
@@ -58,7 +80,7 @@
         </div>
       </header>
 
-      <section class="content-section">
+      <section class="content-section" id="projects">
         <div class="section-heading">
           <p class="eyebrow" data-i18n="projects.eyebrow">Released</p>
           <h2 data-i18n="projects.title">Mod Projects</h2>
@@ -95,6 +117,14 @@
           <p data-i18n="updates.description">Published release changes and important page updates.</p>
         </div>
         <div class="update-list" data-update-list></div>
+      </section>
+
+      <section class="content-section about-section" id="about">
+        <div class="section-heading">
+          <p class="eyebrow">K2040 Projects</p>
+          <h2>About</h2>
+          <p>Open-source game mods and tools with clear ownership, official download links, and project-specific documentation.</p>
+        </div>
       </section>
     </main>
 

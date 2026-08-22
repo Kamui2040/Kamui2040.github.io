@@ -126,11 +126,24 @@
     }
   };
 
+  const initProjectMenu=()=>{
+    const menu=document.querySelector("[data-project-menu]");
+    if(!menu)return;
+    const buttons=[...menu.querySelectorAll("[data-project-game-button]")];
+    const panels=[...menu.querySelectorAll("[data-project-game-panel]")];
+    const selectGame=(game)=>{
+      buttons.forEach((button)=>button.setAttribute("aria-selected",String(button.dataset.projectGameButton===game)));
+      panels.forEach((panel)=>panel.hidden=panel.dataset.projectGamePanel!==game);
+    };
+    buttons.forEach((button)=>button.addEventListener("click",()=>selectGame(button.dataset.projectGameButton)));
+  };
+
   const apply=()=>{translateStatic();renderProjects();renderUpdates();updateThemeButton(document.querySelector("[data-theme-toggle]"))};
   const init=()=>{
     const themeButton=document.querySelector("[data-theme-toggle]");
     const languageSelect=document.querySelector("[data-language-select]");
     apply();
+    initProjectMenu();
     themeButton?.addEventListener("click",()=>{const next=theme()==="dark"?"light":"dark";root.dataset.theme=next;write(themeKey,next);updateThemeButton(themeButton)});
     languageSelect?.addEventListener("change",()=>{if(!languages.includes(languageSelect.value))return;language=languageSelect.value;write(languageKey,language);if(normalize(location.hash.slice(1)))history.replaceState(null,"",location.pathname+location.search);apply()});
     const onSystemTheme=()=>{if(!root.dataset.theme)updateThemeButton(themeButton)};
