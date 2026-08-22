@@ -138,6 +138,27 @@
     }
   };
 
+  const renderScreenshots=()=>{
+    const section=document.querySelector("[data-project-screenshots]");
+    const grid=document.querySelector("[data-screenshot-grid]");
+    const screenshots=window.K2040_PROJECT?.screenshots;
+    if(!section||!grid||!Array.isArray(screenshots)||screenshots.length===0)return;
+    grid.replaceChildren();
+    for(const screenshot of screenshots){
+      if(!screenshot?.src)continue;
+      const figure=document.createElement("figure");
+      const image=document.createElement("img");
+      image.src=screenshot.src;
+      image.alt=screenshot.alt||"Project screenshot";
+      image.loading="lazy";
+      image.decoding="async";
+      figure.append(image);
+      if(screenshot.caption){const caption=document.createElement("figcaption");caption.textContent=screenshot.caption;figure.append(caption)}
+      grid.append(figure);
+    }
+    if(grid.childElementCount)section.hidden=false;
+  };
+
   const initProjectMenu=()=>{
     const menu=document.querySelector("[data-project-menu]");
     if(!menu)return;
@@ -150,7 +171,7 @@
     buttons.forEach((button)=>button.addEventListener("click",()=>selectGame(button.dataset.projectGameButton)));
   };
 
-  const apply=()=>{translateStatic();renderProjects();renderUpdates();updateThemeButton(document.querySelector("[data-theme-toggle]"))};
+  const apply=()=>{translateStatic();renderProjects();renderUpdates();renderScreenshots();updateThemeButton(document.querySelector("[data-theme-toggle]"))};
   const init=()=>{
     const themeButton=document.querySelector("[data-theme-toggle]");
     const languageSelect=document.querySelector("[data-language-select]");
