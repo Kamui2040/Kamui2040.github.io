@@ -96,6 +96,7 @@
       title: "ECO Quick Menu Additions",
       description: "Choose the all-in-one installer or individual optional compatibility patches.",
       overview: "A single home for K2040’s released ECO Quick Menu compatibility work. Choose the AiO installer for the complete collection, or install only the individual patches you need.",
+      heroImage: "../assets/eco-quick-menu-additions-header.png",
       wideHero: true,
       features: [
         "Adds quick-menu compatibility support for supported Fallout 4 weapon mods.",
