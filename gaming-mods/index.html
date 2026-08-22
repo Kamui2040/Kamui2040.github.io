@@ -43,9 +43,7 @@
               </section>
               <section role="tabpanel" id="fallout-projects" aria-labelledby="fallout-game" data-project-game-panel="fallout" hidden>
                 <p class="project-menu-label">Fallout 4</p>
-                <a href="https://www.nexusmods.com/fallout4/mods/105461"><strong>ECO Quick Menu Additions AiO</strong><small>Compatibility patches</small></a>
-                <div class="project-menu-separator" aria-hidden="true"></div>
-                <a href="https://www.nexusmods.com/fallout4/mods/105464"><strong>ECO Quick Menu Single Patches</strong><small>Optional individual patches</small></a>
+                <a href="projects/project.html?project=eco-quick-menu-additions"><strong>ECO Quick Menu Additions</strong><small>AiO installer and individual patches</small></a>
                 <div class="project-menu-separator" aria-hidden="true"></div>
                 <a href="https://www.nexusmods.com/fallout4/mods/105775"><strong>xEdit JSON Exporter</strong><small>FO4Edit export utility</small></a>
               </section>
@@ -97,17 +95,16 @@
       <section class="content-section featured-project" aria-labelledby="featured-project-title">
         <div class="section-heading">
           <p class="eyebrow">Featured project</p>
-          <h2 id="featured-project-title">ECO Quick Menu Additions AiO</h2>
-          <p>All-in-one compatibility patches for Fallout 4 quick-menu setups.</p>
+          <h2 id="featured-project-title">ECO Quick Menu Additions</h2>
+          <p>AiO and individual compatibility patches for Fallout 4 quick-menu setups.</p>
         </div>
         <div class="featured-project-layout">
           <div class="featured-game-art-placeholder" role="img" aria-label="Placeholder for Fallout 4 featured-project game artwork"></div>
           <div class="featured-project-copy">
             <p class="featured-project-game">Fallout 4</p>
-            <p>One clear place for the released all-in-one installer, with direct project information and official download links.</p>
+            <p>One clear place for the AiO installer and individual optional patches, with separate official links and changelogs.</p>
             <div class="featured-project-actions">
-              <a class="text-link" href="projects/project.html?project=eco-aio">View project</a>
-              <a class="text-link" href="https://www.nexusmods.com/fallout4/mods/105461" data-brand="nexus">Download</a>
+              <a class="text-link" href="projects/project.html?project=eco-quick-menu-additions">View project</a>
             </div>
           </div>
         </div>
@@ -164,12 +161,16 @@
 
   <template id="project-card-template">
     <article class="project-card">
-      <p class="card-label" data-project-label></p>
-      <h3 data-project-title></h3>
-      <p data-project-description></p>
-      <div class="card-footer">
-        <span class="status-badge" data-project-status></span>
-        <span class="project-action" data-project-action></span>
+      <div class="project-card-art" data-project-art aria-hidden="true"></div>
+      <div class="project-card-copy">
+        <p class="card-label" data-project-label></p>
+        <h3 data-project-title></h3>
+        <p data-project-description></p>
+        <div class="project-card-meta" data-project-meta></div>
+        <div class="card-footer">
+          <span class="status-badge" data-project-status></span>
+          <span class="project-action" data-project-action></span>
+        </div>
       </div>
     </article>
   </template>

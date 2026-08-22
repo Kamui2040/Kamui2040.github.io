@@ -91,6 +91,50 @@
         "28 May 2026 — HK USP compatibility patch uploaded."
       ]
     },
+    "eco-quick-menu-additions": {
+      game: "Fallout 4",
+      title: "ECO Quick Menu Additions",
+      description: "Choose the all-in-one installer or individual optional compatibility patches.",
+      overview: "A single home for K2040’s released ECO Quick Menu compatibility work. Choose the AiO installer for the complete collection, or install only the individual patches you need.",
+      wideHero: true,
+      features: [
+        "Adds quick-menu compatibility support for supported Fallout 4 weapon mods.",
+        "All released patches are ESL-flagged ESP files.",
+        "Uses streamlined edits and reorganized menus for a more consistent workflow.",
+        "Includes conditions for attachment-dependent options to reduce invalid menu choices.",
+        "Shows a notification after the quick-menu injection completes successfully."
+      ],
+      variants: [
+        {
+          id: "aio",
+          title: "AiO installer",
+          description: "Install the complete released compatibility-patch collection through one FOMOD installer.",
+          nexus: "https://www.nexusmods.com/fallout4/mods/105461",
+          changelog: [
+            "1.0.1.11 — Added AER15 support and its MEC-R7 variant; split DKS-501 and AER15 variants into separate groups.",
+            "1.0.0.9 — Added a patch for the H&K 45C Mk24.",
+            "1.0.0.8 — Added patches for AQUILA and the X12 Plasmacaster.",
+            "1.0.0.6 — Added patches for DKS-501 Redux and ACR-W17.",
+            "1.0.0.4 — Initial release with patches for the HK USP, DKS-501, .357 Cattleman Revolver, and MW19 FAL."
+          ]
+        },
+        {
+          id: "single-patches",
+          title: "Single patches",
+          description: "Install only the individual optional patches for the weapon mods you use.",
+          nexus: "https://www.nexusmods.com/fallout4/mods/105464",
+          changelog: [
+            "31 May 2026 — AER15 compatibility patch uploaded.",
+            "29 May 2026 — MEC-R7 compatibility patch uploaded.",
+            "29 May 2026 — HK 45C Mk24 compatibility patch uploaded.",
+            "29 May 2026 — X12 Plasmacaster compatibility patch uploaded.",
+            "29 May 2026 — Aquila compatibility patch uploaded.",
+            "29 May 2026 — DKS-501 Redux compatibility patch uploaded.",
+            "28 May 2026 — DKS-501 Unofficial Update Vanilla, DKS-501, .357 Cattleman Revolver, MW19 FAL, and HK USP compatibility patches uploaded."
+          ]
+        }
+      ]
+    },
     "xedit-json-exporter": {
       game: "Fallout 4",
       title: "xEdit JSON Exporter",
@@ -113,8 +157,10 @@
       ]
     }
   };
-  const id = new URLSearchParams(location.search).get("project");
-  const project = projects[id] || projects["eco-aio"];
+  const requestedId = new URLSearchParams(location.search).get("project");
+  const aliases = { "eco-aio": "eco-quick-menu-additions", "eco-single": "eco-quick-menu-additions" };
+  const id = aliases[requestedId] || requestedId;
+  const project = projects[id] || projects["eco-quick-menu-additions"];
   window.K2040_PROJECT = { screenshots: project.screenshots || [] };
 
   const setText = (selector, value) => { const element = document.querySelector(selector); if (element) element.textContent = value; };
@@ -133,7 +179,7 @@
     const art = document.querySelector("[data-project-hero-art]");
     const hero = document.querySelector(".project-detail-hero");
     const heroArtwork = project.heroImage || project.image;
-    if (hero && project.heroImage) hero.classList.add("project-detail-hero--wide-art");
+    if (hero && (project.heroImage || project.wideHero)) hero.classList.add("project-detail-hero--wide-art");
     if (art && heroArtwork) { const image = document.createElement("img"); image.src = heroArtwork; image.alt = `${project.title} project artwork`; art.append(image); }
     const downloads = document.querySelector("[data-project-downloads]");
     const links = document.querySelector("[data-project-links]");
@@ -142,7 +188,32 @@
     addLink(links, project.nexus, "Open Nexus Mods", "nexus");
     addLink(links, project.originalNexus, "Open original mod", "nexus");
     addLink(links, project.github, "Open GitHub release", "github");
+    const variants = document.querySelector("[data-project-variants-section]");
+    const variantList = document.querySelector("[data-project-variants]");
+    if (variants && variantList && project.variants?.length) {
+      variantList.replaceChildren(...project.variants.map((variant) => {
+        const item = document.createElement("article");
+        item.className = "project-variant";
+        item.id = variant.id;
+        const title = document.createElement("h3"); title.textContent = variant.title;
+        const description = document.createElement("p"); description.textContent = variant.description;
+        const action = document.createElement("a"); action.className = "text-link"; action.href = variant.nexus; action.textContent = "Open Nexus Mods"; action.dataset.brand = "nexus";
+        const heading = document.createElement("h4"); heading.textContent = "Changelog";
+        const changelog = document.createElement("ul"); changelog.className = "detail-list";
+        changelog.replaceChildren(...variant.changelog.map((entry) => { const line = document.createElement("li"); line.textContent = entry; return line; }));
+        item.append(title, description, action, heading, changelog);
+        return item;
+      }));
+      variants.hidden = false;
+      document.querySelector("[data-project-links-section]")?.setAttribute("hidden", "");
+      document.querySelector("[data-project-changelog-section]")?.setAttribute("hidden", "");
+    }
     const nexus = document.querySelector("[data-project-nexus]");
-    if (nexus) nexus.href = project.nexus;
+    if (nexus && project.nexus) nexus.href = project.nexus;
+    if (nexus && project.variants?.length) {
+      nexus.href = "#project-variants";
+      nexus.textContent = "Downloads";
+      nexus.removeAttribute("data-brand");
+    }
   });
 })();

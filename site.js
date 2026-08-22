@@ -106,7 +106,32 @@
       const strings=localStrings(project);
       const fragment=template.content.cloneNode(true);
       const article=fragment.querySelector(".project-card");
-      if(project.image){
+      const artwork=fragment.querySelector("[data-project-art]");
+      if(artwork){
+        article.classList.add("project-card--visual");
+        if(project.image){
+          const image=document.createElement("img");
+          image.src=project.image;
+          image.alt="";
+          image.loading="lazy";
+          image.decoding="async";
+          artwork.append(image);
+        }
+      }
+      fragment.querySelector("[data-project-label]").textContent=strings.label||"";
+      fragment.querySelector("[data-project-title]").textContent=strings.title||"";
+      fragment.querySelector("[data-project-description]").textContent=strings.description||"";
+      const meta=fragment.querySelector("[data-project-meta]");
+      if(meta&&project.cardMeta?.length){
+        meta.replaceChildren(...project.cardMeta.map((item)=>{
+          const tag=document.createElement("span");
+          tag.textContent=item;
+          return tag;
+        }));
+      }
+      fragment.querySelector("[data-project-status]").textContent=t(project.available?"status.available":"status.planned")||"";
+      fragment.querySelector("[data-project-action]").textContent=t(project.available?"actions.open":"actions.planned")||"";
+      if(project.image&&!artwork){
         article.classList.add("project-card--artwork");
         article.replaceChildren();
         const image=document.createElement("img");
@@ -115,12 +140,6 @@
         image.loading="lazy";
         image.decoding="async";
         article.append(image);
-      }else{
-        fragment.querySelector("[data-project-label]").textContent=strings.label||"";
-        fragment.querySelector("[data-project-title]").textContent=strings.title||"";
-        fragment.querySelector("[data-project-description]").textContent=strings.description||"";
-        fragment.querySelector("[data-project-status]").textContent=t(project.available?"status.available":"status.planned")||"";
-        fragment.querySelector("[data-project-action]").textContent=t(project.available?"actions.open":"actions.planned")||"";
       }
       if(project.available&&project.href){
         const link=document.createElement("a");
