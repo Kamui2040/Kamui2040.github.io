@@ -54,6 +54,41 @@
   box-shadow: inset 0 -2px 0 #00d9e5,0 0 10px rgba(0,217,229,.1) !important;
 }
 
+/* Home actions use the exact Gaming text-link component, regardless of label. */
+.text-link,
+.project-action,
+.about-links a {
+  display: inline-flex !important;
+  min-height: 38px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: .5rem .85rem !important;
+  border: 1px solid rgba(0,207,215,.3) !important;
+  border-radius: 0 !important;
+  background: rgba(12,22,29,.88) !important;
+  color: #dce8ec !important;
+  font: inherit !important;
+  font-weight: 750 !important;
+  line-height: normal !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  clip-path: polygon(0 7px,7px 0,calc(100% - 7px) 0,100% 7px,100% calc(100% - 7px),calc(100% - 7px) 100%,7px 100%,0 calc(100% - 7px)) !important;
+}
+
+.text-link:hover,
+.text-link:focus-visible,
+.project-action:hover,
+.project-action:focus-visible,
+.about-links a:hover,
+.about-links a:focus-visible {
+  border-color: transparent !important;
+  border-bottom-color: #00d9e5 !important;
+  background: linear-gradient(180deg,rgba(0,217,229,.08),rgba(8,20,27,.94)) !important;
+  box-shadow: inset 0 -2px 0 #00d9e5,0 0 10px rgba(0,217,229,.1) !important;
+  outline: none !important;
+  transform: none !important;
+}
+
 /* The Home hero uses the verified source image element directly. */
 .projects-home-page .home-hero { background-color: #071019; }
 .projects-home-page .home-hero::after { pointer-events: none; }
