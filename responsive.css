@@ -1,1 +1,208 @@
-/* Responsive base comes directly from the canonical Gaming site via styles.css. */
+/* Responsive behavior for the shared K2040 gateway and Gaming Mods pages. */
+
+@media (max-width: 900px) {
+  .project-grid:has(.project-card--artwork),
+  .project-grid:has(.project-card--visual) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .page-shell {
+    width: min(100% - 1rem, 1100px);
+    padding-top: .5rem;
+  }
+
+  :where(.hero, .content-section, footer, .project-detail-hero) {
+    clip-path: polygon(0 10px, 10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+
+  :where(.hero, .content-section, footer, .project-detail-hero, .project-card, .update-card, .featured-game-art-placeholder, .screenshot-grid figure)::before {
+    inset: 5px;
+  }
+
+  .hero-image {
+    aspect-ratio: 16 / 8;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .theme-toggle,
+  .language-control,
+  .language-select {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-project-layout,
+  .screenshot-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .screenshot-dialog {
+    padding: .5rem;
+  }
+
+  .screenshot-dialog-close {
+    top: .8rem;
+    right: .8rem;
+  }
+
+  .project-detail-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .project-detail-art {
+    min-height: 260px;
+  }
+
+  .project-variant-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* The Gaming Mods landing hero becomes a compact image + copy stack on phones. */
+  .gaming-mods-page .hero {
+    min-height: 0;
+  }
+
+  .gaming-mods-page .hero::after {
+    display: none;
+  }
+
+  .gaming-mods-page .hero-media {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1717 / 916;
+  }
+
+  .gaming-mods-page .hero-media img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .gaming-mods-page .hero-copy {
+    min-height: 0;
+    max-width: none;
+    justify-content: flex-start;
+    padding: 1.4rem;
+  }
+
+  /* Wide project headers show the complete artwork above readable HTML copy. */
+  .project-detail-hero--wide-art {
+    display: grid;
+    min-height: 0;
+    background: var(--surface);
+  }
+
+  .project-detail-hero--wide-art .project-detail-art {
+    position: relative;
+    inset: auto;
+    min-height: 0;
+    aspect-ratio: 3 / 1;
+    background: #080d12;
+  }
+
+  .project-detail-hero--wide-art .project-detail-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .project-detail-hero--wide-art .project-detail-art::after {
+    display: none;
+  }
+
+  .project-detail-hero--wide-art .project-detail-copy {
+    min-height: 0;
+    max-width: none;
+    justify-content: flex-start;
+    padding: 1.4rem;
+    color: var(--text);
+  }
+
+  .project-detail-hero--wide-art .project-detail-copy > p:not(.eyebrow) {
+    color: var(--muted);
+  }
+}
+
+@media (max-width: 620px) {
+  /* Seven Gaming Mods controls fit into two predictable rows. */
+  .gaming-mods-page .site-nav,
+  .project-detail-page .site-nav {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: .25rem;
+  }
+
+  .gaming-mods-page .site-nav > :nth-child(-n + 4),
+  .project-detail-page .site-nav > :nth-child(-n + 4) {
+    grid-column: span 3;
+  }
+
+  .gaming-mods-page .site-nav > :nth-child(n + 5),
+  .project-detail-page .site-nav > :nth-child(n + 5) {
+    grid-column: span 4;
+  }
+
+  .gaming-mods-page .site-nav > .menu,
+  .project-detail-page .site-nav > .menu {
+    grid-column: span 3;
+  }
+
+  .gaming-mods-page .nav-link,
+  .gaming-mods-page .menu > summary,
+  .gaming-mods-page .nav-language-control,
+  .gaming-mods-page .site-header .theme-toggle,
+  .project-detail-page .nav-link,
+  .project-detail-page .menu > summary,
+  .project-detail-page .nav-language-control,
+  .project-detail-page .site-header .theme-toggle {
+    min-height: 44px;
+    padding: .5rem .3rem;
+    font-size: clamp(.76rem, 3.15vw, .88rem);
+    line-height: 1.1;
+  }
+
+  .gaming-mods-page .nav-language-select,
+  .project-detail-page .nav-language-select {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: .15rem;
+    font-size: inherit;
+  }
+}
+
+@media (max-width: 560px) {
+  .project-grid:has(.project-card--artwork),
+  .project-grid:has(.project-card--visual) {
+    grid-template-columns: 1fr;
+  }
+
+  .gaming-mods-page .featured-project-actions .text-link,
+  .project-detail-page .featured-project-actions .text-link,
+  .project-detail-page .project-link-grid .text-link,
+  .project-detail-page .project-variant .text-link {
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .gaming-mods-page .site-nav,
+  .project-detail-page .site-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gaming-mods-page .site-nav > *,
+  .project-detail-page .site-nav > * {
+    grid-column: span 1 !important;
+  }
+}
