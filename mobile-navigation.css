@@ -1,7 +1,8 @@
 /* Compact two-row mobile header shared by the K2040 gateway and Gaming Mods pages. */
 @media (max-width: 760px) {
   .site-header {
-    position: static;
+    position: relative;
+    z-index: 50;
     display: grid;
     min-height: 0;
     grid-template-columns: repeat(12, minmax(0, 1fr));
