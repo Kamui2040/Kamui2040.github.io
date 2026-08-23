@@ -256,6 +256,7 @@
     const buttons=[...menu.querySelectorAll("[data-project-game-button]")];
     const panels=[...menu.querySelectorAll("[data-project-game-panel]")];
     let layoutFrame=0;
+    let desktopLayout=window.innerWidth>1100;
     const updateDirection=()=>{
       cancelAnimationFrame(layoutFrame);
       layoutFrame=requestAnimationFrame(()=>{
@@ -264,11 +265,12 @@
         menu.classList.remove("project-menu--flip");
         const availableHeight=Math.max(120,window.innerHeight-menuPanel.getBoundingClientRect().top-8);
         menuPanel.style.setProperty("--project-menu-max-height",`${Math.round(availableHeight)}px`);
+        const modsVisible=!modsPanel.hidden;
         if(window.innerWidth>1100){
           const trigger=summary.getBoundingClientRect();
           const firstWidth=menuPanel.offsetWidth||220;
-          const secondWidth=modsPanel.offsetWidth||280;
-          const gap=9;
+          const secondWidth=modsVisible?(modsPanel.offsetWidth||280):0;
+          const gap=modsVisible?9:0;
           const margin=16;
           const fitsRight=trigger.left+firstWidth+gap+secondWidth<=window.innerWidth-margin;
           const fitsLeft=trigger.right-firstWidth-gap-secondWidth>=margin;
@@ -276,10 +278,10 @@
         }
         requestAnimationFrame(()=>{
           const panelRect=menuPanel.getBoundingClientRect();
-          const modsRect=modsPanel.getBoundingClientRect();
+          const modsRect=modsVisible?modsPanel.getBoundingClientRect():null;
           const margin=8;
-          const left=Math.min(panelRect.left,modsRect.left);
-          const right=Math.max(panelRect.right,modsRect.right);
+          const left=modsRect?Math.min(panelRect.left,modsRect.left):panelRect.left;
+          const right=modsRect?Math.max(panelRect.right,modsRect.right):panelRect.right;
           let shift=0;
           if(right>window.innerWidth-margin)shift=window.innerWidth-margin-right;
           if(left+shift<margin)shift+=margin-(left+shift);
@@ -288,13 +290,36 @@
       });
     };
     const selectGame=(game)=>{
+      modsPanel.hidden=false;
       buttons.forEach((button)=>button.setAttribute("aria-selected",String(button.dataset.projectGameButton===game)));
       panels.forEach((panel)=>panel.hidden=panel.dataset.projectGamePanel!==game);
       updateDirection();
     };
+    const collapseDesktop=()=>{
+      buttons.forEach((button)=>button.setAttribute("aria-selected","false"));
+      panels.forEach((panel)=>{panel.hidden=true});
+      modsPanel.hidden=true;
+      updateDirection();
+    };
+    const restoreNarrow=()=>{
+      if(buttons.length===0)return;
+      const selected=buttons.find((button)=>button.getAttribute("aria-selected")==="true");
+      selectGame((selected||buttons[0]).dataset.projectGameButton);
+    };
     buttons.forEach((button)=>button.addEventListener("click",()=>selectGame(button.dataset.projectGameButton)));
-    menu.addEventListener("toggle",updateDirection);
-    window.addEventListener("resize",updateDirection,{passive:true});
+    menu.addEventListener("toggle",()=>{
+      if(!menu.open){updateDirection();return}
+      if(window.innerWidth>1100)collapseDesktop();else restoreNarrow();
+    });
+    window.addEventListener("resize",()=>{
+      const nextDesktop=window.innerWidth>1100;
+      if(nextDesktop!==desktopLayout){
+        if(nextDesktop&&menu.open)collapseDesktop();
+        if(!nextDesktop)restoreNarrow();
+        desktopLayout=nextDesktop;
+      }
+      updateDirection();
+    },{passive:true});
   };
 
   const apply=()=>{translateStatic();renderProjects();renderUpdates();renderScreenshots();decorateBrandLinks();updateThemeButton(document.querySelector("[data-theme-toggle]"))};
