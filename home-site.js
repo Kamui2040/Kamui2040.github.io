@@ -19,7 +19,23 @@
   const sorted=()=>combined.map((entry,index)=>({entry,index,time:updateTime(entry)})).sort((a,b)=>{if(a.time===null&&b.time===null)return a.index-b.index;if(a.time===null)return 1;if(b.time===null)return-1;if(a.time!==b.time)return b.time-a.time;return a.index-b.index}).map(({entry})=>entry);
   const render=()=>{const list=document.querySelector("[data-update-list]");const template=document.querySelector("#update-card-template");if(!list||!template)return;const all=document.body.classList.contains("news-page");const entries=all?sorted():sorted().slice(0,5);list.replaceChildren();for(const update of entries){const strings=localStrings(update);const fragment=template.content.cloneNode(true);const time=fragment.querySelector("[data-update-date]");time.dateTime=update.date;time.textContent=new Intl.DateTimeFormat(language,{year:"numeric",month:"short",day:"numeric",timeZone:"UTC"}).format(new Date(`${update.date}T00:00:00Z`));fragment.querySelector("[data-update-category]").textContent=strings.category||"";fragment.querySelector("[data-update-title]").textContent=strings.title||"";fragment.querySelector("[data-update-summary]").textContent=strings.summary||"";const link=fragment.querySelector("[data-update-link]");if(update.href){link.href=update.href;link.textContent=update.href.includes("nexusmods.com")?"Nexus Mods":update.href.includes("github.com")?"GitHub":(window.K2040_TRANSLATIONS?.[language]?.actions?.readMore||"Read more")}else link.remove();list.append(fragment)}};
   const loadScriptData=async(url,selector)=>{const response=await fetch(url,{cache:"no-cache"});if(!response.ok)throw new Error(`${response.status} ${url}`);const source=await response.text();const sandbox={};new Function("window",`"use strict";\n${source}`)(sandbox);const value=selector(sandbox);return Array.isArray(value)?value:[]};
-  const loadFeeds=async()=>{const home=[...(window.K2040_CONTENT?.updates||[])];const results=await Promise.allSettled([loadScriptData("/K2040-Android-Releases/content.js",(box)=>box.K2040_CONTENT?.updates),loadScriptData("/K2040-Gaming-Mods/updates/2026.js",(box)=>box.K2040_GAMING_UPDATES)]);const android=results[0].status==="fulfilled"?results[0].value:[];const gaming=results[1].status==="fulfilled"?results[1].value:[];combined=[...home,...android,...gaming];render()};
+  const loadFeeds=async()=>{
+    const home=[...(window.K2040_CONTENT?.updates||[])];
+    const fullNews=document.body.classList.contains("news-page");
+    const requests=[
+      loadScriptData("/K2040-Android-Releases/updates/latest.js",(box)=>box.K2040_CONTENT?.updates)
+    ];
+    if(fullNews){requests.push(loadScriptData("/K2040-Android-Releases/updates/archive-2026.js",(box)=>box.K2040_CONTENT?.updates));}
+    requests.push(loadScriptData("/K2040-Gaming-Mods/updates/2026.js",(box)=>box.K2040_GAMING_UPDATES));
+    const results=await Promise.allSettled(requests);
+    const androidLatest=results[0].status==="fulfilled"?results[0].value:[];
+    let androidArchive=[];
+    let gamingResult;
+    if(fullNews){androidArchive=results[1].status==="fulfilled"?results[1].value:[];gamingResult=results[2];}else{gamingResult=results[1];}
+    const gaming=gamingResult?.status==="fulfilled"?gamingResult.value:[];
+    combined=[...home,...androidLatest,...androidArchive,...gaming];
+    render();
+  };
   const initMenu=(menu)=>{const items=[...menu.querySelectorAll("[data-global-menu-item]")];const position=(item)=>{item.classList.remove("global-menu-item--flip");if(!item.open||innerWidth<=760)return;requestAnimationFrame(()=>{const panel=menu.querySelector(".global-menu-panel"),sub=item.querySelector(".global-menu-submenu");if(!panel||!sub)return;const rect=panel.getBoundingClientRect(),width=sub.offsetWidth||245,gap=9,margin=16;const fitsRight=rect.right+gap+width<=innerWidth-margin;const fitsLeft=rect.left-gap-width>=margin;item.classList.toggle("global-menu-item--flip",!fitsRight&&fitsLeft)})};items.forEach((item)=>item.addEventListener("toggle",()=>{if(item.open){items.forEach((other)=>{if(other!==item)other.open=false});position(item)}}));menu.addEventListener("toggle",()=>{if(!menu.open)items.forEach((item)=>item.open=false)});addEventListener("resize",()=>items.forEach(position),{passive:true})};
   const init=()=>{applyLabels();document.querySelectorAll("[data-global-menu]").forEach(initMenu);document.addEventListener("click",(event)=>document.querySelectorAll("[data-global-menu][open]").forEach((menu)=>{if(!menu.contains(event.target))menu.open=false}));const select=document.querySelector("[data-language-select]");select?.addEventListener("change",()=>{if(supported.includes(select.value)){language=select.value;applyLabels();render()}});render();loadFeeds().catch(()=>render())};
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true});else init();
