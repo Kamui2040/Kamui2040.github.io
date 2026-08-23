@@ -36,35 +36,36 @@
         <a class="nav-link" href="#projects" data-home-i18n="projectAreas">Project Areas</a>
         <a class="nav-link" href="#news" data-home-i18n="news">News</a>
         <a class="nav-link" href="#about" data-home-i18n="about">About</a>
-        <label class="nav-language-control"><span class="visually-hidden" data-home-i18n="language">Language</span><select class="nav-language-select" data-language-select aria-label="Language"><option value="en">🇬🇧 English</option><option value="de">🇩🇪 Deutsch</option><option value="pt-PT">🇵🇹 Português</option><option value="es">🇪🇸 Español</option><option value="fr">🇫🇷 Français</option></select></label>
+        <label class="nav-language-control"><span class="visually-hidden" data-i18n="controls.language">Language</span><select class="nav-language-select" data-language-select aria-label="Language" data-i18n-aria-label="controls.language"><option value="en">🇬🇧 English</option><option value="de">🇩🇪 Deutsch</option><option value="pt-PT">🇵🇹 Português</option><option value="es">🇪🇸 Español</option><option value="fr">🇫🇷 Français</option></select></label>
         <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark theme"><span class="theme-toggle-icon" aria-hidden="true">☾</span><span data-theme-label>Dark</span></button>
       </nav>
     </header>
 
     <main>
       <header class="hero home-hero">
-        <img class="hero-image" src="assets/k2040-home-hero-v2.webp" width="1672" height="941" alt="K2040 wolf mascot at a dark blue development workstation" decoding="async">
-        <div class="hero-copy"><p class="eyebrow">K2040 PROJECTS</p><h1>Apps, Mods and Tools</h1><p>Android apps, game mods, and development tools in one place.</p></div>
+        <img class="hero-image" src="assets/k2040-home-hero-v2.webp?v=20260823h2" width="800" height="450" alt="K2040 wolf mascot at a dark blue development workstation" data-i18n-alt="hero.bannerAlt" decoding="async">
+        <div class="hero-copy"><p class="eyebrow">K2040 Projects</p><h1 data-i18n="hero.title">Apps, Mods and Tools</h1><p data-i18n="hero.description">A central place for K2040 projects, releases, documentation, and updates.</p></div>
       </header>
 
       <section class="content-section" id="projects">
-        <div class="section-heading"><p class="eyebrow" data-home-i18n="projectAreas">Project Areas</p><h2 data-home-i18n="projectAreas">Project Areas</h2><p data-home-i18n="projectAreasDescription">Choose a project area for current releases, downloads, screenshots, and project-specific details.</p></div>
-        <div class="project-grid" data-home-project-grid></div>
+        <div class="section-heading"><p class="eyebrow" data-i18n="projects.eyebrow">Explore</p><h2 data-i18n="projects.title">Project areas</h2><p data-i18n="projects.description">Open a dedicated project page for releases, documentation, downloads, and support.</p></div>
+        <div class="project-grid" data-project-grid></div>
       </section>
 
       <section class="content-section" id="news">
-        <div class="section-heading section-heading--split"><div><p class="eyebrow" data-home-i18n="latest">Latest</p><h2 data-home-i18n="news">News</h2><p data-home-i18n="newsDescription">Meaningful public changes and the latest updates from K2040 projects.</p></div><a class="text-link" href="news/" data-home-i18n="viewAllNews">View all news</a></div>
-        <div class="update-list" data-home-update-list data-home-update-limit="5"></div>
+        <div class="section-heading section-heading--split"><div><p class="eyebrow" data-home-i18n="newsEyebrow">Latest</p><h2 data-home-i18n="newsTitle">News</h2><p data-home-i18n="newsDescription">Meaningful public changes and the latest updates from K2040 projects.</p></div><a class="text-link" href="news/" data-home-i18n="viewAll">View all news</a></div>
+        <div class="update-list" data-update-list></div>
       </section>
 
       <section class="content-section about-section" id="about">
         <div class="section-heading"><p class="eyebrow">K2040 Projects</p><h2 data-home-i18n="about">About</h2><p data-i18n="about.body">I build Android apps, game mods, and development tools with a focus on practical improvements, clear documentation, and accessible design.</p></div>
-        <nav class="about-links" aria-label="K2040 links"><a class="text-link" href="/K2040-Android-Releases/" data-home-i18n="android">Android Projects</a><a class="text-link" href="/K2040-Gaming-Mods/" data-home-i18n="gaming">Gaming Mods</a><a class="text-link" href="https://github.com/Kamui2040">GitHub</a><a class="text-link" href="https://next.nexusmods.com/profile/kamui2040">Nexus Mods</a><a class="text-link" href="https://ko-fi.com/k2040">Ko-fi</a><a class="text-link" href="https://www.instagram.com/k2040.projects/">Instagram</a></nav>
+        <nav class="about-links" aria-label="K2040 links"><a class="text-link" href="/" data-home-i18n="home">Home</a><a class="text-link" href="/K2040-Android-Releases/" data-home-i18n="android">Android Projects</a><a class="text-link" href="/K2040-Gaming-Mods/" data-home-i18n="gaming">Gaming Mods</a><a class="text-link" href="https://github.com/Kamui2040">GitHub</a><a class="text-link" href="https://www.nexusmods.com/profile/kamui2040">Nexus Mods</a><a class="text-link" href="https://ko-fi.com/k2040">Ko-fi</a><a class="text-link" href="https://www.instagram.com/k2040.projects/">Instagram</a></nav>
       </section>
     </main>
-
-    <template id="home-project-card-template"><article class="project-card"><p class="card-label" data-home-project-label></p><h3 data-home-project-title></h3><p data-home-project-description></p><div class="card-footer"><span class="status-badge" data-home-project-status></span><span class="project-action" data-home-project-action></span></div></article></template>
-    <template id="home-update-card-template"><article class="update-card"><div class="update-meta"><time data-home-update-date></time><span data-home-update-category></span></div><h3 data-home-update-title></h3><p data-home-update-summary></p><a class="text-link" data-home-update-link></a></article></template>
   </div>
+
+  <template id="project-card-template"><article class="project-card"><p class="card-label" data-project-label></p><h3 data-project-title></h3><p data-project-description></p><div class="card-footer"><span class="status-badge" data-project-status></span><span class="project-action" data-project-action></span></div></article></template>
+  <template id="update-card-template"><article class="update-card"><div class="update-meta"><time data-update-date></time><span data-update-category></span></div><h3 data-update-title></h3><p data-update-summary></p><a class="text-link" data-update-link></a></article></template>
+  <noscript><p class="noscript-message">JavaScript is required for language switching and dynamic project news.</p></noscript>
 </body>
 </html>
