@@ -1,0 +1,55 @@
+/* Final visual corrections from live QA. */
+.site-brand > .global-menu > summary,
+.site-brand-name,
+.site-brand-section {
+  position: relative;
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  padding: .65rem .8rem;
+  border: 1px solid transparent !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: var(--site-nav-text);
+  text-decoration: none;
+  box-shadow: none !important;
+  clip-path: polygon(0 7px,7px 0,calc(100% - 7px) 0,100% 7px,100% calc(100% - 7px),calc(100% - 7px) 100%,7px 100%,0 calc(100% - 7px));
+  transition: background 140ms ease,border-color 140ms ease,box-shadow 140ms ease;
+}
+.site-brand > .global-menu > summary:hover,
+.site-brand > .global-menu > summary:focus-visible,
+.site-brand > .global-menu[open] > summary,
+.site-brand-name:hover,
+.site-brand-name:focus-visible,
+.site-brand-section:hover,
+.site-brand-section:focus-visible,
+.site-brand-section[aria-current="page"] {
+  border-color: transparent !important;
+  border-bottom-color: #00d9e5 !important;
+  background: linear-gradient(180deg,rgba(0,217,229,.08),transparent) !important;
+  box-shadow: inset 0 -2px 0 #00d9e5,0 0 10px rgba(0,217,229,.1) !important;
+  outline: none;
+}
+.site-brand > .global-menu > summary strong,
+.site-brand-name strong,
+.site-brand-section span { color: #f5f7f9; }
+
+/* Use the verified hero file as a background so a stale/broken image element cannot blank the artwork. */
+.projects-home-page .home-hero {
+  background-color: #071019;
+  background-image: url("assets/k2040-home-hero-v2.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.projects-home-page .home-hero .hero-image { display: none !important; }
+.projects-home-page .home-hero::after { pointer-events: none; }
+
+@media (max-width: 760px) {
+  .projects-home-page .home-hero { background-position: 72% center; }
+}
+@media (max-width: 420px) {
+  .projects-home-page .home-hero { background-position: 76% center; }
+}
