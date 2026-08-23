@@ -2,7 +2,7 @@ window.K2040_TRANSLATIONS = {
   en: {
     meta: { title: "K2040 Gaming Mods", description: "Released K2040 game mods, official download links, and compatibility notes." },
     controls: { language: "Language", dark: "Dark", light: "Light", switchToDark: "Switch to dark theme", switchToLight: "Switch to light theme" },
-    nav: { projects: "Projects", browseProjects: "Browse projects", games: "Games", downloads: "Downloads", about: "About" },
+    nav: { projects: "Projects", browseProjects: "Browse projects", games: "Games", downloads: "Downloads", updates: "Updates", about: "About" },
     menu: { dirdeDescription: "Ultimate Edition Mod Menu · Linux", ecoDescription: "AiO installer and individual patches", xeditDescription: "FO4Edit export utility" },
     landing: { heroEyebrow: "Gaming Mods", heroDescription: "Open Source game mods, tools, and enhancements.", exploreProjects: "Explore projects", viewGithub: "GitHub profile", featuredEyebrow: "Featured project", featuredDescription: "AiO and individual compatibility patches for Fallout 4 quick-menu setups.", featuredCopy: "One place for the AiO installer and individual optional patches, with separate official links and changelogs.", viewProject: "View project", aboutEyebrow: "K2040 Projects", aboutTitle: "About", aboutDescription: "Open Source game mods and tools with official download links and project-specific documentation." },
     projects: { eyebrow: "Released", title: "Mod Projects", description: "Choose a project to see its overview, downloads, changelog, and screenshots." },
@@ -14,7 +14,7 @@ window.K2040_TRANSLATIONS = {
   de: {
     meta: { title: "K2040 Gaming Mods", description: "Veröffentlichte K2040 Gaming Mods, offizielle Downloads und Hinweise zur Kompatibilität." },
     controls: { language: "Sprache", dark: "Dunkel", light: "Hell", switchToDark: "Zum dunklen Design wechseln", switchToLight: "Zum hellen Design wechseln" },
-    nav: { projects: "Projekte", browseProjects: "Projekte durchsuchen", games: "Spiele", downloads: "Downloads", about: "Info" },
+    nav: { projects: "Projekte", browseProjects: "Projekte durchsuchen", games: "Spiele", downloads: "Downloads", updates: "Updates", about: "Info" },
     menu: { dirdeDescription: "Ultimate Edition Mod Menu · Linux", ecoDescription: "AiO-Installer und einzelne Patches", xeditDescription: "Export-Tool für FO4Edit" },
     landing: { heroEyebrow: "Gaming Mods", heroDescription: "Open Source Mods, Tools und Erweiterungen für Spiele.", exploreProjects: "Projekte entdecken", viewGithub: "GitHub-Profil", featuredEyebrow: "Im Fokus", featuredDescription: "AiO-Installer und einzelne Kompatibilitätspatches für das Quick Menu in Fallout 4.", featuredCopy: "Der AiO-Installer und alle optionalen Einzelpatches an einem Ort – mit getrennten offiziellen Links und Changelogs.", viewProject: "Projekt ansehen", aboutEyebrow: "K2040 Projekte", aboutTitle: "Info", aboutDescription: "Open Source Mods und Tools mit offiziellen Downloads und eigener Dokumentation für jedes Projekt." },
     projects: { eyebrow: "Veröffentlicht", title: "Mod-Projekte", description: "Wähle ein Projekt aus, um Übersicht, Downloads, Changelog und Screenshots zu sehen." },
@@ -26,7 +26,7 @@ window.K2040_TRANSLATIONS = {
   "pt-PT": {
     meta: { title: "K2040 Gaming Mods", description: "Gaming Mods K2040 publicados, downloads oficiais e notas de compatibilidade." },
     controls: { language: "Idioma", dark: "Escuro", light: "Claro", switchToDark: "Mudar para o tema escuro", switchToLight: "Mudar para o tema claro" },
-    nav: { projects: "Projetos", browseProjects: "Explorar projetos", games: "Jogos", downloads: "Downloads", about: "Sobre" },
+    nav: { projects: "Projetos", browseProjects: "Explorar projetos", games: "Jogos", downloads: "Downloads", updates: "Atualizações", about: "Sobre" },
     menu: { dirdeDescription: "Ultimate Edition Mod Menu · Linux", ecoDescription: "Instalador AiO e patches individuais", xeditDescription: "Ferramenta de exportação para FO4Edit" },
     landing: { heroEyebrow: "Gaming Mods", heroDescription: "Mods, ferramentas e melhorias Open Source.", exploreProjects: "Explorar projetos", viewGithub: "Perfil no GitHub", featuredEyebrow: "Projeto em destaque", featuredDescription: "Instalador AiO e patches de compatibilidade individuais para o quick menu de Fallout 4.", featuredCopy: "O instalador AiO e os patches opcionais individuais num só lugar, com links oficiais e changelogs separados.", viewProject: "Ver projeto", aboutEyebrow: "Projetos K2040", aboutTitle: "Sobre", aboutDescription: "Mods e ferramentas Open Source com downloads oficiais e documentação própria para cada projeto." },
     projects: { eyebrow: "Publicados", title: "Projetos de Mods", description: "Escolha um projeto para ver o resumo, os downloads, o changelog e as capturas de ecrã." },
@@ -38,7 +38,7 @@ window.K2040_TRANSLATIONS = {
   es: {
     meta: { title: "K2040 Gaming Mods", description: "Gaming Mods K2040 publicados, descargas oficiales y notas de compatibilidad." },
     controls: { language: "Idioma", dark: "Oscuro", light: "Claro", switchToDark: "Cambiar al tema oscuro", switchToLight: "Cambiar al tema claro" },
-    nav: { projects: "Proyectos", browseProjects: "Explorar proyectos", games: "Juegos", downloads: "Descargas", about: "Acerca de" },
+    nav: { projects: "Proyectos", browseProjects: "Explorar proyectos", games: "Juegos", downloads: "Descargas", updates: "Actualizaciones", about: "Acerca de" },
     menu: { dirdeDescription: "Ultimate Edition Mod Menu · Linux", ecoDescription: "Instalador AiO y parches individuales", xeditDescription: "Herramienta de exportación para FO4Edit" },
     landing: { heroEyebrow: "Gaming Mods", heroDescription: "Mods, herramientas y mejoras Open Source.", exploreProjects: "Explorar proyectos", viewGithub: "Perfil de GitHub", featuredEyebrow: "Proyecto destacado", featuredDescription: "Instalador AiO y parches de compatibilidad individuales para el quick menu de Fallout 4.", featuredCopy: "El instalador AiO y los parches opcionales individuales en un solo lugar, con enlaces oficiales y changelogs separados.", viewProject: "Ver proyecto", aboutEyebrow: "Proyectos K2040", aboutTitle: "Acerca de", aboutDescription: "Mods y herramientas Open Source con descargas oficiales y documentación específica para cada proyecto." },
     projects: { eyebrow: "Publicados", title: "Proyectos de Mods", description: "Elige un proyecto para ver su resumen, descargas, changelog y capturas de pantalla." },
@@ -50,7 +50,7 @@ window.K2040_TRANSLATIONS = {
   fr: {
     meta: { title: "K2040 Gaming Mods", description: "Gaming Mods K2040 publiés, téléchargements officiels et notes de compatibilité." },
     controls: { language: "Langue", dark: "Sombre", light: "Clair", switchToDark: "Passer au thème sombre", switchToLight: "Passer au thème clair" },
-    nav: { projects: "Projets", browseProjects: "Parcourir les projets", games: "Jeux", downloads: "Téléchargements", about: "À propos" },
+    nav: { projects: "Projets", browseProjects: "Parcourir les projets", games: "Jeux", downloads: "Téléchargements", updates: "Mises à jour", about: "À propos" },
     menu: { dirdeDescription: "Ultimate Edition Mod Menu · Linux", ecoDescription: "Installateur AiO et patchs individuels", xeditDescription: "Outil d’export pour FO4Edit" },
     landing: { heroEyebrow: "Gaming Mods", heroDescription: "Des mods, des outils et des améliorations Open Source.", exploreProjects: "Parcourir les projets", viewGithub: "Profil GitHub", featuredEyebrow: "Projet à la une", featuredDescription: "Installateur AiO et patchs de compatibilité individuels pour le quick menu de Fallout 4.", featuredCopy: "L’installateur AiO et les patchs individuels facultatifs au même endroit, avec des liens officiels et des changelogs séparés.", viewProject: "Voir le projet", aboutEyebrow: "Projets K2040", aboutTitle: "À propos", aboutDescription: "Des mods et des outils Open Source avec des téléchargements officiels et une documentation propre à chaque projet." },
     projects: { eyebrow: "Publiés", title: "Projets de Mods", description: "Choisissez un projet pour voir sa présentation, ses téléchargements, son changelog et ses captures d’écran." },
