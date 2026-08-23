@@ -1,4 +1,4 @@
-/* Canonical K2040 controls and global cascade.
+/* Canonical K2040 header controls, menus, actions, and global cascade.
  * Keep site-specific layout and content styling out of this file.
  */
 
@@ -6,6 +6,43 @@
   --k2040-nav-bg: var(--site-nav-bg, var(--nav-bg, #0f1318));
   --k2040-nav-text: var(--site-nav-text, var(--nav-text, #f7f9fb));
   --k2040-nav-muted: var(--site-nav-muted, var(--nav-muted, #c6ccd2));
+}
+
+/* Shared technical header frame. */
+.site-header {
+  border: 1px solid rgba(0,207,215,.54);
+  border-radius: 0;
+  background: var(--k2040-nav-bg);
+  color: var(--k2040-nav-text);
+  box-shadow: 0 0 0 1px rgba(0,130,143,.32),0 0 22px rgba(0,210,220,.08),inset 0 0 30px rgba(0,209,219,.035),0 20px 44px rgba(0,0,0,.24);
+  clip-path: none;
+  isolation: isolate;
+}
+
+.site-header::before,
+.site-header .menu-panel:not(.global-menu-panel)::before {
+  position: absolute;
+  z-index: 3;
+  inset: 7px;
+  pointer-events: none;
+  content: "";
+  border: 1px solid rgba(0,183,193,.2);
+  background:
+    linear-gradient(90deg,#00d9e5,transparent) 0 0/3.5rem 1px no-repeat,
+    linear-gradient(180deg,#00d9e5,transparent) 0 0/1px 3.5rem no-repeat,
+    linear-gradient(-90deg,#00d9e5,transparent) 100% 100%/3.5rem 1px no-repeat,
+    linear-gradient(0deg,#00d9e5,transparent) 100% 100%/1px 3.5rem no-repeat;
+  clip-path: polygon(0 8px,8px 0,calc(100% - 8px) 0,100% 8px,100% calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,0 calc(100% - 8px));
+}
+
+.site-header .menu-panel:not(.global-menu-panel) {
+  border: 1px solid rgba(0,207,215,.54);
+  border-radius: 0;
+  background: var(--k2040-nav-bg);
+  color: var(--k2040-nav-text);
+  box-shadow: 0 0 0 1px rgba(0,130,143,.32),0 0 22px rgba(0,210,220,.08),0 20px 44px rgba(0,0,0,.24);
+  clip-path: polygon(0 10px,10px 0,calc(100% - 10px) 0,100% 10px,100% calc(100% - 10px),calc(100% - 10px) 100%,10px 100%,0 calc(100% - 10px));
+  isolation: isolate;
 }
 
 /* Shared header controls. */
@@ -82,6 +119,84 @@
   box-shadow: inset 0 -2px 0 #00d9e5,0 0 10px rgba(0,217,229,.1);
   outline: none;
   transform: none;
+}
+
+/* Shared simple dropdown contents used by Android. */
+.app-menu-panel {
+  width: min(360px,calc(100vw - 2rem));
+}
+
+.language-menu-panel {
+  min-width: 190px;
+}
+
+.app-menu-panel a,
+.language-menu-panel button {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 42px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: .2rem;
+  padding: .7rem .55rem;
+  border: 1px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: var(--k2040-nav-text);
+  font: inherit;
+  font-weight: 750;
+  text-align: left;
+  text-decoration: none;
+  box-shadow: none;
+  clip-path: polygon(0 7px,7px 0,calc(100% - 7px) 0,100% 7px,100% calc(100% - 7px),calc(100% - 7px) 100%,7px 100%,0 calc(100% - 7px));
+}
+
+.language-menu-panel button {
+  display: grid;
+  grid-template-columns: 1.6rem 1fr;
+  align-items: center;
+  justify-content: initial;
+  gap: .55rem;
+}
+
+.app-menu-panel small {
+  margin: 0;
+  color: var(--k2040-nav-muted);
+  font-size: .78rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.app-menu-panel a:hover,
+.app-menu-panel a:focus-visible,
+.language-menu-panel button:hover,
+.language-menu-panel button:focus-visible,
+.language-menu-panel button[aria-current="true"] {
+  border-color: transparent;
+  border-bottom-color: #00d9e5;
+  background: linear-gradient(180deg,rgba(0,217,229,.08),transparent);
+  box-shadow: inset 0 -2px 0 #00d9e5,0 0 10px rgba(0,217,229,.1);
+  outline: none;
+}
+
+.app-menu-panel a + a,
+.language-menu-panel button + button {
+  margin-top: .55rem;
+  padding-top: 1.15rem;
+}
+
+.app-menu-panel a + a::before,
+.language-menu-panel button + button::before {
+  position: absolute;
+  top: .25rem;
+  left: 16%;
+  right: 16%;
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg,transparent,rgba(0,217,229,.72),transparent);
+  box-shadow: 0 0 7px rgba(0,217,229,.28);
 }
 
 /* Shared K2040 global cascade. */
