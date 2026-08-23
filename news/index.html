@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="News and published updates across K2040 projects.">
+  <meta name="color-scheme" content="light dark">
+  <title>News · K2040 Projects</title>
+  <script src="../translations.js?v=20260814"></script>
+  <script src="../content.js?v=20260823n"></script>
+  <script src="../site.js?v=20260814b"></script>
+  <script src="../home-site.js?v=20260823n"></script>
+  <link rel="stylesheet" href="../styles.css?v=20260823a">
+  <link rel="stylesheet" href="../navigation.css?v=20260817">
+  <link rel="stylesheet" href="../responsive.css?v=20260823a">
+  <link rel="stylesheet" href="../mobile-navigation.css?v=20260823">
+  <link rel="stylesheet" href="../home-redesign.css?v=20260823n">
+</head>
+<body class="news-page">
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="site-brand">
+        <details class="menu global-menu" data-global-menu>
+          <summary data-home-aria="menu" aria-label="K2040 navigation"><strong>K2040</strong><span class="menu-caret" aria-hidden="true">⌄</span></summary>
+          <div class="menu-panel global-menu-panel">
+            <details class="global-menu-item" data-global-menu-item><summary><span data-home-i18n="home">Home</span><span class="global-menu-item-arrow" aria-hidden="true">›</span></summary><nav class="global-menu-submenu" aria-label="Home"><a href="/" data-home-i18n="home">Home</a><a href="/#projects" data-home-i18n="projectAreas">Project Areas</a><a href="/#news" data-home-i18n="news">News</a><a href="/#about" data-home-i18n="about">About</a></nav></details>
+            <details class="global-menu-item" data-global-menu-item><summary><span data-home-i18n="android">Android Projects</span><span class="global-menu-item-arrow" aria-hidden="true">›</span></summary><nav class="global-menu-submenu" aria-label="Android Projects"><a href="/K2040-Android-Releases/" data-home-i18n="androidHome">Android Home</a><a href="/K2040-Android-Releases/#apps" data-home-i18n="apps">Apps</a><a href="/K2040-Android-Releases/#updates" data-home-i18n="updates">Updates</a><a href="/K2040-Android-Releases/#about" data-home-i18n="about">About</a></nav></details>
+            <details class="global-menu-item" data-global-menu-item><summary><span data-home-i18n="gaming">Gaming Mods</span><span class="global-menu-item-arrow" aria-hidden="true">›</span></summary><nav class="global-menu-submenu" aria-label="Gaming Mods"><a href="/K2040-Gaming-Mods/" data-home-i18n="modsHome">Mods Home</a><a href="/K2040-Gaming-Mods/#projects" data-home-i18n="modProjects">Mod Projects</a><a href="/K2040-Gaming-Mods/#updates" data-home-i18n="updates">Updates</a><a href="/K2040-Gaming-Mods/#about" data-home-i18n="about">About</a></nav></details>
+          </div>
+        </details>
+        <a class="site-brand-section" href="/"><span>Projects</span></a>
+      </div>
+      <nav class="site-nav" aria-label="K2040 projects">
+        <label class="nav-language-control"><span class="visually-hidden" data-i18n="controls.language">Language</span><select class="nav-language-select" data-language-select aria-label="Language" data-i18n-aria-label="controls.language"><option value="en">🇬🇧 English</option><option value="de">🇩🇪 Deutsch</option><option value="pt-PT">🇵🇹 Português</option><option value="es">🇪🇸 Español</option><option value="fr">🇫🇷 Français</option></select></label>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark theme"><span class="theme-toggle-icon" aria-hidden="true">☾</span><span data-theme-label>Dark</span></button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="content-section" id="news"><div class="section-heading"><p class="eyebrow" data-home-i18n="newsEyebrow">Latest</p><h1 data-home-i18n="newsTitle">News</h1><p data-home-i18n="newsDescription">Meaningful public changes and the latest updates from K2040 projects.</p></div></section>
+      <section class="content-section"><div class="update-list" data-update-list></div></section>
+    </main>
+
+    <template id="update-card-template"><article class="update-card"><div class="update-meta"><time data-update-date></time><span data-update-category></span></div><h3 data-update-title></h3><p data-update-summary></p><a class="text-link" data-update-link></a></article></template>
+  </div>
+</body>
+</html>
