@@ -24,8 +24,7 @@
 .site-brand-name:hover,
 .site-brand-name:focus-visible,
 .site-brand-section:hover,
-.site-brand-section:focus-visible,
-.site-brand-section[aria-current="page"] {
+.site-brand-section:focus-visible {
   border-color: transparent !important;
   border-bottom-color: #00d9e5 !important;
   background: linear-gradient(180deg,rgba(0,217,229,.08),transparent) !important;
@@ -39,7 +38,7 @@
 /* Use the verified hero file as a background so a stale/broken image element cannot blank the artwork. */
 .projects-home-page .home-hero {
   background-color: #071019;
-  background-image: url("assets/k2040-home-hero-v2.webp");
+  background-image: url("assets/k2040-home-hero-v2.webp?v=20260823f2");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
