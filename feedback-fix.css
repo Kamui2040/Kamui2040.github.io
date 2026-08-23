@@ -1,5 +1,0 @@
-@import url("gaming-ui.css?v=20260823-1");
-
-/* Final Home-only fixes. Shared controls and cascade come from gaming-ui.css. */
-.projects-home-page .home-hero { background-color: #071019; }
-.projects-home-page .home-hero::after { pointer-events: none; }
