@@ -5,365 +5,37 @@ window.K2040_CONTENT = {
       href: "https://kamui2040.github.io/K2040-Android-Releases/",
       available: true,
       strings: {
-        en: {
-          label: "Android",
-          title: "Android Projects",
-          description: "Official Android releases, documentation, feedback routes, and support."
-        },
-        de: {
-          label: "Android",
-          title: "Android-Projekte",
-          description: "Offizielle Android-Veröffentlichungen, Dokumentation, Rückmeldewege und Support."
-        },
-        "pt-PT": {
-          label: "Android",
-          title: "Projetos Android",
-          description: "Lançamentos oficiais para Android, documentação, formas de contacto e apoio."
-        },
-        es: {
-          label: "Android",
-          title: "Proyectos Android",
-          description: "Lanzamientos oficiales de Android, documentación, vías de contacto y soporte."
-        },
-        fr: {
-          label: "Android",
-          title: "Projets Android",
-          description: "Versions Android officielles, documentation, moyens de retour et assistance."
-        }
+        en: { label: "Android", title: "Android Projects", description: "Official Android releases, documentation, feedback routes, and support." },
+        de: { label: "Android", title: "Android-Projekte", description: "Offizielle Android-Veröffentlichungen, Dokumentation, Rückmeldewege und Support." },
+        "pt-PT": { label: "Android", title: "Projetos Android", description: "Lançamentos oficiais para Android, documentação, formas de contacto e apoio." },
+        es: { label: "Android", title: "Proyectos Android", description: "Lanzamientos oficiales de Android, documentación, vías de contacto y soporte." },
+        fr: { label: "Android", title: "Projets Android", description: "Versions Android officielles, documentation, moyens de retour et assistance." }
       }
     },
     {
       id: "gaming-mods",
-      href: "/gaming-mods/",
+      href: "https://kamui2040.github.io/K2040-Gaming-Mods/",
       available: true,
       strings: {
-        en: {
-          label: "Gaming",
-          title: "Gaming Mods",
-          description: "Released game mods and tools, official downloads, and compatibility information."
-        },
-        de: {
-          label: "Gaming",
-          title: "Spiele-Mods",
-          description: "Veröffentlichte Spiele-Mods und Werkzeuge, offizielle Downloads und Kompatibilitätsinformationen."
-        },
-        "pt-PT": {
-          label: "Jogos",
-          title: "Mods de Jogos",
-          description: "Mods e ferramentas de jogos publicados, transferências oficiais e informações de compatibilidade."
-        },
-        es: {
-          label: "Juegos",
-          title: "Mods de Juegos",
-          description: "Mods y herramientas de juegos publicados, descargas oficiales e información de compatibilidad."
-        },
-        fr: {
-          label: "Jeux",
-          title: "Mods de Jeux",
-          description: "Mods et outils de jeu publiés, téléchargements officiels et informations de compatibilité."
-        }
+        en: { label: "Gaming", title: "Gaming Mods", description: "Released game mods and tools, official downloads, and compatibility information." },
+        de: { label: "Gaming", title: "Spiele-Mods", description: "Veröffentlichte Spiele-Mods und Werkzeuge, offizielle Downloads und Kompatibilitätsinformationen." },
+        "pt-PT": { label: "Jogos", title: "Mods de Jogos", description: "Mods e ferramentas de jogos publicados, transferências oficiais e informações de compatibilidade." },
+        es: { label: "Juegos", title: "Mods de Juegos", description: "Mods y herramientas de juegos publicados, descargas oficiales e información de compatibilidad." },
+        fr: { label: "Jeux", title: "Mods de Jeux", description: "Mods et outils de jeu publiés, téléchargements officiels et informations de compatibilité." }
       }
     }
   ],
   updates: [
     {
-      id: "dirde-ue-linux-0-1-0-dev0",
-      date: "2026-08-22",
-      href: "https://github.com/Kamui2040/DeadIsland-Riptide-Ultimate-edition-mod-menu/releases/tag/v0.1.0-dev0",
+      id: "home-news-redesign",
+      date: "2026-08-23",
+      href: null,
       strings: {
-        en: {
-          category: "Gaming",
-          title: "DIRDE UE Linux 0.1.0.dev0 is now available",
-          summary: "The native Linux port of the Dead Island: Riptide Ultimate Edition mod menu is released on GitHub, with a simple GUI, 42 gameplay options, safe Data0 patching, exact restore, and Flatpak/AppImage packages."
-        },
-        de: {
-          category: "Spiele",
-          title: "DIRDE UE Linux 0.1.0.dev0 ist jetzt verfügbar",
-          summary: "Der native Linux-Port des Dead Island: Riptide Ultimate Edition Mod-Menüs ist auf GitHub erschienen – mit einfacher GUI, 42 Gameplay-Optionen, sicherem Data0-Patching, exakter Wiederherstellung sowie Flatpak- und AppImage-Paketen."
-        },
-        "pt-PT": {
-          category: "Jogos",
-          title: "DIRDE UE Linux 0.1.0.dev0 já está disponível",
-          summary: "O port nativo para Linux do menu mod Dead Island: Riptide Ultimate Edition foi lançado no GitHub, com GUI simples, 42 opções de jogo, patch seguro do Data0, restauro exato e pacotes Flatpak/AppImage."
-        },
-        es: {
-          category: "Juegos",
-          title: "DIRDE UE Linux 0.1.0.dev0 ya está disponible",
-          summary: "El port nativo para Linux del menú mod de Dead Island: Riptide Ultimate Edition ya está disponible en GitHub, con GUI sencilla, 42 opciones de juego, parcheo seguro de Data0, restauración exacta y paquetes Flatpak/AppImage."
-        },
-        fr: {
-          category: "Jeux",
-          title: "DIRDE UE Linux 0.1.0.dev0 est disponible",
-          summary: "Le port Linux natif du menu mod Dead Island: Riptide Ultimate Edition est sorti sur GitHub, avec une interface simple, 42 options de gameplay, un patch Data0 sûr, une restauration exacte et des paquets Flatpak/AppImage."
-        }
-      }
-    },
-    {
-      id: "geojoystick-uptodown-0-1-4",
-      date: "2026-08-18",
-      href: "https://geojoystick.en.uptodown.com/android",
-      strings: {
-        en: {
-          category: "Android",
-          title: "GeoJoystick v0.1.4 is now available on Uptodown",
-          summary: "The developer-signed v0.1.4 release is now available on Uptodown as an additional official download channel."
-        },
-        de: {
-          category: "Android",
-          title: "GeoJoystick v0.1.4 ist jetzt auf Uptodown verfügbar",
-          summary: "Die entwicklersignierte Version v0.1.4 ist jetzt auch über Uptodown als zusätzlicher offizieller Downloadkanal verfügbar."
-        },
-        "pt-PT": {
-          category: "Android",
-          title: "GeoJoystick v0.1.4 está agora disponível no Uptodown",
-          summary: "A versão v0.1.4 assinada pelo programador está agora também disponível no Uptodown como canal oficial adicional de transferência."
-        },
-        es: {
-          category: "Android",
-          title: "GeoJoystick v0.1.4 ya está disponible en Uptodown",
-          summary: "La versión v0.1.4 firmada por el desarrollador ya está disponible también en Uptodown como canal oficial de descarga adicional."
-        },
-        fr: {
-          category: "Android",
-          title: "GeoJoystick v0.1.4 est maintenant disponible sur Uptodown",
-          summary: "La version v0.1.4 signée par le développeur est désormais également disponible sur Uptodown comme canal officiel de téléchargement supplémentaire."
-        }
-      }
-    },
-    {
-      id: "esca-agnellis-uptodown-0-16-0",
-      date: "2026-08-14",
-      href: "https://esca-agnellis.en.uptodown.com/android",
-      strings: {
-        en: {
-          category: "Android",
-          title: "Esca Agnellis v0.16.0 is now available on Uptodown",
-          summary: "The developer-signed v0.16.0 release is now available on Uptodown as an additional official download channel."
-        },
-        de: {
-          category: "Android",
-          title: "Esca Agnellis v0.16.0 ist jetzt auf Uptodown verfügbar",
-          summary: "Die entwicklersignierte Version v0.16.0 ist jetzt auch über Uptodown als zusätzlicher offizieller Downloadkanal verfügbar."
-        },
-        "pt-PT": {
-          category: "Android",
-          title: "Esca Agnellis v0.16.0 está agora disponível no Uptodown",
-          summary: "A versão v0.16.0 assinada pelo programador está agora também disponível no Uptodown como canal oficial adicional de transferência."
-        },
-        es: {
-          category: "Android",
-          title: "Esca Agnellis v0.16.0 ya está disponible en Uptodown",
-          summary: "La versión v0.16.0 firmada por el desarrollador ya está disponible también en Uptodown como canal oficial de descarga adicional."
-        },
-        fr: {
-          category: "Android",
-          title: "Esca Agnellis v0.16.0 est maintenant disponible sur Uptodown",
-          summary: "La version v0.16.0 signée par le développeur est désormais également disponible sur Uptodown comme canal officiel de téléchargement supplémentaire."
-        }
-      }
-    },
-    {
-      id: "geojoystick-fdroid-apkpure",
-      date: "2026-07-18",
-      href: "https://kamui2040.github.io/K2040-Android-Releases/",
-      strings: {
-        en: {
-          category: "Android",
-          title: "GeoJoystick v0.1.3 is available on F-Droid and APKPure",
-          summary: "The current release can now be downloaded through GitHub, F-Droid, and APKPure from the K2040 Android Projects page."
-        },
-        de: {
-          category: "Android",
-          title: "GeoJoystick v0.1.3 ist auf F-Droid und APKPure verfügbar",
-          summary: "Die aktuelle Version kann jetzt über GitHub, F-Droid und APKPure auf der K2040-Android-Projektseite heruntergeladen werden."
-        },
-        "pt-PT": {
-          category: "Android",
-          title: "GeoJoystick v0.1.3 está disponível no F-Droid e APKPure",
-          summary: "A versão atual pode agora ser transferida através do GitHub, F-Droid e APKPure na página de Projetos Android K2040."
-        },
-        es: {
-          category: "Android",
-          title: "GeoJoystick v0.1.3 está disponible en F-Droid y APKPure",
-          summary: "La versión actual ya se puede descargar mediante GitHub, F-Droid y APKPure desde la página de Proyectos Android de K2040."
-        },
-        fr: {
-          category: "Android",
-          title: "GeoJoystick v0.1.3 est disponible sur F-Droid et APKPure",
-          summary: "La version actuelle peut désormais être téléchargée via GitHub, F-Droid et APKPure depuis la page des projets Android K2040."
-        }
-      }
-    },
-    {
-      id: "geojoystick-android-page",
-      date: "2026-07-07",
-      href: "https://kamui2040.github.io/K2040-Android-Releases/",
-      strings: {
-        en: {
-          category: "Android",
-          title: "GeoJoystick added to Android Projects",
-          summary: "GeoJoystick v0.1.2 is now listed with its GitHub release, source, and feedback links."
-        },
-        de: {
-          category: "Android",
-          title: "GeoJoystick zu den Android-Projekten hinzugefügt",
-          summary: "GeoJoystick v0.1.2 ist jetzt mit GitHub-Veröffentlichung, Quellcode und Feedback-Links gelistet."
-        },
-        "pt-PT": {
-          category: "Android",
-          title: "GeoJoystick adicionado aos Projetos Android",
-          summary: "GeoJoystick v0.1.2 está agora listado com ligações para o lançamento no GitHub, código-fonte e comentários."
-        },
-        es: {
-          category: "Android",
-          title: "GeoJoystick añadido a Proyectos Android",
-          summary: "GeoJoystick v0.1.2 aparece ahora con enlaces a la versión de GitHub, el código fuente y comentarios."
-        },
-        fr: {
-          category: "Android",
-          title: "GeoJoystick ajouté aux projets Android",
-          summary: "GeoJoystick v0.1.2 est désormais listé avec des liens vers la version GitHub, le code source et les retours."
-        }
-      }
-    },
-    {
-      id: "esca-agnellis-0-16-0",
-      date: "2026-08-14",
-      href: "https://github.com/Kamui2040/K2040-Android-Releases/releases/tag/esca-agnellis-v0.16.0",
-      strings: {
-        en: { category: "Android", title: "Esca Agnellis v0.16.0 released", summary: "The new release adds local PDF reports and an optional companion and marks Esca Agnellis' first open-source release. GitHub is the current canonical developer-signed download." },
-        de: { category: "Android", title: "Esca Agnellis v0.16.0 veröffentlicht", summary: "Die neue Version ergänzt lokale PDF-Berichte und einen optionalen Begleiter und ist die erste quelloffene Esca-Agnellis-Version. GitHub ist derzeit der maßgebliche Entwickler-signierte Download." },
-        "pt-PT": { category: "Android", title: "Esca Agnellis v0.16.0 lançado", summary: "A nova versão adiciona relatórios PDF locais e um companheiro opcional e marca a primeira versão de código aberto do Esca Agnellis. O GitHub é atualmente a transferência canónica assinada pelo programador." },
-        es: { category: "Android", title: "Esca Agnellis v0.16.0 publicado", summary: "La nueva versión añade informes PDF locales y un acompañante opcional y es la primera versión de código abierto de Esca Agnellis. GitHub es actualmente la descarga canónica firmada por el desarrollador." },
-        fr: { category: "Android", title: "Esca Agnellis v0.16.0 publié", summary: "La nouvelle version ajoute des rapports PDF locaux et un compagnon facultatif et constitue la première version open source d’Esca Agnellis. GitHub est actuellement le téléchargement canonique signé par le développeur." }
-      }
-    },
-    {
-      id: "esca-agnellis-0-15-0",
-      date: "2026-06-23",
-      href: "https://github.com/Kamui2040/K2040-Android-Releases/releases/tag/esca-agnellis-v0.15.0",
-      strings: {
-        en: {
-          category: "Android",
-          title: "Esca Agnellis v0.15.0 released",
-          summary: "The first stable public release adds app-language selection, compact redesigned settings, and expanded theme choices."
-        },
-        de: {
-          category: "Android",
-          title: "Esca Agnellis v0.15.0 veröffentlicht",
-          summary: "Die erste stabile öffentliche Version ergänzt die App-Sprachauswahl, kompakte neu gestaltete Einstellungen und zusätzliche Designoptionen."
-        },
-        "pt-PT": {
-          category: "Android",
-          title: "Esca Agnellis v0.15.0 lançado",
-          summary: "A primeira versão pública estável adiciona seleção de idioma da aplicação, definições compactas redesenhadas e mais opções de tema."
-        },
-        es: {
-          category: "Android",
-          title: "Esca Agnellis v0.15.0 publicado",
-          summary: "La primera versión pública estable añade selección de idioma de la aplicación, ajustes compactos rediseñados y más opciones de tema."
-        },
-        fr: {
-          category: "Android",
-          title: "Esca Agnellis v0.15.0 publié",
-          summary: "La première version publique stable ajoute le choix de la langue de l’application, des réglages compacts remaniés et davantage d’options de thème."
-        }
-      }
-    },
-    {
-      id: "xedit-json-exporter-added",
-      date: "2026-06-23",
-      href: "/gaming-mods/",
-      strings: {
-        en: {
-          category: "Gaming",
-          title: "xEdit JSON Exporter added",
-          summary: "The xEdit JSON Exporter is now listed on the Gaming Mods page with a direct Nexus Mods link."
-        },
-        de: {
-          category: "Gaming",
-          title: "xEdit JSON Exporter hinzugefügt",
-          summary: "Der xEdit JSON Exporter ist jetzt auf der Spiele-Mods-Seite mit einem direkten Nexus-Mods-Link aufgeführt."
-        },
-        "pt-PT": {
-          category: "Jogos",
-          title: "xEdit JSON Exporter adicionado",
-          summary: "O xEdit JSON Exporter está agora listado na página de Mods de Jogos com uma ligação direta para o Nexus Mods."
-        },
-        es: {
-          category: "Juegos",
-          title: "xEdit JSON Exporter añadido",
-          summary: "El xEdit JSON Exporter ya aparece en la página de Mods de Juegos con un enlace directo a Nexus Mods."
-        },
-        fr: {
-          category: "Jeux",
-          title: "xEdit JSON Exporter ajouté",
-          summary: "Le xEdit JSON Exporter figure désormais sur la page des Mods de Jeux avec un lien direct vers Nexus Mods."
-        }
-      }
-    },
-    {
-      id: "gaming-mods-page",
-      date: "2026-06-22",
-      href: "/gaming-mods/",
-      strings: {
-        en: {
-          category: "Gaming",
-          title: "Gaming Mods page added",
-          summary: "Released Fallout 4 mods now have a dedicated multilingual gateway."
-        },
-        de: {
-          category: "Gaming",
-          title: "Seite für Spiele-Mods hinzugefügt",
-          summary: "Veröffentlichte Fallout-4-Mods haben nun einen eigenen mehrsprachigen Einstiegspunkt."
-        },
-        "pt-PT": {
-          category: "Jogos",
-          title: "Página de Mods de Jogos adicionada",
-          summary: "Os mods publicados de Fallout 4 têm agora um portal multilingue dedicado."
-        },
-        es: {
-          category: "Juegos",
-          title: "Página de Mods de Juegos añadida",
-          summary: "Los mods publicados de Fallout 4 cuentan ahora con un portal multilingüe dedicado."
-        },
-        fr: {
-          category: "Jeux",
-          title: "Page des Mods de Jeux ajoutée",
-          summary: "Les mods Fallout 4 publiés disposent désormais d’un portail multilingue dédié."
-        }
-      }
-    },
-    {
-      id: "android-hub",
-      date: "2026-06-22",
-      href: "https://kamui2040.github.io/K2040-Android-Releases/",
-      strings: {
-        en: {
-          category: "Android",
-          title: "The Android project hub is now multilingual",
-          summary: "The dedicated Android page now supports a single-language interface, automatic language detection, and persistent light and dark themes."
-        },
-        de: {
-          category: "Android",
-          title: "Der Android-Projekthub ist jetzt mehrsprachig",
-          summary: "Die eigene Android-Seite unterstützt nun eine einsprachige Oberfläche, automatische Spracherkennung sowie dauerhafte helle und dunkle Designs."
-        },
-        "pt-PT": {
-          category: "Android",
-          title: "O centro de projetos Android é agora multilingue",
-          summary: "A página Android dedicada passa a ter uma interface num único idioma, deteção automática do idioma e temas claro e escuro persistentes."
-        },
-        es: {
-          category: "Android",
-          title: "El centro de proyectos Android ya es multilingüe",
-          summary: "La página dedicada a Android incorpora una interfaz de un solo idioma, detección automática del idioma y temas claro y oscuro persistentes."
-        },
-        fr: {
-          category: "Android",
-          title: "Le portail des projets Android est désormais multilingue",
-          summary: "La page Android dédiée propose une interface dans une seule langue, la détection automatique de la langue et des thèmes clair et sombre persistants."
-        }
+        en: { category: "Website", title: "K2040 navigation and News redesigned", summary: "The main project sites now share clearer navigation, consistent About links, and compact News and Updates previews." },
+        de: { category: "Webseite", title: "K2040-Navigation und News überarbeitet", summary: "Die wichtigsten Projektseiten nutzen jetzt eine klarere Navigation, einheitliche Info-Links sowie kompakte Vorschauen für News und Updates." },
+        "pt-PT": { category: "Website", title: "Navegação K2040 e Notícias renovadas", summary: "Os principais sites de projetos partilham agora uma navegação mais clara, links Sobre consistentes e pré-visualizações compactas de Notícias e Atualizações." },
+        es: { category: "Sitio web", title: "Navegación K2040 y Noticias renovadas", summary: "Los principales sitios de proyectos comparten ahora una navegación más clara, enlaces de Acerca de coherentes y vistas previas compactas de Noticias y Actualizaciones." },
+        fr: { category: "Site web", title: "Navigation K2040 et Actualités repensées", summary: "Les principaux sites de projets partagent désormais une navigation plus claire, des liens À propos cohérents et des aperçus compacts des actualités et mises à jour." }
       }
     },
     {
@@ -371,31 +43,11 @@ window.K2040_CONTENT = {
       date: "2026-06-22",
       href: null,
       strings: {
-        en: {
-          category: "Website",
-          title: "The shared K2040 gateway is available",
-          summary: "The front page now connects Android projects, gaming mods, support links, and compact project updates."
-        },
-        de: {
-          category: "Webseite",
-          title: "Der gemeinsame K2040-Einstiegspunkt ist verfügbar",
-          summary: "Die Startseite verbindet nun Android-Projekte, Spiele-Mods, Supportlinks und kompakte Projektupdates."
-        },
-        "pt-PT": {
-          category: "Website",
-          title: "O portal comum K2040 está disponível",
-          summary: "A página inicial liga agora projetos Android, mods de jogos, ligações de apoio e atualizações compactas."
-        },
-        es: {
-          category: "Sitio web",
-          title: "El portal común de K2040 está disponible",
-          summary: "La página principal conecta ahora proyectos Android, mods de juegos, enlaces de soporte y actualizaciones breves."
-        },
-        fr: {
-          category: "Site web",
-          title: "Le portail K2040 commun est disponible",
-          summary: "La page d’accueil relie désormais les projets Android, les mods de jeux, les liens d’assistance et de brèves actualités."
-        }
+        en: { category: "Website", title: "The shared K2040 gateway is available", summary: "The front page now connects Android projects, gaming mods, support links, and compact project updates." },
+        de: { category: "Webseite", title: "Der gemeinsame K2040-Einstiegspunkt ist verfügbar", summary: "Die Startseite verbindet nun Android-Projekte, Spiele-Mods, Supportlinks und kompakte Projektupdates." },
+        "pt-PT": { category: "Website", title: "O portal comum K2040 está disponível", summary: "A página inicial liga agora projetos Android, mods de jogos, ligações de apoio e atualizações compactas." },
+        es: { category: "Sitio web", title: "El portal común de K2040 está disponible", summary: "La página principal conecta ahora proyectos Android, mods de juegos, enlaces de soporte y actualizaciones breves." },
+        fr: { category: "Site web", title: "Le portail K2040 commun est disponible", summary: "La page d’accueil relie désormais les projets Android, les mods de jeux, les liens d’assistance et de brèves actualités." }
       }
     }
   ]
