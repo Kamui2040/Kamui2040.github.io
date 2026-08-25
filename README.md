@@ -6,7 +6,7 @@ This repository contains the public K2040 project website.
 
 - Main page: <https://kamui2040.github.io/>
 - Android Projects: <https://kamui2040.github.io/K2040-Android-Releases/>
-- Gaming Mods: <https://kamui2040.github.io/gaming-mods/>
+- Gaming Mods: <https://kamui2040.github.io/K2040-Gaming-Mods/>
 
 The site brings released K2040 projects, downloads, documentation, and updates together in one place. It supports English, German, Portuguese (Portugal), Spanish, and French, as well as light and dark themes.
 
