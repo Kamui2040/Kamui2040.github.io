@@ -4,19 +4,27 @@
   const loaderScript = document.currentScript;
   if (loaderScript?.src) {
     const base = new URL(".", loaderScript.src);
-    if (!document.querySelector('link[data-external-platform-icons]')) {
+    const loadStyle = (name, href) => {
+      if (document.querySelector(`link[data-shared-style="${name}"]`)) return;
       const styles = document.createElement("link");
       styles.rel = "stylesheet";
-      styles.href = new URL("external-link-icons.css?v=20260825a", base).href;
-      styles.dataset.externalPlatformIcons = "true";
+      styles.href = new URL(href, base).href;
+      styles.dataset.sharedStyle = name;
       document.head.append(styles);
-    }
-    if (!document.querySelector('script[data-external-platform-icons]')) {
+    };
+    const loadScript = (name, src) => {
+      if (document.querySelector(`script[data-shared-script="${name}"]`)) return;
       const script = document.createElement("script");
-      script.src = new URL("external-link-icons.js?v=20260825a", base).href;
-      script.dataset.externalPlatformIcons = "true";
+      script.src = new URL(src, base).href;
+      script.dataset.sharedScript = name;
       document.head.append(script);
-    }
+    };
+
+    loadStyle("external-platform-icons", "external-link-icons.css?v=20260825a");
+    loadStyle("k2040-brand-menu", "brand-menu-icon.css?v=20260825brand1");
+    loadStyle("news-store-links", "news-store-links.css?v=20260825news1");
+    loadScript("external-platform-icons", "external-link-icons.js?v=20260825a");
+    loadScript("news-store-links", "news-store-links.js?v=20260825news1");
   }
 
   const globalLabels = {
@@ -58,7 +66,6 @@
 
   const initMenu = (menu) => {
     const items = [...menu.querySelectorAll("[data-global-menu-item]")];
-
     const reposition = (item) => {
       item.classList.remove("global-menu-item--flip");
       if (!item.open || window.innerWidth <= 760) return;
@@ -79,38 +86,29 @@
     items.forEach((item) => {
       item.addEventListener("toggle", () => {
         if (!item.open) return;
-        items.forEach((other) => {
-          if (other !== item) other.open = false;
-        });
+        items.forEach((other) => { if (other !== item) other.open = false; });
         reposition(item);
       });
     });
-
     menu.addEventListener("toggle", () => {
       if (!menu.open) items.forEach((item) => { item.open = false; });
     });
-
-    window.addEventListener("resize", () => {
-      items.forEach(reposition);
-    }, { passive: true });
+    window.addEventListener("resize", () => items.forEach(reposition), { passive: true });
   };
 
   const init = () => {
     document.querySelectorAll("[data-global-menu]").forEach(initMenu);
     applyGlobalLabels();
-
     document.querySelectorAll("[data-language-option]").forEach((button) => {
       button.addEventListener("click", () => {
         if (globalLabels[button.dataset.languageOption]) applyGlobalLabels(button.dataset.languageOption);
       });
     });
-
     document.addEventListener("click", (event) => {
       document.querySelectorAll("[data-global-menu][open]").forEach((menu) => {
         if (!menu.contains(event.target)) menu.open = false;
       });
     });
-
     window.addEventListener("storage", (event) => {
       if (event.key === "k2040-language") applyGlobalLabels(event.newValue || "en");
     });
