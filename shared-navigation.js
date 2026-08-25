@@ -1,6 +1,24 @@
 (() => {
   "use strict";
 
+  const loaderScript = document.currentScript;
+  if (loaderScript?.src) {
+    const base = new URL(".", loaderScript.src);
+    if (!document.querySelector('link[data-external-platform-icons]')) {
+      const styles = document.createElement("link");
+      styles.rel = "stylesheet";
+      styles.href = new URL("external-link-icons.css?v=20260825a", base).href;
+      styles.dataset.externalPlatformIcons = "true";
+      document.head.append(styles);
+    }
+    if (!document.querySelector('script[data-external-platform-icons]')) {
+      const script = document.createElement("script");
+      script.src = new URL("external-link-icons.js?v=20260825a", base).href;
+      script.dataset.externalPlatformIcons = "true";
+      document.head.append(script);
+    }
+  }
+
   const globalLabels = {
     en: { menu: "K2040 navigation", home: "Home", android: "Android Projects", gaming: "Gaming Mods", projectAreas: "Project Areas", news: "News", about: "About", androidHome: "Android Home", apps: "Apps", updates: "Updates", modsHome: "Mods Home", modProjects: "Mod Projects" },
     de: { menu: "K2040-Navigation", home: "Home", android: "Android-Projekte", gaming: "Gaming Mods", projectAreas: "Projektbereiche", news: "News", about: "Info", androidHome: "Android-Startseite", apps: "Apps", updates: "Updates", modsHome: "Mods-Startseite", modProjects: "Mod-Projekte" },
