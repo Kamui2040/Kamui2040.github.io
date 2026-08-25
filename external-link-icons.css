@@ -29,6 +29,13 @@
   clip-path: polygon(0 4px,4px 0,calc(100% - 4px) 0,100% 4px,100% calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,0 calc(100% - 4px));
 }
 
+.external-platform-icon--nexus.external-platform-icon--monogram {
+  border: 0;
+  background: transparent url("/assets/icons/k2040-nexus.webp") center / contain no-repeat;
+  font-size: 0;
+  clip-path: none;
+}
+
 .external-platform-label {
   min-width: 0;
 }
