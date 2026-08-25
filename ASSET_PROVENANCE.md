@@ -3,8 +3,15 @@
 ## K2040 navigation icon
 
 - Source: K2040 shared brand asset `K2040-omnisexual-icon-512.png` supplied by the project owner.
-- Use here: downscaled to 64 × 64 and embedded as WebP data in `brand-menu-icon.css` for the global K2040 menu control.
+- Use here: downscaled to a 128 × 128 lossless WebP at `assets/icons/k2040-home.webp` for the global navigation and shared footer links.
 - Changes: size and web encoding only; the artwork is otherwise unchanged.
+
+## K2040 site-family icons
+
+- `assets/icons/k2040-android.webp`, `assets/icons/k2040-gaming.webp`, and `assets/icons/k2040-nexus.webp` are original generated artwork commissioned and approved by K2040 on 2026-08-25 for the shared website navigation and link system.
+- The approved source artwork was reduced to 128 × 128 lossless WebP for small-screen use; no new visual content was introduced during resizing.
+- The Nexus destination icon is an original tornado/vortex symbol. It does not reproduce the official Nexus Mods logo and is used only as a visual destination cue.
+- Nexus Mods names and trademarks remain the property of their respective owner.
 
 ## OpenAPK destination icon
 

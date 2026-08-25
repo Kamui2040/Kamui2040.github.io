@@ -14,6 +14,8 @@ Keep `main` stable and use focused branches and pull requests for normal changes
 
 Only publish information that is already verified and public. Official project and release pages remain authoritative for downloads and versions; do not duplicate mutable release truth unnecessarily.
 
+The landing-site News section consumes the canonical public update feeds from the Android and Gaming sites. Keep site-specific release and project updates in those source feeds instead of copying the same mutable facts into this repository. Once a confirmed update is added to the appropriate source feed, the landing site should relay it automatically.
+
 Keep supported languages, themes, navigation, links, and the shared K2040 visual system consistent when they are affected by a change.
 
 Use only authorized, licensed, or properly attributed assets. Keep durable asset provenance in the repository when it is needed for public reuse.
