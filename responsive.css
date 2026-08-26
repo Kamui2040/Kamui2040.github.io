@@ -13,14 +13,6 @@
     padding-top: .5rem;
   }
 
-  :where(.hero, .content-section, footer, .project-detail-hero) {
-    clip-path: polygon(0 10px, 10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px));
-  }
-
-  :where(.hero, .content-section, footer, .project-detail-hero, .project-card, .update-card, .featured-game-art-placeholder, .screenshot-grid figure)::before {
-    inset: 5px;
-  }
-
   .hero-image {
     aspect-ratio: 16 / 8;
   }
