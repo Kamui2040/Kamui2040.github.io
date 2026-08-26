@@ -1,13 +1,13 @@
 /* Shared external platform link icons. */
 .external-platform-link {
-  gap: .45rem;
+  gap: .5rem;
 }
 
 .external-platform-icon {
   display: inline-flex;
-  width: 1.1rem;
-  height: 1.1rem;
-  flex: 0 0 1.1rem;
+  width: 1.35rem;
+  height: 1.35rem;
+  flex: 0 0 1.35rem;
   align-items: center;
   justify-content: center;
   color: currentColor;
@@ -20,10 +20,10 @@
 }
 
 .external-platform-icon--monogram {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1.35rem;
+  height: 1.35rem;
   border: 1px solid currentColor;
-  font-size: .68rem;
+  font-size: .8rem;
   font-weight: 900;
   line-height: 1;
   clip-path: polygon(0 4px,4px 0,calc(100% - 4px) 0,100% 4px,100% calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,0 calc(100% - 4px));
@@ -31,7 +31,7 @@
 
 .external-platform-icon--nexus.external-platform-icon--monogram {
   border: 0;
-  background: transparent url("/assets/icons/k2040-nexus.webp") center / contain no-repeat;
+  background: transparent url("/assets/icons/k2040-nexus.webp") center / 118% no-repeat;
   font-size: 0;
   clip-path: none;
 }
@@ -44,6 +44,25 @@
   clip-path: none;
 }
 
+/* Shared ONE store cue. This is also used by Main News. */
+.external-platform-icon--onestore {
+  position: relative;
+  overflow: hidden;
+  border: 0;
+  border-radius: .28rem;
+  background: #f43a59;
+  color: #fff;
+  clip-path: none;
+}
+
+.external-platform-icon--onestore::before {
+  content: "1";
+  font-size: 1rem;
+  font-weight: 950;
+  line-height: 1;
+  transform: translateY(-.02rem);
+}
+
 .external-platform-label {
   min-width: 0;
 }
@@ -51,10 +70,10 @@
 @media (max-width: 760px) {
   .external-platform-link--icon-only-mobile {
     position: relative;
-    width: 42px;
-    min-width: 42px;
-    padding-right: .55rem !important;
-    padding-left: .55rem !important;
+    width: 44px;
+    min-width: 44px;
+    padding-right: .5rem !important;
+    padding-left: .5rem !important;
     gap: 0;
   }
 
@@ -71,8 +90,8 @@
   }
 
   .external-platform-link--icon-only-mobile .external-platform-icon {
-    width: 1.1rem;
-    height: 1.1rem;
-    flex-basis: 1.1rem;
+    width: 1.35rem;
+    height: 1.35rem;
+    flex-basis: 1.35rem;
   }
 }
