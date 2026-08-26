@@ -1,7 +1,7 @@
 :root {
   --k2040-icon-size: 1.5rem;
   --k2040-frame-color: rgba(0, 207, 215, .54);
-  --k2040-frame-inner: rgba(0, 183, 193, .24);
+  --k2040-frame-inner: rgba(0, 207, 215, .52);
   --k2040-frame-glow: rgba(0, 210, 220, .08);
 }
 
@@ -65,7 +65,7 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
   background-size: contain;
 }
 
-/* Canonical frame. Borders provide the visible geometry; inset shadows add depth. */
+/* Canonical frame. This file owns shared panel geometry at every breakpoint. */
 .hero,
 .content-section,
 .detail-card,
@@ -175,6 +175,38 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
 }
 
 @media (max-width: 760px) {
+  .hero,
+  .content-section,
+  .detail-card,
+  .app-promo-card,
+  .esca-promo-section,
+  .geo-promo-section,
+  .update-card,
+  .project-card,
+  .project-detail-hero,
+  .featured-game-art-placeholder,
+  .screenshot-card,
+  .screenshot-grid figure,
+  .site-footer {
+    clip-path: polygon(0 10px, 10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+
+  .hero::before,
+  .content-section::before,
+  .detail-card::before,
+  .app-promo-card::before,
+  .esca-promo-section::before,
+  .geo-promo-section::before,
+  .update-card::before,
+  .project-card::before,
+  .project-detail-hero::before,
+  .featured-game-art-placeholder::before,
+  .screenshot-card::before,
+  .screenshot-grid figure::before,
+  .site-footer::before {
+    inset: 5px;
+  }
+
   .site-footer {
     padding: 1rem;
   }
