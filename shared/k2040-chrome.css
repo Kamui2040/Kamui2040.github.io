@@ -1,0 +1,140 @@
+:root {
+  --k2040-icon-size: 1.5rem;
+  --k2040-frame-color: rgba(0, 207, 215, .54);
+  --k2040-frame-inner: rgba(0, 183, 193, .24);
+  --k2040-frame-glow: rgba(0, 210, 220, .08);
+}
+
+/* Shared site-family identity. Only the explicit site-home control receives a site icon. */
+.global-menu > summary::before,
+[data-k2040-site-home]::before {
+  width: var(--k2040-icon-size);
+  height: var(--k2040-icon-size);
+  flex: 0 0 var(--k2040-icon-size);
+  content: "";
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.global-menu > summary::before {
+  background-image: url("/assets/icons/k2040-home.webp");
+}
+
+body[data-k2040-site="main"] [data-k2040-site-home]::before {
+  background-image: url("/assets/icons/k2040-home.webp");
+}
+
+body[data-k2040-site="android"] [data-k2040-site-home]::before {
+  background-image: url("/assets/icons/k2040-android.webp?v=20260826outline1");
+}
+
+body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
+  background-image: url("/assets/icons/k2040-gaming.webp?v=20260826outline1");
+}
+
+.k2040-icon,
+.site-family-icon,
+.external-platform-icon,
+.external-platform-icon--monogram,
+.brand-icon,
+.brand-icon svg {
+  width: var(--k2040-icon-size);
+  height: var(--k2040-icon-size);
+  flex: 0 0 var(--k2040-icon-size);
+}
+
+.k2040-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain;
+}
+
+.k2040-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* One frame implementation for shared K2040 panels. */
+.content-section,
+.detail-card,
+.app-promo-card,
+.update-card,
+.project-card,
+.project-detail-hero,
+.featured-game-art-placeholder,
+.screenshot-card,
+.screenshot-grid figure,
+.site-footer {
+  position: relative;
+  border: 1px solid var(--k2040-frame-color);
+  box-shadow:
+    0 0 0 1px rgba(0, 130, 143, .32),
+    0 0 22px var(--k2040-frame-glow),
+    inset 0 0 30px rgba(0, 209, 219, .035),
+    0 20px 44px rgba(0, 0, 0, .24);
+  clip-path: polygon(0 14px, 14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px));
+}
+
+.content-section::after,
+.detail-card::after,
+.app-promo-card::after,
+.update-card::after,
+.project-card::after,
+.project-detail-hero::after,
+.featured-game-art-placeholder::after,
+.screenshot-card::after,
+.screenshot-grid figure::after,
+.site-footer::after {
+  position: absolute;
+  z-index: 3;
+  inset: 7px;
+  pointer-events: none;
+  content: "";
+  border: 1px solid var(--k2040-frame-inner);
+  background:
+    linear-gradient(90deg, #00d9e5, transparent) 0 0 / 3.5rem 1px no-repeat,
+    linear-gradient(180deg, #00d9e5, transparent) 0 0 / 1px 3.5rem no-repeat,
+    linear-gradient(-90deg, #00d9e5, transparent) 100% 100% / 3.5rem 1px no-repeat,
+    linear-gradient(0deg, #00d9e5, transparent) 100% 100% / 1px 3.5rem no-repeat;
+  clip-path: polygon(0 8px, 8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+/* Canonical buttons-only footer used by every site and child page. */
+.site-footer {
+  margin-top: 1.5rem;
+  padding: 1.4rem;
+  background: var(--surface, #10171f);
+  color: var(--muted, #aeb9c3);
+  text-align: left;
+}
+
+.site-footer .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: .65rem;
+  margin: 0;
+}
+
+.site-footer .footer-links a {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .55rem .85rem;
+}
+
+.site-footer .footer-links a:hover,
+.site-footer .footer-links a:focus-visible {
+  transform: none;
+}
+
+@media (max-width: 760px) {
+  .site-footer {
+    padding: 1rem;
+  }
+}

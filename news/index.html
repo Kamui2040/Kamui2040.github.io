@@ -9,9 +9,10 @@
   <script src="../translations.js?v=20260814"></script>
   <script src="../content.js?v=20260826feeds1"></script>
   <script src="../site.js?v=20260814b"></script>
-  <script src="../shared-navigation.js?v=20260826icons3"></script>
   <script src="../home-site.js?v=20260826feeds1"></script>
-  <script defer src="../final-visual-fixes.js?v=20260826a"></script>
+  <script defer src="../external-link-icons.js?v=20260825a"></script>
+  <script defer src="../news-store-links.js?v=20260825news1"></script>
+  <script defer src="../shared/k2040-chrome.js?v=20260826source1"></script>
   <link rel="stylesheet" href="../styles.css?v=20260824exact1">
   <link rel="stylesheet" href="../navigation.css?v=20260824exact1">
   <link rel="stylesheet" href="../responsive.css?v=20260824exact1">
@@ -19,9 +20,11 @@
   <link rel="stylesheet" href="../home-redesign.css?v=20260824buttons1">
   <link rel="stylesheet" href="../home-feed.css?v=20260826feeds1">
   <link rel="stylesheet" href="../shared-ui.css?v=20260824exact1">
-  <link rel="stylesheet" href="../final-visual-fixes.css?v=20260826a">
+  <link rel="stylesheet" href="../external-link-icons.css?v=20260826icons5">
+  <link rel="stylesheet" href="../news-store-links.css?v=20260825news1">
+  <link rel="stylesheet" href="../shared/k2040-chrome.css?v=20260826source1">
 </head>
-<body class="news-page">
+<body class="news-page" data-k2040-site="main">
   <div class="page-shell">
     <header class="site-header">
       <div class="site-brand">
@@ -33,7 +36,7 @@
             <details class="global-menu-item" data-global-menu-item><summary><span data-home-i18n="gaming">Gaming Mods</span><span class="global-menu-item-arrow" aria-hidden="true">›</span></summary><nav class="global-menu-submenu" aria-label="Gaming Mods"><a href="/K2040-Gaming-Mods/" data-home-i18n="modsHome">Mods Home</a><a href="/K2040-Gaming-Mods/#projects" data-home-i18n="modProjects">Mod Projects</a><a href="/K2040-Gaming-Mods/#updates" data-home-i18n="updates">Updates</a><a href="/K2040-Gaming-Mods/#about" data-home-i18n="about">About</a></nav></details>
           </div>
         </details>
-        <a class="site-brand-section" href="/"><span>Home</span></a>
+        <a class="site-brand-section" data-k2040-site-home href="/"><span>Home</span></a>
       </div>
       <nav class="site-nav" aria-label="K2040 projects">
         <a class="nav-link" href="/#projects" data-home-i18n="projectAreas">Project Areas</a>
@@ -49,9 +52,10 @@
       <section class="content-section"><div class="update-list" data-update-list></div></section>
       <section class="content-section about-section">
         <div class="section-heading"><p class="eyebrow">K2040 Projects</p><h2 data-home-i18n="about">About</h2><p data-i18n="about.body">I build Android apps, game mods, and development tools with a focus on practical improvements, clear documentation, and accessible design.</p></div>
-        <nav class="about-links" aria-label="K2040 links"><a class="text-link" href="/" data-home-i18n="home">Home</a><a class="text-link" href="/K2040-Android-Releases/" data-home-i18n="android">Android Projects</a><a class="text-link" href="/K2040-Gaming-Mods/" data-home-i18n="gaming">Gaming Mods</a><a class="text-link" href="https://github.com/Kamui2040">GitHub</a><a class="text-link" href="https://next.nexusmods.com/profile/kamui2040">Nexus Mods</a><a class="text-link" href="https://ko-fi.com/k2040">Ko-fi</a><a class="text-link" href="https://www.instagram.com/k2040.projects/">Instagram</a></nav>
       </section>
     </main>
+
+    <footer data-k2040-footer></footer>
 
     <template id="update-card-template"><article class="update-card"><div class="update-meta"><time data-update-date></time><span data-update-category></span></div><h3 data-update-title></h3><p data-update-summary></p><a class="text-link" data-update-link></a></article></template>
   </div>
