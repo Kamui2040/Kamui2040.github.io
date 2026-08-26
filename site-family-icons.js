@@ -3,8 +3,8 @@
 
   const ICONS = {
     home: "/assets/icons/k2040-home.webp",
-    android: "/assets/icons/k2040-android.webp",
-    gaming: "/assets/icons/k2040-gaming.webp"
+    android: "/assets/icons/k2040-android.webp?v=20260826outline1",
+    gaming: "/assets/icons/k2040-gaming.webp?v=20260826outline1"
   };
 
   const targetFor = (link) => {
