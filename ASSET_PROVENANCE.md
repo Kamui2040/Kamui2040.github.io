@@ -8,8 +8,9 @@
 
 ## K2040 site-family icons
 
-- `assets/icons/k2040-android.webp`, `assets/icons/k2040-gaming.webp`, and `assets/icons/k2040-nexus.webp` are original generated artwork commissioned and approved by K2040 on 2026-08-25 for the shared website navigation and link system.
-- The approved source artwork was reduced to 128 × 128 lossless WebP for small-screen use; no new visual content was introduced during resizing.
+- `assets/icons/k2040-android.webp`, `assets/icons/k2040-gaming.webp`, and `assets/icons/k2040-nexus.webp` are original generated artwork commissioned and approved by K2040 on 2026-08-26 for the shared website navigation and link system.
+- The current versions use simple transparent outline artwork with no built-in button frame or background so the visible symbols remain readable at the shared icon size.
+- The approved artwork was normalized to 128 × 128 transparent WebP for small-screen use.
 - The Nexus destination icon is an original tornado/vortex symbol. It does not reproduce the official Nexus Mods logo and is used only as a visual destination cue.
 - Nexus Mods names and trademarks remain the property of their respective owner.
 
