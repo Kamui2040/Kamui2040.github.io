@@ -45,16 +45,24 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
 }
 
 .k2040-icon {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  object-fit: contain;
+  color: currentColor;
 }
 
 .k2040-icon svg {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.k2040-icon--main,
+.k2040-icon--gaming {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 /* One frame implementation for shared K2040 panels. */
@@ -69,8 +77,7 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
 .project-detail-hero,
 .featured-game-art-placeholder,
 .screenshot-card,
-.screenshot-grid figure,
-.site-footer {
+.screenshot-grid figure {
   position: relative;
   border: 1px solid var(--k2040-frame-color);
   box-shadow:
@@ -92,8 +99,7 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
 .project-detail-hero::after,
 .featured-game-art-placeholder::after,
 .screenshot-card::after,
-.screenshot-grid figure::after,
-.site-footer::after {
+.screenshot-grid figure::after {
   position: absolute;
   z-index: 3;
   inset: 7px;
@@ -113,16 +119,42 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
   display: none;
 }
 
-/* Canonical buttons-only footer used by every site and child page. */
+/* Canonical buttons-only footer. It owns its DOM, icons, buttons, and complete frame. */
 .site-footer {
+  position: relative;
+  isolation: isolate;
   margin-top: 1.5rem;
   padding: 1.4rem;
+  border: 1px solid var(--k2040-frame-color);
   background: var(--surface, #10171f);
   color: var(--muted, #aeb9c3);
+  box-shadow:
+    0 0 0 1px rgba(0, 130, 143, .32),
+    0 0 22px var(--k2040-frame-glow),
+    inset 0 0 30px rgba(0, 209, 219, .035),
+    0 20px 44px rgba(0, 0, 0, .24);
   text-align: left;
+  clip-path: polygon(0 14px, 14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px));
 }
 
-.site-footer .footer-links {
+.site-footer::after {
+  position: absolute;
+  z-index: 3;
+  inset: 7px;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(90deg, #00d9e5, transparent) 0 0 / 3.5rem 1px no-repeat,
+    linear-gradient(180deg, #00d9e5, transparent) 0 0 / 1px 3.5rem no-repeat,
+    linear-gradient(-90deg, #00d9e5, transparent) 100% 100% / 3.5rem 1px no-repeat,
+    linear-gradient(0deg, #00d9e5, transparent) 100% 100% / 1px 3.5rem no-repeat;
+  box-shadow: inset 0 0 0 1px var(--k2040-frame-inner);
+  clip-path: polygon(0 8px, 8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+.k2040-footer-links {
+  position: relative;
+  z-index: 4;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -130,22 +162,45 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
   margin: 0;
 }
 
-.site-footer .footer-links a {
+.k2040-footer-link {
   display: inline-flex;
   min-height: 40px;
   align-items: center;
   justify-content: center;
   gap: .5rem;
   padding: .55rem .85rem;
+  border: 1px solid rgba(0, 207, 215, .34);
+  border-bottom-color: #00d9e5;
+  border-radius: 0;
+  background: linear-gradient(180deg, rgba(0, 217, 229, .09), var(--strong, #17212a));
+  box-shadow: inset 0 -2px 0 #00d9e5, 0 0 10px rgba(0, 217, 229, .08);
+  color: var(--accentText, #a3d8f5);
+  font-weight: 750;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  clip-path: polygon(0 8px, 8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px));
+  transition: background 140ms ease, border-color 140ms ease, box-shadow 140ms ease, color 140ms ease;
 }
 
-.site-footer .footer-links a:hover,
-.site-footer .footer-links a:focus-visible {
-  transform: none;
+.k2040-footer-link:hover,
+.k2040-footer-link:focus-visible {
+  border-color: rgba(0, 240, 242, .58);
+  border-bottom-color: #00f0f2;
+  background: linear-gradient(180deg, rgba(0, 217, 229, .16), var(--surface, #10171f));
+  box-shadow: inset 0 -2px 0 #00f0f2, 0 0 13px rgba(0, 217, 229, .18);
+  color: var(--text, #edf1f5);
+  outline: none;
 }
 
 @media (max-width: 760px) {
   .site-footer {
     padding: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .k2040-footer-link {
+    transition: none;
   }
 }
