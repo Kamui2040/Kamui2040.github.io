@@ -77,21 +77,22 @@
     footer.classList.add("site-footer");
     const language = currentLanguage();
     const labels = FOOTER_LABELS[language] || FOOTER_LABELS.en;
-    const nav = document.createElement("nav");
-    nav.className = "footer-links";
-    nav.setAttribute("aria-label", "K2040 links");
+    const links = document.createElement("div");
+    links.className = "footer-links";
+    links.setAttribute("role", "navigation");
+    links.setAttribute("aria-label", "K2040 links");
 
     FOOTER_ITEMS.forEach((item) => {
       const link = document.createElement("a");
-      link.className = "text-link";
+      link.className = "k2040-footer-link";
       link.href = item.href;
       link.dataset.footerKey = item.key;
       link.append(createIcon(item.icon));
       link.append(document.createTextNode(item.label || labels[item.key] || item.key));
-      nav.append(link);
+      links.append(link);
     });
 
-    footer.replaceChildren(nav);
+    footer.replaceChildren(links);
   };
 
   const initGlobalMenu = (menu) => {
