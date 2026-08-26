@@ -58,9 +58,12 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
 }
 
 /* One frame implementation for shared K2040 panels. */
+.hero,
 .content-section,
 .detail-card,
 .app-promo-card,
+.esca-promo-section,
+.geo-promo-section,
 .update-card,
 .project-card,
 .project-detail-hero,
@@ -78,9 +81,12 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
   clip-path: polygon(0 14px, 14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px));
 }
 
+.hero::after,
 .content-section::after,
 .detail-card::after,
 .app-promo-card::after,
+.esca-promo-section::after,
+.geo-promo-section::after,
 .update-card::after,
 .project-card::after,
 .project-detail-hero::after,
@@ -100,6 +106,11 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
     linear-gradient(-90deg, #00d9e5, transparent) 100% 100% / 3.5rem 1px no-repeat,
     linear-gradient(0deg, #00d9e5, transparent) 100% 100% / 1px 3.5rem no-repeat;
   clip-path: polygon(0 8px, 8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+/* About sections carry description only; destinations live in the canonical footer. */
+.about-section .about-links {
+  display: none;
 }
 
 /* Canonical buttons-only footer used by every site and child page. */
