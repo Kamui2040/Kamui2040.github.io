@@ -4,9 +4,7 @@
   const ROOT = "https://kamui2040.github.io";
   const SITE_ICONS = {
     main: `${ROOT}/assets/icons/k2040-home.webp`,
-    android: `${ROOT}/assets/icons/k2040-android.webp?v=20260826outline1`,
-    gaming: `${ROOT}/assets/icons/k2040-gaming.webp?v=20260826outline1`,
-    nexus: `${ROOT}/assets/icons/k2040-nexus.webp?v=20260826outline2`
+    gaming: `${ROOT}/assets/icons/k2040-gaming.webp?v=20260826outline1`
   };
 
   const SVG_PATHS = {
@@ -44,13 +42,18 @@
 
   const currentLanguage = () => normalizeLanguage(document.documentElement.lang || navigator.language);
 
-  const createSvgIcon = (key) => {
-    const icon = document.createElement("span");
-    icon.className = `k2040-icon k2040-icon--${key}`;
-    icon.setAttribute("aria-hidden", "true");
+  const makeSvg = () => {
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("viewBox", "0 0 24 24");
     svg.setAttribute("focusable", "false");
+    return svg;
+  };
+
+  const createPathIcon = (key) => {
+    const icon = document.createElement("span");
+    icon.className = `k2040-icon k2040-icon--${key}`;
+    icon.setAttribute("aria-hidden", "true");
+    const svg = makeSvg();
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     path.setAttribute("fill", "currentColor");
     path.setAttribute("d", SVG_PATHS[key]);
@@ -59,26 +62,79 @@
     return icon;
   };
 
-  const createImageIcon = (key) => {
-    const image = document.createElement("img");
-    image.className = `k2040-icon k2040-icon--${key}`;
-    image.src = SITE_ICONS[key];
-    image.alt = "";
-    image.setAttribute("aria-hidden", "true");
-    image.decoding = "async";
-    return image;
+  const createStrokeIcon = (key) => {
+    const icon = document.createElement("span");
+    icon.className = `k2040-icon k2040-icon--${key}`;
+    icon.setAttribute("aria-hidden", "true");
+    const svg = makeSvg();
+    svg.setAttribute("fill", "none");
+    svg.setAttribute("stroke", "currentColor");
+    svg.setAttribute("stroke-width", "1.8");
+    svg.setAttribute("stroke-linecap", "round");
+    svg.setAttribute("stroke-linejoin", "round");
+
+    if (key === "android") {
+      const phone = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+      phone.setAttribute("x", "6.5");
+      phone.setAttribute("y", "2.5");
+      phone.setAttribute("width", "11");
+      phone.setAttribute("height", "19");
+      phone.setAttribute("rx", "2.2");
+      const speaker = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      speaker.setAttribute("d", "M10 5h4M10.5 18.7h3");
+      svg.append(phone, speaker);
+    } else {
+      [
+        "M4 7.5c2-2.5 5.1-3.8 8.4-3.4 3 .3 5.7 1.8 7.4 4.2",
+        "M5.4 11.4c1.6-1.8 3.9-2.7 6.4-2.5 2.2.2 4.2 1.2 5.5 2.8",
+        "M7.4 15.2c1.2-.8 2.7-1.1 4.1-.8 1.2.2 2.3.8 3.1 1.6",
+        "M10.1 18.7h3.8"
+      ].forEach((d) => {
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("d", d);
+        svg.append(path);
+      });
+    }
+
+    icon.append(svg);
+    return icon;
   };
 
-  const createIcon = (key) => SVG_PATHS[key] ? createSvgIcon(key) : createImageIcon(key);
+  const createImageIcon = (key) => {
+    const icon = document.createElement("span");
+    icon.className = `k2040-icon k2040-icon--${key}`;
+    icon.setAttribute("aria-hidden", "true");
+    icon.style.backgroundImage = `url("${SITE_ICONS[key]}")`;
+    return icon;
+  };
+
+  const createIcon = (key) => {
+    if (key === "android" || key === "nexus") return createStrokeIcon(key);
+    if (SVG_PATHS[key]) return createPathIcon(key);
+    return createImageIcon(key);
+  };
+
+  const footerRoot = () => {
+    const placeholder = document.querySelector("[data-k2040-footer]");
+    if (!placeholder) return null;
+    if (placeholder.dataset.k2040FooterRoot === "true") return placeholder;
+
+    const root = document.createElement("div");
+    root.className = "site-footer";
+    root.setAttribute("data-k2040-footer", "");
+    root.dataset.k2040FooterRoot = "true";
+    root.setAttribute("role", "contentinfo");
+    placeholder.replaceWith(root);
+    return root;
+  };
 
   const renderFooter = () => {
-    const footer = document.querySelector("[data-k2040-footer]");
+    const footer = footerRoot();
     if (!footer) return;
-    footer.classList.add("site-footer");
     const language = currentLanguage();
     const labels = FOOTER_LABELS[language] || FOOTER_LABELS.en;
     const links = document.createElement("div");
-    links.className = "footer-links";
+    links.className = "k2040-footer-links";
     links.setAttribute("role", "navigation");
     links.setAttribute("aria-label", "K2040 links");
 
