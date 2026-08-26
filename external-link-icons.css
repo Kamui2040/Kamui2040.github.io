@@ -36,6 +36,14 @@
   clip-path: none;
 }
 
+/* Official Uptodown App Store icon, displayed unchanged from Uptodown's CDN. */
+.external-platform-icon--uptodown.external-platform-icon--monogram {
+  border: 0;
+  background: transparent url("https://img.utdstc.com/icon/f66/dd0/f66dd06c25088f96b64eb440bcc90a2994cc645680cb27840b30fbf996902804") center / contain no-repeat;
+  font-size: 0;
+  clip-path: none;
+}
+
 .external-platform-label {
   min-width: 0;
 }

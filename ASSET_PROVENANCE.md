@@ -13,6 +13,14 @@
 - The Nexus destination icon is an original tornado/vortex symbol. It does not reproduce the official Nexus Mods logo and is used only as a visual destination cue.
 - Nexus Mods names and trademarks remain the property of their respective owner.
 
+## Uptodown destination icon
+
+- Source: official Uptodown App Store icon served by Uptodown at `https://img.utdstc.com/icon/f66/dd0/f66dd06c25088f96b64eb440bcc90a2994cc645680cb27840b30fbf996902804`.
+- Brand resources: https://en.uptodown.com/about-us/brand-assets
+- Use here: displayed unchanged as the destination icon for Uptodown links.
+- Changes: none to the icon artwork; CSS only controls its displayed size and position.
+- Uptodown's name, icon, logo, and trademarks remain the property of Uptodown.
+
 ## OpenAPK destination icon
 
 - Source: `public/openapk-blank.svg` from `mobilenetworkltd/openapk`.
