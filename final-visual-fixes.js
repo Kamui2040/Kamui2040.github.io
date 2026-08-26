@@ -3,19 +3,39 @@
 
   const ICONS = {
     home: "/assets/icons/k2040-home.webp",
-    android: "/assets/icons/k2040-android.webp?v=20260826outline2",
-    gaming: "/assets/icons/k2040-gaming.webp?v=20260826outline2"
+    android: "/assets/icons/k2040-android.webp?v=20260826outline1",
+    gaming: "/assets/icons/k2040-gaming.webp?v=20260826outline1"
+  };
+
+  const labels = {
+    en: { home: "Home", android: "Android Projects", gaming: "Gaming Mods" },
+    de: { home: "Home", android: "Android-Projekte", gaming: "Gaming Mods" },
+    "pt-PT": { home: "Início", android: "Projetos Android", gaming: "Gaming Mods" },
+    es: { home: "Inicio", android: "Proyectos Android", gaming: "Gaming Mods" },
+    fr: { home: "Accueil", android: "Projets Android", gaming: "Gaming Mods" }
   };
 
   const footerLinks = [
-    ["/", "Home"],
-    ["/K2040-Android-Releases/", "Android Projects"],
-    ["/K2040-Gaming-Mods/", "Gaming Mods"],
-    ["https://github.com/Kamui2040", "GitHub"],
-    ["https://next.nexusmods.com/profile/kamui2040", "Nexus Mods"],
-    ["https://ko-fi.com/k2040", "Ko-fi"],
-    ["https://www.instagram.com/k2040.projects/", "Instagram"]
+    { key: "home", href: "/" },
+    { key: "android", href: "/K2040-Android-Releases/" },
+    { key: "gaming", href: "/K2040-Gaming-Mods/" },
+    { key: "github", href: "https://github.com/Kamui2040", label: "GitHub" },
+    { key: "nexus", href: "https://next.nexusmods.com/profile/kamui2040", label: "Nexus Mods" },
+    { key: "kofi", href: "https://ko-fi.com/k2040", label: "Ko-fi" },
+    { key: "instagram", href: "https://www.instagram.com/k2040.projects/", label: "Instagram" }
   ];
+
+  const normalizeLanguage = (value) => {
+    const language = (value || "").toLowerCase();
+    if (language.startsWith("de")) return "de";
+    if (language.startsWith("pt")) return "pt-PT";
+    if (language.startsWith("es")) return "es";
+    if (language.startsWith("fr")) return "fr";
+    return "en";
+  };
+
+  const language = () => normalizeLanguage(document.documentElement.lang || navigator.language);
+  const labelFor = (item) => item.label || (labels[language()] || labels.en)[item.key] || item.key;
 
   const familyFor = (link) => {
     let url;
@@ -33,14 +53,15 @@
     let icon = link.querySelector(":scope > .site-family-icon");
     if (!icon) {
       icon = document.createElement("img");
-      icon.className = `site-family-icon site-family-icon--${family}`;
       icon.alt = "";
       icon.setAttribute("aria-hidden", "true");
       link.prepend(icon);
     }
+    icon.className = `site-family-icon site-family-icon--${family}`;
     icon.src = ICONS[family];
     icon.decoding = "async";
     link.classList.add("site-family-link");
+    link.dataset.siteFamilyIcon = "done";
   };
 
   const ensureNexusIcon = (link) => {
@@ -65,19 +86,21 @@
     link.dataset.externalPlatform = "nexus";
   };
 
+  const decorateLink = (link) => {
+    if (!(link instanceof HTMLAnchorElement)) return;
+    ensureFamilyIcon(link);
+    ensureNexusIcon(link);
+  };
+
   const decorateLinks = (root = document) => {
-    root.querySelectorAll?.("a[href]").forEach((link) => {
-      ensureFamilyIcon(link);
-      ensureNexusIcon(link);
-    });
+    if (root instanceof HTMLAnchorElement) decorateLink(root);
+    root.querySelectorAll?.("a[href]").forEach(decorateLink);
   };
 
   const ensureFooter = () => {
-    document.querySelectorAll(".about-section .about-links").forEach((links) => links.remove());
-
     const shell = document.querySelector(".page-shell");
     const main = shell?.querySelector("main");
-    if (!shell || !main) return;
+    if (!shell || !main) return null;
 
     let footer = shell.querySelector(":scope > .site-footer");
     if (!footer) {
@@ -86,35 +109,60 @@
       main.after(footer);
     }
 
-    const nav = document.createElement("nav");
-    nav.className = "footer-links";
-    nav.setAttribute("aria-label", "K2040 links");
-    footerLinks.forEach(([href, label]) => {
-      const link = document.createElement("a");
-      link.className = "text-link";
-      link.href = href;
-      link.textContent = label;
-      nav.append(link);
+    let nav = footer.querySelector(":scope > .footer-links");
+    if (!nav) {
+      nav = document.createElement("nav");
+      nav.className = "footer-links";
+      nav.setAttribute("aria-label", "K2040 links");
+      footer.replaceChildren(nav);
+    }
+
+    footerLinks.forEach((item) => {
+      let link = nav.querySelector(`:scope > a[data-footer-key="${item.key}"]`);
+      if (!link) {
+        link = document.createElement("a");
+        link.className = "text-link";
+        link.dataset.footerKey = item.key;
+        nav.append(link);
+      }
+      link.href = item.href;
+      const label = link.querySelector(":scope > .external-platform-label");
+      if (label) label.textContent = labelFor(item);
+      else {
+        const icon = link.querySelector(":scope > .site-family-icon, :scope > .external-platform-icon");
+        if (icon) {
+          [...link.childNodes].filter((node) => node !== icon).forEach((node) => node.remove());
+          link.append(document.createTextNode(labelFor(item)));
+        } else link.textContent = labelFor(item);
+      }
+      decorateLink(link);
     });
-    footer.replaceChildren(nav);
-    decorateLinks(footer);
+
+    [...nav.querySelectorAll(":scope > a[data-footer-key]")].forEach((link) => {
+      if (!footerLinks.some((item) => item.key === link.dataset.footerKey)) link.remove();
+    });
+
+    return footer;
   };
 
-  let queued = false;
-  const refresh = () => {
-    queued = false;
-    ensureFooter();
-    decorateLinks();
-  };
-  const schedule = () => {
-    if (queued) return;
-    queued = true;
-    requestAnimationFrame(refresh);
+  const refreshFooter = () => {
+    const footer = ensureFooter();
+    if (footer) decorateLinks(footer);
   };
 
   const init = () => {
-    refresh();
-    new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true });
+    refreshFooter();
+    decorateLinks();
+
+    new MutationObserver((records) => {
+      records.forEach((record) => record.addedNodes.forEach((node) => {
+        if (node.nodeType === Node.ELEMENT_NODE) decorateLinks(node);
+      }));
+    }).observe(document.body, { childList: true, subtree: true });
+
+    document.querySelectorAll("[data-language-select]").forEach((select) => {
+      select.addEventListener("change", () => requestAnimationFrame(refreshFooter));
+    });
   };
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init, { once: true });
