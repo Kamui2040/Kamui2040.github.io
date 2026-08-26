@@ -65,7 +65,7 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
   background-size: contain;
 }
 
-/* Canonical frame. Shared panels and the footer use this one implementation only. */
+/* Canonical frame. Borders provide the visible geometry; inset shadows add depth. */
 .hero,
 .content-section,
 .detail-card,
@@ -81,9 +81,10 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
 .site-footer {
   position: relative;
   isolation: isolate;
-  border: 0;
+  border: 1px solid var(--k2040-frame-color);
   box-shadow:
     inset 0 0 0 1px var(--k2040-frame-color),
+    0 0 0 1px rgba(0, 130, 143, .32),
     0 0 22px var(--k2040-frame-glow),
     inset 0 0 30px rgba(0, 209, 219, .035),
     0 20px 44px rgba(0, 0, 0, .24);
@@ -106,10 +107,10 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
   position: absolute;
   z-index: 3;
   inset: 7px;
+  box-sizing: border-box;
   pointer-events: none;
   content: "";
-  border: 0;
-  box-shadow: inset 0 0 0 1px var(--k2040-frame-inner);
+  border: 1px solid var(--k2040-frame-inner);
   background:
     linear-gradient(90deg, #00d9e5, transparent) 0 0 / 3.5rem 1px no-repeat,
     linear-gradient(180deg, #00d9e5, transparent) 0 0 / 1px 3.5rem no-repeat,
