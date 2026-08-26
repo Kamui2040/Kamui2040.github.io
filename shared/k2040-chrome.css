@@ -110,7 +110,8 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
   box-sizing: border-box;
   pointer-events: none;
   content: "";
-  border: 1px solid var(--k2040-frame-inner);
+  border: 0;
+  box-shadow: inset 0 0 0 1px var(--k2040-frame-inner);
   background:
     linear-gradient(90deg, #00d9e5, transparent) 0 0 / 3.5rem 1px no-repeat,
     linear-gradient(180deg, #00d9e5, transparent) 0 0 / 1px 3.5rem no-repeat,
