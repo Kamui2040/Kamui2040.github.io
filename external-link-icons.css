@@ -7,7 +7,7 @@
   display: inline-flex;
   width: 1.1rem;
   height: 1.1rem;
-  flex: 0 0 auto;
+  flex: 0 0 1.1rem;
   align-items: center;
   justify-content: center;
   color: currentColor;
@@ -20,8 +20,8 @@
 }
 
 .external-platform-icon--monogram {
-  width: 1.12rem;
-  height: 1.12rem;
+  width: 1.1rem;
+  height: 1.1rem;
   border: 1px solid currentColor;
   font-size: .68rem;
   font-weight: 900;
@@ -71,7 +71,8 @@
   }
 
   .external-platform-link--icon-only-mobile .external-platform-icon {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.1rem;
+    height: 1.1rem;
+    flex-basis: 1.1rem;
   }
 }

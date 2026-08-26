@@ -1,0 +1,32 @@
+/* Main-only presentation for data relayed from the canonical Android and Gaming update feeds. */
+.project-latest {
+  display: grid;
+  gap: .22rem;
+  margin-top: 1rem;
+  padding-top: .85rem;
+  border-top: 1px solid rgba(0, 207, 215, .2);
+}
+
+.project-latest-label {
+  color: var(--accentText);
+  font-size: .7rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.project-latest strong {
+  color: var(--text);
+  font-size: .94rem;
+  line-height: 1.32;
+}
+
+.project-latest time {
+  color: var(--muted);
+  font-size: .76rem;
+}
+
+/* Main update/news surfaces deliberately stay text-only for readability. */
+:is(.projects-home-page, .news-page) .update-card {
+  grid-template-columns: 1fr;
+}
