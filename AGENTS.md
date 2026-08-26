@@ -14,7 +14,9 @@ Keep `main` stable and use focused branches and pull requests for normal changes
 
 Only publish information that is already verified and public. Official project and release pages remain authoritative for downloads and versions; do not duplicate mutable release truth unnecessarily.
 
-The landing-site News section consumes the canonical public update feeds from the Android and Gaming sites. Keep site-specific release and project updates in those source feeds instead of copying the same mutable facts into this repository. Once a confirmed update is added to the appropriate source feed, the landing site should relay it automatically.
+The Main site consumes the canonical public update feeds from the Android and Gaming sites. Keep site-specific release and project updates in those source feeds instead of copying the same mutable facts into this repository. Once a confirmed update is added to the appropriate source feed, the Main site should relay it automatically.
+
+The Main homepage News block combines both source feeds, sorts newest first, and shows the latest five entries. Main update/news presentation remains text-only for readability. Project-area cards may show a compact latest-update summary derived from the same feeds, without copying update records into this repository.
 
 Keep supported languages, themes, navigation, links, and the shared K2040 visual system consistent when they are affected by a change.
 
