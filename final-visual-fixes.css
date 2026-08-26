@@ -85,18 +85,13 @@
 
 .site-family-icon {
   object-fit: contain;
+  transform: none !important;
   clip-path: none !important;
-}
-
-.site-family-icon--android,
-.site-family-icon--gaming {
-  transform: scale(1.18) !important;
-  transform-origin: center;
 }
 
 .external-platform-icon--nexus.external-platform-icon--monogram {
   border: 0 !important;
-  background: transparent url("/assets/icons/k2040-nexus.webp?v=20260826outline2") center / 118% no-repeat !important;
+  background: transparent url("/assets/icons/k2040-nexus.webp?v=20260826outline2") center / contain no-repeat !important;
   font-size: 0 !important;
   clip-path: none !important;
 }
