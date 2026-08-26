@@ -20,13 +20,13 @@
       document.head.append(script);
     };
 
-    loadStyle("external-platform-icons", "external-link-icons.css?v=20260826icons4");
+    loadStyle("external-platform-icons", "external-link-icons.css?v=20260826icons5");
     loadStyle("k2040-brand-menu", "brand-menu-icon.css?v=20260825brand1");
     loadStyle("news-store-links", "news-store-links.css?v=20260825news1");
-    loadStyle("site-family-icons", "site-family-icons.css?v=20260826family4");
+    loadStyle("site-family-icons", "site-family-icons.css?v=20260826family5");
     loadScript("external-platform-icons", "external-link-icons.js?v=20260825a");
     loadScript("news-store-links", "news-store-links.js?v=20260825news1");
-    loadScript("site-family-icons", "site-family-icons.js?v=20260825family1");
+    loadScript("site-family-icons", "site-family-icons.js?v=20260826outline1");
   }
 
   const globalLabels = {

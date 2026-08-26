@@ -33,13 +33,11 @@
   clip-path: polygon(0 4px,4px 0,calc(100% - 4px) 0,100% 4px,100% calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,0 calc(100% - 4px));
 }
 
-/* The custom Nexus artwork includes an outer presentation frame. Enlarge the
-   background inside the same icon box so the glyph, not that frame, defines its size. */
 .external-platform-icon--nexus.external-platform-icon--monogram {
   border: 0;
-  background: transparent url("/assets/icons/k2040-nexus.webp") center / 176% no-repeat;
+  background: transparent url("/assets/icons/k2040-nexus.webp?v=20260826outline1") center / contain no-repeat;
   font-size: 0;
-  clip-path: inset(8%);
+  clip-path: none;
 }
 
 /* Official Uptodown App Store icon, displayed unchanged from Uptodown's CDN. */

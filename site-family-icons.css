@@ -1,6 +1,5 @@
 :root {
   --k2040-icon-size: 1.5rem;
-  --k2040-framed-icon-scale: 1.72;
 }
 
 .global-menu > summary::before {
@@ -22,12 +21,4 @@
   height: var(--k2040-icon-size);
   flex: 0 0 var(--k2040-icon-size);
   object-fit: contain;
-}
-
-/* Android and Gaming artwork includes an outer presentation frame. Crop that frame
-   visually so the actual glyph uses the same 1.5rem icon box as the K2040 mark. */
-.site-family-icon--android,
-.site-family-icon--gaming {
-  transform: scale(var(--k2040-framed-icon-scale));
-  clip-path: inset(12%);
 }
