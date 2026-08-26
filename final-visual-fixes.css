@@ -2,19 +2,21 @@
   --k2040-unified-icon-size: 1.5rem;
 }
 
-/* Keep structural frames visible in the normal state, not only on hover. */
+/* Keep structural frames visible in the normal state, including clipped lower/right edges. */
 :where(.hero, .content-section, .project-detail-hero, .project-card, .update-card, .site-footer) {
+  border-color: rgba(0, 207, 215, .54) !important;
   box-shadow:
     inset 0 0 0 1px rgba(0, 207, 215, .54),
     0 0 0 1px rgba(0, 130, 143, .32),
     0 0 22px rgba(0, 210, 220, .08),
     inset 0 0 30px rgba(0, 209, 219, .035),
-    0 20px 44px rgba(0, 0, 0, .24);
+    0 20px 44px rgba(0, 0, 0, .24) !important;
 }
 
 :where(.hero, .content-section, .project-detail-hero, .project-card, .update-card, .site-footer)::before {
-  border-color: rgba(0, 207, 215, .52) !important;
-  box-shadow: inset 0 0 0 1px rgba(0, 207, 215, .12);
+  box-sizing: border-box;
+  border: 0 !important;
+  box-shadow: inset 0 0 0 1px rgba(0, 207, 215, .52) !important;
 }
 
 /* About is description-only. The shared destinations live in a separate footer. */
@@ -83,13 +85,18 @@
 
 .site-family-icon {
   object-fit: contain;
-  transform: none !important;
   clip-path: none !important;
+}
+
+.site-family-icon--android,
+.site-family-icon--gaming {
+  transform: scale(1.18) !important;
+  transform-origin: center;
 }
 
 .external-platform-icon--nexus.external-platform-icon--monogram {
   border: 0 !important;
-  background: transparent url("/assets/icons/k2040-nexus.webp?v=20260826outline2") center / contain no-repeat !important;
+  background: transparent url("/assets/icons/k2040-nexus.webp?v=20260826outline2") center / 118% no-repeat !important;
   font-size: 0 !important;
   clip-path: none !important;
 }
