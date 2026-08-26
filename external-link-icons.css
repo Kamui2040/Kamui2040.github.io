@@ -1,13 +1,17 @@
 /* Shared external platform link icons. */
+:root {
+  --k2040-icon-size: 1.5rem;
+}
+
 .external-platform-link {
   gap: .5rem;
 }
 
 .external-platform-icon {
   display: inline-flex;
-  width: 1.35rem;
-  height: 1.35rem;
-  flex: 0 0 1.35rem;
+  width: var(--k2040-icon-size);
+  height: var(--k2040-icon-size);
+  flex: 0 0 var(--k2040-icon-size);
   align-items: center;
   justify-content: center;
   color: currentColor;
@@ -20,8 +24,8 @@
 }
 
 .external-platform-icon--monogram {
-  width: 1.35rem;
-  height: 1.35rem;
+  width: var(--k2040-icon-size);
+  height: var(--k2040-icon-size);
   border: 1px solid currentColor;
   font-size: .8rem;
   font-weight: 900;
@@ -29,11 +33,13 @@
   clip-path: polygon(0 4px,4px 0,calc(100% - 4px) 0,100% 4px,100% calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,0 calc(100% - 4px));
 }
 
+/* The custom Nexus artwork includes an outer presentation frame. Enlarge the
+   background inside the same icon box so the glyph, not that frame, defines its size. */
 .external-platform-icon--nexus.external-platform-icon--monogram {
   border: 0;
-  background: transparent url("/assets/icons/k2040-nexus.webp") center / 118% no-repeat;
+  background: transparent url("/assets/icons/k2040-nexus.webp") center / 176% no-repeat;
   font-size: 0;
-  clip-path: none;
+  clip-path: inset(8%);
 }
 
 /* Official Uptodown App Store icon, displayed unchanged from Uptodown's CDN. */
@@ -90,8 +96,8 @@
   }
 
   .external-platform-link--icon-only-mobile .external-platform-icon {
-    width: 1.35rem;
-    height: 1.35rem;
-    flex-basis: 1.35rem;
+    width: var(--k2040-icon-size);
+    height: var(--k2040-icon-size);
+    flex-basis: var(--k2040-icon-size);
   }
 }
