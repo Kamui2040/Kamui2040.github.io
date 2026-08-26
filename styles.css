@@ -148,36 +148,7 @@ h3 {
   font-size: 1.05rem;
 }
 
-/* One angular panel system. */
-:where(.hero, .content-section, footer, .project-detail-hero) {
-  position: relative;
-  isolation: isolate;
-  border: 1px solid rgba(0, 207, 215, .54);
-  border-radius: 0;
-  background: var(--surface);
-  box-shadow:
-    0 0 0 1px rgba(0, 130, 143, .32),
-    0 0 22px rgba(0, 210, 220, .08),
-    inset 0 0 30px rgba(0, 209, 219, .035),
-    0 20px 44px rgba(0, 0, 0, .24);
-  clip-path: polygon(0 14px, 14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px));
-}
-
-:where(.hero, .content-section, footer, .project-detail-hero, .project-card, .update-card, .featured-game-art-placeholder, .screenshot-grid figure)::before {
-  position: absolute;
-  z-index: 3;
-  inset: 7px;
-  pointer-events: none;
-  content: "";
-  border: 1px solid rgba(0, 183, 193, .2);
-  background:
-    linear-gradient(90deg, #00d9e5, transparent) 0 0 / 3.5rem 1px no-repeat,
-    linear-gradient(180deg, #00d9e5, transparent) 0 0 / 1px 3.5rem no-repeat,
-    linear-gradient(-90deg, #00d9e5, transparent) 100% 100% / 3.5rem 1px no-repeat,
-    linear-gradient(0deg, #00d9e5, transparent) 100% 100% / 1px 3.5rem no-repeat;
-  clip-path: polygon(0 8px, 8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px));
-}
-
+/* Panel framing is owned by shared/k2040-chrome.css. */
 .content-section {
   margin-top: 1.5rem;
   padding: clamp(1.4rem, 4vw, 2.5rem);
@@ -343,28 +314,12 @@ a.project-card:focus-visible {
   transform: translateY(-1px);
 }
 
-/* Project and update cards. */
+/* Project and update cards. Frame geometry comes from the shared chrome. */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 1.5rem;
-}
-
-.project-card,
-.update-card,
-.featured-game-art-placeholder,
-.screenshot-grid figure {
-  position: relative;
-  isolation: isolate;
-  border: 1px solid rgba(0, 207, 215, .54);
-  border-radius: 0;
-  box-shadow:
-    0 0 0 1px rgba(0, 130, 143, .32),
-    0 0 22px rgba(0, 210, 220, .08),
-    inset 0 0 30px rgba(0, 209, 219, .035),
-    0 20px 44px rgba(0, 0, 0, .24);
-  clip-path: polygon(0 10px, 10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px));
 }
 
 .project-card {
@@ -911,7 +866,7 @@ a.project-card:focus-visible {
   font-size: .75rem;
 }
 
-/* Footer. */
+/* Legacy footer rules retained for old static markup only. Canonical footer is .site-footer. */
 .footer-links {
   display: flex;
   flex-wrap: wrap;
