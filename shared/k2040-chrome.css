@@ -65,7 +65,7 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
   background-size: contain;
 }
 
-/* One frame implementation for shared K2040 panels. */
+/* Canonical frame. Shared panels and the footer use this one implementation only. */
 .hero,
 .content-section,
 .detail-card,
@@ -77,35 +77,39 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
 .project-detail-hero,
 .featured-game-art-placeholder,
 .screenshot-card,
-.screenshot-grid figure {
+.screenshot-grid figure,
+.site-footer {
   position: relative;
-  border: 1px solid var(--k2040-frame-color);
+  isolation: isolate;
+  border: 0;
   box-shadow:
-    0 0 0 1px rgba(0, 130, 143, .32),
+    inset 0 0 0 1px var(--k2040-frame-color),
     0 0 22px var(--k2040-frame-glow),
     inset 0 0 30px rgba(0, 209, 219, .035),
     0 20px 44px rgba(0, 0, 0, .24);
   clip-path: polygon(0 14px, 14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px));
 }
 
-.hero::after,
-.content-section::after,
-.detail-card::after,
-.app-promo-card::after,
-.esca-promo-section::after,
-.geo-promo-section::after,
-.update-card::after,
-.project-card::after,
-.project-detail-hero::after,
-.featured-game-art-placeholder::after,
-.screenshot-card::after,
-.screenshot-grid figure::after {
+.hero::before,
+.content-section::before,
+.detail-card::before,
+.app-promo-card::before,
+.esca-promo-section::before,
+.geo-promo-section::before,
+.update-card::before,
+.project-card::before,
+.project-detail-hero::before,
+.featured-game-art-placeholder::before,
+.screenshot-card::before,
+.screenshot-grid figure::before,
+.site-footer::before {
   position: absolute;
   z-index: 3;
   inset: 7px;
   pointer-events: none;
   content: "";
-  border: 1px solid var(--k2040-frame-inner);
+  border: 0;
+  box-shadow: inset 0 0 0 1px var(--k2040-frame-inner);
   background:
     linear-gradient(90deg, #00d9e5, transparent) 0 0 / 3.5rem 1px no-repeat,
     linear-gradient(180deg, #00d9e5, transparent) 0 0 / 1px 3.5rem no-repeat,
@@ -119,37 +123,13 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
   display: none;
 }
 
-/* Canonical buttons-only footer. It owns its DOM, icons, buttons, and complete frame. */
+/* Canonical buttons-only footer. Frame styling comes from the shared frame above. */
 .site-footer {
-  position: relative;
-  isolation: isolate;
   margin-top: 1.5rem;
   padding: 1.4rem;
-  border: 1px solid var(--k2040-frame-color);
   background: var(--surface, #10171f);
   color: var(--muted, #aeb9c3);
-  box-shadow:
-    0 0 0 1px rgba(0, 130, 143, .32),
-    0 0 22px var(--k2040-frame-glow),
-    inset 0 0 30px rgba(0, 209, 219, .035),
-    0 20px 44px rgba(0, 0, 0, .24);
   text-align: left;
-  clip-path: polygon(0 14px, 14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px));
-}
-
-.site-footer::after {
-  position: absolute;
-  z-index: 3;
-  inset: 7px;
-  pointer-events: none;
-  content: "";
-  background:
-    linear-gradient(90deg, #00d9e5, transparent) 0 0 / 3.5rem 1px no-repeat,
-    linear-gradient(180deg, #00d9e5, transparent) 0 0 / 1px 3.5rem no-repeat,
-    linear-gradient(-90deg, #00d9e5, transparent) 100% 100% / 3.5rem 1px no-repeat,
-    linear-gradient(0deg, #00d9e5, transparent) 100% 100% / 1px 3.5rem no-repeat;
-  box-shadow: inset 0 0 0 1px var(--k2040-frame-inner);
-  clip-path: polygon(0 8px, 8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px));
 }
 
 .k2040-footer-links {
