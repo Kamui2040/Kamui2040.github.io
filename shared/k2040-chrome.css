@@ -89,8 +89,8 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
   clip-path: polygon(0 14px, 14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px));
 }
 
-/* Draw the inner frame as explicit pixels inside the clipped shape. Firefox can
-   drop the bottom edge of an inset shadow on a clipped pseudo-element after paint. */
+/* The inner frame is one scalable border image for every framed panel. Fixed
+   corner slices and stretched edges avoid height-dependent 1px rasterization. */
 .hero::before,
 .content-section::before,
 .detail-card::before,
@@ -110,22 +110,18 @@ body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
   box-sizing: border-box;
   pointer-events: none;
   content: "";
-  border: 0;
+  border: 8px solid transparent;
+  border-image-source: url("/assets/k2040-inner-frame.svg");
+  border-image-slice: 8;
+  border-image-width: 8px;
+  border-image-repeat: stretch;
   box-shadow: none;
   background:
-    linear-gradient(var(--k2040-frame-inner), var(--k2040-frame-inner)) 8px 0 / calc(100% - 16px) 1px no-repeat,
-    linear-gradient(var(--k2040-frame-inner), var(--k2040-frame-inner)) 8px 100% / calc(100% - 16px) 1px no-repeat,
-    linear-gradient(var(--k2040-frame-inner), var(--k2040-frame-inner)) 0 8px / 1px calc(100% - 16px) no-repeat,
-    linear-gradient(var(--k2040-frame-inner), var(--k2040-frame-inner)) 100% 8px / 1px calc(100% - 16px) no-repeat,
-    linear-gradient(135deg, transparent 46%, var(--k2040-frame-inner) 46%, var(--k2040-frame-inner) 54%, transparent 54%) 0 0 / 8px 8px no-repeat,
-    linear-gradient(45deg, transparent 46%, var(--k2040-frame-inner) 46%, var(--k2040-frame-inner) 54%, transparent 54%) 100% 0 / 8px 8px no-repeat,
-    linear-gradient(135deg, transparent 46%, var(--k2040-frame-inner) 46%, var(--k2040-frame-inner) 54%, transparent 54%) 100% 100% / 8px 8px no-repeat,
-    linear-gradient(45deg, transparent 46%, var(--k2040-frame-inner) 46%, var(--k2040-frame-inner) 54%, transparent 54%) 0 100% / 8px 8px no-repeat,
     linear-gradient(90deg, #00d9e5, transparent) 8px 0 / 3.5rem 1px no-repeat,
     linear-gradient(180deg, #00d9e5, transparent) 0 8px / 1px 3.5rem no-repeat,
     linear-gradient(-90deg, #00d9e5, transparent) calc(100% - 8px) 100% / 3.5rem 1px no-repeat,
     linear-gradient(0deg, #00d9e5, transparent) 100% calc(100% - 8px) / 1px 3.5rem no-repeat;
-  clip-path: polygon(0 8px, 8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px));
+  background-origin: border-box;
 }
 
 /* About sections carry description only; destinations live in the canonical footer. */
