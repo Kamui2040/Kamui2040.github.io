@@ -3,7 +3,7 @@
 
   const STORES = [
     { key: "github", hosts: ["github.com"], label: "GitHub" },
-    { key: "nexus", hosts: ["nexusmods.com"], label: "Nexus Mods" },
+    { key: "nexus", hosts: ["nexusmods.com"], label: "Nexus Mods", footerIcon: true },
     { key: "fdroid", hosts: ["f-droid.org"], label: "F-Droid" },
     { key: "apkpure", hosts: ["apkpure.com"], label: "APKPure" },
     { key: "uptodown", hosts: ["uptodown.com"], label: "Uptodown" },
@@ -29,6 +29,37 @@
     return null;
   };
 
+  const makeLabel = (text) => {
+    const label = document.createElement("span");
+    label.className = "external-platform-label";
+    label.textContent = text;
+    return label;
+  };
+
+  const finishDirectDecoration = (link, store, icon) => {
+    link.replaceChildren(icon, makeLabel(store.label));
+    link.classList.add("external-platform-link");
+    link.dataset.externalPlatform = store.key;
+    link.dataset.platformOnlyLabel = "true";
+  };
+
+  const decorateWithFooterIcon = (link, store) => {
+    const source = document.querySelector(`.k2040-footer-link[data-footer-key="${store.key}"] .k2040-icon`);
+    if (!source) return false;
+
+    const current = link.querySelector(":scope > .k2040-icon");
+    if (current) {
+      ensureLabel(link, store.label);
+      return true;
+    }
+
+    const icon = source.cloneNode(true);
+    icon.classList.add("external-platform-icon", `external-platform-icon--${store.key}`);
+    delete link.dataset.brand;
+    finishDirectDecoration(link, store, icon);
+    return true;
+  };
+
   const decorateExtraStore = (link, store) => {
     const existingIcon = link.querySelector(":scope > .external-platform-icon");
     if (existingIcon) {
@@ -39,13 +70,7 @@
     const icon = document.createElement("span");
     icon.className = `external-platform-icon external-platform-icon--${store.key}`;
     icon.setAttribute("aria-hidden", "true");
-    const label = document.createElement("span");
-    label.className = "external-platform-label";
-    label.textContent = store.label;
-    link.replaceChildren(icon, label);
-    link.classList.add("external-platform-link");
-    link.dataset.externalPlatform = store.key;
-    link.dataset.platformOnlyLabel = "true";
+    finishDirectDecoration(link, store, icon);
   };
 
   const decorate = (link) => {
@@ -53,6 +78,12 @@
     if (!store) return;
 
     link.title = store.label;
+
+    if (store.footerIcon) {
+      decorateWithFooterIcon(link, store);
+      return;
+    }
+
     if (store.extraIcon) {
       decorateExtraStore(link, store);
       return;
@@ -65,7 +96,9 @@
       return;
     }
 
-    ensureLabel(link, store.label);
+    // Replacing the plain label guarantees a child-list mutation so the shared
+    // external icon decorator sees this newly branded News action immediately.
+    link.textContent = store.label;
   };
 
   const refresh = () => document.querySelectorAll("a[data-update-link]").forEach(decorate);
