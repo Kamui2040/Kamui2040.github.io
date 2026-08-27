@@ -8,10 +8,15 @@
 
 ## K2040 site-family icons
 
-- `assets/icons/k2040-android.webp`, `assets/icons/k2040-gaming.webp`, and `assets/icons/k2040-nexus.webp` are original generated artwork commissioned and approved by K2040 on 2026-08-26 for the shared website navigation and link system.
+- `assets/icons/k2040-android.webp` and `assets/icons/k2040-gaming.webp` are original generated artwork commissioned and approved by K2040 on 2026-08-26 for the shared website navigation and link system.
 - The current versions use simple transparent outline artwork with no built-in button frame or background so the visible symbols remain readable at the shared icon size.
 - The approved artwork was normalized to 128 × 128 transparent WebP for small-screen use.
-- The Nexus destination icon is an original tornado/vortex symbol. It does not reproduce the official Nexus Mods logo and is used only as a visual destination cue.
+
+## Nexus destination icon
+
+- The Nexus destination cue is an original tornado/vortex outline commissioned and approved by K2040 on 2026-08-26.
+- The canonical artwork is rendered as inline SVG by `shared/k2040-chrome.js` for the shared footer. News actions reuse that exact rendered symbol rather than maintaining a second Nexus image treatment.
+- It does not reproduce the official Nexus Mods logo and is used only as a visual destination cue.
 - Nexus Mods names and trademarks remain the property of their respective owner.
 
 ## Uptodown destination icon
@@ -27,7 +32,7 @@
 - Source: `public/openapk-blank.svg` from `mobilenetworkltd/openapk`.
 - Upstream: https://github.com/mobilenetworkltd/openapk
 - Licence: CC0 1.0 Universal.
-- Use here: adapted into a CSS mask in `news-store-links.css` so it follows the current site colour.
+- Use here: adapted into a CSS mask in `external-link-icons.css` so it follows the current site colour.
 
 ## ONE store destination symbol
 
