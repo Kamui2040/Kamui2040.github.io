@@ -96,7 +96,9 @@
       return;
     }
 
-    ensureLabel(link, store.label);
+    // Replacing the plain label guarantees a child-list mutation so the shared
+    // external icon decorator sees this newly branded News action immediately.
+    link.textContent = store.label;
   };
 
   const refresh = () => document.querySelectorAll("a[data-update-link]").forEach(decorate);
