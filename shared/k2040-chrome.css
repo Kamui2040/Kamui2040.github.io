@@ -5,9 +5,11 @@
   --k2040-frame-glow: rgba(0, 210, 220, .08);
 }
 
-/* Shared site-family identity. Only the explicit site-home control receives a site icon. */
+/* The global K2040 menu carries the K2040 symbol. Main Home stays text-only;
+   Android and Gaming keep their site-specific Home symbols. */
 .global-menu > summary::before,
-[data-k2040-site-home]::before {
+body[data-k2040-site="android"] [data-k2040-site-home]::before,
+body[data-k2040-site="gaming"] [data-k2040-site-home]::before {
   width: var(--k2040-icon-size);
   height: var(--k2040-icon-size);
   flex: 0 0 var(--k2040-icon-size);
@@ -18,10 +20,6 @@
 }
 
 .global-menu > summary::before {
-  background-image: url("/assets/icons/k2040-home.webp");
-}
-
-body[data-k2040-site="main"] [data-k2040-site-home]::before {
   background-image: url("/assets/icons/k2040-home.webp");
 }
 
