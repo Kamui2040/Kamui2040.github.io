@@ -39,4 +39,11 @@
 - Reference: ONE store developer guidance identifies the Store BI as the marketplace identifier and says provided store assets should be used for download promotion.
 - Guidance: https://onestore-dev.gitbook.io/dev/eng/tools/icon-guide
 - Use here: a small custom `1` destination symbol is used instead of redistributing or hot-linking ONE store artwork. It is not represented as an official ONE store logo asset.
-- ONE store names and trademarks remain the property of their respective owner.
+- ONE store names and trademarks remain the property of One store Co., Ltd.
+
+## AppGallery destination cue
+
+- The AppGallery news-action symbol is original K2040 artwork first introduced for the Android site on 2026-08-29.
+- It is a simple fan/blossom-shaped destination cue rendered as inline SVG by `news-actions.js` so Main news actions match the Android store-button presentation without redistributing Huawei promotional badge artwork.
+- It is not represented as an official HUAWEI or AppGallery logo.
+- HUAWEI and AppGallery names and trademarks remain the property of Huawei and their respective owners.
