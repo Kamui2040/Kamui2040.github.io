@@ -1,12 +1,22 @@
 (() => {
   "use strict";
 
+  // Original K2040 AppGallery destination cue. It is not an official HUAWEI logo.
+  const APPGALLERY_PATHS = [
+    "M22 38V12c0-4 4-7 4-7s4 3 4 7l-4 26h-4Z",
+    "M21 38 12 16c-1.5-3.7 1.3-7.7 1.3-7.7s4.8 1 6.3 4.7L25 37l-4 1Z",
+    "m20 38-14-13c-2.9-2.7-1.9-7.5-1.9-7.5s4.9-.9 7.8 1.8L24 36l-4 2Z",
+    "m27 38 9-22c1.5-3.7-1.3-7.7-1.3-7.7s-4.8 1-6.3 4.7L23 37l4 1Z",
+    "m28 38 14-13c2.9-2.7 1.9-7.5 1.9-7.5s-4.9-.9-7.8 1.8L24 36l4 2Z"
+  ];
+
   const STORES = [
     { key: "github", hosts: ["github.com"], label: "GitHub" },
     { key: "nexus", hosts: ["nexusmods.com"], label: "Nexus Mods", footerIcon: true },
     { key: "fdroid", hosts: ["f-droid.org"], label: "F-Droid" },
     { key: "apkpure", hosts: ["apkpure.com"], label: "APKPure" },
     { key: "uptodown", hosts: ["uptodown.com"], label: "Uptodown" },
+    { key: "appgallery", hosts: ["appgallery.huawei.com", "url.cloud.huawei.com"], label: "HUAWEI AppGallery", extraIcon: true },
     { key: "onestore", hosts: ["onestore.net"], label: "ONE store", extraIcon: true },
     { key: "openapk", hosts: ["openapk.net"], label: "OpenAPK", extraIcon: true }
   ];
@@ -60,6 +70,25 @@
     return true;
   };
 
+  const addAppGalleryCue = (icon) => {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 48 48");
+    svg.setAttribute("focusable", "false");
+    APPGALLERY_PATHS.forEach((pathData) => {
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path.setAttribute("fill", "currentColor");
+      path.setAttribute("d", pathData);
+      svg.append(path);
+    });
+    const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    circle.setAttribute("fill", "currentColor");
+    circle.setAttribute("cx", "24");
+    circle.setAttribute("cy", "38");
+    circle.setAttribute("r", "4");
+    svg.append(circle);
+    icon.append(svg);
+  };
+
   const decorateExtraStore = (link, store) => {
     const existingIcon = link.querySelector(":scope > .external-platform-icon");
     if (existingIcon) {
@@ -70,6 +99,7 @@
     const icon = document.createElement("span");
     icon.className = `external-platform-icon external-platform-icon--${store.key}`;
     icon.setAttribute("aria-hidden", "true");
+    if (store.key === "appgallery") addAppGalleryCue(icon);
     finishDirectDecoration(link, store, icon);
   };
 
