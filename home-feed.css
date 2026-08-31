@@ -26,6 +26,13 @@
   font-size: .76rem;
 }
 
+.update-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .65rem;
+}
+
 /* Main update/news surfaces deliberately stay text-only for readability. */
 :is(.projects-home-page, .news-page) .update-card {
   grid-template-columns: 1fr;
