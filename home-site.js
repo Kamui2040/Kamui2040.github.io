@@ -48,6 +48,14 @@
     })
     .map(({ entry }) => entry);
 
+  const updateLinks = (entry) => {
+    const links = Array.isArray(entry?.links)
+      ? entry.links.filter((href) => typeof href === "string" && href.trim())
+      : [];
+    if (links.length) return links;
+    return typeof entry?.href === "string" && entry.href.trim() ? [entry.href] : [];
+  };
+
   const formatDate = (date) => new Intl.DateTimeFormat(language, {
     year: "numeric",
     month: "short",
@@ -89,12 +97,21 @@
       fragment.querySelector("[data-update-category]").textContent = strings.category || "";
       fragment.querySelector("[data-update-title]").textContent = strings.title || "";
       fragment.querySelector("[data-update-summary]").textContent = strings.summary || "";
-      const link = fragment.querySelector("[data-update-link]");
-      if (update.href) {
-        link.href = update.href;
-        link.textContent = window.K2040_TRANSLATIONS?.[language]?.actions?.readMore || "Read more";
+
+      const placeholder = fragment.querySelector("[data-update-link]");
+      const hrefs = updateLinks(update);
+      if (hrefs.length) {
+        const actions = document.createElement("div");
+        actions.className = "update-actions";
+        hrefs.forEach((href) => {
+          const link = placeholder.cloneNode(false);
+          link.href = href;
+          link.textContent = window.K2040_TRANSLATIONS?.[language]?.actions?.readMore || "Read more";
+          actions.append(link);
+        });
+        placeholder.replaceWith(actions);
       } else {
-        link.remove();
+        placeholder.remove();
       }
       list.append(fragment);
     }
