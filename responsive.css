@@ -179,6 +179,24 @@
     grid-template-columns: 1fr;
   }
 
+  /* Visual project cards must grow with their copy on phones. The fixed 4:5
+     desktop card ratio otherwise clips metadata and action rows. */
+  .project-card--visual {
+    height: auto;
+    aspect-ratio: auto;
+  }
+
+  .project-card--visual .project-card-art {
+    height: auto;
+    flex: 0 0 auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .project-card--visual .project-card-copy {
+    height: auto;
+    overflow: visible;
+  }
+
   .gaming-mods-page .featured-project-actions .text-link,
   .project-detail-page .featured-project-actions .text-link,
   .project-detail-page .project-link-grid .text-link,
