@@ -127,52 +127,6 @@
   }
 }
 
-@media (max-width: 620px) {
-  /* Seven Gaming Mods controls fit into two predictable rows. */
-  .gaming-mods-page .site-nav,
-  .project-detail-page .site-nav {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    gap: .25rem;
-  }
-
-  .gaming-mods-page .site-nav > :nth-child(-n + 4),
-  .project-detail-page .site-nav > :nth-child(-n + 4) {
-    grid-column: span 3;
-  }
-
-  .gaming-mods-page .site-nav > :nth-child(n + 5),
-  .project-detail-page .site-nav > :nth-child(n + 5) {
-    grid-column: span 4;
-  }
-
-  .gaming-mods-page .site-nav > .menu,
-  .project-detail-page .site-nav > .menu {
-    grid-column: span 3;
-  }
-
-  .gaming-mods-page .nav-link,
-  .gaming-mods-page .menu > summary,
-  .gaming-mods-page .nav-language-control,
-  .gaming-mods-page .site-header .theme-toggle,
-  .project-detail-page .nav-link,
-  .project-detail-page .menu > summary,
-  .project-detail-page .nav-language-control,
-  .project-detail-page .site-header .theme-toggle {
-    min-height: 44px;
-    padding: .5rem .3rem;
-    font-size: clamp(.76rem, 3.15vw, .88rem);
-    line-height: 1.1;
-  }
-
-  .gaming-mods-page .nav-language-select,
-  .project-detail-page .nav-language-select {
-    width: 100%;
-    max-width: 100%;
-    padding-inline: .15rem;
-    font-size: inherit;
-  }
-}
-
 @media (max-width: 560px) {
   .project-grid:has(.project-card--artwork),
   .project-grid:has(.project-card--visual) {
@@ -202,17 +156,5 @@
   .project-detail-page .project-link-grid .text-link,
   .project-detail-page .project-variant .text-link {
     width: 100%;
-  }
-}
-
-@media (max-width: 360px) {
-  .gaming-mods-page .site-nav,
-  .project-detail-page .site-nav {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .gaming-mods-page .site-nav > *,
-  .project-detail-page .site-nav > * {
-    grid-column: span 1 !important;
   }
 }
