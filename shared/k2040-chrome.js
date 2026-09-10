@@ -18,14 +18,23 @@
     fr: { home: "Accueil", android: "Projets Android", gaming: "Gaming Mods" }
   };
 
+  const LIBRARY_NAV_LABELS = {
+    en: { home: "Library Home", read: "Read Volume 1", lexicon: "Lexicon" },
+    de: { home: "Bibliotheks-Startseite", read: "Band 1 lesen", lexicon: "Lexikon" },
+    "pt-PT": { home: "Início da biblioteca", read: "Ler o volume 1", lexicon: "Léxico" },
+    es: { home: "Inicio de la biblioteca", read: "Leer el volumen 1", lexicon: "Léxico" },
+    fr: { home: "Accueil de la bibliothèque", read: "Lire le volume 1", lexicon: "Lexique" }
+  };
+
   const FOOTER_ITEMS = [
     { key: "home", href: `${ROOT}/`, icon: "main" },
     { key: "android", href: `${ROOT}/K2040-Android-Releases/`, icon: "android" },
     { key: "gaming", href: `${ROOT}/K2040-Gaming-Mods/`, icon: "gaming" },
-    { key: "github", href: "https://github.com/Kamui2040", label: "GitHub", icon: "github" },
+    { key: "library", href: `${ROOT}/The-Library/`, label: "The Library", icon: "library" },
+    { key: "github", href: "https://github.com/Kamui2040", label: "GitHub", icon: "github", iconOnly: true },
     { key: "nexus", href: "https://next.nexusmods.com/profile/kamui2040", label: "Nexus Mods", icon: "nexus" },
     { key: "kofi", href: "https://ko-fi.com/k2040", label: "Ko-fi", icon: "kofi" },
-    { key: "instagram", href: "https://www.instagram.com/k2040.projects/", label: "Instagram", icon: "instagram" }
+    { key: "instagram", href: "https://www.instagram.com/k2040.projects/", label: "Instagram", icon: "instagram", iconOnly: true }
   ];
 
   const normalizeLanguage = (value) => {
@@ -97,6 +106,10 @@
       rightButton.setAttribute("cy", "13.4");
       rightButton.setAttribute("r", ".9");
       svg.append(leftButton, rightButton);
+    } else if (key === "library") {
+      appendStrokePath(svg, "M3.5 5.2c2.8-.9 5.6-.3 8.5 1.4v12.2c-2.9-1.7-5.7-2.3-8.5-1.4Z");
+      appendStrokePath(svg, "M20.5 5.2c-2.8-.9-5.6-.3-8.5 1.4v12.2c2.9-1.7 5.7-2.3 8.5-1.4Z");
+      appendStrokePath(svg, "M12 6.6v12.2");
     } else if (key === "nexus") {
       appendStrokePath(svg, "M3.4 6.7c4.4-2.8 10.8-3.2 15-.7 1.4.8 2.3 1.9 2.5 3.2");
       appendStrokePath(svg, "M5 10c3.4-2 8.2-2.3 11.4-.5 1.5.8 2.4 2 2.4 3.2");
@@ -119,8 +132,69 @@
 
   const createIcon = (key) => {
     if (key === "main") return createHomeIcon();
-    if (key === "android" || key === "gaming" || key === "nexus") return createFamilyIcon(key);
+    if (key === "android" || key === "gaming" || key === "library" || key === "nexus") return createFamilyIcon(key);
     return createFilledIcon(key);
+  };
+
+  const updateLibraryNavigation = () => {
+    const language = currentLanguage();
+    const copy = LIBRARY_NAV_LABELS[language] || LIBRARY_NAV_LABELS.en;
+    const routeLanguage = language === "de" ? "de" : "en";
+    const routes = {
+      home: `${ROOT}/The-Library/`,
+      telanas: `${ROOT}/The-Library/${routeLanguage}/telanas/`,
+      read: `${ROOT}/The-Library/${routeLanguage}/telanas/read/dragon-knight/volume-01/`,
+      lexicon: `${ROOT}/The-Library/${routeLanguage}/telanas/lexicon/`
+    };
+    const labels = { home: copy.home, telanas: "Telanas", read: copy.read, lexicon: copy.lexicon };
+
+    document.querySelectorAll("[data-k2040-library-menu]").forEach((item) => {
+      item.querySelectorAll("[data-k2040-library-link]").forEach((link) => {
+        const key = link.dataset.k2040LibraryLink;
+        link.href = routes[key];
+        link.textContent = labels[key];
+      });
+    });
+  };
+
+  const ensureLibraryNavigation = () => {
+    document.querySelectorAll(".site-brand > [data-global-menu] > .global-menu-panel").forEach((panel) => {
+      if (panel.querySelector("[data-k2040-library-menu]")) return;
+
+      const item = document.createElement("details");
+      item.className = "global-menu-item";
+      item.setAttribute("data-global-menu-item", "");
+      item.setAttribute("data-k2040-library-menu", "");
+
+      const summary = document.createElement("summary");
+      const label = document.createElement("span");
+      label.textContent = "The Library";
+      const arrow = document.createElement("span");
+      arrow.className = "global-menu-item-arrow";
+      arrow.setAttribute("aria-hidden", "true");
+      arrow.textContent = "›";
+      summary.append(label, arrow);
+
+      const submenu = document.createElement("nav");
+      submenu.className = "global-menu-submenu";
+      submenu.setAttribute("aria-label", "The Library");
+      ["home", "telanas", "read", "lexicon"].forEach((key) => {
+        const link = document.createElement("a");
+        link.setAttribute("data-k2040-library-link", key);
+        submenu.append(link);
+      });
+
+      item.append(summary, submenu);
+      panel.append(item);
+    });
+    updateLibraryNavigation();
+  };
+
+  const ensureLibraryHomeIcon = () => {
+    if (document.body?.dataset.k2040Site !== "library") return;
+    document.querySelectorAll("[data-k2040-site-home]").forEach((link) => {
+      if (!link.querySelector(".k2040-icon--library")) link.prepend(createFamilyIcon("library"));
+    });
   };
 
   const footerRoot = () => {
@@ -153,7 +227,14 @@
       link.href = item.href;
       link.dataset.footerKey = item.key;
       link.append(createIcon(item.icon));
-      link.append(document.createTextNode(item.label || labels[item.key] || item.key));
+      const label = item.label || labels[item.key] || item.key;
+      if (item.iconOnly) {
+        link.classList.add("k2040-footer-link--icon-only");
+        link.setAttribute("aria-label", label);
+        link.title = label;
+      } else {
+        link.append(document.createTextNode(label));
+      }
       links.append(link);
     });
 
@@ -198,7 +279,9 @@
   };
 
   const init = () => {
+    ensureLibraryNavigation();
     document.querySelectorAll("[data-global-menu]").forEach(initGlobalMenu);
+    ensureLibraryHomeIcon();
     renderFooter();
 
     document.addEventListener("click", (event) => {
@@ -208,7 +291,11 @@
     });
 
     document.querySelectorAll("[data-language-select]").forEach((select) => {
-      select.addEventListener("change", () => requestAnimationFrame(renderFooter));
+      select.addEventListener("change", () => requestAnimationFrame(() => {
+        updateLibraryNavigation();
+        ensureLibraryHomeIcon();
+        renderFooter();
+      }));
     });
   };
 

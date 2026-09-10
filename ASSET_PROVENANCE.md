@@ -12,6 +12,8 @@
 - The current versions use simple transparent outline artwork with no built-in button frame or background so the visible symbols remain readable at the shared icon size.
 - The approved artwork was normalized to 128 × 128 transparent WebP for small-screen use.
 
+The Library uses an original open-book outline drawn directly by the shared interface code. It follows the same stroke weight and rounded line treatment as the Android and Gaming symbols and does not depend on an external asset.
+
 ## Nexus destination icon
 
 - The Nexus destination cue is an original tornado/vortex outline commissioned and approved by K2040 on 2026-08-26.
