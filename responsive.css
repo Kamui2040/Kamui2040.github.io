@@ -1,6 +1,7 @@
 /* Responsive behavior for the shared K2040 gateway and Gaming Mods pages. */
 
 @media (max-width: 900px) {
+  .project-grid,
   .project-grid:has(.project-card--artwork),
   .project-grid:has(.project-card--visual) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
