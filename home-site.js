@@ -28,9 +28,11 @@
     return normalize(document.documentElement.lang || navigator.language);
   };
 
+  const localUpdates = () => Array.isArray(window.K2040_CONTENT?.updates) ? window.K2040_CONTENT.updates : [];
+
   let language = currentLanguage();
-  let feeds = { android: [], gaming: [] };
-  let combined = [];
+  let feeds = { library: localUpdates(), android: [], gaming: [] };
+  let combined = [...feeds.library];
 
   const localStrings = (entry) => entry?.strings?.[language] || entry?.strings?.en || {};
   const updateTime = (entry) => {
@@ -122,6 +124,7 @@
     try { url = new URL(card.href, location.href); } catch { return null; }
     if (url.pathname.startsWith("/K2040-Android-Releases/")) return "android";
     if (url.pathname.startsWith("/K2040-Gaming-Mods/")) return "gaming";
+    if (url.pathname.startsWith("/The-Library/")) return "library";
     return null;
   };
 
@@ -179,16 +182,18 @@
     ]);
 
     feeds = {
+      library: localUpdates(),
       android: results[0].status === "fulfilled" ? results[0].value : [],
       gaming: results[1].status === "fulfilled" ? results[1].value : []
     };
-    combined = [...feeds.android, ...feeds.gaming];
+    combined = [...feeds.library, ...feeds.android, ...feeds.gaming];
     render();
   };
 
   const init = () => {
     applyLabels();
-    combined = [];
+    feeds.library = localUpdates();
+    combined = [...feeds.library];
     render();
 
     const select = document.querySelector("[data-language-select]");
