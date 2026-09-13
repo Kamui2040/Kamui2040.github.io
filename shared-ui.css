@@ -328,6 +328,19 @@
   box-shadow:none;
 }
 
+/* At narrow-desktop widths the header becomes two rows. Anchor the global
+   project menu to the complete header so it cannot sit beneath the second row
+   or lose its stacking order against the page content. */
+@media (min-width:761px) and (max-width:1100px) {
+  .site-header { position:relative; }
+  .site-header .global-menu { position:static; }
+  .site-header .global-menu-panel {
+    top:calc(100% + .55rem);
+    right:auto;
+    left:.8rem;
+  }
+}
+
 @media (max-width:760px) {
   .site-header::before,
   .site-header .menu-panel:not(.global-menu-panel)::before { inset:4px; }
