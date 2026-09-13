@@ -39,6 +39,19 @@ window.K2040_CONTENT = {
   ],
   updates: [
     {
+      id: "the-dragon-knight-volume-01-lulu",
+      projectId: "library",
+      date: "2026-09-13",
+      href: "https://www.lulu.com/shop/k2040/the-dragon-knight-volume-1-home/ebook/product-7k56k76.html",
+      strings: {
+        en: { category: "The Library", title: "The Dragon Knight Volume 1 is now available on Lulu", summary: "The English EPUB edition of The Dragon Knight: Volume 1 — Home is now available through Lulu." },
+        de: { category: "The Library", title: "The Dragon Knight – Band 1 ist jetzt bei Lulu verfügbar", summary: "Die englische EPUB-Ausgabe von The Dragon Knight: Volume 1 — Home ist jetzt über Lulu verfügbar." },
+        "pt-PT": { category: "The Library", title: "O Volume 1 de The Dragon Knight já está disponível na Lulu", summary: "A edição EPUB em inglês de The Dragon Knight: Volume 1 — Home já está disponível através da Lulu." },
+        es: { category: "The Library", title: "El Volumen 1 de The Dragon Knight ya está disponible en Lulu", summary: "La edición EPUB en inglés de The Dragon Knight: Volume 1 — Home ya está disponible a través de Lulu." },
+        fr: { category: "The Library", title: "Le Volume 1 de The Dragon Knight est maintenant disponible sur Lulu", summary: "L’édition EPUB en anglais de The Dragon Knight: Volume 1 — Home est maintenant disponible sur Lulu." }
+      }
+    },
+    {
       id: "the-library-launch-volume-01",
       projectId: "library",
       date: "2026-09-10",
