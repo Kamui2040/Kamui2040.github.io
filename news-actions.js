@@ -18,7 +18,8 @@
     { key: "uptodown", hosts: ["uptodown.com"], label: "Uptodown" },
     { key: "appgallery", hosts: ["appgallery.huawei.com", "url.cloud.huawei.com"], label: "HUAWEI AppGallery", extraIcon: true },
     { key: "onestore", hosts: ["onestore.net"], label: "ONE store", extraIcon: true },
-    { key: "openapk", hosts: ["openapk.net"], label: "OpenAPK", extraIcon: true }
+    { key: "openapk", hosts: ["openapk.net"], label: "OpenAPK", extraIcon: true },
+    { key: "lulu", hosts: ["lulu.com"], label: "Lulu" }
   ];
 
   const storeFor = (link) => {
