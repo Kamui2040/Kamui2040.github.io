@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+<defs>
+<linearGradient id="outer" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#723c72"/><stop offset="100%" stop-color="#41669c"/>
+</linearGradient>
+<linearGradient id="inner" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#986895"/><stop offset="100%" stop-color="#5479aa"/>
+</linearGradient>
+</defs>
+<!-- Compact mobile-only bracket: two offset parallel 45-degree chamfer rails. -->
+<path d="M9 102 L9 27 L27 9 L102 9 L99 12 L29 12 L12 29 L12 99 Z" fill="url(#outer)"/>
+<path d="M21 90 L21 33 L33 21 L90 21 L87 24 L35 24 L24 35 L24 87 Z" fill="url(#inner)" opacity="0.70"/>
+</svg>

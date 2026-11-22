@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "site-and-social-relaunch",
+    "date": "2026-11-22",
+    "featureInNews": true,
+    "translations": {
+      "en": {
+        "title": "A fresh start for K2040",
+        "excerpt": "I'm rebuilding the website and refreshing my social pages, with a clearer layout and a consistent look.",
+        "paragraphs": [
+          "I'm giving K2040 a complete relaunch, from this website to my social pages. The site has been rebuilt from scratch, and I'm refreshing the profiles to match.",
+          "I want it to be easier to find my game projects, Android apps, and Telanas - the dragon knight. Some project pages and links are still being prepared, so they'll return as they're ready. I'll share updates as things come together."
+        ]
+      },
+      "de": {
+        "title": "Ein Neustart für K2040",
+        "excerpt": "Ich baue die Website neu auf und überarbeite meine Social-Media-Seiten – mit klarerem Aufbau und einheitlichem Design.",
+        "paragraphs": [
+          "K2040 bekommt einen kompletten Neustart – von dieser Website bis zu meinen Social-Media-Seiten. Die Website wurde von Grund auf neu erstellt, und die Profile werden nach und nach an das neue Design angepasst.",
+          "Meine Spielprojekte, Android-Apps und Telanas - the dragon knight sollen leichter zu finden sein. Einige Projektseiten und Links sind noch in Vorbereitung und kommen zurück, sobald sie bereit sind. Über die nächsten Schritte werde ich hier berichten."
+        ]
+      },
+      "pt-PT": {
+        "title": "Um novo começo para K2040",
+        "excerpt": "Estou a reconstruir o site e a renovar as minhas páginas nas redes sociais, com uma estrutura mais clara e um visual consistente.",
+        "paragraphs": [
+          "Estou a relançar o K2040 por completo, desde este site até às minhas páginas nas redes sociais. O site foi reconstruído de raiz e estou a atualizar os perfis para seguirem o mesmo visual.",
+          "Quero facilitar o acesso aos meus projetos de jogos, aplicações Android e Telanas - the dragon knight. Algumas páginas e ligações ainda estão a ser preparadas e voltarão quando estiverem prontas. Vou partilhando novidades à medida que tudo avança."
+        ]
+      },
+      "es": {
+        "title": "Un nuevo comienzo para K2040",
+        "excerpt": "Estoy reconstruyendo la web y renovando mis perfiles sociales con una estructura más clara y un diseño coherente.",
+        "paragraphs": [
+          "Estoy preparando un relanzamiento completo de K2040, desde esta web hasta mis perfiles en redes sociales. He reconstruido la web desde cero y estoy actualizando los perfiles para que compartan el mismo diseño.",
+          "Quiero que sea más fácil encontrar mis proyectos de juegos, aplicaciones Android y Telanas - the dragon knight. Algunas páginas y enlaces siguen en preparación y volverán cuando estén listos. Iré compartiendo novedades durante el proceso."
+        ]
+      },
+      "fr": {
+        "title": "Un nouveau départ pour K2040",
+        "excerpt": "Je reconstruis le site et je renouvelle mes profils sur les réseaux sociaux, avec une navigation plus claire et une identité cohérente.",
+        "paragraphs": [
+          "Je prépare une relance complète de K2040, de ce site à mes pages sur les réseaux sociaux. Le site a été reconstruit de zéro et je remets les profils à jour pour qu'ils aient une présentation cohérente.",
+          "Je veux faciliter l'accès à mes projets de jeux, mes applications Android et Telanas - the dragon knight. Certaines pages et certains liens sont encore en préparation et reviendront dès qu'ils seront prêts. Je partagerai les prochaines nouvelles au fur et à mesure."
+        ]
+      }
+    }
+  },
+  {
+    "slug": "why-i-started-making-things",
+    "date": "2026-11-22",
+    "translations": {
+      "en": {
+        "title": "Why I started making things",
+        "excerpt": "A bit of backstory on my apps, game mods, and the fantasy light novel I've wanted to write for decades.",
+        "paragraphs": [
+          "I'm K2040, an independent developer. I make Android apps, mod games, and write fantasy. Each of those started with something I wanted to do for myself.",
+          "I started making Android apps because I kept struggling to find free, privacy-focused apps that weren't full of ads or tracking services. Eventually, I decided to try building my own instead of settling for something I didn't really want to use.",
+          "Modding games came from a similar place. Sometimes a game was missing a feature I wanted; other times I had an idea for a different way to do something. Making mods lets me fill those gaps and give familiar things my own twist.",
+          "Writing has been a much longer-held ambition. For decades, I've dreamed of writing a fantasy story of my own. Starting my light novel, Telanas - the dragon knight, was my way of finally doing something about that dream.",
+          "Those are the main things I work on today. I'll use this space for occasional thoughts, experiments, and stories behind the projects. News and release details will stay on their own pages."
+        ]
+      },
+      "de": {
+        "title": "Warum ich angefangen habe, eigene Projekte zu entwickeln",
+        "excerpt": "Ein bisschen Hintergrund zu meinen Apps, Spiel-Mods und der Fantasy-Light-Novel, die ich schon seit Jahrzehnten schreiben wollte.",
+        "paragraphs": [
+          "Ich bin K2040, unabhängiger Entwickler. Ich entwickle Android-Apps, modde Spiele und schreibe Fantasy. Bei allem stand am Anfang etwas, das ich selbst gerne machen wollte.",
+          "Mit Android-Apps habe ich angefangen, weil ich immer wieder Schwierigkeiten hatte, kostenlose, datenschutzfreundliche Apps ohne Werbung oder Tracking-Dienste zu finden. Irgendwann wollte ich mich nicht länger mit Kompromissen zufriedengeben und habe begonnen, eigene Apps zu entwickeln.",
+          "Beim Modden war der Auslöser ähnlich. Manchmal fehlte mir in einem Spiel eine bestimmte Funktion. Ein anderes Mal hatte ich einfach eine Idee, wie etwas anders funktionieren könnte. Mit Mods kann ich solche Lücken füllen und Dingen meine eigene Note geben.",
+          "Das Schreiben ist ein noch viel älterer Wunsch. Ich habe jahrzehntelang davon geträumt, meine eigene Fantasygeschichte zu schreiben. Mit meiner Light Novel Telanas - the dragon knight habe ich schließlich angefangen, diesen Traum umzusetzen.",
+          "An diesen drei Bereichen arbeite ich heute. Hier werde ich gelegentlich Gedanken, Experimente und Hintergründe zu meinen Projekten teilen. Neuigkeiten zu Veröffentlichungen bleiben auf ihren eigenen Seiten."
+        ]
+      },
+      "pt-PT": {
+        "title": "Porque comecei a criar os meus próprios projetos",
+        "excerpt": "Um pouco da história por trás das minhas aplicações, dos mods e da light novel de fantasia que sonhava escrever há décadas.",
+        "paragraphs": [
+          "Sou K2040, um programador independente. Faço aplicações Android, crio mods para jogos e escrevo fantasia. Cada uma destas atividades começou com algo que queria fazer para mim.",
+          "Comecei a criar aplicações Android porque tinha dificuldade em encontrar aplicações gratuitas, focadas na privacidade, sem publicidade excessiva nem serviços de rastreamento. A certa altura, decidi fazer as minhas próprias aplicações em vez de continuar a aceitar compromissos.",
+          "Os mods surgiram por uma razão semelhante. Por vezes faltava-me alguma funcionalidade num jogo; outras vezes tinha uma ideia para fazer algo de maneira diferente. Criar mods permite-me preencher essas lacunas e dar o meu próprio toque às coisas.",
+          "A escrita vem de um sonho muito mais antigo. Durante décadas quis escrever a minha própria história de fantasia. Começar a minha light novel, Telanas - the dragon knight, foi uma forma de finalmente concretizar esse sonho.",
+          "Hoje continuo a dedicar-me a estas três áreas. Vou usar este espaço para partilhar ocasionalmente ideias, experiências e histórias por trás dos projetos. As notícias sobre lançamentos continuarão nas páginas próprias."
+        ]
+      },
+      "es": {
+        "title": "Por qué empecé a crear mis propios proyectos",
+        "excerpt": "Un poco de historia sobre mis aplicaciones, mods y la novela ligera de fantasía que llevaba décadas queriendo escribir.",
+        "paragraphs": [
+          "Soy K2040, desarrollador independiente. Creo aplicaciones Android, hago mods para videojuegos y escribo fantasía. Todo empezó con algo que quería hacer por mi cuenta.",
+          "Empecé a desarrollar aplicaciones Android porque me costaba encontrar aplicaciones gratuitas centradas en la privacidad que no estuvieran llenas de anuncios o servicios de seguimiento. Al final decidí crear las mías en lugar de seguir conformándome.",
+          "Con los mods me pasó algo parecido. A veces echaba en falta una función en un juego; otras veces se me ocurría una manera distinta de hacer algo. Crear mods me permite cubrir esas carencias y aportar mi propio enfoque.",
+          "Escribir es un sueño mucho más antiguo. Durante décadas quise escribir mi propia historia de fantasía. Empezar mi novela ligera, Telanas - the dragon knight, fue mi forma de cumplir por fin ese sueño.",
+          "Hoy sigo trabajando en esas tres áreas. Aquí compartiré de vez en cuando ideas, pruebas e historias detrás de mis proyectos. Las noticias sobre lanzamientos seguirán en sus páginas correspondientes."
+        ]
+      },
+      "fr": {
+        "title": "Pourquoi j'ai commencé à créer mes propres projets",
+        "excerpt": "Quelques mots sur mes applications, mes mods et le light novel de fantasy que je rêvais d'écrire depuis des décennies.",
+        "paragraphs": [
+          "Je suis K2040, développeur indépendant. Je crée des applications Android, des mods pour les jeux et j'écris de la fantasy. Chaque activité est née de quelque chose que je voulais faire moi-même.",
+          "J'ai commencé à développer mes propres applications Android parce que je trouvais difficilement des applications gratuites, respectueuses de la vie privée, sans publicité envahissante ni services de suivi. J'ai fini par décider de créer les miennes plutôt que de continuer à faire des compromis.",
+          "Pour les mods, l'idée était similaire. Parfois, une fonctionnalité me manquait dans un jeu ; d'autres fois, j'imaginais une autre façon de faire les choses. Créer des mods me permet de combler ces manques et d'y apporter ma touche personnelle.",
+          "L'écriture répond à un rêve bien plus ancien. Pendant des décennies, j'ai voulu écrire ma propre histoire de fantasy. Commencer mon light novel, Telanas - the dragon knight, m'a permis de concrétiser enfin ce rêve.",
+          "Aujourd'hui, je continue à travailler dans ces trois domaines. Je partagerai ici de temps en temps des réflexions, des expériences et des histoires derrière les projets. Les annonces de sortie resteront sur leurs pages dédiées."
+        ]
+      }
+    }
+  }
+]

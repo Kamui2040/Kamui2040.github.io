@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="624" viewBox="0 0 1640 624" preserveAspectRatio="none">
+<defs><linearGradient id="edge" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#ed83cc"/><stop offset="48%" stop-color="#ae92fa"/><stop offset="100%" stop-color="#91b5fb"/></linearGradient><linearGradient id="inner" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#aa5b96"/><stop offset="50%" stop-color="#7f79ba"/><stop offset="100%" stop-color="#668bd0"/></linearGradient></defs>
+<!-- Frame quadrant 1: TOP-LEFT ONLY. The exposed top/right and vertical/lower ends have diagonal 45-degree *cut* caps. No extra diagonal decorative strokes. -->
+<path d="M58 94 L105 47 L720 47 L714 53 L108 53 L64 97 L64 349 L58 355 Z" fill="url(#edge)"/>
+<path d="M78 109 L118 69 L695 69 L691 72 L120 72 L82 111 L82 327 L78 331 Z" fill="url(#inner)" opacity="0.68"/>
+<!-- Frame quadrant 4: BOTTOM-RIGHT ONLY. No top-right or bottom-left frame quarters. -->
+<path d="M1576 270 L1582 264 L1582 529 L1534 577 L948 577 L954 571 L1531 571 L1576 526 Z" fill="url(#edge)"/>
+<path d="M1558 283 L1561 280 L1561 515 L1520 555 L977 555 L980 552 L1518 552 L1558 513 Z" fill="url(#inner)" opacity="0.68"/>
+</svg>
