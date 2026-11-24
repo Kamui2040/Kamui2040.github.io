@@ -39,3 +39,10 @@
 .lightbox-caption { text-align: center; margin: 8px 0 0; }
 @media(max-width: 950px) { .mod-grid,.game-tiles { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media(max-width: 620px) { .mod-grid,.game-tiles,.gaming-gallery,.mod-header { grid-template-columns: minmax(0,1fr); } .game-group-header { grid-template-columns: minmax(0,100px) 1fr; gap: 12px; } .gaming-section { margin-block: 28px; } }
+
+.mod-promo { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:contain; }
+.mod-card-art { display:block; width:100%; margin-bottom:16px; }
+.mod-overview { max-width: 78ch; line-height:1.75; }
+.mod-overview p { margin:0 0 1em; }
+.mod-download { border-top:1px solid var(--line); padding-top:24px; }
+.gaming-gallery .gallery-item img { height:auto; aspect-ratio:16/9; }

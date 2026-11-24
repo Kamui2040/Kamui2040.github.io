@@ -111,9 +111,11 @@ try:
                 ("/gaming/",500,850,"light","de"),
                 ("/gaming/mods/",1440,900,"light","fr"),
                 ("/gaming/mods/",500,850,"dark","pt-PT"),
-                ("/gaming/mods/quick-attach-menu/",1440,900,"dark","en"),
-                ("/gaming/mods/quest-journal/",500,850,"light","es"),
-                ("/gaming/news/",500,850,"dark","fr")
+                ("/gaming/mods/pinup-magazines/",1440,900,"dark","en"),
+                ("/gaming/mods/pinup-magazines/",500,850,"light","es"),
+                ("/gaming/news/",500,850,"dark","fr"),
+                ("/gaming/news/pinup-magazines/",1440,900,"dark","en"),
+                ("/gaming/news/pinup-magazines/",500,850,"light","de")
             ]:
                 b.size(width,height)
                 b.open(origin+pathname)
@@ -140,7 +142,7 @@ try:
                     newsItems:document.querySelectorAll(".update-card").length,
                     firstNewsTitle:document.querySelector(".update-card h3")?.textContent||null,
                     firstNewsHref:document.querySelector(".update-card .update-card__link")?.getAttribute("href")||null,
-                    featuredNewsTitle:window.K2040_SITE_NEWS?.[0]?.strings?.[document.documentElement.lang]?.title||null,
+                    featuredNewsTitle:[...(window.K2040_SITE_NEWS||[])].sort((a,b)=>b.date.localeCompare(a.date))[0]?.strings?.[document.documentElement.lang]?.title||null,
                     noteCards:document.querySelectorAll(".note-card").length,
                     noteArticle:!!document.querySelector(".note-article"),
                     activeNoteLocales:[...document.querySelectorAll("[data-post-locale]")].filter(el=>getComputedStyle(el).display!=="none").map(el=>el.dataset.postLocale),
@@ -164,11 +166,11 @@ try:
                 require(result["menuVisible"]==(result["width"]<=820),(pathname,"mobile menu breakpoint",result))
                 require(result["primaryVisible"]==(result["width"]>820),(pathname,"desktop nav breakpoint",result))
                 if pathname in ("/","/news/"):
-                    require(result["newsItems"]==1,("fresh launch must show exactly one News entry",result))
+                    require(result["newsItems"]==2,("launch news must include both current announcements",result))
                     require(result["firstNewsTitle"]==result["featuredNewsTitle"],
-                            ("relaunch notice not first / translated",result))
-                    require(result["firstNewsHref"] and result["firstNewsHref"].endswith("/about/notes/site-and-social-relaunch/"),
-                            ("relaunch news link not pointing to its blog post",result))
+                            ("latest announcement not first / translated",result))
+                    require(result["firstNewsHref"] and result["firstNewsHref"].endswith("/gaming/news/pinup-magazines/"),
+                            ("latest news link not pointing to its post",result))
                 if pathname=="/":
                     require(result["projectCards"]==3,("project cards",result))
                     require(result["heroTopicLinks"]==3 and result["heroTopicsValid"],("hero project links",result))
@@ -248,10 +250,11 @@ try:
                     require(game["switchHome"] and game["switchGaming"],("website switch",game))
                     require(game["pictures"],("gaming image decoding",game))
                     require(all(l==language for l in game["activeLocales"]),("gaming localization",game))
-                    if pathname=="/gaming/": require(game["tiles"]==3 and result["newsItems"]==0,("gaming home",game))
-                    if pathname=="/gaming/mods/": require(game["mods"]==8,("catalogue",game))
-                    if pathname.startswith("/gaming/mods/") and pathname!="/gaming/mods/":
-                        require(game["modLink"],("official mod link",game))
+                    if pathname=="/gaming/": require(game["tiles"]==1 and result["newsItems"]==1,("gaming home",game))
+                    if pathname=="/gaming/mods/": require(game["mods"]==1,("catalogue",game))
+                    if pathname in ("/gaming/mods/pinup-magazines/","/gaming/news/pinup-magazines/"):
+                        if pathname.startswith("/gaming/mods/"): require(game["modLink"],("official mod link",game))
+                        require(b.js('return document.querySelectorAll(".gallery-item").length')==4,"four gallery compositions")
                         outcome=b.js('''const a=document.querySelector(".gallery-item"),d=document.querySelector(".gaming-lightbox");
                           a.click();const first=d.querySelector("img").src;
                           d.dispatchEvent(new KeyboardEvent("keydown",{key:"ArrowRight",bubbles:true}));
@@ -259,7 +262,7 @@ try:
                           d.querySelector("[data-gallery-close]").click();
                           return {opened,changed:first!==second,closed:!d.open};''')
                         require(outcome["opened"] and outcome["changed"] and outcome["closed"],("gallery interaction",outcome))
-                    if pathname=="/gaming/news/": require(result["newsItems"]==0,("unpublished gaming news",result))
+                    if pathname=="/gaming/news/": require(result["newsItems"]==1,("gaming announcement",result))
                     b.screenshot("gaming-"+pathname.strip("/").replace("/","-")+"-"+str(width)+"-"+theme+".png")
                 checks.append({"path":pathname,"size":result["width"],"theme":theme,"locale":language,"news":result["newsItems"],"bg":result["bodyBg"],"action":result["themeAction"]})
                 time.sleep(.9)
@@ -325,7 +328,7 @@ try:
             checks.append({"regression":"theme-click-isolation","cases":12,"status":"PASS"})
             b.call("WebDriver:DeleteSession")
     (OUT/"browser-results.json").write_text(json.dumps(checks,indent=2)+"\n")
-    print(f"PASS Firefox: {len(checks)-1} layout cases, 12 persisted-theme click-isolation cases, relaunch first, notes, gaming and news")
+    print(f"PASS Firefox: {len(checks)-1} layout cases, 12 persisted-theme click-isolation cases, latest announcement first, notes, gaming and news")
 finally:
     if sock:sock.close()
     if proc:

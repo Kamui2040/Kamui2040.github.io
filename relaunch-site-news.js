@@ -33,5 +33,39 @@ window.K2040_SITE_NEWS = [
         "summary": "Je reconstruis le site et je renouvelle mes profils sur les réseaux sociaux, avec une navigation plus claire et une identité cohérente."
       }
     }
+  },
+  {
+    "id": "gaming-pinup-magazines",
+    "projectId": "game-projects",
+    "date": "2026-11-24",
+    "pinned": false,
+    "href": "/gaming/news/pinup-magazines/",
+    "strings": {
+      "en": {
+        "category": "Fallout 4",
+        "title": "New Fallout 4 pin-up magazine covers",
+        "summary": "134 retro-style magazine covers for Fallout 4, its DLCs and optional Creation Club content."
+      },
+      "de": {
+        "category": "Fallout 4",
+        "title": "Neue Pin-up-Magazincover für Fallout 4",
+        "summary": "134 Retro-Magazincover für Fallout 4, seine DLCs und optionale Creation-Club-Inhalte."
+      },
+      "pt-PT": {
+        "category": "Fallout 4",
+        "title": "Novas capas pin-up de revistas para Fallout 4",
+        "summary": "134 capas de revistas de estilo retro para Fallout 4, os seus DLC e conteúdos opcionais do Creation Club."
+      },
+      "es": {
+        "category": "Fallout 4",
+        "title": "Nuevas portadas pin-up de revistas para Fallout 4",
+        "summary": "134 portadas de revistas de estilo retro para Fallout 4, sus DLC y contenido opcional del Creation Club."
+      },
+      "fr": {
+        "category": "Fallout 4",
+        "title": "Nouvelles couvertures pin-up pour Fallout 4",
+        "summary": "134 couvertures de magazines rétro pour Fallout 4, ses DLC et les contenus optionnels du Creation Club."
+      }
+    }
   }
 ];

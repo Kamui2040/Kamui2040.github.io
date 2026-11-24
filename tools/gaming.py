@@ -50,6 +50,16 @@ def load(root, langs):
             assert isinstance(body["paragraphs"],list) and body["paragraphs"] and all(isinstance(p,str) and p.strip() for p in body["paragraphs"])
         for pic in post["artwork"]:
             media(pic); translations(pic["caption"])
+    post_index={p["slug"]:p for p in posts}
+    for mod in catalog["mods"]:
+        if "overview" in mod:
+            assert set(mod["overview"])==set(langs)
+            assert all(isinstance(v,list) and v and all(isinstance(t,str) and t.strip() for t in v) for v in mod["overview"].values())
+        if "feature_post" in mod:
+            assert mod["feature_post"] in post_index
+            featured=post_index[mod["feature_post"]]
+            assert featured["mod"]==mod["slug"] and featured["artwork"]
+            assert not mod["images"], "Use a single gallery source for featured mods"
     return catalog,posts
 
 def news_entries(data,langs):
@@ -69,6 +79,7 @@ def pages(data,langs,head,header,footer,copy,localized):
     games={g["id"]:g for g in catalog["games"]}
     mods={m["slug"]:m for m in catalog["mods"]}
     result={}
+    post_index={p["slug"]:p for p in posts}
     def c(key,fallback):return copy("gaming."+key,fallback)
     def wrap(kind,title,desc,uri,body):
         return head(kind,title+" — K2040",desc,uri)+header(kind)+body+footer()
@@ -81,8 +92,14 @@ def pages(data,langs,head,header,footer,copy,localized):
         return f'<a class="{style}" href="{escape(href,quote=True)}">{c(key,fallback)}</a>'
     def modlink(mod):
         return "/gaming/mods/"+mod["slug"]+"/"
+    def feature_art(m):
+        post=post_index.get(m.get("feature_post"))
+        if not post:return ""
+        a=post["artwork"][0]
+        return f'<img class="mod-promo" src="{a["src"]}" width="{a["width"]}" height="{a["height"]}" alt="" decoding="async">'
     def modcard(m):
-        return f'<article class="mod-card"><h3><a href="{modlink(m)}">{escape(m["title"])}</a></h3><p>{translated(m["description"])}</p>{button(modlink(m),"details","View mod","text-link")}</article>'
+        image=feature_art(m)
+        return f'<article class="mod-card">{f'<a class="mod-card-art" href="{modlink(m)}" aria-label="{escape(m["title"],quote=True)}">{image}</a>' if image else ""}<h3><a href="{modlink(m)}">{escape(m["title"])}</a></h3><p>{translated(m["description"])}</p>{button(modlink(m),"details","View mod","text-link")}</article>'
     def gallery(images,kind):
         if not images:return ""
         label=c("screenshots","Screenshots") if kind=="shots" else c("art","Promotional artwork")
@@ -111,9 +128,14 @@ def pages(data,langs,head,header,footer,copy,localized):
         game=games[mod["game"]]
         desc=mod["description"]["en"]
         title=translated({l:mod["title"] for l in langs})
+        featured=post_index.get(mod.get("feature_post"))
+        overview="".join(f'<p data-post-locale="{l}">{escape(line)}</p>' for l in langs for line in mod.get("overview",{}).get(l,[]))
+        introduction=f'<section class="gaming-section mod-overview">{overview}</section>' if overview else ""
+        preview=gallery(featured["artwork"],"art") if featured else gallery(mod["images"],"shots")
+        news_link=button("/gaming/news/"+featured["slug"]+"/","news","Gaming news","text-link") if featured else ""
         body=f'''<main id="main" class="shell gaming-main"><div class="note-back">{button("/gaming/mods/","back","Back to all mods","text-link")}</div>
-<article class="mod-detail"><header class="mod-header">{art(game)}<div class="mod-header-copy"><p class="eyebrow">{escape(game["title"])}</p><h1 data-note-title>{title}</h1><p data-note-summary>{translated(mod["description"])}</p>{button(mod["nexus"],"nexus","Open on Nexus Mods")}</div></header>
-<section class="gaming-section"><p>{c("official","For the latest downloads, compatibility, installation instructions and credits, see the official mod page.")}</p></section>{gallery(mod["images"],"shots")}</article></main>'''
+<article class="mod-detail"><header class="mod-header">{feature_art(mod) or art(game)}<div class="mod-header-copy"><p class="eyebrow">{escape(game["title"])}</p><h1 data-note-title>{title}</h1><p data-note-summary>{translated(mod["description"])}</p>{button(mod["nexus"],"nexus","Open on Nexus Mods")}</div></header>
+{introduction}{preview}<section class="gaming-section mod-download"><p>{c("official","For the latest downloads, compatibility, installation instructions and credits, see the official mod page.")}</p><div class="actions">{button(mod["nexus"],"nexus","Open on Nexus Mods")}{news_link}</div></section></article></main>'''
         uri=modlink(mod)
         result[uri.lstrip("/")+"index.html"]=wrap("gamingMod",mod["title"],desc,uri,body)
     body=f'<main id="main" class="shell gaming-main"><header class="page-intro gaming-intro"><p class="eyebrow">K2040 / Gaming</p><h1>{c("news","Gaming news")}</h1></header><section class="gaming-section"><div class="update-list" data-updates aria-live="polite"></div></section></main>'

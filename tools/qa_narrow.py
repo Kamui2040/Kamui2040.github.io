@@ -114,7 +114,7 @@ CASES = [
     (ARTICLE, 320, "de"),
     (ARTICLE, 390, "es"),
     ("/gaming/", 320, "de"), ("/gaming/mods/", 390, "fr"),
-    ("/gaming/mods/quick-attach-menu/", 320, "pt-PT"), ("/gaming/news/", 280, "es")
+    ("/gaming/mods/pinup-magazines/", 320, "pt-PT"), ("/gaming/news/", 280, "es"), ("/gaming/news/pinup-magazines/", 320, "en")
 ]
 
 server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), Handler)

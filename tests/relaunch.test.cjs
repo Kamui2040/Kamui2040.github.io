@@ -290,7 +290,7 @@ test("Unverified platforms and offline project sites are non-clickable",()=>{
  assert.ok(html.includes('href="https://www.patreon.com/cw/k2040"'));
  assert.ok(!html.includes('href="https://kamui2040.github.io/K2040-Gaming-Mods/'));
 });
-test("Relaunch notice is a short, localized blog entry featured first in news",()=>{
+test("Relaunch notice is a short, localized blog entry included in news",()=>{
  const post=notes.find(entry=>entry.slug==="site-and-social-relaunch");
  assert.ok(post,"missing original relaunch blog entry");
  assert.equal(post.date,"2026-11-22");
@@ -303,7 +303,7 @@ test("Relaunch notice is a short, localized blog entry featured first in news",(
  assert.ok(relaunchNote.includes('datetime="2026-11-22"'));
  assert.ok(relaunchNote.includes('href="/about/"'));
  const siteNews=context.window.K2040_SITE_NEWS;
- assert.equal(siteNews.length,1);
+ assert.equal(siteNews.length,1+JSON.parse(file("gaming/posts.json")).length);
  const entry=siteNews[0];
  assert.equal(entry.id,"site-site-and-social-relaunch");
  assert.equal(entry.pinned,false);
@@ -333,9 +333,9 @@ test("First relaunch teaser is generated without duplicating post copy",()=>{
  const files=["about/posts.json","relaunch-site-news.js","about/notes/site-and-social-relaunch/index.html"];
  assert.ok(files.every(name=>fs.existsSync(path.join(root,name))));
 });
-test("Fresh-launch News contains only the new site announcement",()=>{
+test("News contains only the site announcement and authored gaming posts",()=>{
  const siteNews=context.window.K2040_SITE_NEWS;
- assert.equal(siteNews.length,1);
+ assert.equal(siteNews.length,1+JSON.parse(file("gaming/posts.json")).length);
  assert.equal(siteNews[0].id,"site-site-and-social-relaunch");
  assert.equal(siteNews[0].href,"/about/notes/site-and-social-relaunch/");
  assert.ok(!fs.existsSync(path.join(root,"relaunch-news.js")),"obsolete Library feed must be removed");
@@ -379,7 +379,7 @@ test("News dates sorted and unsafe links filtered in UI logic",()=>{
 test("Static builder is reproducible",()=>{
  const files=["index.html","news/index.html","links/index.html","about/index.html",
   "about/notes/why-i-started-making-things/index.html",
-  "about/notes/site-and-social-relaunch/index.html","relaunch-site-news.js",...["gaming/index.html","gaming/mods/index.html","gaming/news/index.html"],...JSON.parse(file("gaming/catalog.json")).mods.map(m=>"gaming/mods/"+m.slug+"/index.html")];
+  "about/notes/site-and-social-relaunch/index.html","relaunch-site-news.js",...["gaming/index.html","gaming/mods/index.html","gaming/news/index.html"],...JSON.parse(file("gaming/catalog.json")).mods.map(m=>"gaming/mods/"+m.slug+"/index.html"),...JSON.parse(file("gaming/posts.json")).map(p=>"gaming/news/"+p.slug+"/index.html")];
  const before=files.map(digest);
  const out=spawnSync("python3",["tools/build_site.py"],{cwd:root,encoding:"utf8"});
  assert.equal(out.status,0,out.stderr);
