@@ -21,4 +21,4 @@ node --test tests/relaunch.test.cjs
 
 Firefox-specific layout checks: python3 tools/qa_browser.py <temporary-output-directory> and python3 tools/qa_narrow.py <temporary-output-directory>.
 
-The website uses only the new approved branding. Older release/news feeds are deliberately disconnected. New posts from other rebuilt project sites may be connected after their own public releases.
+The website uses only the new approved branding. Older release/news feeds are deliberately disconnected. New gaming, Android and fiction sections belong in this repository and use the same shared page generator, navigation, localization, themes and central News. Build them anew; retain only verified release facts and approved media from older sites. Link to authoritative external release platforms rather than duplicating downloads.
