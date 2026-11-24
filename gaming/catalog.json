@@ -1,0 +1,245 @@
+{
+  "games": [
+    {
+      "id": "fallout4",
+      "title": "Fallout 4",
+      "art": {
+        "src": "/assets/gaming/fallout4.webp",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "worldofwarcraft",
+      "title": "World of Warcraft: Wrath of the Lich King",
+      "art": {
+        "src": "/assets/gaming/worldofwarcraft.webp",
+        "width": 640,
+        "height": 800
+      }
+    },
+    {
+      "id": "deadislandriptide",
+      "title": "Dead Island: Riptide Definitive Edition",
+      "art": {
+        "src": "/assets/gaming/deadisland.webp",
+        "width": 1280,
+        "height": 720
+      }
+    }
+  ],
+  "mods": [
+    {
+      "slug": "quick-attach-menu",
+      "game": "fallout4",
+      "title": "K2040 Quick Attach Menu",
+      "nexus": "https://www.nexusmods.com/fallout4/mods/109575",
+      "description": {
+        "en": "Change compatible weapon attachments directly in-game.",
+        "de": "Kompatible Waffenaufsätze direkt im Spiel wechseln.",
+        "pt-PT": "Altera acessórios de armas compatíveis no jogo.",
+        "es": "Cambia accesorios de armas compatibles en el juego.",
+        "fr": "Changez les accessoires d’armes compatibles en jeu."
+      },
+      "images": [
+        {
+          "src": "/assets/gaming/qam-menu.webp",
+          "width": 2560,
+          "height": 1440,
+          "caption": {
+            "en": "Quick menu",
+            "de": "Schnellmenü",
+            "pt-PT": "Menu rápido",
+            "es": "Menú rápido",
+            "fr": "Menu rapide"
+          }
+        },
+        {
+          "src": "/assets/gaming/qam-builder.webp",
+          "width": 2560,
+          "height": 1440,
+          "caption": {
+            "en": "Menu builder",
+            "de": "Menü-Editor",
+            "pt-PT": "Editor de menus",
+            "es": "Editor de menús",
+            "fr": "Éditeur de menu"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "quest-journal",
+      "game": "fallout4",
+      "title": "K2040 Quest Journal",
+      "nexus": "https://www.nexusmods.com/fallout4/mods/110911",
+      "description": {
+        "en": "A full-screen quest journal and customizable tracker.",
+        "de": "Vollbild-Questtagebuch und anpassbare Zielanzeige.",
+        "pt-PT": "Diário de missões em ecrã inteiro e indicador personalizável.",
+        "es": "Diario de misiones a pantalla completa y rastreador personalizable.",
+        "fr": "Journal de quêtes plein écran et suivi personnalisable."
+      },
+      "images": [
+        {
+          "src": "/assets/gaming/journal.webp",
+          "width": 2560,
+          "height": 1440,
+          "caption": {
+            "en": "Quest journal",
+            "de": "Questtagebuch",
+            "pt-PT": "Diário de missões",
+            "es": "Diario de misiones",
+            "fr": "Journal de quêtes"
+          }
+        },
+        {
+          "src": "/assets/gaming/quest-tracker.webp",
+          "width": 369,
+          "height": 610,
+          "caption": {
+            "en": "Quest tracker",
+            "de": "Questanzeige",
+            "pt-PT": "Indicador de missões",
+            "es": "Rastreador de misiones",
+            "fr": "Suivi des quêtes"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "eco-aio",
+      "game": "fallout4",
+      "title": "ECO Quick Menu Additions — All-in-One",
+      "nexus": "https://www.nexusmods.com/fallout4/mods/105461",
+      "description": {
+        "en": "A collection of weapon compatibility patches for ECO Redux.",
+        "de": "Eine Sammlung von Waffen-Kompatibilitätspatches für ECO Redux.",
+        "pt-PT": "Coleção de patches de compatibilidade de armas para ECO Redux.",
+        "es": "Colección de parches de compatibilidad de armas para ECO Redux.",
+        "fr": "Collection de correctifs de compatibilité des armes pour ECO Redux."
+      },
+      "images": []
+    },
+    {
+      "slug": "eco-single-patches",
+      "game": "fallout4",
+      "title": "ECO Quick Menu Additions — Single Patches",
+      "nexus": "https://www.nexusmods.com/fallout4/mods/105464",
+      "description": {
+        "en": "Individual weapon compatibility patches for ECO Redux.",
+        "de": "Einzelne Waffen-Kompatibilitätspatches für ECO Redux.",
+        "pt-PT": "Patches individuais de compatibilidade de armas para ECO Redux.",
+        "es": "Parches individuales de compatibilidad de armas para ECO Redux.",
+        "fr": "Correctifs individuels de compatibilité des armes pour ECO Redux."
+      },
+      "images": []
+    },
+    {
+      "slug": "xedit-json-exporter",
+      "game": "fallout4",
+      "title": "K2040 xEdit JSON Exporter",
+      "nexus": "https://www.nexusmods.com/fallout4/mods/105775",
+      "description": {
+        "en": "Export Fallout 4 plugin records from xEdit to JSON.",
+        "de": "Fallout-4-Plugin-Datensätze aus xEdit als JSON exportieren.",
+        "pt-PT": "Exporta registos de plugins de Fallout 4 do xEdit para JSON.",
+        "es": "Exporta registros de plugins de Fallout 4 desde xEdit a JSON.",
+        "fr": "Exportez les données de plugins de Fallout 4 depuis xEdit en JSON."
+      },
+      "images": []
+    },
+    {
+      "slug": "gm-genie",
+      "game": "worldofwarcraft",
+      "title": "GM Genie 3.3.5a",
+      "nexus": "https://www.nexusmods.com/worldofwarcraft/mods/905",
+      "description": {
+        "en": "A Game Master utility for Wrath of the Lich King, focused on AzerothCore.",
+        "de": "Ein Spielleiter-Werkzeug für Wrath of the Lich King mit Schwerpunkt AzerothCore.",
+        "pt-PT": "Ferramenta para Game Masters de Wrath of the Lich King, focada em AzerothCore.",
+        "es": "Herramienta para Game Masters de Wrath of the Lich King, centrada en AzerothCore.",
+        "fr": "Outil pour les maîtres de jeu de Wrath of the Lich King, axé sur AzerothCore."
+      },
+      "images": [
+        {
+          "src": "/assets/gaming/gm-genie-tickets.webp",
+          "width": 607,
+          "height": 383,
+          "caption": {
+            "en": "Ticket interface",
+            "de": "Ticket-Ansicht",
+            "pt-PT": "Interface de pedidos",
+            "es": "Interfaz de tickets",
+            "fr": "Interface de requêtes"
+          }
+        },
+        {
+          "src": "/assets/gaming/gm-genie-builder.webp",
+          "width": 292,
+          "height": 454,
+          "caption": {
+            "en": "Builder interface",
+            "de": "Builder-Oberfläche",
+            "pt-PT": "Interface do editor",
+            "es": "Interfaz del editor",
+            "fr": "Interface de l’éditeur"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "loot-and-salvage",
+      "game": "worldofwarcraft",
+      "title": "Loot & Salvage",
+      "nexus": "https://www.nexusmods.com/worldofwarcraft/mods/906",
+      "description": {
+        "en": "Manage unwanted items and junk in Wrath of the Lich King 3.3.5a.",
+        "de": "Unerwünschte Gegenstände und Plunder in Wrath of the Lich King 3.3.5a verwalten.",
+        "pt-PT": "Gere objetos indesejados em Wrath of the Lich King 3.3.5a.",
+        "es": "Gestiona objetos no deseados en Wrath of the Lich King 3.3.5a.",
+        "fr": "Gérez les objets indésirables dans Wrath of the Lich King 3.3.5a."
+      },
+      "images": []
+    },
+    {
+      "slug": "dirde-ue-linux",
+      "game": "deadislandriptide",
+      "title": "Dead Island: Riptide — Ultimate Edition Mod (Linux)",
+      "nexus": "https://www.nexusmods.com/deadislandriptide/mods/31",
+      "description": {
+        "en": "A native Linux port of FireEyeEian’s original Ultimate Edition mod menu.",
+        "de": "Eine native Linux-Portierung von FireEyeEians ursprünglichem Ultimate-Edition-Modmenü.",
+        "pt-PT": "Versão nativa para Linux do menu Ultimate Edition original de FireEyeEian.",
+        "es": "Adaptación nativa para Linux del menú Ultimate Edition original de FireEyeEian.",
+        "fr": "Portage Linux natif du menu Ultimate Edition original de FireEyeEian."
+      },
+      "images": [
+        {
+          "src": "/assets/gaming/dirde-main.png",
+          "width": 1210,
+          "height": 1060,
+          "caption": {
+            "en": "Main window",
+            "de": "Hauptfenster",
+            "pt-PT": "Janela principal",
+            "es": "Ventana principal",
+            "fr": "Fenêtre principale"
+          }
+        },
+        {
+          "src": "/assets/gaming/dirde-about.png",
+          "width": 650,
+          "height": 400,
+          "caption": {
+            "en": "About and credits",
+            "de": "Über das Projekt und Mitwirkende",
+            "pt-PT": "Sobre e créditos",
+            "es": "Acerca de y créditos",
+            "fr": "À propos et crédits"
+          }
+        }
+      ]
+    }
+  ]
+}

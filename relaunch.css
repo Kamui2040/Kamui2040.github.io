@@ -578,3 +578,9 @@ html[lang="fr"] [data-post-locale="fr"] { display: revert !important; }
   html { scroll-behavior: auto; }
   *,*::before,*::after { transition: none !important; animation: none !important; }
 }
+
+/* Shared website switcher, distinct from each site's primary navigation. */
+.site-switch { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 24px; padding-block: 8px; border-bottom: 1px solid var(--soft-line); }
+.site-switch a { display: inline-flex; align-items: center; min-height: 44px; font-size: .9rem; color: var(--muted); text-decoration: none; }
+.site-switch a[aria-current="page"] { color: var(--ink); font-weight: 700; border-bottom: 2px solid var(--brand-strong); }
+.site-switch a:hover { color: var(--ink); text-decoration: underline; }

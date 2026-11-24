@@ -7,7 +7,8 @@ The public website for K2040, with an introduction, project overview, a short bl
 - index.html — landing page and current announcements
 - about/ — introduction and blog posts
 - links/ — verified profiles and support links
-- news/ — current announcements
+- news/ — current announcements across the websites
+- gaming/ — Gaming landing page, mod catalogue, detail pages and news; catalogue and announcements are authored in gaming/catalog.json and gaming/posts.json
 - relaunch.css, relaunch.js, relaunch-copy.js — shared responsive visual system and five locales
 - about/posts.json — editable blog content
 - relaunch-site-news.js — generated announcement feed

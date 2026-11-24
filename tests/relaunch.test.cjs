@@ -285,7 +285,8 @@ test("Unverified platforms and offline project sites are non-clickable",()=>{
  for(const name of ["Patreon","TikTok",">X<"]){
   assert.ok(html.includes(name),name);
  }
- assert.equal((html.match(/class="directory-item directory-item--unavailable"/g)||[]).length,5);
+ assert.equal((html.match(/class="directory-item directory-item--unavailable"/g)||[]).length,4);
+ assert.ok(html.includes('class="directory-item" href="/gaming/"'));
  assert.ok(html.includes('href="https://www.patreon.com/cw/k2040"'));
  assert.ok(!html.includes('href="https://kamui2040.github.io/K2040-Gaming-Mods/'));
 });
@@ -320,7 +321,7 @@ test("Relaunch notice is a short, localized blog entry featured first in news",(
  assert.ok(!pages.about.includes('src="/relaunch-site-news.js"'));
  assert.ok(!pages.note.includes('src="/relaunch-site-news.js"'));
  const runtime=file("relaunch.js");
- assert.ok(runtime.includes('let updates=[...siteUpdates]'));
+ assert.ok(runtime.includes('siteUpdates.filter(item=>item.projectId==="game-projects")'));
  assert.ok(!runtime.includes('...siteUpdates,...library,...android,...gaming'));
  assert.ok(runtime.includes('Date.parse(b.publishedAt || b.date+"T00:00:00Z")'));
  assert.ok(runtime.includes('new URL(value,location.href)'));
@@ -343,53 +344,27 @@ test("Fresh-launch News contains only the new site announcement",()=>{
  for(const obsolete of ["window.K2040_NEWS","importFeed","loadFeeds","K2040_CONTENT","K2040_GAMING_UPDATES",
    "/K2040-Android-Releases/updates/latest.js","/K2040-Gaming-Mods/updates/2026.js"])
     assert.ok(!runtime.includes(obsolete),"unexpected historic news reference: "+obsolete);
- assert.ok(runtime.includes('const relaunchFeedSources = Object.freeze([]);'),"new feeds must start disconnected");
- assert.ok(runtime.includes('const newFeedItems = async source =>'),"future relaunch feed importer must remain");
- assert.ok(runtime.includes('const loadRelaunchFeeds = async () =>'),"automatic reload needed after subsite relaunch");
+ assert.ok(runtime.includes('siteUpdates.filter(item=>item.projectId==="game-projects")'));
+ assert.ok(!runtime.includes("newFeedItems"),"single generated feed replaces external importers");
  for(const [name,html] of Object.entries(pages))assert.ok(!html.includes('"/relaunch-news.js"'),name);
 });
-test("Future relaunch-only feeds reject legacy, mismatched and unpublished entries", async()=>{
- const js=file("relaunch.js");
- const start=js.indexOf("  const newFeedItems = async source => {");
- const end=js.indexOf("  const loadRelaunchFeeds = async () => {",start);
- assert.ok(start>0 && end>start);
- const source={
-  path:"/K2040-Gaming-Mods/updates/relaunch.json",
-  project:"game-projects",launchId:"relaunch-2026"
- };
- const good={id:"new",date:"2026-11-22",publishedAt:"2026-11-22T17:00:00+01:00",
-  relaunch:true,launchId:source.launchId,projectId:source.project,
-  strings:{en:{title:"A new public post"}}};
- const historical={...good,id:"legacy",relaunch:false};
- const wrongLaunch={...good,id:"wrong-launch",launchId:"old-version"};
- const future={...good,id:"scheduled",date:"2999-01-01",publishedAt:"2999-01-01T12:00:00Z"};
- let calls=0;
- let payload={
-  schema:"k2040-relaunch-v1",project:source.project,launchId:source.launchId,
-  entries:[good,historical,wrongLaunch,future]
- };
- const scope={
-  fetch:async (path,opts)=>{
-   calls++;
-   assert.equal(path,source.path);
-   assert.equal(opts.mode,"same-origin");
-   assert.equal(opts.credentials,"omit");
-   return {ok:true,json:async()=>payload};
-  },
-  validDate:date=>/^\d{4}-\d{2}-\d{2}$/.test(date),
-  Date,
- };
- const importer=vm.runInNewContext(js.slice(start,end)+"\nnewFeedItems;",scope);
- const accepted=await importer(source);
- assert.equal(accepted.length,1);
- assert.equal(accepted[0].id,"new");
- assert.equal(calls,1);
- assert.equal((await importer({...source,path:"/K2040-Gaming-Mods/updates/2026.js"})).length,0);
- assert.equal(calls,1,"legacy endpoints should not even be fetched");
- payload={...payload,schema:"legacy"};
- assert.equal((await importer(source)).length,0);
- payload={...payload,schema:"k2040-relaunch-v1",launchId:"old-version"};
- assert.equal((await importer(source)).length,0);
+test("New gaming announcements enter the shared news index exactly once",()=>{
+ const catalog=JSON.parse(file("gaming/catalog.json"));
+ const posts=JSON.parse(file("gaming/posts.json"));
+ const entries=context.window.K2040_SITE_NEWS.filter(x=>x.projectId==="game-projects");
+ assert.equal(entries.length,posts.length);
+ assert.equal(new Set(entries.map(x=>x.id)).size,entries.length);
+ for(const p of posts){
+   const entry=entries.find(x=>x.id==="gaming-"+p.slug);
+   assert.ok(entry);
+   assert.ok(catalog.mods.some(m=>m.slug===p.mod));
+   assert.equal(entry.href,"/gaming/news/"+p.slug+"/");
+   assert.ok(fs.existsSync(path.join(root,entry.href,"index.html")));
+   for(const lang of Object.keys(translations)){
+     assert.equal(entry.strings[lang].title,p.translations[lang].title);
+     assert.equal(entry.strings[lang].summary,p.translations[lang].excerpt);
+   }
+ }
 });
 test("News dates sorted and unsafe links filtered in UI logic",()=>{
  const js=file("relaunch.js");
@@ -404,7 +379,7 @@ test("News dates sorted and unsafe links filtered in UI logic",()=>{
 test("Static builder is reproducible",()=>{
  const files=["index.html","news/index.html","links/index.html","about/index.html",
   "about/notes/why-i-started-making-things/index.html",
-  "about/notes/site-and-social-relaunch/index.html","relaunch-site-news.js"];
+  "about/notes/site-and-social-relaunch/index.html","relaunch-site-news.js",...["gaming/index.html","gaming/mods/index.html","gaming/news/index.html"],...JSON.parse(file("gaming/catalog.json")).mods.map(m=>"gaming/mods/"+m.slug+"/index.html")];
  const before=files.map(digest);
  const out=spawnSync("python3",["tools/build_site.py"],{cwd:root,encoding:"utf8"});
  assert.equal(out.status,0,out.stderr);

@@ -106,7 +106,14 @@ try:
                 ("/about/notes/why-i-started-making-things/",1440,900,"dark","de"),
                 ("/about/notes/why-i-started-making-things/",500,850,"light","pt-PT"),
                 ("/about/notes/site-and-social-relaunch/",1440,900,"dark","es"),
-                ("/about/notes/site-and-social-relaunch/",500,850,"light","fr")
+                ("/about/notes/site-and-social-relaunch/",500,850,"light","fr"),
+                ("/gaming/",1440,900,"dark","en"),
+                ("/gaming/",500,850,"light","de"),
+                ("/gaming/mods/",1440,900,"light","fr"),
+                ("/gaming/mods/",500,850,"dark","pt-PT"),
+                ("/gaming/mods/quick-attach-menu/",1440,900,"dark","en"),
+                ("/gaming/mods/quest-journal/",500,850,"light","es"),
+                ("/gaming/news/",500,850,"dark","fr")
             ]:
                 b.size(width,height)
                 b.open(origin+pathname)
@@ -185,7 +192,7 @@ try:
                         require(escaped=="false","Escape failed to close navigation")
                         time.sleep(.35)
                 if pathname=="/links/":
-                    require(result["profileLinks"]==8,("active external links",result))
+                    require(result["profileLinks"]==9,("active external links",result))
                     directory=b.js('''
                       const header=document.querySelector(".directory-intro");
                       const profiles=document.querySelector("#profile-title").closest("section");
@@ -201,7 +208,7 @@ try:
                             ("Patreon grouping",directory))
                     require(directory["supportLinks"]==2,("support links",directory))
                     require(directory["introHeight"]<260,("oversized directory intro",directory))
-                    require(directory["profilesTop"]<410,("profiles pushed below visible area",directory))
+                    require(directory["profilesTop"]<470,("profiles pushed below visible area",directory))
                 if pathname=="/about/":
                     require(result["noteCards"]==2,("About blog entries missing",result))
                     require(result["aboutActive"],("About nav current",result))
@@ -227,6 +234,33 @@ try:
                     require(note["back"] and note["heading"],("Note navigation/title",note))
                     require(note["title"].startswith(note["heading"].strip()),("Note title not localized",note))
                     require(note["description"] and len(note["description"])>=8,("Note description missing",note))
+                if pathname.startswith("/gaming/"):
+                    game=b.js('''return {
+                      switchHome:!!document.querySelector('.site-switch a[href="/"]'),
+                      switchGaming:!!document.querySelector('.site-switch a[href="/gaming/"][aria-current="page"]'),
+                      tiles:document.querySelectorAll(".game-tile").length,
+                      mods:document.querySelectorAll(".mod-card").length,
+                      pictures:[...document.querySelectorAll("main img[src]")].every(i=>i.loading==="lazy"||i.complete&&i.naturalWidth>0),
+                      title:document.title,
+                      modLink:!!document.querySelector('.mod-header a[href^="https://www.nexusmods.com/"]'),
+                      activeLocales:[...document.querySelectorAll("[data-post-locale]")].filter(el=>getComputedStyle(el).display!=="none").map(el=>el.dataset.postLocale)
+                    };''')
+                    require(game["switchHome"] and game["switchGaming"],("website switch",game))
+                    require(game["pictures"],("gaming image decoding",game))
+                    require(all(l==language for l in game["activeLocales"]),("gaming localization",game))
+                    if pathname=="/gaming/": require(game["tiles"]==3 and result["newsItems"]==0,("gaming home",game))
+                    if pathname=="/gaming/mods/": require(game["mods"]==8,("catalogue",game))
+                    if pathname.startswith("/gaming/mods/") and pathname!="/gaming/mods/":
+                        require(game["modLink"],("official mod link",game))
+                        outcome=b.js('''const a=document.querySelector(".gallery-item"),d=document.querySelector(".gaming-lightbox");
+                          a.click();const first=d.querySelector("img").src;
+                          d.dispatchEvent(new KeyboardEvent("keydown",{key:"ArrowRight",bubbles:true}));
+                          const second=d.querySelector("img").src; const opened=d.open;
+                          d.querySelector("[data-gallery-close]").click();
+                          return {opened,changed:first!==second,closed:!d.open};''')
+                        require(outcome["opened"] and outcome["changed"] and outcome["closed"],("gallery interaction",outcome))
+                    if pathname=="/gaming/news/": require(result["newsItems"]==0,("unpublished gaming news",result))
+                    b.screenshot("gaming-"+pathname.strip("/").replace("/","-")+"-"+str(width)+"-"+theme+".png")
                 checks.append({"path":pathname,"size":result["width"],"theme":theme,"locale":language,"news":result["newsItems"],"bg":result["bodyBg"],"action":result["themeAction"]})
                 time.sleep(.9)
                 if pathname=="/" and width==1440: b.screenshot("home-desktop-dark.png")
@@ -291,7 +325,7 @@ try:
             checks.append({"regression":"theme-click-isolation","cases":12,"status":"PASS"})
             b.call("WebDriver:DeleteSession")
     (OUT/"browser-results.json").write_text(json.dumps(checks,indent=2)+"\n")
-    print("PASS Firefox: 14 layout cases, 12 persisted-theme click-isolation cases, relaunch first, notes and news")
+    print(f"PASS Firefox: {len(checks)-1} layout cases, 12 persisted-theme click-isolation cases, relaunch first, notes, gaming and news")
 finally:
     if sock:sock.close()
     if proc:
