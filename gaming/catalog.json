@@ -1,0 +1,57 @@
+{
+  "games": [
+    {
+      "id": "fallout4",
+      "title": "Fallout 4",
+      "art": {
+        "src": "/assets/gaming/fallout4.webp",
+        "width": 1280,
+        "height": 720
+      }
+    }
+  ],
+  "mods": [
+    {
+      "slug": "pinup-magazines",
+      "game": "fallout4",
+      "title": "K2040 Pin-up Magazine Covers",
+      "nexus": "https://www.nexusmods.com/fallout4/mods/111814",
+      "description": {
+        "en": "134 retro-style magazine covers for Fallout 4, its DLCs and optional Creation Club content.",
+        "de": "134 Retro-Magazincover für Fallout 4, seine DLCs und optionale Creation-Club-Inhalte.",
+        "pt-PT": "134 capas de revistas de estilo retro para Fallout 4, os seus DLC e conteúdos opcionais do Creation Club.",
+        "es": "134 portadas de revistas de estilo retro para Fallout 4, sus DLC y contenido opcional del Creation Club.",
+        "fr": "134 couvertures de magazines rétro pour Fallout 4, ses DLC et les contenus optionnels du Creation Club."
+      },
+      "images": [],
+      "feature_post": "pinup-magazines",
+      "overview": {
+        "en": [
+          "A collection of 134 redesigned magazine covers for Fallout 4: 130 for the base game, Far Harbor and Nuka-World, plus four for optional Creation Club content. The illustrations draw on vintage pin-up art, retro science fiction and the world of Fallout.",
+          "Choose between standard and high-resolution versions. The gallery shows a selection of the AI-assisted cover artwork, rather than in-game screenshots.",
+          "Optional Creation Club packs are also available for Halloween Workshop (one cover) and Enclave Remnants (three covers), both in standard and high resolution."
+        ],
+        "de": [
+          "Eine Sammlung von 134 neu gestalteten Magazincovern für Fallout 4: 130 für das Hauptspiel, Far Harbor und Nuka-World sowie vier für optionale Creation-Club-Inhalte. Die Illustrationen verbinden klassische Pin-up-Kunst, Retro-Science-Fiction und die Welt von Fallout.",
+          "Zur Auswahl stehen eine Standard- und eine hochauflösende Version. Die Galerie zeigt ausgewählte, mit KI-Unterstützung erstellte Cover und keine Screenshots aus dem Spiel.",
+          "Optionale Creation-Club-Pakete für Halloween Workshop (ein Cover) und Enclave Remnants (drei Cover) sind ebenfalls erhältlich, jeweils in Standard- und hoher Auflösung."
+        ],
+        "pt-PT": [
+          "Uma coleção de 134 capas de revistas redesenhadas para Fallout 4: 130 para o jogo base, Far Harbor e Nuka-World, e quatro para conteúdos opcionais do Creation Club. As ilustrações inspiram-se na arte pin-up clássica, na ficção científica retro e no mundo de Fallout.",
+          "Escolhe entre as versões de resolução normal e alta. A galeria mostra uma seleção de capas criadas com o auxílio de IA, não capturas do jogo.",
+          "Também estão disponíveis pacotes opcionais do Creation Club para Halloween Workshop (uma capa) e Enclave Remnants (três capas), ambos em resolução normal e alta."
+        ],
+        "es": [
+          "Una colección de 134 portadas de revistas rediseñadas para Fallout 4: 130 para el juego base, Far Harbor y Nuka-World, y cuatro para contenido opcional del Creation Club. Las ilustraciones se inspiran en el arte pin-up clásico, la ciencia ficción retro y el mundo de Fallout.",
+          "Puedes elegir entre las versiones de resolución estándar y alta. La galería muestra una selección de portadas creadas con ayuda de IA, no capturas del juego.",
+          "También están disponibles paquetes opcionales de Creation Club para Halloween Workshop (una portada) y Enclave Remnants (tres portadas), ambos en resolución estándar y alta."
+        ],
+        "fr": [
+          "Une collection de 134 couvertures de magazines revisitées pour Fallout 4 : 130 pour le jeu de base, Far Harbor et Nuka-World, et quatre pour les contenus optionnels du Creation Club. Les illustrations s’inspirent de l’art pin-up classique, de la science-fiction rétro et de l’univers de Fallout.",
+          "Deux versions sont disponibles, en résolution standard et haute. La galerie présente une sélection de couvertures créées avec l’aide de l’IA, et non des captures en jeu.",
+          "Des packs optionnels Creation Club sont également disponibles pour Halloween Workshop (une couverture) et Enclave Remnants (trois couvertures), en résolution standard et haute."
+        ]
+      }
+    }
+  ]
+}

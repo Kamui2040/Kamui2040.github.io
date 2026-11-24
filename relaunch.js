@@ -21,12 +21,9 @@
     root.dataset.theme = rememberedTheme;
   }
   let language = preferred();
-  // The relaunch starts with only local announcements. Future redesigned project
-  // sites can opt in one at a time after their new versioned feeds are verified.
-  // Never point these sources at legacy release/news endpoints.
-  const relaunchFeedSources = Object.freeze([]);
+  // One local, generated news index. Gaming articles are authored once.
   const siteUpdates=Array.isArray(window.K2040_SITE_NEWS) ? window.K2040_SITE_NEWS : [];
-  let updates=[...siteUpdates];
+  const updates=page.startsWith("gaming") ? siteUpdates.filter(item=>item.projectId==="game-projects") : siteUpdates;
   const header = document.querySelector(".masthead");
   const toggle = document.querySelector("[data-menu-toggle]");
   const mobile = document.querySelector(".mobile-nav");
@@ -44,6 +41,7 @@
       const value = pathValue(labels,node.dataset.copyAria);
       if (typeof value === "string") node.setAttribute("aria-label",value);
     }
+    for (const image of document.querySelectorAll("img[data-alt-en]")) image.alt = image.getAttribute("data-alt-"+language.toLowerCase()) || image.dataset.altEn;
     if (languageSelect) languageSelect.value = language;
     const postTitle = document.querySelector("[data-note-title]");
     const localizedPostTitle = postTitle?.querySelector('[data-post-locale="'+language+'"]')?.textContent;
@@ -119,7 +117,7 @@
     try {
       const url = new URL(value,location.href);
       if (!["https:","http:"].includes(url.protocol)) return null;
-      // Related project sites remain private during the relaunch.
+      // Reject retired standalone routes.
       if (url.hostname==="kamui2040.github.io" &&
           /^\/(K2040-Gaming-Mods|K2040-Android-Releases|The-Library)\//.test(url.pathname)) return null;
       return url.href;
@@ -128,11 +126,11 @@
   const renderNews = () => {
     const list = document.querySelector("[data-updates]");
     if (!list) return;
-    const count = page==="home" ? 5 : Infinity;
+    const count = page==="home" || page==="gaming" ? 5 : Infinity;
     const entries = sortNews([...updates]).slice(0,count);
     list.replaceChildren();
     if(!entries.length) {
-      list.append(makeElement("p","empty-state",copy().news.empty));
+      list.append(makeElement("p","empty-state",page.startsWith("gaming") ? copy().gaming.empty : copy().news.empty));
       return;
     }
     for (const item of entries) {
@@ -163,47 +161,5 @@
       list.append(card);
     }
   };
-  // New project feeds use JSON rather than executable cross-site scripts.
-  // Future source entry: {path, project, launchId}; the new endpoint must serve:
-  // {schema:"k2040-relaunch-v1", project, launchId, entries:[...]}
-  // Every entry must explicitly carry the same project and launchId, a
-  // relaunch:true marker, and a timezone-aware publishedAt for ordering.
-  const newFeedItems = async source => {
-    if (!source || !/^(?:\/K2040-Gaming-Mods|\/K2040-Android-Releases|\/The-Library)\/updates\/relaunch\.json$/.test(source.path) ||
-        typeof source.project!=="string" || !/^[a-z0-9-]+$/.test(source.project) ||
-        typeof source.launchId!=="string" || !/^[a-z0-9-]+$/.test(source.launchId)) return [];
-    try {
-      const response=await fetch(source.path,{credentials:"omit",mode:"same-origin"});
-      if (!response.ok) return [];
-      const feed=await response.json();
-      if (feed?.schema!=="k2040-relaunch-v1" ||
-          feed.project!==source.project || feed.launchId!==source.launchId ||
-          !Array.isArray(feed.entries)) return [];
-      return feed.entries.filter(item =>
-        item?.relaunch===true && item.projectId===source.project &&
-        item.launchId===source.launchId && validDate(item.date) &&
-        typeof item.publishedAt==="string" &&
-        /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(Z|[+-]\d{2}:\d{2})$/.test(item.publishedAt) &&
-        !Number.isNaN(Date.parse(item.publishedAt)) &&
-        Date.parse(item.publishedAt)<=Date.now() &&
-        item.publishedAt.slice(0,10)===item.date &&
-        item.strings?.en?.title
-      );
-    } catch {
-      // A project site may still be private or temporarily unavailable.
-      return [];
-    }
-  };
-  const loadRelaunchFeeds = async () => {
-    if (!document.querySelector("[data-updates]") || !relaunchFeedSources.length) return;
-    const sources=await Promise.all(relaunchFeedSources.map(newFeedItems));
-    const deduplicated=new Map();
-    for (const item of [...siteUpdates,...sources.flat()]) {
-      if (typeof item.id==="string" && item.id) deduplicated.set(item.id,item);
-    }
-    updates=[...deduplicated.values()];
-    renderNews();
-  };
   renderCopy();
-  loadRelaunchFeeds();
 })();

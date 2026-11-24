@@ -11,3 +11,13 @@ The wordmark and frame identity may not be represented as an external brand's as
 `assets/support/ko-fi.png` and `assets/support/monero-xmr.png` are creator-approved, original K2040-themed navigation graphics produced locally for optional donation links. Their frames reuse the original owner-approved K2040 open top-left and bottom-right quarter geometry and gradient palette; no external photography, game artwork or third-party logos are incorporated. Text reads “Support me on Ko-fi” and “Support me on Monero (XMR)”. They contain no donation addresses or payment credentials. The creator maintains editable SVG source files outside this public repository.
 
 Both public PNG exports are 320 × 64 pixels. SHA-256: `ko-fi.png` = `c95a8f14e46ec900cbac3f24f697a24b93bf648edd54b2ad5649c04196114b07`; `monero-xmr.png` = `a11fa5c4b6c752fa402af9dbb910c115d643e2a6d3a1f5a2a59d04dbc298048c`.
+
+## Gaming website media
+
+Owner-approved promotional illustrations. The magazine compositions use existing creator-approved AI-generated cover artwork, including two optional Creation Club covers, and the approved K2040 branding. These are artwork previews, not gameplay screenshots. No game assets, source masters or mod archives are distributed.
+
+- `assets/gaming/fallout4.webp` — Original promotional illustration, responsive WebP derivative; SHA-256 `165e93b599b8836f33247544500e6378c12bf35d43cbb1db7c1ea09c5f465a90`.
+- `assets/gaming/pinup-preview-1-varied.webp` — 1920 × 1080 promotional composition; SHA-256 `cabfcd40ead447dc21570bc58be851b5a8838e85ed09bd7a7186b0ff0652c32b`.
+- `assets/gaming/pinup-preview-2-varied.webp` — 1920 × 1080 promotional composition; SHA-256 `21ccf3f87d0eadebbeec71ddf8d7d76677576bc199d7d875012aabff215b126d`.
+- `assets/gaming/pinup-preview-3-varied.webp` — 1920 × 1080 promotional composition; SHA-256 `56b59557bc0bdc4b594bbc5e741e60a98a4d1ce6f93846ebd23e32a6dee6b69c`.
+- `assets/gaming/pinup-preview-4-varied.webp` — 1920 × 1080 promotional composition; SHA-256 `5728c26df3c9a85a7b910f0243905a3d6c3c6378b29f8fcb211b6cd36ed023e7`.

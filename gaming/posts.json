@@ -1,0 +1,109 @@
+[
+  {
+    "slug": "pinup-magazines",
+    "date": "2026-11-24",
+    "mod": "pinup-magazines",
+    "translations": {
+      "en": {
+        "title": "New Fallout 4 pin-up magazine covers",
+        "excerpt": "134 retro-style magazine covers for Fallout 4, its DLCs and optional Creation Club content.",
+        "paragraphs": [
+          "I've released a pin-up magazine cover replacer for Fallout 4 with 134 new covers in total: 130 for the base game, Far Harbor and Nuka-World, plus four for optional Creation Club content. Standard and high-resolution versions are available.",
+          "Optional Creation Club packs are also available for Halloween Workshop (one cover) and Enclave Remnants (three covers), both in standard and high resolution.",
+          "Here are a few of the more restrained covers from the collection. These are artwork previews, not in-game screenshots.",
+          "The covers were made with AI-assisted artwork and adapted to fit the magazines. If you enjoy the mod, an endorsement on Nexus is always appreciated."
+        ]
+      },
+      "de": {
+        "title": "Neue Pin-up-Magazincover für Fallout 4",
+        "excerpt": "134 Retro-Magazincover für Fallout 4, seine DLCs und optionale Creation-Club-Inhalte.",
+        "paragraphs": [
+          "Ich habe einen Pin-up-Magazincover-Replacer für Fallout 4 mit insgesamt 134 neuen Covern veröffentlicht: 130 für das Hauptspiel, Far Harbor und Nuka-World sowie vier für optionale Creation-Club-Inhalte. Es gibt eine Standard- und eine hochauflösende Version.",
+          "Optionale Creation-Club-Pakete für Halloween Workshop (ein Cover) und Enclave Remnants (drei Cover) sind ebenfalls erhältlich, jeweils in Standard- und hoher Auflösung.",
+          "Hier sind einige der zurückhaltenderen Cover aus der Sammlung. Das sind Artwork-Vorschauen, keine Screenshots aus dem Spiel.",
+          "Die Cover wurden mit KI-Unterstützung erstellt und an die Magazine angepasst. Wenn euch der Mod gefällt, freue ich mich über ein Endorsement auf Nexus."
+        ]
+      },
+      "pt-PT": {
+        "title": "Novas capas pin-up de revistas para Fallout 4",
+        "excerpt": "134 capas de revistas de estilo retro para Fallout 4, os seus DLC e conteúdos opcionais do Creation Club.",
+        "paragraphs": [
+          "Lancei um mod de substituição de capas pin-up para Fallout 4 com 134 novas capas no total: 130 para o jogo base, Far Harbor e Nuka-World, e quatro para conteúdos opcionais do Creation Club. Disponível em resolução normal e alta.",
+          "Também estão disponíveis pacotes opcionais do Creation Club para Halloween Workshop (uma capa) e Enclave Remnants (três capas), ambos em resolução normal e alta.",
+          "Aqui estão algumas das capas mais discretas da coleção. São pré-visualizações das ilustrações, não capturas do jogo.",
+          "As capas foram criadas com o auxílio de IA e adaptadas às revistas. Se gostarem do mod, agradeço um endorsement no Nexus."
+        ]
+      },
+      "es": {
+        "title": "Nuevas portadas pin-up de revistas para Fallout 4",
+        "excerpt": "134 portadas de revistas de estilo retro para Fallout 4, sus DLC y contenido opcional del Creation Club.",
+        "paragraphs": [
+          "He publicado un mod de reemplazo de portadas pin-up para Fallout 4 con 134 nuevas portadas en total: 130 para el juego base, Far Harbor y Nuka-World, y cuatro para contenido opcional del Creation Club. Disponible en resolución estándar y alta.",
+          "También están disponibles paquetes opcionales de Creation Club para Halloween Workshop (una portada) y Enclave Remnants (tres portadas), ambos en resolución estándar y alta.",
+          "Aquí tenéis algunas de las portadas más discretas de la colección. Son vistas previas de las ilustraciones, no capturas del juego.",
+          "Las portadas se crearon con ayuda de IA y se adaptaron a las revistas. Si os gusta el mod, agradezco un endorsement en Nexus."
+        ]
+      },
+      "fr": {
+        "title": "Nouvelles couvertures pin-up pour Fallout 4",
+        "excerpt": "134 couvertures de magazines rétro pour Fallout 4, ses DLC et les contenus optionnels du Creation Club.",
+        "paragraphs": [
+          "J’ai publié un mod de remplacement des couvertures pin-up pour Fallout 4, avec 134 nouvelles couvertures au total : 130 pour le jeu de base, Far Harbor et Nuka-World, et quatre pour les contenus optionnels du Creation Club. Disponible en résolution standard et haute.",
+          "Des packs optionnels Creation Club sont également disponibles pour Halloween Workshop (une couverture) et Enclave Remnants (trois couvertures), en résolution standard et haute.",
+          "Voici quelques couvertures plus sobres de la collection. Il s’agit d’aperçus des illustrations, pas de captures en jeu.",
+          "Les couvertures ont été créées avec l’aide de l’IA et adaptées aux magazines. Si le mod vous plaît, un endorsement sur Nexus est toujours apprécié."
+        ]
+      }
+    },
+    "artwork": [
+      {
+        "src": "/assets/gaming/pinup-preview-1-varied.webp",
+        "width": 1920,
+        "height": 1080,
+        "caption": {
+          "en": "Everyday life and style",
+          "de": "Alltag und Stil",
+          "pt-PT": "Vida quotidiana e estilo",
+          "es": "Vida cotidiana y estilo",
+          "fr": "Vie quotidienne et style"
+        }
+      },
+      {
+        "src": "/assets/gaming/pinup-preview-2-varied.webp",
+        "width": 1920,
+        "height": 1080,
+        "caption": {
+          "en": "Science and technology",
+          "de": "Wissenschaft und Technik",
+          "pt-PT": "Ciência e tecnologia",
+          "es": "Ciencia y tecnología",
+          "fr": "Science et technologie"
+        }
+      },
+      {
+        "src": "/assets/gaming/pinup-preview-3-varied.webp",
+        "width": 1920,
+        "height": 1080,
+        "caption": {
+          "en": "Exploring the wasteland",
+          "de": "Unterwegs im Ödland",
+          "pt-PT": "Explorar o ermo",
+          "es": "Explorando el yermo",
+          "fr": "Explorer les terres désolées"
+        }
+      },
+      {
+        "src": "/assets/gaming/pinup-preview-4-varied.webp",
+        "width": 1920,
+        "height": 1080,
+        "caption": {
+          "en": "Comics and games",
+          "de": "Comics und Spiele",
+          "pt-PT": "Banda desenhada e jogos",
+          "es": "Cómics y juegos",
+          "fr": "Bandes dessinées et jeux"
+        }
+      }
+    ]
+  }
+]
