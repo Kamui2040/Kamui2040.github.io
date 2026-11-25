@@ -14,7 +14,7 @@
     {
       "slug": "pinup-magazines",
       "game": "fallout4",
-      "title": "K2040 Pin-up Magazine Covers",
+      "title": "K2040 Pin-up Magazine Covers — Replacer",
       "nexus": "https://www.nexusmods.com/fallout4/mods/111814",
       "description": {
         "en": "134 retro-style magazine covers for Fallout 4, its DLCs and optional Creation Club content.",
@@ -50,6 +50,54 @@
           "Une collection de 134 couvertures de magazines revisitées pour Fallout 4 : 130 pour le jeu de base, Far Harbor et Nuka-World, et quatre pour les contenus optionnels du Creation Club. Les illustrations s’inspirent de l’art pin-up classique, de la science-fiction rétro et de l’univers de Fallout.",
           "Deux versions sont disponibles, en résolution standard et haute. La galerie présente une sélection de couvertures créées avec l’aide de l’IA, et non des captures en jeu.",
           "Des packs optionnels Creation Club sont également disponibles pour Halloween Workshop (une couverture) et Enclave Remnants (trois couvertures), en résolution standard et haute."
+        ]
+      },
+      "related_mods": [
+        "pinup-magazines-standalone"
+      ]
+    },
+    {
+      "slug": "pinup-magazines-standalone",
+      "game": "fallout4",
+      "title": "K2040’s Pin-Up Magazines — Standalone",
+      "nexus": "https://www.nexusmods.com/fallout4/mods/111851",
+      "description": {
+        "en": "134 separate collectible magazines with vintage pin-up artwork. Original magazines and their perks remain unchanged.",
+        "de": "134 eigenständige Sammelmagazine im Retro-Pin-up-Stil. Die Originalmagazine und ihre Boni bleiben unverändert.",
+        "pt-PT": "134 revistas colecionáveis independentes com ilustrações pin-up retro. As revistas originais e os seus benefícios permanecem inalterados.",
+        "es": "134 revistas coleccionables independientes con ilustraciones pin-up retro. Las revistas originales y sus ventajas no cambian.",
+        "fr": "134 magazines de collection indépendants aux illustrations pin-up rétro. Les magazines d’origine et leurs avantages restent inchangés."
+      },
+      "images": [],
+      "feature_post": "pinup-magazines-standalone",
+      "related_mods": [
+        "pinup-magazines"
+      ],
+      "overview": {
+        "en": [
+          "Collect 134 additional issues without replacing the original magazines or gaining new perks. Choose distribution in the world, in loot, or both. The standalone edition can be used without the replacer or alongside it.",
+          "Standard and high-resolution textures are available. Tested with Fallout 4 version 1.10.163; other versions have not been tested. Check the official mod page for requirements and known issues.",
+          "The gallery shows selected AI-generated cover artwork, not gameplay screenshots."
+        ],
+        "de": [
+          "Sammle 134 zusätzliche Ausgaben, ohne die Originalmagazine zu ersetzen oder neue Boni zu erhalten. Wähle die Verteilung in der Spielwelt, als Beute oder beides. Die Standalone-Version kann allein oder zusammen mit dem Replacer verwendet werden.",
+          "Standard- und hochauflösende Texturen stehen zur Auswahl. Getestet mit Fallout 4 in Version 1.10.163; andere Versionen wurden nicht getestet. Voraussetzungen und bekannte Probleme findest du auf der offiziellen Modseite.",
+          "Die Galerie zeigt ausgewählte KI-generierte Cover, keine Screenshots aus dem Spiel."
+        ],
+        "pt-PT": [
+          "Coleciona 134 edições adicionais sem substituir as revistas originais nem ganhar novos benefícios. Escolhe a distribuição pelo mundo, como saque ou ambas. A edição independente pode ser utilizada sozinha ou em conjunto com o mod de substituição.",
+          "Estão disponíveis texturas de resolução normal e alta. Testada com Fallout 4 na versão 1.10.163; outras versões não foram testadas. Consulta a página oficial do mod para conhecer os requisitos e problemas conhecidos.",
+          "A galeria mostra capas selecionadas geradas por IA, não capturas do jogo."
+        ],
+        "es": [
+          "Colecciona 134 números adicionales sin reemplazar las revistas originales ni obtener nuevas ventajas. Elige la distribución por el mundo, como botín o ambas. La edición independiente puede usarse sola o junto con la versión de reemplazo.",
+          "Hay texturas de resolución estándar y alta. Probado con Fallout 4 en la versión 1.10.163; no se han probado otras versiones. Consulta la página oficial del mod para ver los requisitos y problemas conocidos.",
+          "La galería muestra una selección de portadas generadas por IA, no capturas del juego."
+        ],
+        "fr": [
+          "Collectionnez 134 numéros supplémentaires sans remplacer les magazines d’origine ni obtenir de nouveaux avantages. Choisissez la distribution dans le monde, dans le butin ou les deux. L’édition autonome peut être utilisée seule ou avec la version de remplacement.",
+          "Des textures en résolution standard et haute sont disponibles. Testé avec Fallout 4 en version 1.10.163 ; les autres versions n’ont pas été testées. Consultez la page officielle du mod pour les prérequis et les problèmes connus.",
+          "La galerie présente une sélection de couvertures générées par IA, et non des captures en jeu."
         ]
       }
     }

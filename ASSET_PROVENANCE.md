@@ -21,3 +21,17 @@ Owner-approved promotional illustrations. The magazine compositions use existing
 - `assets/gaming/pinup-preview-2-varied.webp` — 1920 × 1080 promotional composition; SHA-256 `21ccf3f87d0eadebbeec71ddf8d7d76677576bc199d7d875012aabff215b126d`.
 - `assets/gaming/pinup-preview-3-varied.webp` — 1920 × 1080 promotional composition; SHA-256 `56b59557bc0bdc4b594bbc5e741e60a98a4d1ce6f93846ebd23e32a6dee6b69c`.
 - `assets/gaming/pinup-preview-4-varied.webp` — 1920 × 1080 promotional composition; SHA-256 `5728c26df3c9a85a7b910f0243905a3d6c3c6378b29f8fcb211b6cd36ed023e7`.
+
+## Standalone magazine edition media
+
+Two 1920 × 1080 WebP compositions of four creator-approved AI-generated magazine covers. Original artwork is proportionally reduced and placed on a neutral background; no gameplay captures, new illustrations or mod archives are included.
+
+- `assets/gaming/pinup-standalone-preview-1.webp` — SHA-256 `e3ae2749752d6acca9d656b079a7e2617f80b98b3a34c34bb37ef1099f62a62c`.
+- `assets/gaming/pinup-standalone-preview-2.webp` — SHA-256 `4312bbd9b8ece2454ca22fba48f0c34beb98cc26211239c2234ba04798bb2f1f`.
+
+Approved source artwork SHA-256:
+
+- hot-rodder-shark-paint-schemes: `4ec7296ab49d3a76b598fa63f9962d08c3fff150dc0dc4c01baadf5e17fa6b77`.
+- astoundingly-awesome-tales-have-dog-will-travel: `893394748f98fc9b13fbb0ed8111fe92dce03aa58444397143f296fb29472df0`.
+- tesla-science-will-robots-rule-the-world: `5458b2d8ec2bc7e41a9e686acf226fc1ac5fac9943286d70f161ec77d4be1448`.
+- tesla-science-tomorrow-s-technology-for-today-s-super-soldiers: `5c99769fa659a8844e44f9ce2bed30b995849bf518af616094ac5cfa86dfcb28`.

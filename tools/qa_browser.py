@@ -115,7 +115,11 @@ try:
                 ("/gaming/mods/pinup-magazines/",500,850,"light","es"),
                 ("/gaming/news/",500,850,"dark","fr"),
                 ("/gaming/news/pinup-magazines/",1440,900,"dark","en"),
-                ("/gaming/news/pinup-magazines/",500,850,"light","de")
+                ("/gaming/news/pinup-magazines/",500,850,"light","de"),
+                ("/gaming/mods/pinup-magazines-standalone/",1440,900,"dark","en"),
+                ("/gaming/mods/pinup-magazines-standalone/",500,850,"light","pt-PT"),
+                ("/gaming/news/pinup-magazines-standalone/",1440,900,"light","fr"),
+                ("/gaming/news/pinup-magazines-standalone/",500,850,"dark","es")
             ]:
                 b.size(width,height)
                 b.open(origin+pathname)
@@ -166,10 +170,10 @@ try:
                 require(result["menuVisible"]==(result["width"]<=820),(pathname,"mobile menu breakpoint",result))
                 require(result["primaryVisible"]==(result["width"]>820),(pathname,"desktop nav breakpoint",result))
                 if pathname in ("/","/news/"):
-                    require(result["newsItems"]==2,("launch news must include both current announcements",result))
+                    require(result["newsItems"]==3,("current news must include all three announcements",result))
                     require(result["firstNewsTitle"]==result["featuredNewsTitle"],
                             ("latest announcement not first / translated",result))
-                    require(result["firstNewsHref"] and result["firstNewsHref"].endswith("/gaming/news/pinup-magazines/"),
+                    require(result["firstNewsHref"] and result["firstNewsHref"].endswith("/gaming/news/pinup-magazines-standalone/"),
                             ("latest news link not pointing to its post",result))
                 if pathname=="/":
                     require(result["projectCards"]==3,("project cards",result))
@@ -250,11 +254,11 @@ try:
                     require(game["switchHome"] and game["switchGaming"],("website switch",game))
                     require(game["pictures"],("gaming image decoding",game))
                     require(all(l==language for l in game["activeLocales"]),("gaming localization",game))
-                    if pathname=="/gaming/": require(game["tiles"]==1 and result["newsItems"]==1,("gaming home",game))
-                    if pathname=="/gaming/mods/": require(game["mods"]==1,("catalogue",game))
-                    if pathname in ("/gaming/mods/pinup-magazines/","/gaming/news/pinup-magazines/"):
+                    if pathname=="/gaming/": require(game["tiles"]==1 and result["newsItems"]==2,("gaming home",game))
+                    if pathname=="/gaming/mods/": require(game["mods"]==2,("catalogue",game))
+                    if pathname.startswith(("/gaming/mods/pinup-magazines","/gaming/news/pinup-magazines")):
                         if pathname.startswith("/gaming/mods/"): require(game["modLink"],("official mod link",game))
-                        require(b.js('return document.querySelectorAll(".gallery-item").length')==4,"four gallery compositions")
+                        require(b.js('return document.querySelectorAll(".gallery-item").length')==(2 if "standalone" in pathname else 4),"expected gallery compositions")
                         outcome=b.js('''const a=document.querySelector(".gallery-item"),d=document.querySelector(".gaming-lightbox");
                           a.click();const first=d.querySelector("img").src;
                           d.dispatchEvent(new KeyboardEvent("keydown",{key:"ArrowRight",bubbles:true}));
@@ -262,7 +266,7 @@ try:
                           d.querySelector("[data-gallery-close]").click();
                           return {opened,changed:first!==second,closed:!d.open};''')
                         require(outcome["opened"] and outcome["changed"] and outcome["closed"],("gallery interaction",outcome))
-                    if pathname=="/gaming/news/": require(result["newsItems"]==1,("gaming announcement",result))
+                    if pathname=="/gaming/news/": require(result["newsItems"]==2,("gaming announcement",result))
                     b.screenshot("gaming-"+pathname.strip("/").replace("/","-")+"-"+str(width)+"-"+theme+".png")
                 checks.append({"path":pathname,"size":result["width"],"theme":theme,"locale":language,"news":result["newsItems"],"bg":result["bodyBg"],"action":result["themeAction"]})
                 time.sleep(.9)
