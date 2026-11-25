@@ -385,3 +385,15 @@ test("Static builder is reproducible",()=>{
  assert.equal(out.status,0,out.stderr);
  assert.deepEqual(files.map(digest),before);
 });
+
+test("Standalone and replacer have distinct official destinations and reciprocal links",()=>{
+ const mods=JSON.parse(file("gaming/catalog.json")).mods;
+ const a=mods.find(m=>m.slug==="pinup-magazines"),b=mods.find(m=>m.slug==="pinup-magazines-standalone");
+ assert.equal(a.nexus,"https://www.nexusmods.com/fallout4/mods/111814");
+ assert.equal(b.nexus,"https://www.nexusmods.com/fallout4/mods/111851");
+ for(const [m,other] of [[a,b],[b,a]]){
+  const html=file("gaming/mods/"+m.slug+"/index.html");
+  assert.ok(html.includes('href="'+m.nexus+'"'));
+  assert.ok(html.includes('href="/gaming/mods/'+other.slug+'/"'));
+ }
+});

@@ -35,6 +35,10 @@ def load(root, langs):
         translations(mod["description"])
         for pic in mod["images"]:
             media(pic); translations(pic["caption"])
+    for mod in catalog["mods"]:
+        related=mod.get("related_mods",[])
+        assert isinstance(related,list) and len(related)==len(set(related))
+        assert all(slug in seen and slug!=mod["slug"] for slug in related)
     assert isinstance(posts,list)
     seen=set()
     for post in posts:
@@ -133,9 +137,10 @@ def pages(data,langs,head,header,footer,copy,localized):
         introduction=f'<section class="gaming-section mod-overview">{overview}</section>' if overview else ""
         preview=gallery(featured["artwork"],"art") if featured else gallery(mod["images"],"shots")
         news_link=button("/gaming/news/"+featured["slug"]+"/","news","Gaming news","text-link") if featured else ""
+        related="".join(f'<a class="text-link" href="{modlink(mods[slug])}">{escape(mods[slug]["title"])}</a>' for slug in mod.get("related_mods",[]))
         body=f'''<main id="main" class="shell gaming-main"><div class="note-back">{button("/gaming/mods/","back","Back to all mods","text-link")}</div>
 <article class="mod-detail"><header class="mod-header">{feature_art(mod) or art(game)}<div class="mod-header-copy"><p class="eyebrow">{escape(game["title"])}</p><h1 data-note-title>{title}</h1><p data-note-summary>{translated(mod["description"])}</p>{button(mod["nexus"],"nexus","Open on Nexus Mods")}</div></header>
-{introduction}{preview}<section class="gaming-section mod-download"><p>{c("official","For the latest downloads, compatibility, installation instructions and credits, see the official mod page.")}</p><div class="actions">{button(mod["nexus"],"nexus","Open on Nexus Mods")}{news_link}</div></section></article></main>'''
+{introduction}{preview}<section class="gaming-section mod-download"><p>{c("official","For the latest downloads, compatibility, installation instructions and credits, see the official mod page.")}</p><div class="actions">{button(mod["nexus"],"nexus","Open on Nexus Mods")}{news_link}{related}</div></section></article></main>'''
         uri=modlink(mod)
         result[uri.lstrip("/")+"index.html"]=wrap("gamingMod",mod["title"],desc,uri,body)
     body=f'<main id="main" class="shell gaming-main"><header class="page-intro gaming-intro"><p class="eyebrow">K2040 / Gaming</p><h1>{c("news","Gaming news")}</h1></header><section class="gaming-section"><div class="update-list" data-updates aria-live="polite"></div></section></main>'

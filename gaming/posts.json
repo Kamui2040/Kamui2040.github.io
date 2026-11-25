@@ -105,5 +105,83 @@
         }
       }
     ]
+  },
+  {
+    "slug": "pinup-magazines-standalone",
+    "date": "2026-11-25",
+    "mod": "pinup-magazines-standalone",
+    "translations": {
+      "en": {
+        "title": "Fallout 4: Pin-Up Magazines standalone edition released",
+        "excerpt": "134 separate collectible magazines with vintage pin-up artwork. Original magazines and their perks remain unchanged.",
+        "paragraphs": [
+          "Collect 134 additional issues without replacing the original magazines or gaining new perks. Choose distribution in the world, in loot, or both. The standalone edition can be used without the replacer or alongside it.",
+          "Standard and high-resolution textures are available. Tested with Fallout 4 version 1.10.163; other versions have not been tested. Check the official mod page for requirements and known issues.",
+          "The gallery shows selected AI-generated cover artwork, not gameplay screenshots."
+        ]
+      },
+      "de": {
+        "title": "Fallout 4: Pin-Up Magazines als Standalone-Version erschienen",
+        "excerpt": "134 eigenständige Sammelmagazine im Retro-Pin-up-Stil. Die Originalmagazine und ihre Boni bleiben unverändert.",
+        "paragraphs": [
+          "Sammle 134 zusätzliche Ausgaben, ohne die Originalmagazine zu ersetzen oder neue Boni zu erhalten. Wähle die Verteilung in der Spielwelt, als Beute oder beides. Die Standalone-Version kann allein oder zusammen mit dem Replacer verwendet werden.",
+          "Standard- und hochauflösende Texturen stehen zur Auswahl. Getestet mit Fallout 4 in Version 1.10.163; andere Versionen wurden nicht getestet. Voraussetzungen und bekannte Probleme findest du auf der offiziellen Modseite.",
+          "Die Galerie zeigt ausgewählte KI-generierte Cover, keine Screenshots aus dem Spiel."
+        ]
+      },
+      "pt-PT": {
+        "title": "Fallout 4: edição independente de Pin-Up Magazines disponível",
+        "excerpt": "134 revistas colecionáveis independentes com ilustrações pin-up retro. As revistas originais e os seus benefícios permanecem inalterados.",
+        "paragraphs": [
+          "Coleciona 134 edições adicionais sem substituir as revistas originais nem ganhar novos benefícios. Escolhe a distribuição pelo mundo, como saque ou ambas. A edição independente pode ser utilizada sozinha ou em conjunto com o mod de substituição.",
+          "Estão disponíveis texturas de resolução normal e alta. Testada com Fallout 4 na versão 1.10.163; outras versões não foram testadas. Consulta a página oficial do mod para conhecer os requisitos e problemas conhecidos.",
+          "A galeria mostra capas selecionadas geradas por IA, não capturas do jogo."
+        ]
+      },
+      "es": {
+        "title": "Fallout 4: publicada la edición independiente de Pin-Up Magazines",
+        "excerpt": "134 revistas coleccionables independientes con ilustraciones pin-up retro. Las revistas originales y sus ventajas no cambian.",
+        "paragraphs": [
+          "Colecciona 134 números adicionales sin reemplazar las revistas originales ni obtener nuevas ventajas. Elige la distribución por el mundo, como botín o ambas. La edición independiente puede usarse sola o junto con la versión de reemplazo.",
+          "Hay texturas de resolución estándar y alta. Probado con Fallout 4 en la versión 1.10.163; no se han probado otras versiones. Consulta la página oficial del mod para ver los requisitos y problemas conocidos.",
+          "La galería muestra una selección de portadas generadas por IA, no capturas del juego."
+        ]
+      },
+      "fr": {
+        "title": "Fallout 4 : sortie de l’édition autonome de Pin-Up Magazines",
+        "excerpt": "134 magazines de collection indépendants aux illustrations pin-up rétro. Les magazines d’origine et leurs avantages restent inchangés.",
+        "paragraphs": [
+          "Collectionnez 134 numéros supplémentaires sans remplacer les magazines d’origine ni obtenir de nouveaux avantages. Choisissez la distribution dans le monde, dans le butin ou les deux. L’édition autonome peut être utilisée seule ou avec la version de remplacement.",
+          "Des textures en résolution standard et haute sont disponibles. Testé avec Fallout 4 en version 1.10.163 ; les autres versions n’ont pas été testées. Consultez la page officielle du mod pour les prérequis et les problèmes connus.",
+          "La galerie présente une sélection de couvertures générées par IA, et non des captures en jeu."
+        ]
+      }
+    },
+    "artwork": [
+      {
+        "src": "/assets/gaming/pinup-standalone-preview-1.webp",
+        "width": 1920,
+        "height": 1080,
+        "caption": {
+          "en": "Hot Rodder and Astoundingly Awesome Tales",
+          "de": "Hot Rodder und Astoundingly Awesome Tales",
+          "pt-PT": "Hot Rodder e Astoundingly Awesome Tales",
+          "es": "Hot Rodder y Astoundingly Awesome Tales",
+          "fr": "Hot Rodder et Astoundingly Awesome Tales"
+        }
+      },
+      {
+        "src": "/assets/gaming/pinup-standalone-preview-2.webp",
+        "width": 1920,
+        "height": 1080,
+        "caption": {
+          "en": "Tesla Science: robots and technology",
+          "de": "Tesla Science: Roboter und Technik",
+          "pt-PT": "Tesla Science: robôs e tecnologia",
+          "es": "Tesla Science: robots y tecnología",
+          "fr": "Tesla Science : robots et technologie"
+        }
+      }
+    ]
   }
 ]

@@ -35,6 +35,40 @@ window.K2040_SITE_NEWS = [
     }
   },
   {
+    "id": "gaming-pinup-magazines-standalone",
+    "projectId": "game-projects",
+    "date": "2026-11-25",
+    "pinned": false,
+    "href": "/gaming/news/pinup-magazines-standalone/",
+    "strings": {
+      "en": {
+        "category": "Fallout 4",
+        "title": "Fallout 4: Pin-Up Magazines standalone edition released",
+        "summary": "134 separate collectible magazines with vintage pin-up artwork. Original magazines and their perks remain unchanged."
+      },
+      "de": {
+        "category": "Fallout 4",
+        "title": "Fallout 4: Pin-Up Magazines als Standalone-Version erschienen",
+        "summary": "134 eigenständige Sammelmagazine im Retro-Pin-up-Stil. Die Originalmagazine und ihre Boni bleiben unverändert."
+      },
+      "pt-PT": {
+        "category": "Fallout 4",
+        "title": "Fallout 4: edição independente de Pin-Up Magazines disponível",
+        "summary": "134 revistas colecionáveis independentes com ilustrações pin-up retro. As revistas originais e os seus benefícios permanecem inalterados."
+      },
+      "es": {
+        "category": "Fallout 4",
+        "title": "Fallout 4: publicada la edición independiente de Pin-Up Magazines",
+        "summary": "134 revistas coleccionables independientes con ilustraciones pin-up retro. Las revistas originales y sus ventajas no cambian."
+      },
+      "fr": {
+        "category": "Fallout 4",
+        "title": "Fallout 4 : sortie de l’édition autonome de Pin-Up Magazines",
+        "summary": "134 magazines de collection indépendants aux illustrations pin-up rétro. Les magazines d’origine et leurs avantages restent inchangés."
+      }
+    }
+  },
+  {
     "id": "gaming-pinup-magazines",
     "projectId": "game-projects",
     "date": "2026-11-24",
