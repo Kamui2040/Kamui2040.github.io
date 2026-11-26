@@ -30,10 +30,12 @@ def load(root,langs):
         assert [s["name"] for s in a["stores"][:2]]==["GitHub","F-Droid"]
         assert a["stores"][0]["url"]==a["source"]+"/releases"
         assert a["stores"][1]["url"]=="https://f-droid.org/packages/"+a["package"]+"/"
-        hosts={"GitHub":"github.com","F-Droid":"f-droid.org","ONEstore":"m.onestore.net","Uptodown":a["slug"]+".en.uptodown.com","OpenAPK":"www.openapk.net"}
+        hosts={"GitHub":"github.com","F-Droid":"f-droid.org","ONEstore":"m.onestore.net","Uptodown":a["slug"]+".en.uptodown.com","OpenAPK":"www.openapk.net","APKPure":"apkpure.com"}
         for s in a["stores"]:
             u=urlparse(s["url"])
             assert u.scheme=="https" and u.netloc==hosts[s["name"]]
+            if s["name"]=="APKPure":
+                assert s["url"]=="https://apkpure.com/"+a["slug"]+"/"+a["package"]
         versions=[tuple(map(int,r["version"].split("."))) for r in a["history"]]
         assert versions==sorted(set(versions),reverse=True)
         assert all(r["text"].strip() for r in a["history"])
