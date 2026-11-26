@@ -118,6 +118,8 @@ CASES = [
     ("/gaming/mods/pinup-magazines-standalone/", 320, "de"), ("/gaming/news/pinup-magazines-standalone/", 280, "fr")
 ]
 
+CASES += [(f"/gaming/mods/{m['slug']}/", 320, "de") for m in json.loads((ROOT/"gaming/catalog.json").read_text())["mods"] if "promo" in m]
+
 server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), Handler)
 threading.Thread(target=server.serve_forever, daemon=True).start()
 try:

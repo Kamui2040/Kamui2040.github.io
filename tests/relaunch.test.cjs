@@ -397,3 +397,24 @@ test("Standalone and replacer have distinct official destinations and reciprocal
   assert.ok(html.includes('href="/gaming/mods/'+other.slug+'/"'));
  }
 });
+
+test("All restored Nexus catalogue entries have unique destinations, localized descriptions and promotional art",()=>{
+ const catalog=JSON.parse(file("gaming/catalog.json"));
+ const mods=catalog.mods;
+ assert.equal(new Set(mods.map(m=>m.nexus)).size,mods.length);
+ const index=file("gaming/mods/index.html");
+ for(const m of mods){
+  assert.deepEqual(Object.keys(m.description).sort(),Object.keys(translations).sort());
+  const detail=file("gaming/mods/"+m.slug+"/index.html");
+  assert.ok(index.includes('href="/gaming/mods/'+m.slug+'/"'));
+  assert.ok(detail.includes('href="'+m.nexus+'"'));
+  if(m.promo){
+   assert.ok(fs.existsSync(path.join(root,m.promo.src)));
+   assert.ok(index.includes(m.promo.src));
+   assert.ok(detail.includes(m.promo.src));
+   assert.ok(!detail.includes('id="gallery-heading"'));
+  }
+ }
+ for(const id of [109575,105464,105461,105775,110911,905,906,31,111814,111851])
+  assert.ok(mods.some(m=>m.nexus.endsWith("/"+id)),String(id));
+});

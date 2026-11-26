@@ -8,6 +8,24 @@
         "width": 1280,
         "height": 720
       }
+    },
+    {
+      "id": "worldofwarcraft",
+      "title": "World of Warcraft",
+      "art": {
+        "src": "/assets/gaming/worldofwarcraft.webp",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "deadislandriptide",
+      "title": "Dead Island Riptide",
+      "art": {
+        "src": "/assets/gaming/deadislandriptide.webp",
+        "width": 1280,
+        "height": 720
+      }
     }
   ],
   "mods": [
@@ -99,6 +117,164 @@
           "Des textures en résolution standard et haute sont disponibles. Testé avec Fallout 4 en version 1.10.163 ; les autres versions n’ont pas été testées. Consultez la page officielle du mod pour les prérequis et les problèmes connus.",
           "La galerie présente une sélection de couvertures générées par IA, et non des captures en jeu."
         ]
+      }
+    },
+    {
+      "slug": "quick-attach-menu",
+      "game": "fallout4",
+      "title": "K2040's Quick Attach Menu",
+      "nexus": "https://www.nexusmods.com/fallout4/mods/109575",
+      "description": {
+        "en": "Change compatible weapon attachments directly in an in-game menu.",
+        "de": "Kompatible Waffenaufsätze direkt im Spielmenü wechseln.",
+        "pt-PT": "Altera acessórios de armas compatíveis diretamente num menu do jogo.",
+        "es": "Cambia accesorios de armas compatibles directamente desde un menú del juego.",
+        "fr": "Changez les accessoires d’armes compatibles directement dans un menu en jeu."
+      },
+      "images": [],
+      "promo": {
+        "src": "/assets/gaming/quick-attach-menu-promo.webp",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "slug": "eco-single-patches",
+      "game": "fallout4",
+      "title": "K2040's Eco Quick Menu Additions Single Patches",
+      "nexus": "https://www.nexusmods.com/fallout4/mods/105464",
+      "description": {
+        "en": "Individual weapon patches for the ECO quick menu.",
+        "de": "Einzelne Waffenpatches für das ECO-Schnellmenü.",
+        "pt-PT": "Patches individuais de armas para o menu rápido ECO.",
+        "es": "Parches individuales de armas para el menú rápido de ECO.",
+        "fr": "Correctifs individuels d’armes pour le menu rapide ECO."
+      },
+      "images": [],
+      "promo": {
+        "src": "/assets/gaming/eco-single-patches-promo.webp",
+        "width": 1280,
+        "height": 720
+      },
+      "related_mods": [
+        "eco-aio"
+      ]
+    },
+    {
+      "slug": "eco-aio",
+      "game": "fallout4",
+      "title": "K2040's ECO Quick Menu Additions AiO",
+      "nexus": "https://www.nexusmods.com/fallout4/mods/105461",
+      "description": {
+        "en": "A combined package of weapon patches for the ECO quick menu.",
+        "de": "Ein Sammelpaket mit Waffenpatches für das ECO-Schnellmenü.",
+        "pt-PT": "Um pacote conjunto de patches de armas para o menu rápido ECO.",
+        "es": "Un paquete conjunto de parches de armas para el menú rápido de ECO.",
+        "fr": "Un ensemble de correctifs d’armes pour le menu rapide ECO."
+      },
+      "images": [],
+      "promo": {
+        "src": "/assets/gaming/eco-aio-promo.webp",
+        "width": 1280,
+        "height": 720
+      },
+      "related_mods": [
+        "eco-single-patches"
+      ]
+    },
+    {
+      "slug": "xedit-json-exporter",
+      "game": "fallout4",
+      "title": "K2040's xEdit JSON Exporter",
+      "nexus": "https://www.nexusmods.com/fallout4/mods/105775",
+      "description": {
+        "en": "A read-only xEdit script that exports Fallout 4 plugin records to structured JSON.",
+        "de": "Ein schreibgeschütztes xEdit-Skript zum Export von Fallout-4-Plugin-Datensätzen als strukturiertes JSON.",
+        "pt-PT": "Um script xEdit só de leitura que exporta registos de plugins de Fallout 4 para JSON estruturado.",
+        "es": "Un script de xEdit de solo lectura que exporta registros de plugins de Fallout 4 a JSON estructurado.",
+        "fr": "Un script xEdit en lecture seule qui exporte les enregistrements de plugins de Fallout 4 en JSON structuré."
+      },
+      "images": [],
+      "promo": {
+        "src": "/assets/gaming/xedit-json-exporter-promo.webp",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "slug": "quest-journal",
+      "game": "fallout4",
+      "title": "K2040's Quest Journal",
+      "nexus": "https://www.nexusmods.com/fallout4/mods/110911",
+      "description": {
+        "en": "A full-screen quest journal and customizable quest tracker for Fallout 4.",
+        "de": "Ein Vollbild-Questjournal und anpassbarer Questtracker für Fallout 4.",
+        "pt-PT": "Um diário de missões em ecrã inteiro e um rastreador personalizável para Fallout 4.",
+        "es": "Un diario de misiones a pantalla completa y un rastreador personalizable para Fallout 4.",
+        "fr": "Un journal de quêtes plein écran et un suivi personnalisable pour Fallout 4."
+      },
+      "images": [],
+      "promo": {
+        "src": "/assets/gaming/quest-journal-promo.webp",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "slug": "gm-genie",
+      "game": "worldofwarcraft",
+      "title": "GM Genie 3.3.5a AzerothCore",
+      "nexus": "https://www.nexusmods.com/worldofwarcraft/mods/905",
+      "description": {
+        "en": "Game Master tools for World of Warcraft 3.3.5a, focused on AzerothCore.",
+        "de": "Game-Master-Werkzeuge für World of Warcraft 3.3.5a mit Schwerpunkt AzerothCore.",
+        "pt-PT": "Ferramentas de Game Master para World of Warcraft 3.3.5a, com foco no AzerothCore.",
+        "es": "Herramientas de Game Master para World of Warcraft 3.3.5a, centradas en AzerothCore.",
+        "fr": "Outils de maître de jeu pour World of Warcraft 3.3.5a, axés sur AzerothCore."
+      },
+      "images": [],
+      "promo": {
+        "src": "/assets/gaming/gm-genie-promo.webp",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "slug": "loot-and-salvage",
+      "game": "worldofwarcraft",
+      "title": "Loot and Salvage",
+      "nexus": "https://www.nexusmods.com/worldofwarcraft/mods/906",
+      "description": {
+        "en": "An addon for managing unwanted items and reducing bag cleanup in World of Warcraft 3.3.5a.",
+        "de": "Ein Addon zur Verwaltung unerwünschter Gegenstände und leichteren Taschenorganisation in World of Warcraft 3.3.5a.",
+        "pt-PT": "Um addon para gerir itens indesejados e facilitar a limpeza das bolsas em World of Warcraft 3.3.5a.",
+        "es": "Un addon para gestionar objetos no deseados y facilitar la limpieza de bolsas en World of Warcraft 3.3.5a.",
+        "fr": "Un addon pour gérer les objets indésirables et faciliter le rangement des sacs dans World of Warcraft 3.3.5a."
+      },
+      "images": [],
+      "promo": {
+        "src": "/assets/gaming/loot-and-salvage-promo.webp",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "slug": "dead-island-riptide-ultimate-edition",
+      "game": "deadislandriptide",
+      "title": "Dead Island Riptide DE Linux — Ultimate Edition Mod",
+      "nexus": "https://www.nexusmods.com/deadislandriptide/mods/31",
+      "description": {
+        "en": "A native Linux adaptation of the Ultimate Edition mod for Dead Island Riptide Definitive Edition.",
+        "de": "Eine native Linux-Anpassung des Ultimate-Edition-Mods für Dead Island Riptide Definitive Edition.",
+        "pt-PT": "Uma adaptação nativa para Linux do mod Ultimate Edition de Dead Island Riptide Definitive Edition.",
+        "es": "Una adaptación nativa para Linux del mod Ultimate Edition de Dead Island Riptide Definitive Edition.",
+        "fr": "Une adaptation Linux native du mod Ultimate Edition pour Dead Island Riptide Definitive Edition."
+      },
+      "images": [],
+      "promo": {
+        "src": "/assets/gaming/dead-island-riptide-ultimate-edition-promo.webp",
+        "width": 1280,
+        "height": 720
       }
     }
   ]

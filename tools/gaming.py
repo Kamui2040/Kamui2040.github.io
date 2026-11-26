@@ -33,6 +33,9 @@ def load(root, langs):
         assert re.fullmatch(r"/"+mod["game"]+r"/mods/[0-9]+",url.path)
         assert not url.query and not url.fragment
         translations(mod["description"])
+        if "promo" in mod:
+            media(mod["promo"])
+            assert "feature_post" not in mod
         for pic in mod["images"]:
             media(pic); translations(pic["caption"])
     for mod in catalog["mods"]:
@@ -98,8 +101,8 @@ def pages(data,langs,head,header,footer,copy,localized):
         return "/gaming/mods/"+mod["slug"]+"/"
     def feature_art(m):
         post=post_index.get(m.get("feature_post"))
-        if not post:return ""
-        a=post["artwork"][0]
+        a=post["artwork"][0] if post else m.get("promo")
+        if not a:return ""
         return f'<img class="mod-promo" src="{a["src"]}" width="{a["width"]}" height="{a["height"]}" alt="" decoding="async">'
     def modcard(m):
         image=feature_art(m)

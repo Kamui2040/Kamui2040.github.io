@@ -35,3 +35,18 @@ Approved source artwork SHA-256:
 - astoundingly-awesome-tales-have-dog-will-travel: `893394748f98fc9b13fbb0ed8111fe92dce03aa58444397143f296fb29472df0`.
 - tesla-science-will-robots-rule-the-world: `5458b2d8ec2bc7e41a9e686acf226fc1ac5fac9943286d70f161ec77d4be1448`.
 - tesla-science-tomorrow-s-technology-for-today-s-super-soldiers: `5c99769fa659a8844e44f9ce2bed30b995849bf518af616094ac5cfa86dfcb28`.
+
+## Restored gaming catalogue media
+
+Creator-approved AI-assisted promotional artwork and unbranded game backgrounds, exported proportionally as WebP. Promotional images are not gameplay screenshots. No original masters or archives are distributed.
+
+- `assets/gaming/worldofwarcraft.webp` — 1280 × 720; SHA-256 `fee8e86f249c5d147f8a5e0d60172ab9c96463c76da144ed60691c0d60e8873c`; source SHA-256 `caff0280e669199fab625cadd41f4a0c7a3f7762dc94516050cd97c97417f24a`.
+- `assets/gaming/deadislandriptide.webp` — 1280 × 720; SHA-256 `13dd197b9012d0fdeb4c9bcebf7caf6c79d72da3a0b0e83e265f9e8cbc79cf6c`; source SHA-256 `480db776c422e80d2e7dbe5a1e192afa67aec8d44cf1281d6d454c24b91a3f05`.
+- `assets/gaming/quick-attach-menu-promo.webp` — 1280 × 720; SHA-256 `f3e1e18cbed8aec19abd4d0ce48240281687587de92de977454d4764a92e66e6`; source SHA-256 `79de7adb9ccb410f9229d1da56e5128cd67100cf4c1fab4a4476d492a89728ca`.
+- `assets/gaming/eco-single-patches-promo.webp` — 1280 × 720; SHA-256 `c88b8148eec72d9f343bf804ef7f7fbdf649b755462dc75ac9a6ba700b94c2f8`; source SHA-256 `0ed4951c097d99029d6c45723a5d53b76bb0e8995eb57509353cd772a7dd2ab5`.
+- `assets/gaming/eco-aio-promo.webp` — 1280 × 720; SHA-256 `498deec5fea3e00347bd03f6f3d9d9ef604f1c4261eba0f45b30bf7e9a998970`; source SHA-256 `759d9f71e4e6c662bf388c329c97de6991f9b10ee1a9363433426a7027dc3dc5`.
+- `assets/gaming/xedit-json-exporter-promo.webp` — 1280 × 720; SHA-256 `cea65137e6723751dc3accf1085a9ab3385b6c6b10b49e2c8af0e453deffa36a`; source SHA-256 `6a56e4fad4c9b26ce353bb14f2908cd6f037f3416383498e94239adea608d4ee`.
+- `assets/gaming/quest-journal-promo.webp` — 1280 × 720; SHA-256 `c256842c9af985bdd1cf2fdd7f18aaa4959bc7a4214ea31187d0b44d776b7095`; source SHA-256 `c19c214932ce795cc364b7be04a8ef68924d382a302fa0f84de9247b76f7860f`.
+- `assets/gaming/gm-genie-promo.webp` — 1280 × 720; SHA-256 `41850f20f93a248a9ebc1273bae1e0e31aee004d1068a6401e84f258a271ba7d`; source SHA-256 `65597afb9a4ed38c6b71a74ffde74e2cf087e85c5e575c8dfde81471e1da142a`.
+- `assets/gaming/loot-and-salvage-promo.webp` — 1280 × 720; SHA-256 `e5e56220122ff19499e02541414f7add351fa5c39f61879502c4bef19db9c544`; source SHA-256 `f38b24268350b0a6c9d74efd4867bd205b7940268edc58b6f759bdfeb8f2b8e7`.
+- `assets/gaming/dead-island-riptide-ultimate-edition-promo.webp` — 1280 × 720; SHA-256 `d1a12e189221606d586a50e153eb6155e1623594fefc171eacfac036c9bd1870`; source SHA-256 `f6ca4730080923a776e7376022d70f588823b66e1252bcde530c80b53911ee4e`.
