@@ -159,27 +159,39 @@
     },
     "artwork": [
       {
-        "src": "/assets/gaming/pinup-standalone-preview-1.webp",
+        "src": "/assets/gaming/pinup-standalone-pulp-adventures.webp",
         "width": 1920,
         "height": 1080,
         "caption": {
-          "en": "Hot Rodder and Astoundingly Awesome Tales",
-          "de": "Hot Rodder und Astoundingly Awesome Tales",
-          "pt-PT": "Hot Rodder e Astoundingly Awesome Tales",
-          "es": "Hot Rodder y Astoundingly Awesome Tales",
-          "fr": "Hot Rodder et Astoundingly Awesome Tales"
+          "en": "Pulp adventures",
+          "de": "Pulp-Abenteuer",
+          "pt-PT": "Aventuras pulp",
+          "es": "Aventuras pulp",
+          "fr": "Aventures pulp"
         }
       },
       {
-        "src": "/assets/gaming/pinup-standalone-preview-2.webp",
+        "src": "/assets/gaming/pinup-standalone-retro-life-and-science.webp",
         "width": 1920,
         "height": 1080,
         "caption": {
-          "en": "Tesla Science: robots and technology",
-          "de": "Tesla Science: Roboter und Technik",
-          "pt-PT": "Tesla Science: robôs e tecnologia",
-          "es": "Tesla Science: robots y tecnología",
-          "fr": "Tesla Science : robots et technologie"
+          "en": "Retro life and science",
+          "de": "Retro-Alltag und Wissenschaft",
+          "pt-PT": "Vida retro e ciência",
+          "es": "Vida retro y ciencia",
+          "fr": "Vie rétro et science"
+        }
+      },
+      {
+        "src": "/assets/gaming/pinup-standalone-life-in-the-wasteland.webp",
+        "width": 1920,
+        "height": 1080,
+        "caption": {
+          "en": "Life in the wasteland",
+          "de": "Leben im Ödland",
+          "pt-PT": "Vida no ermo",
+          "es": "Vida en el yermo",
+          "fr": "Vie dans les terres désolées"
         }
       }
     ]

@@ -92,6 +92,7 @@ try:
             b=Browser(sock)
             b.call("WebDriver:NewSession",{"capabilities":{"alwaysMatch":{"browserName":"firefox"}}})
             origin="http://127.0.0.1:"+str(server.server_address[1])
+            catalog=json.loads((ROOT/"gaming/catalog.json").read_text())
             for pathname,width,height,theme,language in [
                 ("/",1440,900,"dark","en"),
                 ("/",1024,768,"light","fr"),
@@ -120,7 +121,7 @@ try:
                 ("/gaming/mods/pinup-magazines-standalone/",500,850,"light","pt-PT"),
                 ("/gaming/news/pinup-magazines-standalone/",1440,900,"light","fr"),
                 ("/gaming/news/pinup-magazines-standalone/",500,850,"dark","es")
-            ]:
+            ]+[(f"/gaming/mods/{m['slug']}/",w,h,t,l) for m in catalog["mods"] if "promo" in m and not m.get("feature_post") for w,h,t,l in [(1440,900,"dark","en"),(500,850,"light","de")]]:
                 b.size(width,height)
                 b.open(origin+pathname)
                 b.js(f'localStorage.setItem("k2040-theme",{json.dumps(theme)});localStorage.setItem("k2040-language",{json.dumps(language)});')
@@ -254,11 +255,21 @@ try:
                     require(game["switchHome"] and game["switchGaming"],("website switch",game))
                     require(game["pictures"],("gaming image decoding",game))
                     require(all(l==language for l in game["activeLocales"]),("gaming localization",game))
-                    if pathname=="/gaming/": require(game["tiles"]==1 and result["newsItems"]==2,("gaming home",game))
-                    if pathname=="/gaming/mods/": require(game["mods"]==2,("catalogue",game))
+                    if pathname=="/gaming/":
+                        require(game["tiles"]==len(catalog["games"]) and result["newsItems"]==2,("gaming home",game))
+                        require(b.js('''const f=document.querySelector(".latest-release");
+                          if(!f)return false;
+                          return !!f.querySelector(".release-feature-art img")?.naturalWidth &&
+                            !![...f.querySelectorAll("a")].some(a=>a.getAttribute("href").startsWith("/gaming/mods/")) &&
+                            !![...f.querySelectorAll("a")].some(a=>a.getAttribute("href").startsWith("https://www.nexusmods.com/")) &&
+                            f.getBoundingClientRect().top<document.querySelector(".game-tiles").getBoundingClientRect().top;'''),"latest release feature")
+                    if pathname=="/gaming/mods/": require(game["mods"]==len(catalog["mods"]),("catalogue",game))
+                    if pathname.startswith("/gaming/mods/") and pathname!="/gaming/mods/":
+                        require(game["modLink"],("official mod link",game))
+                        require(b.js('return !!document.querySelector(".mod-header .mod-promo")'),"mod promotional image")
                     if pathname.startswith(("/gaming/mods/pinup-magazines","/gaming/news/pinup-magazines")):
                         if pathname.startswith("/gaming/mods/"): require(game["modLink"],("official mod link",game))
-                        require(b.js('return document.querySelectorAll(".gallery-item").length')==(2 if "standalone" in pathname else 4),"expected gallery compositions")
+                        require(b.js('return document.querySelectorAll(".gallery-item").length')==(3 if "standalone" in pathname else 4),"expected gallery compositions")
                         outcome=b.js('''const a=document.querySelector(".gallery-item"),d=document.querySelector(".gaming-lightbox");
                           a.click();const first=d.querySelector("img").src;
                           d.dispatchEvent(new KeyboardEvent("keydown",{key:"ArrowRight",bubbles:true}));
