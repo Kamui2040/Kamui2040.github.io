@@ -8,6 +8,7 @@ The public website for K2040, with an introduction, project overview, a short bl
 - about/ — introduction and blog posts
 - links/ — verified profiles and support links
 - news/ — current announcements across the websites
+- android/ — Android landing page, released app catalogue, detail pages and news; authored in android/catalog.json and android/posts.json
 - gaming/ — Gaming landing page, mod catalogue, detail pages and news; catalogue and announcements are authored in gaming/catalog.json and gaming/posts.json
 - relaunch.css, relaunch.js, relaunch-copy.js — shared responsive visual system and five locales
 - about/posts.json — editable blog content
@@ -25,3 +26,5 @@ node --test tests/relaunch.test.cjs
 Firefox-specific layout checks: python3 tools/qa_browser.py <temporary-output-directory> and python3 tools/qa_narrow.py <temporary-output-directory>.
 
 The website uses only the new approved branding. Older release/news feeds are deliberately disconnected. New gaming, Android and fiction sections belong in this repository and use the same shared page generator, navigation, localization, themes and central News. Build them anew; retain only verified release facts and approved media from older sites. Link to authoritative external release platforms rather than duplicating downloads.
+
+The Android homepage features a confirmed release when a new announcement is marked as a release in android/posts.json; otherwise it highlights a released app without claiming a new release. Distribution-channel version labels are kept separate. Historical notes remain on app detail pages.

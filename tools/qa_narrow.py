@@ -120,6 +120,8 @@ CASES = [
 
 CASES += [(f"/gaming/mods/{m['slug']}/", 320, "de") for m in json.loads((ROOT/"gaming/catalog.json").read_text())["mods"] if "promo" in m and not m.get("feature_post")]
 
+CASES += [("/android/", 280, "de"),("/android/apps/", 320, "fr"),("/android/news/", 280, "es")]+[(f"/android/apps/{a['slug']}/",320,"pt-PT") for a in json.loads((ROOT/"android/catalog.json").read_text())["apps"]]
+
 server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), Handler)
 threading.Thread(target=server.serve_forever, daemon=True).start()
 try:

@@ -23,7 +23,7 @@
   let language = preferred();
   // One local, generated news index. Gaming articles are authored once.
   const siteUpdates=Array.isArray(window.K2040_SITE_NEWS) ? window.K2040_SITE_NEWS : [];
-  const updates=page.startsWith("gaming") ? siteUpdates.filter(item=>item.projectId==="game-projects") : siteUpdates;
+  const updates=page.startsWith("gaming") ? siteUpdates.filter(item=>item.projectId==="game-projects") : page.startsWith("android") ? siteUpdates.filter(item=>item.projectId==="android-apps") : siteUpdates;
   const header = document.querySelector(".masthead");
   const toggle = document.querySelector("[data-menu-toggle]");
   const mobile = document.querySelector(".mobile-nav");
@@ -126,11 +126,11 @@
   const renderNews = () => {
     const list = document.querySelector("[data-updates]");
     if (!list) return;
-    const count = page==="home" || page==="gaming" ? 5 : Infinity;
+    const count = page==="home" || page==="gaming" || page==="android" ? 5 : Infinity;
     const entries = sortNews([...updates]).slice(0,count);
     list.replaceChildren();
     if(!entries.length) {
-      list.append(makeElement("p","empty-state",page.startsWith("gaming") ? copy().gaming.empty : copy().news.empty));
+      list.append(makeElement("p","empty-state",page.startsWith("gaming") ? copy().gaming.empty : page.startsWith("android") ? copy().android.empty : copy().news.empty));
       return;
     }
     for (const item of entries) {
