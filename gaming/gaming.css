@@ -46,3 +46,26 @@
 .mod-overview p { margin:0 0 1em; }
 .mod-download { border-top:1px solid var(--line); padding-top:24px; }
 .gaming-gallery .gallery-item img { height:auto; aspect-ratio:16/9; }
+
+.gaming-gallery .capture-image img { aspect-ratio:auto; height:auto; max-height:360px; width:auto; max-width:100%; }
+.capture-note,.mod-changelog > p { color:var(--muted); }
+.release-history { list-style:none; padding:0; margin:0; display:grid; gap:12px; }
+.release-history li { border:1px solid var(--line); padding:16px; background:var(--surface); min-width:0; overflow-wrap:anywhere; }
+.release-history p { margin:8px 0 0; }
+
+/* Latest confirmed release: editorial focus without modifying promotional artwork. */
+.latest-release { margin-block: 32px 40px; }
+.release-feature { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); align-items:center; gap:clamp(18px,3vw,36px); padding:clamp(16px,2.5vw,28px); background:var(--surface); border:1px solid var(--brand-strong); box-shadow:var(--shadow); }
+.release-feature-art,.release-feature-copy { display:block; min-width:0; }
+.release-feature-art img { display:block; width:100%; height:auto; }
+.release-feature-copy h3 { margin:8px 0 12px; font-size:clamp(1.35rem,2.7vw,2.4rem); line-height:1.18; overflow-wrap:anywhere; }
+.release-feature-copy h3 a { color:inherit; }
+.release-feature-copy p { color:var(--muted); overflow-wrap:anywhere; }
+.release-feature-meta { display:flex; flex-wrap:wrap; gap:8px; font-size:.85rem; margin:0; }
+.release-feature-copy .actions { margin-top:20px; }
+.mod-card .mod-release-label { color:var(--ink); font-size:.8rem; font-weight:700; margin:0 0 6px; }
+@media(max-width:620px) {
+  .release-feature { grid-template-columns:minmax(0,1fr); gap:16px; }
+  .release-feature-copy .actions { margin-top:16px; }
+  .release-feature-copy .actions a { max-width:100%; white-space:normal; }
+}

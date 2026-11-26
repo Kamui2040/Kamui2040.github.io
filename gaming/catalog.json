@@ -72,6 +72,12 @@
       },
       "related_mods": [
         "pinup-magazines-standalone"
+      ],
+      "changelog": [
+        {
+          "version": "1.0",
+          "text": "130 new pin-up magazine covers for the base game, Far Harbor and Nuka-World. New covers for world objects, inventory inspection and loading screens."
+        }
       ]
     },
     {
@@ -117,7 +123,22 @@
           "Des textures en résolution standard et haute sont disponibles. Testé avec Fallout 4 en version 1.10.163 ; les autres versions n’ont pas été testées. Consultez la page officielle du mod pour les prérequis et les problèmes connus.",
           "La galerie présente une sélection de couvertures générées par IA, et non des captures en jeu."
         ]
-      }
+      },
+      "promo": {
+        "src": "/assets/gaming/pinup-standalone-promo.webp",
+        "width": 1920,
+        "height": 1080
+      },
+      "changelog": [
+        {
+          "version": "1.1",
+          "text": "Fixed Vortex XML error."
+        },
+        {
+          "version": "1.0",
+          "text": "Initial release of the standalone version."
+        }
+      ]
     },
     {
       "slug": "quick-attach-menu",
@@ -131,12 +152,124 @@
         "es": "Cambia accesorios de armas compatibles directamente desde un menú del juego.",
         "fr": "Changez les accessoires d’armes compatibles directement dans un menu en jeu."
       },
-      "images": [],
+      "images": [
+        {
+          "src": "/assets/gaming/quick-attach-menu-release-01-in-game-quick-menu.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "In-game quick menu",
+            "de": "Schnellmenü im Spiel",
+            "pt-PT": "Menu rápido no jogo",
+            "es": "Menú rápido en el juego",
+            "fr": "Menu rapide en jeu"
+          }
+        },
+        {
+          "src": "/assets/gaming/quick-attach-menu-release-02-menu-builder.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "Menu Builder",
+            "de": "Menü-Builder",
+            "pt-PT": "Editor de menus",
+            "es": "Editor de menús",
+            "fr": "Éditeur de menus"
+          }
+        },
+        {
+          "src": "/assets/gaming/quick-attach-menu-release-03-radial-wheel-settings.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "Radial wheel settings",
+            "de": "Radialmenü-Einstellungen",
+            "pt-PT": "Definições do menu radial",
+            "es": "Ajustes del menú radial",
+            "fr": "Paramètres du menu radial"
+          }
+        },
+        {
+          "src": "/assets/gaming/quick-attach-menu-release-04-controls-and-cascade.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "Controls and Cascade",
+            "de": "Steuerung und Cascade",
+            "pt-PT": "Controlos e Cascade",
+            "es": "Controles y Cascade",
+            "fr": "Commandes et Cascade"
+          }
+        }
+      ],
       "promo": {
         "src": "/assets/gaming/quick-attach-menu-promo.webp",
         "width": 1280,
         "height": 720
-      }
+      },
+      "overview": {
+        "en": [
+          "Change attachments without a workbench using one of four menu styles: Cascade, Radial Wheel, Compact Hybrid or Horizontal Bar. The per-weapon Builder organizes attachment categories, names, visibility and order. Keyboard, mouse and controller are supported; appearance and profiles are customizable."
+        ],
+        "de": [
+          "Wechsle Aufsätze ohne Werkbank mit vier Menüstilen: Cascade, Radial Wheel, Compact Hybrid oder Horizontal Bar. Im Builder lassen sich Kategorien, Namen, Sichtbarkeit und Reihenfolge pro Waffe anpassen. Tastatur, Maus und Controller werden unterstützt; Aussehen und Profile sind anpassbar."
+        ],
+        "pt-PT": [
+          "Altera acessórios sem bancada com quatro estilos de menu: Cascade, Radial Wheel, Compact Hybrid ou Horizontal Bar. O Builder permite organizar categorias, nomes, visibilidade e ordem por arma. Suporta teclado, rato e comando, com aparência e perfis configuráveis."
+        ],
+        "es": [
+          "Cambia accesorios sin banco de trabajo con cuatro estilos de menú: Cascade, Radial Wheel, Compact Hybrid y Horizontal Bar. El Builder permite organizar categorías, nombres, visibilidad y orden por arma. Admite teclado, ratón y mando, con apariencia y perfiles personalizables."
+        ],
+        "fr": [
+          "Changez les accessoires sans établi avec quatre styles de menu : Cascade, Radial Wheel, Compact Hybrid ou Horizontal Bar. Le Builder organise les catégories, les noms, la visibilité et l’ordre par arme. Clavier, souris et manette sont pris en charge ; l’apparence et les profils sont personnalisables."
+        ]
+      },
+      "changelog": [
+        {
+          "version": "0.5.222",
+          "text": "Restored the Quick Attach Builder shortcut in MCM. Fixed the Quick Attach page display with MCM Categorizer. Fixed Hunting Rifle attachment swaps, improved category navigation and ordering, kept clipped items in view, and added optional movement and mouse-look while the Quick Attach Menu is open."
+        },
+        {
+          "version": "0.5.220",
+          "text": "Fixed keybind synchronization between Settings and MCM, including reset and clearing controls. MCM now handles keybind changes and persistence directly. Fixed Mouse 4/5 recognition, modifier combinations, invalid keycodes and duplicate MCM entries. Improved Proton and PrismaUI keybind handling, JSON handling and keybind registry validation. Generated menus prioritize OMOD display names over loose-mod item names, while preserving custom names and ECO-authored labels. Improved compatibility without native MCM."
+        },
+        {
+          "version": "0.5.219",
+          "text": "Fixed MCM hotkeys showing None or reverting after assignment; default shortcuts initialize correctly on fresh installations. Fixed the Pip-Boy opening when closing Quick Menu or Menu Builder using their keyboard shortcuts. Improved shortcut handling when closing or switching menus, preserving custom keybindings."
+        },
+        {
+          "version": "0.5.216",
+          "text": "Fixed RIS rail attachment compatibility when another installed OMOD supplies the required weapon-target keyword; dynamic keywords remain subject to active OMOD and live-instance evidence. Added controller shortcuts, movement and confirmation in Quick Menu layouts, plus navigation in Builder and Settings. Text editing and drag-based reordering still use keyboard or mouse. Unified K2040 Mods MCM includes shared parent and child configuration, hotkeys and settings; native MCM is optional. Added experimental Cheat mode, disabled by default, to bypass loose OMOD inventory requirements while retaining attachment and weapon validation and transaction safeguards."
+        },
+        {
+          "version": "0.5.213",
+          "text": "Added controller navigation in Quick Menu, Builder and Settings, using thumbsticks or D-pad. Attachments are applied only on confirmation. Improved navigation across all four layouts, corrected reversed Compact Hybrid controls, and improved dropdowns, sliders and confirmation dialogs. Added controller shortcut options and radial wheel pagination. Fixed an Anniversary Edition crash caused by an incompatible weapon refresh function; added automatic re-equipping after closing the menu, improved default material handling, hid internal configuration slots and improved generated attachment compatibility checks. Improved keyboard, mouse and controller behavior. Fallout 4 AE 1.11.240 remained beta; the visual refresh could reset loaded ammunition. Fallout 4 1.10.163 retained its original refresh method."
+        },
+        {
+          "version": "0.5.199",
+          "text": "Fixed safe installation into restored attachment points, including the reported SREP M203 barrel-to-muzzle path."
+        },
+        {
+          "version": "0.5.198",
+          "text": "Fixed Tactical Reload compatibility causing false attachment swap safety errors. Improved internal/provider OMOD handling and attachment dependency ordering. Added a per-weapon Force Unsafe Swaps option for unsupported or unusual setups; safe swapping remains enabled by default."
+        },
+        {
+          "version": "0.5.197",
+          "text": "Added persistent diagnostic logging controls and menu slowdown from 0% to 100%, including normal speed, slow motion and full pause. Fixed hidden categories and attachments reappearing after changes in Cascade view, restricted mouse movement in Quick Menu, Builder and Settings, and cursor handling when switching between Builder and Settings."
+        },
+        {
+          "version": "0.5.192",
+          "text": "Addressed the attachment bug and prevented menu hotkeys from opening the menus during dialogue."
+        },
+        {
+          "version": "0.5.181",
+          "text": "Fixed generated attachment compatibility so unrelated weapon mods no longer appear. Builder shows compatible player-facing attachments, while Quick Menu shows installed and carried options. Fixed false unsafe-to-replace errors, Prisma Dock registration and filtering of internal helper OMODs."
+        },
+        {
+          "version": "0.5.180",
+          "text": "Initial release: change compatible weapon attachments from an in-game quick menu using ECO-authored or runtime-generated menus. Four layouts: Cascade, Radial Wheel, Compact Hybrid and Horizontal Bar. Configure per-weapon visibility, order, labels, bracket handling and menu source through Builder. Customize keybindings, scale, position, opacity, themes, colors, hints and behavior in Settings. Export and import per-weapon profiles. Validated provider/child ordering, inventory checks, post-change verification and rollback for supported attachment operations."
+        }
+      ]
     },
     {
       "slug": "eco-single-patches",
@@ -158,6 +291,29 @@
       },
       "related_mods": [
         "eco-aio"
+      ],
+      "overview": {
+        "en": [
+          "Individual ESL-flagged ESP patches add weapon-specific modifications to the ECO Redux quick menu. Install ECO Redux and the required weapon mods, then select the patches you need. Some combinations of attachments cannot be changed safely. The combined FOMOD installer is available separately."
+        ],
+        "de": [
+          "Einzelne ESL-markierte ESP-Patches ergänzen waffenspezifische Modifikationen im ECO-Redux-Schnellmenü. Installiere ECO Redux und die benötigten Waffenmods und wähle die passenden Patches. Manche Aufsatzkombinationen lassen sich nicht sicher wechseln. Der gemeinsame FOMOD-Installer ist separat erhältlich."
+        ],
+        "pt-PT": [
+          "Patches ESP marcados como ESL adicionam modificações específicas de armas ao menu rápido do ECO Redux. Instala o ECO Redux e os mods de armas necessários, depois escolhe os patches. Algumas combinações de acessórios não podem ser alteradas em segurança. O instalador FOMOD conjunto está disponível separadamente."
+        ],
+        "es": [
+          "Los parches ESP marcados como ESL añaden modificaciones específicas de armas al menú rápido de ECO Redux. Instala ECO Redux y los mods de armas necesarios y elige los parches. Algunas combinaciones de accesorios no pueden cambiarse de forma segura. El instalador FOMOD conjunto está disponible por separado."
+        ],
+        "fr": [
+          "Des correctifs ESP marqués ESL ajoutent des modifications propres aux armes au menu rapide d’ECO Redux. Installez ECO Redux et les mods d’armes requis, puis choisissez les correctifs. Certaines combinaisons d’accessoires ne peuvent pas être changées en toute sécurité. L’installateur FOMOD groupé est disponible séparément."
+        ]
+      },
+      "changelog": [
+        {
+          "version": "2026-05-31",
+          "text": "The individual-patch collection received newly published optional files."
+        }
       ]
     },
     {
@@ -180,6 +336,29 @@
       },
       "related_mods": [
         "eco-single-patches"
+      ],
+      "overview": {
+        "en": [
+          "The combined FOMOD installer adds weapon-specific quick-menu support to ECO Redux and detects active weapon plugins. All patches are ESL-flagged ESP files. Install the required mods first; some attachment combinations have limitations. Individual patches are available separately."
+        ],
+        "de": [
+          "Der gemeinsame FOMOD-Installer ergänzt das ECO-Redux-Schnellmenü um waffenspezifische Funktionen und erkennt aktive Waffenplugins. Alle Patches sind ESL-markierte ESP-Dateien. Installiere zuerst die benötigten Mods; manche Aufsatzkombinationen sind eingeschränkt. Einzelpatches sind separat erhältlich."
+        ],
+        "pt-PT": [
+          "O instalador FOMOD conjunto adiciona suporte específico de armas ao menu rápido do ECO Redux e deteta plugins de armas ativos. Todos os patches são ficheiros ESP marcados como ESL. Instala primeiro os mods necessários; algumas combinações de acessórios têm limitações. Os patches individuais estão disponíveis separadamente."
+        ],
+        "es": [
+          "El instalador FOMOD conjunto añade compatibilidad específica de armas al menú rápido de ECO Redux y detecta plugins de armas activos. Todos los parches son archivos ESP marcados como ESL. Instala primero los mods necesarios; algunas combinaciones de accesorios tienen limitaciones. Los parches individuales están disponibles por separado."
+        ],
+        "fr": [
+          "L’installateur FOMOD groupé ajoute la prise en charge des armes au menu rapide d’ECO Redux et détecte les plugins d’armes actifs. Tous les correctifs sont des fichiers ESP marqués ESL. Installez d’abord les mods requis ; certaines combinaisons d’accessoires sont limitées. Les correctifs individuels sont disponibles séparément."
+        ]
+      },
+      "changelog": [
+        {
+          "version": "2026-05-29",
+          "text": "A new all-in-one installer release was published on Nexus Mods."
+        }
       ]
     },
     {
@@ -199,7 +378,38 @@
         "src": "/assets/gaming/xedit-json-exporter-promo.webp",
         "width": 1280,
         "height": 720
-      }
+      },
+      "overview": {
+        "en": [
+          "Export entire ESP, ESL or ESM plugins, or selected groups and records, while preserving the xEdit hierarchy. The read-only script includes nested fields, arrays, record counts and automatically generated filenames. Place it in the xEdit Edit Scripts folder and run it with Apply Script."
+        ],
+        "de": [
+          "Exportiere ganze ESP-, ESL- oder ESM-Plugins oder ausgewählte Gruppen und Datensätze unter Erhalt der xEdit-Hierarchie. Das schreibgeschützte Skript erfasst verschachtelte Felder, Arrays, Datensatzanzahlen und erzeugt Dateinamen automatisch. Lege es im Ordner Edit Scripts ab und starte es über Apply Script."
+        ],
+        "pt-PT": [
+          "Exporta plugins ESP, ESL ou ESM completos, ou grupos e registos selecionados, mantendo a hierarquia do xEdit. O script só de leitura inclui campos aninhados, arrays, contagens de registos e nomes de ficheiros automáticos. Coloca-o na pasta Edit Scripts e executa-o através de Apply Script."
+        ],
+        "es": [
+          "Exporta plugins ESP, ESL o ESM completos, o grupos y registros seleccionados, conservando la jerarquía de xEdit. El script de solo lectura incluye campos anidados, matrices, recuentos de registros y nombres de archivo automáticos. Colócalo en Edit Scripts y ejecútalo con Apply Script."
+        ],
+        "fr": [
+          "Exportez des plugins ESP, ESL ou ESM entiers ou des groupes et enregistrements sélectionnés, en conservant la hiérarchie xEdit. Le script en lecture seule inclut les champs imbriqués, tableaux, comptages et noms de fichiers automatiques. Placez-le dans Edit Scripts et lancez-le via Apply Script."
+        ]
+      },
+      "changelog": [
+        {
+          "version": "1.6",
+          "text": "Fixed data loss when xEdit contains multiple children with the same name. Repeated values are now preserved in order instead of later entries replacing earlier ones, fixing the reported MGEF Actor Value and repeated keyword loss."
+        },
+        {
+          "version": "1.5",
+          "text": "Fixed full-plugin automatic naming so ESP, ESL, and ESM exports do not append every exported signature."
+        },
+        {
+          "version": "1.4",
+          "text": "First public version."
+        }
+      ]
     },
     {
       "slug": "quest-journal",
@@ -213,12 +423,72 @@
         "es": "Un diario de misiones a pantalla completa y un rastreador personalizable para Fallout 4.",
         "fr": "Un journal de quêtes plein écran et un suivi personnalisable pour Fallout 4."
       },
-      "images": [],
+      "images": [
+        {
+          "src": "/assets/gaming/quest-journal-release-01-quest-journal.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "Quest journal",
+            "de": "Questjournal",
+            "pt-PT": "Diário de missões",
+            "es": "Diario de misiones",
+            "fr": "Journal de quêtes"
+          }
+        },
+        {
+          "src": "/assets/gaming/quest-journal-release-02-tracker-appearance.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "Tracker appearance",
+            "de": "Tracker-Design",
+            "pt-PT": "Aspeto do rastreador",
+            "es": "Aspecto del rastreador",
+            "fr": "Apparence du suivi"
+          }
+        },
+        {
+          "src": "/assets/gaming/quest-journal-release-03-quest-tracker-styles.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "Quest tracker styles",
+            "de": "Questtracker-Stile",
+            "pt-PT": "Estilos do rastreador",
+            "es": "Estilos del rastreador",
+            "fr": "Styles de suivi de quêtes"
+          }
+        }
+      ],
       "promo": {
         "src": "/assets/gaming/quest-journal-promo.webp",
         "width": 1280,
         "height": 720
-      }
+      },
+      "overview": {
+        "en": [
+          "Browse active and completed quests using search, categories, sorting and favorites. Keep objectives visible with a configurable HUD tracker and synchronize supported quests with the Pip-Boy. Five themes, custom colors, keyboard and controller navigation, and optional MCM settings are included."
+        ],
+        "de": [
+          "Durchsuche aktive und abgeschlossene Quests mit Suche, Kategorien, Sortierung und Favoriten. Behalte Ziele mit einem konfigurierbaren HUD-Tracker im Blick und synchronisiere unterstützte Quests mit dem Pip-Boy. Fünf Designs, eigene Farben, Tastatur- und Controllersteuerung sowie optionale MCM-Einstellungen sind enthalten."
+        ],
+        "pt-PT": [
+          "Consulta missões ativas e concluídas com pesquisa, categorias, ordenação e favoritos. Mantém os objetivos visíveis com um rastreador HUD configurável e sincroniza missões suportadas com o Pip-Boy. Inclui cinco temas, cores personalizadas, navegação por teclado e comando e MCM opcional."
+        ],
+        "es": [
+          "Consulta misiones activas y completadas con búsqueda, categorías, orden y favoritos. Mantén los objetivos visibles con un rastreador HUD configurable y sincroniza misiones compatibles con el Pip-Boy. Incluye cinco temas, colores personalizados, teclado y mando, y MCM opcional."
+        ],
+        "fr": [
+          "Parcourez les quêtes actives et terminées avec recherche, catégories, tri et favoris. Gardez les objectifs visibles grâce au suivi HUD configurable et synchronisez les quêtes prises en charge avec le Pip-Boy. Cinq thèmes, couleurs personnalisées, clavier et manette, ainsi que MCM facultatif sont inclus."
+        ]
+      },
+      "changelog": [
+        {
+          "version": "0.0.2",
+          "text": "Full-screen quest journal, compact HUD tracker, quest tracking, themes, and customizable settings."
+        }
+      ]
     },
     {
       "slug": "gm-genie",
@@ -232,12 +502,76 @@
         "es": "Herramientas de Game Master para World of Warcraft 3.3.5a, centradas en AzerothCore.",
         "fr": "Outils de maître de jeu pour World of Warcraft 3.3.5a, axés sur AzerothCore."
       },
-      "images": [],
+      "images": [
+        {
+          "src": "/assets/gaming/gm-genie-release-01-gm-controls.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "GM controls",
+            "de": "GM-Steuerung",
+            "pt-PT": "Controlos GM",
+            "es": "Controles GM",
+            "fr": "Commandes MJ"
+          }
+        },
+        {
+          "src": "/assets/gaming/gm-genie-release-02-ticket-management.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "Ticket management",
+            "de": "Ticketverwaltung",
+            "pt-PT": "Gestão de tickets",
+            "es": "Gestión de tickets",
+            "fr": "Gestion des tickets"
+          }
+        },
+        {
+          "src": "/assets/gaming/gm-genie-release-03-builder-and-spy.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "Builder and Spy Player",
+            "de": "Builder und Spy Player",
+            "pt-PT": "Builder e Spy Player",
+            "es": "Builder y Spy Player",
+            "fr": "Builder et Spy Player"
+          }
+        }
+      ],
       "promo": {
         "src": "/assets/gaming/gm-genie-promo.webp",
         "width": 1280,
         "height": 720
-      }
+      },
+      "overview": {
+        "en": [
+          "The in-game Game Master interface includes a HUD, ticket management, player lookup, Spy and Builder tools, visibility, whispers, flight, revive shortcuts and macro menus. This adaptation targets AzerothCore and WoW 3.3.5a; other server cores may behave differently. It includes compatibility fixes and optional ElvUI presentation."
+        ],
+        "de": [
+          "Die Game-Master-Oberfläche enthält HUD, Ticketverwaltung, Spielersuche, Spy- und Builder-Werkzeuge, Sichtbarkeit, Flüstern, Flugmodus, Wiederbelebung und Makromenüs. Die Anpassung richtet sich an AzerothCore und WoW 3.3.5a; andere Serverkerne können sich anders verhalten. Kompatibilitätskorrekturen und eine optionale ElvUI-Darstellung sind enthalten."
+        ],
+        "pt-PT": [
+          "A interface de Game Master inclui HUD, gestão de tickets, pesquisa de jogadores, ferramentas Spy e Builder, visibilidade, sussurros, voo, reanimação e menus de macros. Esta adaptação destina-se a AzerothCore e WoW 3.3.5a; outros servidores podem comportar-se de forma diferente. Inclui correções de compatibilidade e apresentação ElvUI opcional."
+        ],
+        "es": [
+          "La interfaz de Game Master incluye HUD, gestión de tickets, búsqueda de jugadores, herramientas Spy y Builder, visibilidad, susurros, vuelo, resurrección y menús de macros. Esta adaptación se dirige a AzerothCore y WoW 3.3.5a; otros servidores pueden comportarse de forma distinta. Incluye correcciones de compatibilidad y presentación ElvUI opcional."
+        ],
+        "fr": [
+          "L’interface de maître de jeu comprend HUD, tickets, recherche de joueurs, outils Spy et Builder, visibilité, chuchotements, vol, résurrection et menus de macros. Cette adaptation cible AzerothCore et WoW 3.3.5a ; d’autres serveurs peuvent se comporter différemment. Elle inclut des correctifs de compatibilité et une présentation ElvUI facultative."
+        ]
+      },
+      "changelog": [
+        {
+          "version": "1.1",
+          "text": "Added the built-in skin selector and optional ElvUI / AddOnSkins presentation."
+        },
+        {
+          "version": "1.0",
+          "text": "First public release on Nexus Mods."
+        }
+      ]
     },
     {
       "slug": "loot-and-salvage",
@@ -251,12 +585,76 @@
         "es": "Un addon para gestionar objetos no deseados y facilitar la limpieza de bolsas en World of Warcraft 3.3.5a.",
         "fr": "Un addon pour gérer les objets indésirables et faciliter le rangement des sacs dans World of Warcraft 3.3.5a."
       },
-      "images": [],
+      "images": [
+        {
+          "src": "/assets/gaming/loot-and-salvage-release-01-quick-lists.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "Quick lists",
+            "de": "Schnelllisten",
+            "pt-PT": "Listas rápidas",
+            "es": "Listas rápidas",
+            "fr": "Listes rapides"
+          }
+        },
+        {
+          "src": "/assets/gaming/loot-and-salvage-release-02-settings.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "Settings",
+            "de": "Einstellungen",
+            "pt-PT": "Definições",
+            "es": "Ajustes",
+            "fr": "Paramètres"
+          }
+        },
+        {
+          "src": "/assets/gaming/loot-and-salvage-release-03-quick-classification.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "Quick classification",
+            "de": "Schnellklassifizierung",
+            "pt-PT": "Classificação rápida",
+            "es": "Clasificación rápida",
+            "fr": "Classification rapide"
+          }
+        }
+      ],
       "promo": {
         "src": "/assets/gaming/loot-and-salvage-promo.webp",
         "width": 1280,
         "height": 720
-      }
+      },
+      "overview": {
+        "en": [
+          "Mark items as junk or protected, maintain blacklists and whitelists, and optionally automate selling, destruction, disenchanting and milling. The addon works on its own; AddOnSkins enables its optional ElvUI presentation, and AdiBags integration is available. Install it in Interface/AddOns and configure it from the game's Interface settings."
+        ],
+        "de": [
+          "Markiere Gegenstände als Schrott oder geschützt, verwalte Positiv- und Negativlisten und automatisiere optional Verkauf, Zerstörung, Entzaubern und Mahlen. Das Addon funktioniert eigenständig; AddOnSkins ermöglicht die optionale ElvUI-Darstellung, AdiBags-Integration ist verfügbar. Installiere es in Interface/AddOns und konfiguriere es in den Interface-Einstellungen."
+        ],
+        "pt-PT": [
+          "Marca itens como lixo ou protegidos, mantém listas de inclusão e exclusão e automatiza opcionalmente venda, destruição, desencantamento e moagem. O addon funciona sozinho; AddOnSkins permite a apresentação ElvUI opcional e existe integração com AdiBags. Instala-o em Interface/AddOns e configura-o nas opções de interface."
+        ],
+        "es": [
+          "Marca objetos como basura o protegidos, mantén listas de inclusión y exclusión y automatiza opcionalmente la venta, destrucción, desencantamiento y molienda. El addon funciona de forma independiente; AddOnSkins permite la presentación ElvUI opcional y dispone de integración con AdiBags. Instálalo en Interface/AddOns y configúralo desde las opciones de interfaz."
+        ],
+        "fr": [
+          "Marquez les objets comme déchets ou protégés, gérez les listes blanches et noires et automatisez facultativement la vente, la destruction, le désenchantement et la mouture. L’addon fonctionne seul ; AddOnSkins permet la présentation ElvUI facultative et AdiBags est pris en charge. Installez-le dans Interface/AddOns et configurez-le dans les options d’interface."
+        ]
+      },
+      "changelog": [
+        {
+          "version": "0.2.0",
+          "text": "Added built-in selectable presentation modes and retired the separate bridge. This GitHub pre-release remains standalone; AddOnSkins is needed only for the ElvUI presentation."
+        },
+        {
+          "version": "0.1.0",
+          "text": "First public preview release on Nexus Mods and GitHub."
+        }
+      ]
     },
     {
       "slug": "dead-island-riptide-ultimate-edition",
@@ -270,12 +668,60 @@
         "es": "Una adaptación nativa para Linux del mod Ultimate Edition de Dead Island Riptide Definitive Edition.",
         "fr": "Une adaptation Linux native du mod Ultimate Edition pour Dead Island Riptide Definitive Edition."
       },
-      "images": [],
+      "images": [
+        {
+          "src": "/assets/gaming/dead-island-riptide-ultimate-edition-capture-01-utility-main-1920x1080.png",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "Mod utility window",
+            "de": "Mod-Tool-Fenster",
+            "pt-PT": "Janela da ferramenta",
+            "es": "Ventana de la herramienta",
+            "fr": "Fenêtre de l’outil"
+          }
+        },
+        {
+          "src": "/assets/gaming/dead-island-riptide-ultimate-edition-capture-02-utility-about-1920x1080.png",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "About the utility",
+            "de": "Über das Tool",
+            "pt-PT": "Sobre a ferramenta",
+            "es": "Acerca de la herramienta",
+            "fr": "À propos de l’outil"
+          }
+        }
+      ],
       "promo": {
         "src": "/assets/gaming/dead-island-riptide-ultimate-edition-promo.webp",
         "width": 1280,
         "height": 720
-      }
+      },
+      "overview": {
+        "en": [
+          "Based on fireeyeeian’s original Windows mod, this native Linux port provides configurable movement, combat, equipment, loot, zombie behavior, field of view, weather and time-of-day adjustments. Flatpak and AppImage packages are available from the official mod page. It requires the Linux version of Dead Island Riptide Definitive Edition."
+        ],
+        "de": [
+          "Diese native Linux-Portierung basiert auf fireeyeeians ursprünglichem Windows-Mod und bietet Einstellungen für Bewegung, Kampf, Ausrüstung, Beute, Zombieverhalten, Sichtfeld, Wetter und Tageszeit. Flatpak- und AppImage-Pakete sind auf der offiziellen Modseite erhältlich. Benötigt wird die Linux-Version von Dead Island Riptide Definitive Edition."
+        ],
+        "pt-PT": [
+          "Baseada no mod original para Windows de fireeyeeian, esta adaptação Linux nativa permite ajustar movimento, combate, equipamento, saque, comportamento dos zombies, campo de visão, clima e hora do dia. Estão disponíveis pacotes Flatpak e AppImage na página oficial. Requer a versão Linux de Dead Island Riptide Definitive Edition."
+        ],
+        "es": [
+          "Basada en el mod original de Windows de fireeyeeian, esta adaptación nativa para Linux permite configurar movimiento, combate, equipo, botín, comportamiento de zombis, campo de visión, clima y hora del día. Hay paquetes Flatpak y AppImage en la página oficial. Requiere la versión Linux de Dead Island Riptide Definitive Edition."
+        ],
+        "fr": [
+          "Basée sur le mod Windows original de fireeyeeian, cette adaptation Linux native permet de régler les déplacements, combats, équipements, butin, comportement des zombies, champ de vision, météo et heure de la journée. Les paquets Flatpak et AppImage sont disponibles sur la page officielle. La version Linux de Dead Island Riptide Definitive Edition est requise."
+        ]
+      },
+      "changelog": [
+        {
+          "version": "0.1.0.dev0",
+          "text": "First public pre-release of the native Linux port of FireEyeEian’s Dead Island Riptide Ultimate Edition mod menu."
+        }
+      ]
     }
   ]
 }

@@ -412,9 +412,94 @@ test("All restored Nexus catalogue entries have unique destinations, localized d
    assert.ok(fs.existsSync(path.join(root,m.promo.src)));
    assert.ok(index.includes(m.promo.src));
    assert.ok(detail.includes(m.promo.src));
-   assert.ok(!detail.includes('id="gallery-heading"'));
+   assert.equal(detail.includes('id="gallery-heading"'),m.images.length>0||!!m.feature_post);
+   assert.ok(Object.keys(m.overview).length===5);
   }
  }
  for(const id of [109575,105464,105461,105775,110911,905,906,31,111814,111851])
   assert.ok(mods.some(m=>m.nexus.endsWith("/"+id)),String(id));
+});
+
+test("Standalone release uses distinct approved header and all three gallery compositions",()=>{
+ const catalog=JSON.parse(file("gaming/catalog.json"));
+ const mod=catalog.mods.find(m=>m.slug==="pinup-magazines-standalone");
+ const post=JSON.parse(file("gaming/posts.json")).find(p=>p.slug===mod.slug);
+ assert.equal(mod.promo.src,"/assets/gaming/pinup-standalone-promo.webp");
+ assert.deepEqual(post.artwork.map(a=>a.src),["pulp-adventures","retro-life-and-science","life-in-the-wasteland"].map(n=>"/assets/gaming/pinup-standalone-"+n+".webp"));
+ for(const page of ["gaming/mods/"+mod.slug+"/index.html","gaming/news/"+mod.slug+"/index.html"]){
+  const detail=file(page);
+  assert.equal((detail.match(/class="gallery-item"/g)||[]).length,3);
+  assert.ok(!detail.includes("promo-framed"));
+  assert.ok(!detail.includes("pinup-standalone-preview-"));
+ }
+ assert.ok(file("gaming/mods/index.html").includes(mod.promo.src));
+ assert.ok(file("gaming/mods/"+mod.slug+"/index.html").includes(mod.promo.src));
+});
+test("Historical captures and release history stay on detail pages, not current news",()=>{
+ const mods=JSON.parse(file("gaming/catalog.json")).mods;
+ for(const m of mods){
+  const detail=file("gaming/mods/"+m.slug+"/index.html");
+  if(m.images.length){
+   assert.ok(detail.includes("capture-image"));
+   for(const pic of m.images)assert.ok(fs.existsSync(path.join(root,pic.src)));
+  }
+  if(m.changelog){
+   assert.ok(detail.includes("mod-changelog"));
+   assert.equal((detail.match(/<li><strong>/g)||[]).length,m.changelog.length);
+  }
+ }
+});
+
+test("Both magazine editions retain their published release history in newest-first order",()=>{
+ const mods=JSON.parse(file("gaming/catalog.json")).mods;
+ const a=mods.find(m=>m.slug==="pinup-magazines");
+ const b=mods.find(m=>m.slug==="pinup-magazines-standalone");
+ assert.deepEqual(a.changelog.map(r=>r.version),["1.0"]);
+ assert.deepEqual(b.changelog.map(r=>r.version),["1.1","1.0"]);
+ assert.ok(a.changelog[0].text.includes("130 new pin-up magazine covers"));
+ assert.ok(b.changelog[0].text.includes("Vortex XML error"));
+ for(const m of [a,b]){
+  const html=file("gaming/mods/"+m.slug+"/index.html");
+  assert.ok(html.includes("mod-changelog"));
+  for(const r of m.changelog)assert.ok(html.includes("<strong>"+r.version+"</strong>"));
+ }
+});
+
+test("Quick Attach Menu and Quest Journal follow the verified Nexus release histories",()=>{
+ const mods=JSON.parse(file("gaming/catalog.json")).mods;
+ const qam=mods.find(m=>m.slug==="quick-attach-menu");
+ const journal=mods.find(m=>m.slug==="quest-journal");
+ assert.deepEqual(qam.changelog.map(e=>e.version),["0.5.222","0.5.220","0.5.219","0.5.216","0.5.213","0.5.199","0.5.198","0.5.197","0.5.192","0.5.181","0.5.180"]);
+ assert.ok(qam.changelog[0].text.includes("Hunting Rifle"));
+ assert.ok(qam.changelog[4].text.includes("controller navigation"));
+ assert.deepEqual(journal.changelog.map(e=>e.version),["0.0.2"]);
+ for(const m of [qam,journal]){
+  const html=file("gaming/mods/"+m.slug+"/index.html");
+  let last=html.indexOf("mod-changelog");
+  assert.ok(last>=0);
+  for(const e of m.changelog){
+   const pos=html.indexOf("<strong>"+e.version+"</strong>",last);
+   assert.ok(pos>last);
+   last=pos;
+  }
+ }
+});
+
+test("Latest confirmed release is featured automatically before the game directory",()=>{
+ const mods=JSON.parse(file("gaming/catalog.json")).mods;
+ const posts=JSON.parse(file("gaming/posts.json"));
+ const releases=mods.filter(m=>m.feature_post).map(m=>({mod:m,post:posts.find(p=>p.slug===m.feature_post)}))
+  .sort((a,b)=>b.post.date.localeCompare(a.post.date)||b.post.slug.localeCompare(a.post.slug));
+ const {mod,post}=releases[0];
+ const home=file("gaming/index.html"),index=file("gaming/mods/index.html");
+ const start=home.indexOf("class=\"gaming-section latest-release\"");
+ assert.ok(start>=0 && start<home.indexOf("class=\"game-tiles\""));
+ const feature=home.slice(start,home.indexOf("</section>",start));
+ assert.ok(feature.includes(mod.promo?.src||post.artwork[0].src));
+ assert.ok(feature.includes("href=\"/gaming/mods/"+mod.slug+"/\""));
+ assert.ok(feature.includes("href=\""+mod.nexus+"\""));
+ assert.ok(feature.includes("datetime=\""+post.date+"\""));
+ assert.equal((index.match(/class="mod-release-label"/g)||[]).length,1);
+ assert.ok(index.indexOf("href=\"/gaming/mods/"+mod.slug+"/\"")<index.indexOf("href=\"/gaming/mods/pinup-magazines/\"")||mod.slug==="pinup-magazines");
+ for(const l of Object.keys(translations))assert.ok(translations[l].gaming.latestRelease);
 });

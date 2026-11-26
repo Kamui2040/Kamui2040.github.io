@@ -82,3 +82,23 @@ window.K2040_COPY["pt-PT"].gaming.details = "Ver mod";
 window.K2040_COPY["es"].gaming.details = "Ver mod";
 
 window.K2040_COPY["fr"].gaming.details = "Voir le mod";
+
+Object.assign(window.K2040_COPY["en"].gaming, {"changelog": "Release history", "historyNote": "Selected historical release notes (English). See the official mod page for current releases.", "historicalCaptures": "Screenshots from earlier released versions; the current interface may differ."});
+
+Object.assign(window.K2040_COPY["de"].gaming, {"changelog": "Versionsverlauf", "historyNote": "Ausgewählte historische Versionshinweise (Englisch). Aktuelle Versionen findest du auf der offiziellen Modseite.", "historicalCaptures": "Screenshots früherer veröffentlichter Versionen; die aktuelle Oberfläche kann abweichen."});
+
+Object.assign(window.K2040_COPY["pt-PT"].gaming, {"changelog": "Histórico de versões", "historyNote": "Notas de versões anteriores selecionadas (inglês). Consulta a página oficial do mod para versões atuais.", "historicalCaptures": "Capturas de versões publicadas anteriormente; a interface atual pode ser diferente."});
+
+Object.assign(window.K2040_COPY["es"].gaming, {"changelog": "Historial de versiones", "historyNote": "Notas de versiones anteriores seleccionadas (inglés). Consulta la página oficial del mod para las versiones actuales.", "historicalCaptures": "Capturas de versiones publicadas anteriormente; la interfaz actual puede ser diferente."});
+
+Object.assign(window.K2040_COPY["fr"].gaming, {"changelog": "Historique des versions", "historyNote": "Sélection de notes de versions antérieures (anglais). Consultez la page officielle du mod pour les versions actuelles.", "historicalCaptures": "Captures de versions publiées antérieurement ; l’interface actuelle peut être différente."});
+
+window.K2040_COPY["en"].gaming.latestRelease = "Latest release";
+
+window.K2040_COPY["de"].gaming.latestRelease = "Neueste Veröffentlichung";
+
+window.K2040_COPY["pt-PT"].gaming.latestRelease = "Lançamento mais recente";
+
+window.K2040_COPY["es"].gaming.latestRelease = "Último lanzamiento";
+
+window.K2040_COPY["fr"].gaming.latestRelease = "Dernière sortie";
