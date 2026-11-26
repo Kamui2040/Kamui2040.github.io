@@ -137,6 +137,7 @@ try:
                     theme:document.documentElement.dataset.theme,
                     lang:document.documentElement.lang,
                     title:document.title,
+                    description:document.querySelector('meta[name="description"]').content,
                     menuVisible:getComputedStyle(document.querySelector(".menu-btn")).display!=="none",
                     primaryVisible:getComputedStyle(document.querySelector(".primary-nav")).display!=="none",
                     legacyMenus:document.querySelectorAll(".global-menu,.menu-panel,details").length,
@@ -168,6 +169,7 @@ try:
                 require(result["theme"]==theme,(pathname,"theme",result))
                 expected_bg="rgb(16, 22, 34)" if theme=="dark" else "rgb(243, 243, 249)"
                 require(result["bodyBg"]==expected_bg,(pathname,"computed theme colors",result))
+                require(all(isinstance(result[k],str) and result[k].strip() and result[k] not in ("undefined","null") for k in ("title","description")),(pathname,"invalid metadata",result))
                 require(result["lang"]==language,(pathname,"language",result))
                 require(result["legacyMenus"]==0,(pathname,"old dropdown found"))
                 require(result["brandLoaded"],(pathname,"approved wordmark absent"))
