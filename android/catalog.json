@@ -40,6 +40,10 @@
           "name": "F-Droid",
           "url": "https://f-droid.org/packages/io.github.kamui2040.vectorint/",
           "version": "0.0.11"
+        },
+        {
+          "name": "APKPure",
+          "url": "https://apkpure.com/vectorint/io.github.kamui2040.vectorint"
         }
       ],
       "source": "https://github.com/Kamui2040/Vectorint",
@@ -156,6 +160,10 @@
         {
           "name": "OpenAPK",
           "url": "https://www.openapk.net/de/geojoystick/com.k2040.geojoystick/"
+        },
+        {
+          "name": "APKPure",
+          "url": "https://apkpure.com/geojoystick/com.k2040.geojoystick"
         }
       ],
       "source": "https://github.com/Kamui2040/K2040-GeoJoystick",
@@ -240,6 +248,10 @@
         {
           "name": "Uptodown",
           "url": "https://esca-agnellis.en.uptodown.com/android"
+        },
+        {
+          "name": "APKPure",
+          "url": "https://apkpure.com/esca-agnellis/com.k2040.escaagnellis"
         }
       ],
       "source": "https://github.com/Kamui2040/Esca-Agnellis-Android",

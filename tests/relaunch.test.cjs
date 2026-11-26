@@ -512,7 +512,7 @@ test("Latest confirmed release is featured automatically before the game directo
 test("Android catalogue exposes three released apps, verified channel links and historical media",()=>{
  const apps=JSON.parse(file("android/catalog.json")).apps;
  assert.deepEqual(apps.map(a=>a.slug),["vectorint","geojoystick","esca-agnellis"]);
- assert.deepEqual(apps[0].stores.map(s=>s.version),["0.0.8","0.0.11"]);
+ assert.deepEqual(apps[0].stores.slice(0,2).map(s=>s.version),["0.0.8","0.0.11"]);
  for(const a of apps){
   const html=file("android/apps/"+a.slug+"/index.html");
   assert.ok(file("android/apps/index.html").includes("/android/apps/"+a.slug+"/"));
@@ -559,5 +559,17 @@ test("Runtime page metadata is valid across every generated page and locale, inc
    assert.ok(desc.content.trim()&&!["undefined","null"].includes(desc.content),p+" "+lang);
    if(["gamingMod","androidApp"].includes(page))assert.equal(document.title,title,p);
   }
+ }
+});
+
+test("APKPure listings match each released Android app package",()=>{
+ const apps=JSON.parse(file("android/catalog.json")).apps;
+ for(const a of apps){
+  const links=a.stores.filter(s=>s.name==="APKPure");
+  assert.equal(links.length,1,a.slug);
+  const expected="https://apkpure.com/"+a.slug+"/"+a.package;
+  assert.equal(links[0].url,expected);
+  assert.equal(links[0].version,undefined);
+  assert.ok(file("android/apps/"+a.slug+"/index.html").includes('href="'+expected+'"'));
  }
 });
