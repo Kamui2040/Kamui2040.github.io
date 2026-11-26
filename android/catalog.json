@@ -1,0 +1,280 @@
+{
+  "apps": [
+    {
+      "slug": "vectorint",
+      "title": "Vectorint",
+      "package": "io.github.kamui2040.vectorint",
+      "date": "2026-09-10",
+      "capture": "0.0.8",
+      "description": {
+        "en": "Know how much you can safely spend with a local budgeting companion.",
+        "de": "Ermittle mit einem lokalen Budgetplaner, wie viel du sicher ausgeben kannst.",
+        "pt-PT": "Saiba quanto pode gastar com um gestor de orçamento local.",
+        "es": "Consulta cuánto puedes gastar con un gestor de presupuesto local.",
+        "fr": "Découvrez combien vous pouvez dépenser avec un outil de budget local."
+      },
+      "overview": {
+        "en": "Track current funds, one-off and recurring income and expenses, and monthly categories. Separate same-currency accounts, local automatic backups and home-screen widgets are available in F-Droid 0.0.11. No sign-in, ads, analytics or internet connection is required.",
+        "de": "Erfasse aktuelle Mittel, einmalige und wiederkehrende Einnahmen und Ausgaben sowie Monatskategorien. Getrennte Konten derselben Währung, automatische lokale Sicherungen und Startbildschirm-Widgets sind in F-Droid 0.0.11 verfügbar. Keine Anmeldung, Werbung, Analyse oder Internetverbindung erforderlich.",
+        "pt-PT": "Registe fundos atuais, receitas e despesas pontuais e recorrentes, e categorias mensais. Contas separadas na mesma moeda, cópias locais automáticas e widgets estão disponíveis no F-Droid 0.0.11. Não requer conta, anúncios, análise nem Internet.",
+        "es": "Registra fondos actuales, ingresos y gastos puntuales y recurrentes, y categorías mensuales. Las cuentas separadas en la misma moneda, las copias locales automáticas y los widgets están disponibles en F-Droid 0.0.11. No requiere cuenta, publicidad, análisis ni conexión a Internet.",
+        "fr": "Suivez les fonds actuels, les revenus et dépenses ponctuels ou récurrents et les catégories mensuelles. Les comptes séparés dans la même devise, les sauvegardes locales automatiques et les widgets sont disponibles dans F-Droid 0.0.11. Aucun compte, publicité, analyse ni accès Internet requis."
+      },
+      "history": [
+        {
+          "version": "0.0.11",
+          "text": "F-Droid release: separate local accounts, automatic local JSON backups, detailed and compact Available now widgets, and a clearer Home layout."
+        },
+        {
+          "version": "0.0.8",
+          "text": "First production release. Initial budgeting features and English and German store materials."
+        }
+      ],
+      "stores": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/Kamui2040/Vectorint/releases",
+          "version": "0.0.8"
+        },
+        {
+          "name": "F-Droid",
+          "url": "https://f-droid.org/packages/io.github.kamui2040.vectorint/",
+          "version": "0.0.11"
+        }
+      ],
+      "source": "https://github.com/Kamui2040/Vectorint",
+      "privacy": "https://github.com/Kamui2040/Vectorint/blob/v0.0.11/PRIVACY.md",
+      "promo": {
+        "src": "/assets/android/vectorint-promo-landscape.webp",
+        "width": 1920,
+        "height": 1080
+      },
+      "images": [
+        {
+          "src": "/assets/android/vectorint-screens-01.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "Available funds and entries",
+            "de": "Verfügbare Mittel und Buchungen",
+            "pt-PT": "Fundos disponíveis e registos",
+            "es": "Fondos disponibles y movimientos",
+            "fr": "Fonds disponibles et opérations"
+          }
+        },
+        {
+          "src": "/assets/android/vectorint-screens-02.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "Expense categories and recurring entries",
+            "de": "Ausgabenkategorien und wiederkehrende Buchungen",
+            "pt-PT": "Categorias de despesas e registos recorrentes",
+            "es": "Categorías de gastos y movimientos recurrentes",
+            "fr": "Catégories de dépenses et opérations récurrentes"
+          }
+        },
+        {
+          "src": "/assets/android/vectorint-screens-03.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "Schedule",
+            "de": "Zeitplan",
+            "pt-PT": "Agenda",
+            "es": "Calendario",
+            "fr": "Échéancier"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "geojoystick",
+      "title": "GeoJoystick",
+      "package": "com.k2040.geojoystick",
+      "date": "2026-09-02",
+      "capture": "0.1.4",
+      "description": {
+        "en": "An open-source mock-location joystick for Android emulator and developer testing.",
+        "de": "Ein quelloffener Mock-Location-Joystick für Android-Emulatoren und Entwicklertests.",
+        "pt-PT": "Joystick de localização simulada de código aberto para testes Android.",
+        "es": "Joystick de ubicación simulada de código abierto para pruebas Android.",
+        "fr": "Joystick de localisation simulée libre pour les tests Android."
+      },
+      "overview": {
+        "en": "Enter coordinates, select a position on the OpenStreetMap-based picker, or import supported map links. Use the floating joystick, compact mode, speed presets and favorites to test location-aware apps. GeoJoystick uses Android’s standard mock-location system; it does not hide mock-location status.",
+        "de": "Gib Koordinaten ein, wähle eine Position auf der OpenStreetMap-Karte oder importiere unterstützte Kartenlinks. Nutze den schwebenden Joystick, Kompaktmodus, Geschwindigkeitsprofile und Favoriten zum Testen standortbezogener Apps. GeoJoystick nutzt Androids reguläres Mock-Location-System und verbirgt den Status nicht.",
+        "pt-PT": "Introduza coordenadas, selecione uma posição no mapa OpenStreetMap ou importe ligações compatíveis. Utilize o joystick flutuante, modo compacto, velocidades predefinidas e favoritos. Usa o sistema de localização simulada do Android e não oculta esse estado.",
+        "es": "Introduce coordenadas, elige una posición en el mapa OpenStreetMap o importa enlaces compatibles. Usa el joystick flotante, el modo compacto, las velocidades predefinidas y los favoritos. Utiliza el sistema de ubicación simulada de Android sin ocultar su estado.",
+        "fr": "Saisissez des coordonnées, choisissez une position sur la carte OpenStreetMap ou importez des liens compatibles. Utilisez le joystick flottant, le mode compact, les vitesses prédéfinies et les favoris. L’application utilise le système de localisation simulée d’Android sans masquer son état."
+      },
+      "history": [
+        {
+          "version": "0.1.5",
+          "text": "Added 15 UI languages, Arabic RTL, pinch-to-zoom, optional place/address search, and improved enlarged-text and localized layouts."
+        },
+        {
+          "version": "0.1.4",
+          "text": "Redesigned Home, Settings and overlay; improved recovery, map links, accessibility and onboarding. Added mascot and launcher identity."
+        },
+        {
+          "version": "0.1.3",
+          "text": "Fixed dialogs not following dark theme; added store icon."
+        },
+        {
+          "version": "0.1.2",
+          "text": "F-Droid release/build metadata; no behavior changes."
+        },
+        {
+          "version": "0.1.1",
+          "text": "Gradle wrapper metadata for F-Droid; no behavior changes."
+        },
+        {
+          "version": "0.1.0",
+          "text": "Initial public release candidate: floating mock-location joystick, coordinates, map picker, map links, favorites, theme/language and overlay settings."
+        }
+      ],
+      "stores": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/Kamui2040/K2040-GeoJoystick/releases",
+          "version": "0.1.5"
+        },
+        {
+          "name": "F-Droid",
+          "url": "https://f-droid.org/packages/com.k2040.geojoystick/",
+          "version": "0.1.5"
+        },
+        {
+          "name": "ONEstore",
+          "url": "https://m.onestore.net/en-us/apps/appsDetail?prodId=0001008367"
+        },
+        {
+          "name": "Uptodown",
+          "url": "https://geojoystick.en.uptodown.com/android"
+        },
+        {
+          "name": "OpenAPK",
+          "url": "https://www.openapk.net/de/geojoystick/com.k2040.geojoystick/"
+        }
+      ],
+      "source": "https://github.com/Kamui2040/K2040-GeoJoystick",
+      "privacy": "https://github.com/Kamui2040/K2040-GeoJoystick/blob/v0.1.5/PRIVACY.md",
+      "promo": {
+        "src": "/assets/android/geojoystick-promo-landscape.webp",
+        "width": 1920,
+        "height": 1080
+      },
+      "images": [
+        {
+          "src": "/assets/android/geojoystick-screens-01.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "Main controls and settings",
+            "de": "Hauptsteuerung und Einstellungen",
+            "pt-PT": "Controlos principais e definições",
+            "es": "Controles principales y ajustes",
+            "fr": "Commandes principales et paramètres"
+          }
+        },
+        {
+          "src": "/assets/android/geojoystick-screens-02.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "About and map overlay",
+            "de": "Über die App und Karten-Overlay",
+            "pt-PT": "Sobre a aplicação e sobreposição no mapa",
+            "es": "Acerca de la app y superposición en el mapa",
+            "fr": "À propos et superposition sur la carte"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "esca-agnellis",
+      "title": "Esca Agnellis",
+      "package": "com.k2040.escaagnellis",
+      "date": "2026-08-31",
+      "capture": "0.16.0",
+      "description": {
+        "en": "Friendly, local portion tracking using a food-pyramid layout.",
+        "de": "Freundliches, lokales Erfassen von Portionen anhand einer Ernährungspyramide.",
+        "pt-PT": "Registo local de porções através de uma pirâmide alimentar.",
+        "es": "Registro local de porciones mediante una pirámide alimentaria.",
+        "fr": "Suivi local et convivial des portions au moyen d’une pyramide alimentaire."
+      },
+      "overview": {
+        "en": "Record daily portions, review local statistics and export PDF reports for selected dates. Choose from eleven app languages and several themes. The optional companion is disabled by default and separate from tracking. No internet permission, accounts, ads, telemetry or cloud synchronization.",
+        "de": "Erfasse tägliche Portionen, sieh lokale Statistiken ein und exportiere PDF-Berichte für ausgewählte Zeiträume. Elf App-Sprachen und mehrere Designs stehen zur Wahl. Der optionale Begleiter ist standardmäßig deaktiviert und vom Tracking getrennt. Keine Internet-Berechtigung, Konten, Werbung, Telemetrie oder Cloud-Synchronisierung.",
+        "pt-PT": "Registe porções diárias, consulte estatísticas locais e exporte relatórios PDF de datas selecionadas. Escolha entre onze idiomas e vários temas. O companheiro opcional está desativado por predefinição e separado do registo. Sem permissão de Internet, contas, anúncios, telemetria ou sincronização na nuvem.",
+        "es": "Registra porciones diarias, consulta estadísticas locales y exporta informes PDF de fechas seleccionadas. Elige entre once idiomas y varios temas. El compañero opcional está desactivado por defecto y separado del registro. Sin permiso de Internet, cuentas, anuncios, telemetría ni sincronización en la nube.",
+        "fr": "Enregistrez les portions quotidiennes, consultez les statistiques locales et exportez des rapports PDF sur des dates choisies. Onze langues et plusieurs thèmes sont proposés. Le compagnon facultatif est désactivé par défaut et séparé du suivi. Sans autorisation Internet, compte, publicité, télémétrie ni synchronisation cloud."
+      },
+      "history": [
+        {
+          "version": "0.17.0",
+          "text": "Added Turkish, Arabic, Polish, Russian, Ukrainian and Romanian; improved Arabic RTL, corrected drink statistics, clarified source information and adopted the shared K2040 symbol."
+        },
+        {
+          "version": "0.16.0",
+          "text": "Added local PDF reports and an optional companion with separate state and backups. Updated license information and published the open-source version."
+        }
+      ],
+      "stores": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/Kamui2040/Esca-Agnellis-Android/releases",
+          "version": "0.17.0"
+        },
+        {
+          "name": "F-Droid",
+          "url": "https://f-droid.org/packages/com.k2040.escaagnellis/",
+          "version": "0.17.0"
+        },
+        {
+          "name": "ONEstore",
+          "url": "https://m.onestore.net/en-us/apps/appsDetail?prodId=0001008793"
+        },
+        {
+          "name": "Uptodown",
+          "url": "https://esca-agnellis.en.uptodown.com/android"
+        }
+      ],
+      "source": "https://github.com/Kamui2040/Esca-Agnellis-Android",
+      "privacy": "https://github.com/Kamui2040/Esca-Agnellis-Android/blob/v0.17.0/PRIVACY.md",
+      "promo": {
+        "src": "/assets/android/esca-agnellis-promo-landscape.webp",
+        "width": 1920,
+        "height": 1080
+      },
+      "images": [
+        {
+          "src": "/assets/android/esca-agnellis-screens-01.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "Today and calendar",
+            "de": "Heute und Kalender",
+            "pt-PT": "Hoje e calendário",
+            "es": "Hoy y calendario",
+            "fr": "Aujourd’hui et calendrier"
+          }
+        },
+        {
+          "src": "/assets/android/esca-agnellis-screens-02.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": {
+            "en": "Companion and statistics",
+            "de": "Begleiter und Statistik",
+            "pt-PT": "Companheiro e estatísticas",
+            "es": "Compañero y estadísticas",
+            "fr": "Compagnon et statistiques"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -145,7 +145,7 @@ test("Desktop nav and independent mobile nav have no nested submenus",()=>{
 });
 test("Homepage uses a compact project-first hero without duplicate logo",()=>{
  const html=pages.home;
- for(const value of ['hero__top','hero__copy','hero__topics','hero__topic','project-grid','home-news'])
+ for(const value of ['hero__top','hero__copy','project-grid','home-news'])
   assert.ok(html.includes(value),value);
  assert.ok(!html.includes("hero__stage"));
  assert.ok(!html.includes("hero__symbol"));
@@ -155,7 +155,9 @@ test("Homepage uses a compact project-first hero without duplicate logo",()=>{
  assert.ok(html.includes('id="projects-heading"'));
  assert.ok(html.includes('aria-labelledby="projects-heading"'));
  assert.equal((html.match(/class="project-card"/g)||[]).length,3);
- assert.equal((html.match(/class="hero__topic"/g)||[]).length,3);
+ assert.ok(!html.includes("hero__topic"));
+ assert.ok(!html.includes("project-card__number"));
+ assert.ok(!html.includes("small-label"));
  assert.ok(html.includes('href="/links/"'));
 });
 test("Game projects section name is consistent across pages and translations",()=>{
@@ -175,23 +177,26 @@ test("Game projects section name is consistent across pages and translations",()
   assert.ok(html.includes('data-copy="footer.description">Game projects ·'),page);
   if(page==="home"||page==="links")assert.ok(html.includes('data-copy="project.gaming">Game projects'),page);
  }
- assert.equal((pages.home.match(/data-copy="project.gaming">Game projects/g)||[]).length,2);
+ assert.equal((pages.home.match(/data-copy="project.gaming">Game projects/g)||[]).length,1);
 });
-test("Hero project navigation points to existing cards and never to offline sites",()=>{
+test("Project selection uses full-card links with fiction non-clickable",()=>{
  const html=pages.home;
- for(const id of ["gaming","fiction","android"]){
-  assert.ok(html.includes('href="#project-'+id+'"'),id+" link missing");
-  assert.ok(html.includes('id="project-'+id+'"'),id+" target missing");
+ for(const id of ["gaming","android"]){
+  assert.ok(html.includes('<a class="project-card" id="project-'+id+'" href="/'+id+'/"'),id);
+  assert.ok(html.includes('aria-labelledby="project-'+id+'-heading"'),id);
  }
- assert.ok(!/<a[^>]+href="https:\/\/kamui2040.github.io\/(?:K2040-Android-Releases|K2040-Gaming-Mods|The-Library)/.test(html));
+ assert.ok(html.includes('<article class="project-card" id="project-fiction">'));
+ assert.ok(html.includes('data-copy="project.offline">Coming soon'));
+ assert.ok(html.includes('data-copy="project.title">Projects'));
+ assert.ok(!html.includes('hero__topics'));
 });
 test("Approved compact corner geometry and responsive hierarchy",()=>{
  const css=file("relaunch.css");
  assert.ok(css.includes('background: var(--corner) center / contain no-repeat'));
  assert.ok(css.includes('.hero::before, .hero::after'));
  assert.ok(css.includes('transform: rotate(180deg)'));
- assert.ok(css.includes('grid-template-columns: repeat(3,minmax(0,1fr))'));
- assert.ok(css.includes('grid-template-columns: 1fr; margin-inline: 22px'));
+ assert.ok(css.includes('grid-template-columns: repeat(3, minmax(0, 1fr))'));
+ assert.ok(!css.includes('.hero__topic'));
  assert.ok(!css.includes('.hero__stage'));
  assert.ok(css.includes("@media (max-width: 600px)"));
  assert.ok(css.includes("overflow-wrap: anywhere"));
@@ -285,7 +290,7 @@ test("Unverified platforms and offline project sites are non-clickable",()=>{
  for(const name of ["Patreon","TikTok",">X<"]){
   assert.ok(html.includes(name),name);
  }
- assert.equal((html.match(/class="directory-item directory-item--unavailable"/g)||[]).length,4);
+ assert.equal((html.match(/class="directory-item directory-item--unavailable"/g)||[]).length,3);
  assert.ok(html.includes('class="directory-item" href="/gaming/"'));
  assert.ok(html.includes('href="https://www.patreon.com/cw/k2040"'));
  assert.ok(!html.includes('href="https://kamui2040.github.io/K2040-Gaming-Mods/'));
@@ -303,7 +308,7 @@ test("Relaunch notice is a short, localized blog entry included in news",()=>{
  assert.ok(relaunchNote.includes('datetime="2026-11-22"'));
  assert.ok(relaunchNote.includes('href="/about/"'));
  const siteNews=context.window.K2040_SITE_NEWS;
- assert.equal(siteNews.length,1+JSON.parse(file("gaming/posts.json")).length);
+ assert.equal(siteNews.length,1+JSON.parse(file("gaming/posts.json")).length+JSON.parse(file("android/posts.json")).length);
  const entry=siteNews[0];
  assert.equal(entry.id,"site-site-and-social-relaunch");
  assert.equal(entry.pinned,false);
@@ -333,9 +338,9 @@ test("First relaunch teaser is generated without duplicating post copy",()=>{
  const files=["about/posts.json","relaunch-site-news.js","about/notes/site-and-social-relaunch/index.html"];
  assert.ok(files.every(name=>fs.existsSync(path.join(root,name))));
 });
-test("News contains only the site announcement and authored gaming posts",()=>{
+test("News contains only the site announcement and authored current project posts",()=>{
  const siteNews=context.window.K2040_SITE_NEWS;
- assert.equal(siteNews.length,1+JSON.parse(file("gaming/posts.json")).length);
+ assert.equal(siteNews.length,1+JSON.parse(file("gaming/posts.json")).length+JSON.parse(file("android/posts.json")).length);
  assert.equal(siteNews[0].id,"site-site-and-social-relaunch");
  assert.equal(siteNews[0].href,"/about/notes/site-and-social-relaunch/");
  assert.ok(!fs.existsSync(path.join(root,"relaunch-news.js")),"obsolete Library feed must be removed");
@@ -379,7 +384,7 @@ test("News dates sorted and unsafe links filtered in UI logic",()=>{
 test("Static builder is reproducible",()=>{
  const files=["index.html","news/index.html","links/index.html","about/index.html",
   "about/notes/why-i-started-making-things/index.html",
-  "about/notes/site-and-social-relaunch/index.html","relaunch-site-news.js",...["gaming/index.html","gaming/mods/index.html","gaming/news/index.html"],...JSON.parse(file("gaming/catalog.json")).mods.map(m=>"gaming/mods/"+m.slug+"/index.html"),...JSON.parse(file("gaming/posts.json")).map(p=>"gaming/news/"+p.slug+"/index.html")];
+  "about/notes/site-and-social-relaunch/index.html","relaunch-site-news.js",...["gaming/index.html","gaming/mods/index.html","gaming/news/index.html"],...JSON.parse(file("gaming/catalog.json")).mods.map(m=>"gaming/mods/"+m.slug+"/index.html"),...JSON.parse(file("gaming/posts.json")).map(p=>"gaming/news/"+p.slug+"/index.html"),"android/index.html","android/apps/index.html","android/news/index.html",...JSON.parse(file("android/catalog.json")).apps.map(a=>"android/apps/"+a.slug+"/index.html")];
  const before=files.map(digest);
  const out=spawnSync("python3",["tools/build_site.py"],{cwd:root,encoding:"utf8"});
  assert.equal(out.status,0,out.stderr);
@@ -502,4 +507,25 @@ test("Latest confirmed release is featured automatically before the game directo
  assert.equal((index.match(/class="mod-release-label"/g)||[]).length,1);
  assert.ok(index.indexOf("href=\"/gaming/mods/"+mod.slug+"/\"")<index.indexOf("href=\"/gaming/mods/pinup-magazines/\"")||mod.slug==="pinup-magazines");
  for(const l of Object.keys(translations))assert.ok(translations[l].gaming.latestRelease);
+});
+
+test("Android catalogue exposes three released apps, verified channel links and historical media",()=>{
+ const apps=JSON.parse(file("android/catalog.json")).apps;
+ assert.deepEqual(apps.map(a=>a.slug),["vectorint","geojoystick","esca-agnellis"]);
+ assert.deepEqual(apps[0].stores.map(s=>s.version),["0.0.8","0.0.11"]);
+ for(const a of apps){
+  const html=file("android/apps/"+a.slug+"/index.html");
+  assert.ok(file("android/apps/index.html").includes("/android/apps/"+a.slug+"/"));
+  assert.ok(html.includes('href="'+a.privacy+'"'));
+  for(const s of a.stores)assert.ok(html.includes('href="'+s.url.replaceAll("&","&amp;")+'"'));
+  for(const m of [a.promo,...a.images])assert.ok(fs.existsSync(path.join(root,m.src))&&html.includes(m.src));
+  assert.ok(html.includes(a.capture));
+  for(const lang of Object.keys(translations))assert.ok(a.description[lang]&&a.overview[lang]&&translations[lang].android);
+  assert.equal((html.match(/aria-current="page"/g)||[]).length,3);
+ }
+ assert.ok(pages.home.includes('href="/android/"'));
+ assert.ok(pages.links.includes('class="directory-item" href="/android/"'));
+ assert.ok(file("android/index.html").includes('class="gaming-section latest-release"'));
+ assert.ok(file("android/index.html").includes('data-copy="android.featured"'));
+ assert.equal(JSON.parse(file("android/posts.json")).length,0);
 });

@@ -93,6 +93,8 @@ try:
             b.call("WebDriver:NewSession",{"capabilities":{"alwaysMatch":{"browserName":"firefox"}}})
             origin="http://127.0.0.1:"+str(server.server_address[1])
             catalog=json.loads((ROOT/"gaming/catalog.json").read_text())
+            android_apps=json.loads((ROOT/"android/catalog.json").read_text())["apps"]
+            android_posts=json.loads((ROOT/"android/posts.json").read_text())
             for pathname,width,height,theme,language in [
                 ("/",1440,900,"dark","en"),
                 ("/",1024,768,"light","fr"),
@@ -121,7 +123,8 @@ try:
                 ("/gaming/mods/pinup-magazines-standalone/",500,850,"light","pt-PT"),
                 ("/gaming/news/pinup-magazines-standalone/",1440,900,"light","fr"),
                 ("/gaming/news/pinup-magazines-standalone/",500,850,"dark","es")
-            ]+[(f"/gaming/mods/{m['slug']}/",w,h,t,l) for m in catalog["mods"] if "promo" in m and not m.get("feature_post") for w,h,t,l in [(1440,900,"dark","en"),(500,850,"light","de")]]:
+                ,("/android/",1440,900,"dark","en"),("/android/",500,850,"light","de"),("/android/apps/",1440,900,"light","fr"),("/android/apps/",500,850,"dark","pt-PT"),("/android/news/",500,850,"dark","es")
+            ]+[(f"/android/apps/{a['slug']}/",w,h,t,l) for a in android_apps for w,h,t,l in [(1440,900,"dark","en"),(500,850,"light","de")]]+[(f"/gaming/mods/{m['slug']}/",w,h,t,l) for m in catalog["mods"] if "promo" in m and not m.get("feature_post") for w,h,t,l in [(1440,900,"dark","en"),(500,850,"light","de")]]:
                 b.size(width,height)
                 b.open(origin+pathname)
                 b.js(f'localStorage.setItem("k2040-theme",{json.dumps(theme)});localStorage.setItem("k2040-language",{json.dumps(language)});')
@@ -141,7 +144,9 @@ try:
                     projectCards:document.querySelectorAll(".project-card").length,
                     heroHeight:document.querySelector(".hero")?.getBoundingClientRect().height||0,
                     heroTopicLinks:document.querySelectorAll(".hero__topics a").length,
-                    heroTopicsValid:[...document.querySelectorAll(".hero__topics a")].every(a=>a.getAttribute("href")?.startsWith("#") && document.getElementById(a.getAttribute("href").slice(1))),
+                    projectLinks:[...document.querySelectorAll("a.project-card")].map(a=>a.getAttribute("href")),
+                    fictionStatic:!!document.querySelector("article#project-fiction") && !document.querySelector("#project-fiction a"),
+                    projectCardHeights:[...document.querySelectorAll(".project-card")].map(a=>a.getBoundingClientRect().height),
                     wordmarkInstances:document.querySelectorAll('img[src*="k2040-approved-horizontal-wordmark"]').length,
                     profileLinks:document.querySelectorAll(".directory-item[href]").length,
                     newsItems:document.querySelectorAll(".update-card").length,
@@ -178,7 +183,8 @@ try:
                             ("latest news link not pointing to its post",result))
                 if pathname=="/":
                     require(result["projectCards"]==3,("project cards",result))
-                    require(result["heroTopicLinks"]==3 and result["heroTopicsValid"],("hero project links",result))
+                    require(result["heroTopicLinks"]==0 and result["projectLinks"]==["/gaming/","/android/"] and result["fictionStatic"],("project card links",result))
+                    require(all(44<=h<=300 for h in result["projectCardHeights"]),("compact project cards",result))
                     require(result["wordmarkInstances"]==1,("duplicate logo",result))
                     require(0 < result["heroHeight"] <= (420 if result["width"]>820 else 660),
                             ("oversized hero",result))
@@ -199,7 +205,7 @@ try:
                         require(escaped=="false","Escape failed to close navigation")
                         time.sleep(.35)
                 if pathname=="/links/":
-                    require(result["profileLinks"]==9,("active external links",result))
+                    require(result["profileLinks"]==10,("active external links",result))
                     directory=b.js('''
                       const header=document.querySelector(".directory-intro");
                       const profiles=document.querySelector("#profile-title").closest("section");
@@ -279,6 +285,29 @@ try:
                         require(outcome["opened"] and outcome["changed"] and outcome["closed"],("gallery interaction",outcome))
                     if pathname=="/gaming/news/": require(result["newsItems"]==2,("gaming announcement",result))
                     b.screenshot("gaming-"+pathname.strip("/").replace("/","-")+"-"+str(width)+"-"+theme+".png")
+                if pathname.startswith("/android/"):
+                    result_android=b.js('''return {
+                      active:!!document.querySelector('.site-switch a[href="/android/"][aria-current="page"]'),
+                      gaming:!!document.querySelector('.site-switch a[href="/gaming/"]'),
+                      apps:document.querySelectorAll(".app-card").length,
+                      pictures:[...document.querySelectorAll("main img[src]")].every(i=>i.loading==="lazy"||i.complete&&i.naturalWidth>0),
+                      locales:[...document.querySelectorAll("[data-post-locale]")].filter(el=>getComputedStyle(el).display!=="none").map(el=>el.dataset.postLocale)
+                    };''')
+                    require(result_android["active"] and result_android["gaming"] and result_android["pictures"],result_android)
+                    require(all(l==language for l in result_android["locales"]),result_android)
+                    if pathname in ("/android/","/android/apps/"):require(result_android["apps"]==len(android_apps),result_android)
+                    if pathname=="/android/":require(b.js('return !!document.querySelector(".latest-release img")?.naturalWidth'),"Android feature art")
+                    if pathname.startswith("/android/apps/") and pathname!="/android/apps/":
+                        app=next(a for a in android_apps if pathname==f"/android/apps/{a['slug']}/")
+                        outcome=b.js('''const a=document.querySelector(".gallery-item"),d=document.querySelector(".gaming-lightbox");
+                          a.click();const first=d.querySelector("img").src;
+                          d.dispatchEvent(new KeyboardEvent("keydown",{key:"ArrowRight",bubbles:true}));
+                          const second=d.querySelector("img").src;const opened=d.open;
+                          d.querySelector("[data-gallery-close]").click();
+                          return {opened,changed:first!==second,closed:!d.open,gallery:document.querySelectorAll(".gallery-item").length,stores:document.querySelectorAll("#downloads .directory-item").length,history:document.querySelectorAll(".release-history li").length};''')
+                        require(outcome["opened"] and outcome["changed"] and outcome["closed"] and outcome["gallery"]==len(app["images"]) and outcome["stores"]==len(app["stores"]) and outcome["history"]==len(app["history"]),outcome)
+                    if pathname in ("/android/","/android/news/"):require(result["newsItems"]==len(android_posts),result)
+                    b.screenshot("android-"+pathname.strip("/").replace("/","-")+"-"+str(width)+"-"+theme+".png")
                 checks.append({"path":pathname,"size":result["width"],"theme":theme,"locale":language,"news":result["newsItems"],"bg":result["bodyBg"],"action":result["themeAction"]})
                 time.sleep(.9)
                 if pathname=="/" and width==1440: b.screenshot("home-desktop-dark.png")

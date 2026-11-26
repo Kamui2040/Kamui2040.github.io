@@ -50,6 +50,7 @@
 <nav class="site-switch shell" aria-label="K2040 websites">
   <a href="/" aria-current="page"><span data-copy="gaming.main">K2040 home</span></a>
   <a href="/gaming/"><span data-copy="gaming.home">Gaming</span></a>
+  <a href="/android/"><span data-copy="android.home">Android</span></a>
 </nav><main id="main">
   <section class="shell hero" aria-labelledby="main-title">
     <div class="hero__top">
@@ -63,46 +64,17 @@
         <a class="action action--quiet" href="/links/"><span data-copy="hero.links">All links</span></a>
       </div>
     </div>
-    <nav class="hero__topics" aria-label="Project areas" data-copy-aria="project.title">
-      <a class="hero__topic" href="#project-gaming">
-        <span class="hero__topic-number" aria-hidden="true">01</span>
-        <strong><span data-copy="project.gaming">Game projects</span></strong>
-        <span class="hero__topic-arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="hero__topic" href="#project-fiction">
-        <span class="hero__topic-number" aria-hidden="true">02</span>
-        <strong><span data-copy="project.fiction">Fantasy fiction</span></strong>
-        <span class="hero__topic-arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="hero__topic" href="#project-android">
-        <span class="hero__topic-number" aria-hidden="true">03</span>
-        <strong><span data-copy="project.android">Android apps</span></strong>
-        <span class="hero__topic-arrow" aria-hidden="true">→</span>
-      </a>
-    </nav>
   </section>
   <section class="shell section" id="projects" aria-labelledby="projects-heading">
     <div class="section__top"><div>
       <p class="eyebrow"><span data-copy="project.eyebrow">The work</span></p>
-      <h2 id="projects-heading" class="section__title"><span data-copy="project.title">Project areas</span></h2>
+      <h2 id="projects-heading" class="section__title"><span data-copy="project.title">Projects</span></h2>
       <p class="section__note"><span data-copy="project.intro">Three places for the things I make.</span></p>
     </div></div>
     <div class="project-grid">
-      <article class="project-card" id="project-gaming">
-      <p class="project-card__number">01 / K2040</p>
-      <h3><span data-copy="project.gaming">Game projects</span></h3><p><span data-copy="project.gamingDesc">Published mods, tools, installation details and supported game versions.</span></p>
-      <div class="project-card__footer"><span class="small-label">K2040 Projects</span><a class="text-link" href="/gaming/"><span data-copy="gaming.explore">Explore gaming</span></a></div>
-    </article>
-      <article class="project-card" id="project-fiction">
-      <p class="project-card__number">02 / K2040</p>
-      <h3><span data-copy="project.fiction">Fantasy fiction</span></h3><p><span data-copy="project.fictionDesc">Stories, editions and reading information from The Library.</span></p>
-      <div class="project-card__footer"><span class="small-label">K2040 Projects</span><span class="status"><span data-copy="project.offline">Project site offline</span></span></div>
-    </article>
-      <article class="project-card" id="project-android">
-      <p class="project-card__number">03 / K2040</p>
-      <h3><span data-copy="project.android">Android apps</span></h3><p><span data-copy="project.androidDesc">Released apps, project details and official downloads.</span></p>
-      <div class="project-card__footer"><span class="small-label">K2040 Projects</span><span class="status"><span data-copy="project.offline">Project site offline</span></span></div>
-    </article>
+      <a class="project-card" id="project-gaming" href="/gaming/" aria-labelledby="project-gaming-heading" aria-describedby="project-gaming-description"><h3 id="project-gaming-heading"><span data-copy="project.gaming">Game projects</span></h3><p id="project-gaming-description"><span data-copy="project.gamingDesc">Published mods, tools, installation details and supported game versions.</span></p><span class="project-card__footer"><span class="project-card__cta"><span data-copy="gaming.explore">Explore gaming</span></span><span aria-hidden="true">→</span></span></a>
+      <article class="project-card" id="project-fiction"><h3 id="project-fiction-heading"><span data-copy="project.fiction">Fantasy fiction</span></h3><p id="project-fiction-description"><span data-copy="project.fictionDesc">Stories, editions and reading information from The Library.</span></p><div class="project-card__footer"><span class="status"><span data-copy="project.offline">Coming soon</span></span></div></article>
+      <a class="project-card" id="project-android" href="/android/" aria-labelledby="project-android-heading" aria-describedby="project-android-description"><h3 id="project-android-heading"><span data-copy="project.android">Android apps</span></h3><p id="project-android-description"><span data-copy="project.androidDesc">Released apps, project details and official downloads.</span></p><span class="project-card__footer"><span class="project-card__cta"><span data-copy="android.explore">Explore apps</span></span><span aria-hidden="true">→</span></span></a>
     </div>
   </section>
   <section class="shell section home-news" id="news" aria-labelledby="news-heading">
