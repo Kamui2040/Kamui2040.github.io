@@ -228,7 +228,7 @@ test("All translated UI keys exist in all five languages",()=>{
    const text=lookup(d,key);
    assert.ok(typeof text==="string"&&text.trim(),lang+" missing "+key);
   }
-  for(const name of ["home","news","links","about"]){
+  for(const name of ["home","news","links","about","gaming","gamingMods","gamingNews","android","androidApps","androidNews"]){
    assert.ok(d.meta[name]&&d.meta[name+"Desc"],lang+": meta "+name);
   }
  }
@@ -528,4 +528,36 @@ test("Android catalogue exposes three released apps, verified channel links and 
  assert.ok(file("android/index.html").includes('class="gaming-section latest-release"'));
  assert.ok(file("android/index.html").includes('data-copy="android.featured"'));
  assert.equal(JSON.parse(file("android/posts.json")).length,0);
+});
+
+test("Runtime page metadata is valid across every generated page and locale, including missing metadata keys",()=>{
+ function walk(dir){
+  return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()&&!e.name.startsWith(".")?walk(path.join(dir,e.name)):e.isFile()&&e.name==="index.html"?[path.join(dir,e.name)]:[]);
+ }
+ const decode=s=>s.replaceAll("&amp;","&").replaceAll("&#x27;","'").replaceAll("&quot;",'"').replaceAll("&lt;","<").replaceAll("&gt;",">");
+ const js=file("relaunch.js");
+ for(const p of walk(root)){
+  const html=fs.readFileSync(p,"utf8");
+  const page=html.match(/data-page="([^"]+)"/)[1];
+  const title=decode(html.match(/<title>([^<]+)<\/title>/)[1]);
+  const description=decode(html.match(/<meta name="description" content="([^"]+)"/)[1]);
+  for(const lang of Object.keys(translations)){
+   const desc={content:description};
+   const noop=()=>{};
+   const rootNode={dataset:{}};
+   const localizedNode=key=>{
+    const match=html.match(new RegExp('<(?:h1|p)[^>]*'+key+'[^>]*>(.*?)</(?:h1|p)>','s'));
+    const value=match?.[1].match(new RegExp('data-post-locale="'+lang+'">([^<]+)'));
+    return value?{querySelector:()=>({textContent:decode(value[1])})}:null;
+   };
+   const document={documentElement:rootNode,body:{dataset:{page}},title,
+    querySelector:sel=>sel==='meta[name="description"]'?desc:sel==='[data-note-title]'?localizedNode('data-note-title'):sel.startsWith('[data-note-summary]')?localizedNode('data-note-summary'):null,
+    querySelectorAll:()=>[],addEventListener:noop};
+   const window={K2040_COPY:translations,addEventListener:noop};
+   vm.runInNewContext(js,{document,window,localStorage:{getItem:key=>key==="k2040-language"?lang:null},navigator:{languages:[lang]},matchMedia:()=>({matches:false,addEventListener:noop})});
+   assert.ok(document.title.trim()&&!["undefined","null"].includes(document.title),p+" "+lang);
+   assert.ok(desc.content.trim()&&!["undefined","null"].includes(desc.content),p+" "+lang);
+   if(["gamingMod","androidApp"].includes(page))assert.equal(document.title,title,p);
+  }
+ }
 });

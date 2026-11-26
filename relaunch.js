@@ -30,6 +30,10 @@
   const languageSelect = document.querySelector("[data-language]");
   const themeButton = document.querySelector("button[data-theme-toggle]");
   const copy = () => dictionaries[language] || dictionaries.en;
+  const desc = document.querySelector('meta[name="description"]');
+  const initialTitle = document.title;
+  const initialDescription = desc?.content;
+  const nonempty = value => typeof value === "string" && value.trim() && value !== "undefined" && value !== "null";
   const renderCopy = () => {
     document.documentElement.lang = language;
     const labels = copy();
@@ -45,11 +49,15 @@
     if (languageSelect) languageSelect.value = language;
     const postTitle = document.querySelector("[data-note-title]");
     const localizedPostTitle = postTitle?.querySelector('[data-post-locale="'+language+'"]')?.textContent;
-    const postExcerpt = document.querySelector("[data-note-summary]");
+    const postExcerpt = document.querySelector("[data-note-summary], .mod-header-copy p:not(.eyebrow)");
     const localizedPostExcerpt = postExcerpt?.querySelector('[data-post-locale="'+language+'"]')?.textContent;
-    document.title = localizedPostTitle ? localizedPostTitle+" — K2040 Projects" : labels.meta[page];
-    const desc = document.querySelector('meta[name="description"]');
-    if (desc) desc.content = localizedPostExcerpt || labels.meta[page+"Desc"];
+    const detailPage = page==="gamingMod" || page==="androidApp";
+    const title = detailPage ? initialTitle
+      : nonempty(localizedPostTitle) ? localizedPostTitle+" — K2040 Projects" : labels.meta?.[page];
+    const description = nonempty(localizedPostExcerpt) ? localizedPostExcerpt
+      : detailPage ? initialDescription : labels.meta?.[page+"Desc"];
+    document.title = nonempty(title) ? title : initialTitle;
+    if (desc) desc.content = nonempty(description) ? description : initialDescription;
     renderNews();
     renderTheme();
   };
