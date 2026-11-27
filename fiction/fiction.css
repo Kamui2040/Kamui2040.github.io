@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "Almendra";
+  src: url("/assets/fiction/fonts/Almendra-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+/* New literary presentation using the shared K2040 shell and original artwork. */
+.fiction-main { padding-block: 22px 68px; }
+.fiction-main h1,.fiction-main h2,.fiction-main h3,.fiction-series-name { font-family: "Almendra", Georgia,"Noto Serif",serif; font-weight: 400; line-height: 1.16; overflow-wrap: anywhere; }
+.fiction-main h1 { font-size:clamp(2.4rem,5.8vw,5rem); margin:0 0 18px; }
+.fiction-main h2 { font-size:clamp(1.7rem,3.4vw,2.8rem); margin:0 0 12px; }
+.fiction-main h3 { font-size:clamp(1.25rem,2.3vw,1.85rem); margin:0 0 12px; }
+.fiction-main p { max-width:68ch; }
+.fiction-lead { font-family:Georgia,"Noto Serif",serif; font-size:clamp(1.05rem,1.7vw,1.35rem); line-height:1.65; }
+.fiction-hero { position:relative; border:1px solid var(--line); background:var(--surface); }
+.fiction-hero-copy { position:relative; padding:clamp(26px,5vw,70px); max-width:750px; }
+.fiction-hero .actions,.fiction-main .actions { flex-wrap:wrap; justify-content:flex-start; }
+.fiction-library { background:linear-gradient(115deg,var(--surface),var(--surface-2)); }
+.fiction-library .fiction-hero-copy { padding:clamp(26px,4vw,48px); }
+.fiction-library .fiction-lead { margin-bottom:0; }
+.fiction-library::before,.fiction-library::after { content:""; position:absolute; width:58px; height:58px; pointer-events:none; background:var(--corner) center / contain no-repeat; }
+.fiction-library::before { top:6px; left:6px; }
+.fiction-library::after { bottom:6px; right:6px; transform:rotate(180deg); }
+.fiction-landscape { min-height:clamp(350px,45vw,560px); display:flex; align-items:flex-end; color:#fff; background:linear-gradient(0deg,rgba(10,17,27,.94),rgba(10,17,27,.05) 90%),url("/assets/fiction/telanas/hero-daylight-v1.webp") center / cover; }
+:root[data-theme="dark"] .fiction-landscape { background-image:linear-gradient(0deg,rgba(10,17,27,.94),rgba(10,17,27,.05) 90%),url("/assets/fiction/telanas/hero-dusk-v1.webp"); }
+.fiction-landscape .eyebrow { color:#f2e9f6; }
+.fiction-section { margin-block:clamp(30px,5vw,64px); }
+.fiction-section-heading { margin-bottom:20px; }
+.fiction-world-card,.fiction-lexicon-preview { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); background:var(--surface); border:1px solid var(--line); color:var(--ink); text-decoration:none; }
+.fiction-world-card>div:last-child,.fiction-lexicon-preview>div:last-child { padding:clamp(22px,3.5vw,44px); align-self:center; }
+.fiction-world-art,.fiction-lexicon-art { min-height:240px; background:url("/assets/fiction/telanas/hero-daylight-v1.webp") center / cover; }
+.fiction-lexicon-art { background-image:url("/assets/fiction/telanas/lexicon-library-daylight-v1.webp"); }
+:root[data-theme="dark"] .fiction-world-art { background-image:url("/assets/fiction/telanas/hero-dusk-v1.webp"); }
+:root[data-theme="dark"] .fiction-lexicon-art { background-image:url("/assets/fiction/telanas/lexicon-library-dusk-v1.webp"); }
+@media(prefers-color-scheme:dark) {
+ :root:not([data-theme="light"]) .fiction-landscape { background-image:linear-gradient(0deg,rgba(10,17,27,.94),rgba(10,17,27,.05) 90%),url("/assets/fiction/telanas/hero-dusk-v1.webp"); }
+ :root:not([data-theme="light"]) .fiction-world-art { background-image:url("/assets/fiction/telanas/hero-dusk-v1.webp"); }
+ :root:not([data-theme="light"]) .fiction-lexicon-art { background-image:url("/assets/fiction/telanas/lexicon-library-dusk-v1.webp"); }
+}
+.fiction-world-card:hover { border-color:var(--brand-strong); }
+.fiction-book-feature,.fiction-book-detail { display:grid; grid-template-columns:minmax(150px,285px) minmax(0,1fr); gap:clamp(22px,5vw,66px); align-items:center; padding:clamp(20px,4vw,48px); background:var(--surface); border:1px solid var(--line); }
+.fiction-book-detail { grid-template-columns:minmax(190px,365px) minmax(0,1fr); }
+.fiction-cover { display:block; width:100%; height:auto; aspect-ratio:2/3; object-fit:contain; box-shadow:0 10px 30px #0003; }
+.fiction-book-feature>div,.fiction-book-detail>header { min-width:0; }
+.fiction-facts,.fiction-note { color:var(--muted); font-size:.9rem; }
+.fiction-editorial { padding-block:clamp(24px,4vw,48px); border-bottom:1px solid var(--line); }
+.fiction-back { margin-bottom:16px; }
+.fiction-series-name { font-size:clamp(1.3rem,2.5vw,2rem); margin:10px 0; }
+.fiction-editions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.fiction-edition { padding:clamp(20px,3vw,32px); background:var(--surface); border:1px solid var(--line); min-width:0; overflow-wrap:anywhere; }
+.fiction-store-links { display:flex; flex-wrap:wrap; gap:18px; margin-top:12px; }
+@media(max-width:650px) {
+ .fiction-world-card,.fiction-lexicon-preview,.fiction-book-feature,.fiction-book-detail,.fiction-editions { grid-template-columns:minmax(0,1fr); }
+ .fiction-world-art,.fiction-lexicon-art { min-height:0; aspect-ratio:16/9; }
+ .fiction-cover { max-width:260px; margin-inline:auto; }
+ .fiction-landscape { min-height:350px; }
+ .fiction-main h1 { font-size:clamp(2rem,10vw,3rem); }
+}

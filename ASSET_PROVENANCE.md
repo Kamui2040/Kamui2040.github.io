@@ -80,3 +80,15 @@ K2040 artwork and genuine synthetic-data release screenshots, arranged into scre
 - `assets/android/esca-agnellis-promo-landscape.webp` — 1920 × 1080; SHA-256 `b63a367139c07754a98bbe199049663ff91c7d0b727bf8d87ff6d45bd4af64d7`; composed SVG source SHA-256 `f611652e56943b1aed7e22d890611a85b697d5313823ae58c6731e4844f9135f`.
 - `assets/android/esca-agnellis-screens-01.webp` — 1920 × 1080; SHA-256 `50b4a81b43addd19b663c8cd75b8f988adf40d436ce49bd9a2fe27c71b8cb672`; composed SVG source SHA-256 `5722e71678b3c05ab9049971b42b4fa81ac9854d8611b881ed5e1cb888935cb8`.
 - `assets/android/esca-agnellis-screens-02.webp` — 1920 × 1080; SHA-256 `4b412546df788f55c455e807d500d05cbf7dfc1065a39ba9b9deddecd542834f`; composed SVG source SHA-256 `e08797afd204e39808a2c369ea13926148a523a54d44ad0701c81c7c5cdcd74c`.
+
+## Fiction catalogue media
+
+The Telanas landscapes, library artwork and original Volume 1 cover are retained without cropping or alteration from the previously released Library. The downloadable English and German PDFs and EPUBs are the approved revised editions. Text and artwork by K2040, all rights reserved. File sizes and SHA-256 hashes are recorded in `fiction/media.json`. No unpublished manuscript or prototype geography is included.
+
+### Fiction display typeface
+
+Almendra Regular by Ana Sanfelippo, distributed unmodified under SIL Open Font License 1.1. [Pinned upstream source](https://github.com/google/fonts/tree/3ff898de2832de8392d3eaa5e4618566c87d6265/ofl/almendra). License: `assets/fiction/fonts/OFL.txt`. SHA-256: `b127a6121209353b53da9ce73bf9d350f74190d8384c28ede179e4fb9440f946`. Self-hosted; no external font requests.
+
+### Released reader content
+
+The English and German reader editions, curated Lexicon and contextual reference annotations contain the approved revised Volume 1 text, Lexicon and curated annotations. The ten chapter illustrations retain the original approved files. The public book manifest omits private manuscript source metadata; the afterword retains its text with its link updated to the current Library portal. The integrity manifest records the transferred files. Prototype geography, timeline and unpublished material are not included.

@@ -1,0 +1,321 @@
+{
+  "schemaVersion": 1,
+  "world": "telanas",
+  "story": "dragon-knight",
+  "id": "volume-01",
+  "state": "published",
+  "contentMode": "released",
+  "editionAlignment": "chapter",
+  "locales": [
+    "en",
+    "de"
+  ],
+  "editions": {
+    "en": "editions/en.json",
+    "de": "editions/de.json"
+  },
+  "cover": {
+    "src": "cover.png",
+    "aspectRatio": "2:3",
+    "alt": {
+      "en": "The pearlescent white and iridescent black primordial twin dragons sleeping together among the broken pieces of their enormous egg.",
+      "de": "Die perlmuttweißen und schillernd schwarzen urzeitlichen Zwillingsdrachen schlafen eng umschlungen zwischen den Bruchstücken ihres gewaltigen Eis."
+    }
+  },
+  "contextualLexicon": "contextual-lexicon.json",
+  "spoilerMilestones": [
+    "dk-v01-p-twins-hatch",
+    "dk-v01-p-first-shard",
+    "dk-v01-ch01-calist",
+    "dk-v01-ch01-corvin-arrives",
+    "dk-v01-ch01-corvin",
+    "dk-v01-ch01-alden",
+    "dk-v01-ch01-alden-war-gear",
+    "dk-v01-ch02-old-woods-pull",
+    "dk-v01-ch02-eryn",
+    "dk-v01-ch03-town-arrival",
+    "dk-v01-ch03-border-warning",
+    "dk-v01-ch03-bram",
+    "dk-v01-ch03-town-fight",
+    "dk-v01-ch04-first-independent-work",
+    "dk-v01-ch04-nessa",
+    "dk-v01-ch05-camp",
+    "dk-v01-ch05-goblins",
+    "dk-v01-ch05-pull-confession",
+    "dk-v01-ch06-apprentice-moves",
+    "dk-v01-ch06-first-letter",
+    "dk-v01-ch06-pendant-design",
+    "dk-v01-ch06-pendant-finished",
+    "dk-v01-ch07-alden-illness",
+    "dk-v01-ch07-calist-runs-forge",
+    "dk-v01-ch08-nessa-dies",
+    "dk-v01-ch08-hunters-depart",
+    "dk-v01-ch08-ambush-return",
+    "dk-v01-ch08-search-ends",
+    "dk-v01-ch08-necklace-grief",
+    "dk-v01-ch09-enlist-decision",
+    "dk-v01-ch09-clasp",
+    "dk-v01-ch09-chainmail-sword"
+  ],
+  "illustrations": [
+    {
+      "id": "dk-v01-ill-prologue",
+      "mode": "image",
+      "src": "illustrations/Band 1 - Approved Primordial Cosmos.png",
+      "aspectRatio": "2:3"
+    },
+    {
+      "id": "dk-v01-ill-ch01",
+      "mode": "image",
+      "src": "illustrations/Band 1 - Approved Village Illustration Reference.png",
+      "aspectRatio": "2:3"
+    },
+    {
+      "id": "dk-v01-ill-ch02",
+      "mode": "image",
+      "src": "illustrations/Band 1 - Approved Old Forest Entrance.png",
+      "aspectRatio": "2:3"
+    },
+    {
+      "id": "dk-v01-ill-ch03",
+      "mode": "image",
+      "src": "illustrations/Band 1 - Approved Town Entrance.png",
+      "aspectRatio": "2:3"
+    },
+    {
+      "id": "dk-v01-ill-ch04",
+      "mode": "image",
+      "src": "illustrations/Band 1 - Approved Alden Smithy.png",
+      "aspectRatio": "2:3"
+    },
+    {
+      "id": "dk-v01-ill-ch05",
+      "mode": "image",
+      "src": "illustrations/Band 1 - Approved Forest Camp.png",
+      "aspectRatio": "2:3"
+    },
+    {
+      "id": "dk-v01-ill-ch06",
+      "mode": "image",
+      "src": "illustrations/Band 1 - Approved Apprentice.png",
+      "aspectRatio": "2:3"
+    },
+    {
+      "id": "dk-v01-ill-ch07",
+      "mode": "image",
+      "src": "illustrations/Band 1 - Approved Long Winter.png",
+      "aspectRatio": "2:3"
+    },
+    {
+      "id": "dk-v01-ill-ch08",
+      "mode": "image",
+      "src": "illustrations/Band 1 - Approved What Remains.png",
+      "aspectRatio": "2:3"
+    },
+    {
+      "id": "dk-v01-ill-ch09",
+      "mode": "image",
+      "src": "illustrations/Band 1 - Approved The Choice.png",
+      "aspectRatio": "2:3"
+    }
+  ],
+  "backMatter": [
+    {
+      "id": "afterword",
+      "type": "afterword",
+      "slug": "afterword",
+      "source": "afterword.json",
+      "labels": {
+        "en": "Afterword",
+        "de": "Nachwort"
+      }
+    }
+  ],
+  "labels": {
+    "en": {
+      "world": "Telanas",
+      "series": "The Dragon Knight",
+      "volume": "Volume 1 — Home",
+      "contents": "Contents"
+    },
+    "de": {
+      "world": "Telanas",
+      "series": "Der Drachenritter",
+      "volume": "Band 1 — Zuhause",
+      "contents": "Inhalt"
+    }
+  },
+  "chapters": [
+    {
+      "id": "dk-v01-prologue",
+      "slug": "prologue",
+      "labels": {
+        "en": "Prologue — Before the Sky",
+        "de": "Prolog — Vor dem Himmel"
+      }
+    },
+    {
+      "id": "dk-v01-ch01",
+      "slug": "chapter-1",
+      "labels": {
+        "en": "Chapter 1 — The Road",
+        "de": "Kapitel 1 — Die Straße"
+      }
+    },
+    {
+      "id": "dk-v01-ch02",
+      "slug": "chapter-2",
+      "labels": {
+        "en": "Chapter 2 — The Old Woods",
+        "de": "Kapitel 2 — Der alte Wald"
+      }
+    },
+    {
+      "id": "dk-v01-ch03",
+      "slug": "chapter-3",
+      "labels": {
+        "en": "Chapter 3 — Beyond Home",
+        "de": "Kapitel 3 — Jenseits des Dorfes"
+      }
+    },
+    {
+      "id": "dk-v01-ch04",
+      "slug": "chapter-4",
+      "labels": {
+        "en": "Chapter 4 — Useful Hands",
+        "de": "Kapitel 4 — Nützliche Hände"
+      }
+    },
+    {
+      "id": "dk-v01-ch05",
+      "slug": "chapter-5",
+      "labels": {
+        "en": "Chapter 5 — The Hunt",
+        "de": "Kapitel 5 — Die Jagd"
+      }
+    },
+    {
+      "id": "dk-v01-ch06",
+      "slug": "chapter-6",
+      "labels": {
+        "en": "Chapter 6 — Apprentice",
+        "de": "Kapitel 6 — Die Lehre"
+      }
+    },
+    {
+      "id": "dk-v01-ch07",
+      "slug": "chapter-7",
+      "labels": {
+        "en": "Chapter 7 — The Long Winter",
+        "de": "Kapitel 7 — Der lange Winter"
+      }
+    },
+    {
+      "id": "dk-v01-ch08",
+      "slug": "chapter-8",
+      "labels": {
+        "en": "Chapter 8 — What Remains",
+        "de": "Kapitel 8 — Was bleibt"
+      }
+    },
+    {
+      "id": "dk-v01-ch09",
+      "slug": "chapter-9",
+      "labels": {
+        "en": "Chapter 9 — The Choice",
+        "de": "Kapitel 9 — Die Entscheidung"
+      }
+    }
+  ],
+  "localizedSpoilerMilestones": [
+    {
+      "id": "dk-v01-ch01-reveal-village",
+      "chapter": "dk-v01-ch01",
+      "paragraphs": {
+        "en": {
+          "anchor": "dk-v01-ch01-en-p002",
+          "sha256": "97df02f7d257c0b24e322c105011cbbae09dd8d62e491be60a01935afbf0b8a6"
+        },
+        "de": {
+          "anchor": "dk-v01-ch01-de-p002",
+          "sha256": "12547c8a42a8fe0411ebf71431f5c5bc8b306ec0c83958cff02885a0ebd68fbb"
+        }
+      },
+      "legacyAnchor": "dk-v01-ch01-alden-war-gear"
+    },
+    {
+      "id": "dk-v01-ch01-reveal-landscape",
+      "chapter": "dk-v01-ch01",
+      "paragraphs": {
+        "en": {
+          "anchor": "dk-v01-ch01-en-p003",
+          "sha256": "54229cf45df2da18f6b1e7e21e3d151072858beb961bc615688cb57aa772d366"
+        },
+        "de": {
+          "anchor": "dk-v01-ch01-de-p003",
+          "sha256": "c6a5d1273f17814a840f27c36b62d3eed0226a3349a965379d377c11fc1a2302"
+        }
+      },
+      "legacyAnchor": "dk-v01-ch01-calist"
+    },
+    {
+      "id": "dk-v01-ch01-reveal-road-and-fort",
+      "chapter": "dk-v01-ch01",
+      "paragraphs": {
+        "en": {
+          "anchor": "dk-v01-ch01-en-p009",
+          "sha256": "b9e3562c68868036e71555a9ddb13610f723563d44ce202d91743f93b5ec38f2"
+        },
+        "de": {
+          "anchor": "dk-v01-ch01-de-p009",
+          "sha256": "061857401036df24f8229d4ec3676950dcba39af074d78318236fa01a8246596"
+        }
+      },
+      "legacyAnchor": "dk-v01-ch01-corvin-arrives"
+    },
+    {
+      "id": "dk-v01-ch01-reveal-goblins",
+      "chapter": "dk-v01-ch01",
+      "paragraphs": {
+        "en": {
+          "anchor": "dk-v01-ch01-en-p076",
+          "sha256": "af9bc9fd38c66f3ca7cc4674c70175eec94f1b83a87a779715072c6b0c7d6d12"
+        },
+        "de": {
+          "anchor": "dk-v01-ch01-de-p076",
+          "sha256": "1c0b65669c870bc0727bae87f8f0c8cd322b4a1271abdb8e2973eee5370d4e03"
+        }
+      },
+      "legacyAnchor": "dk-v01-ch01-alden-war-gear"
+    },
+    {
+      "id": "dk-v01-ch02-reveal-caerbreyn",
+      "chapter": "dk-v01-ch02",
+      "paragraphs": {
+        "en": {
+          "anchor": "dk-v01-ch02-en-p442",
+          "sha256": "6dcfb715de031274a0688586db888c47cc0a87efd90560ef8e3f1ab527009eda"
+        },
+        "de": {
+          "anchor": "dk-v01-ch02-de-p442",
+          "sha256": "433644de802739ef3318a6b4681ab2d503b7699061b4dd4cb970fe25c1244fa7"
+        }
+      },
+      "legacyAnchor": "dk-v01-ch03-border-warning"
+    },
+    {
+      "id": "dk-v01-ch09-reveal-sword",
+      "chapter": "dk-v01-ch09",
+      "paragraphs": {
+        "en": {
+          "anchor": "dk-v01-ch09-en-p634",
+          "sha256": "4ec3aa73315cbd134af53bf23029dc1682f75cbf43ede96a95a3473e43c5a0ee"
+        },
+        "de": {
+          "anchor": "dk-v01-ch09-de-p634",
+          "sha256": "d27b48c41c237522883c1e189b82fcee666382cea74f97622aa4c5075b439a6a"
+        }
+      }
+    }
+  ]
+}

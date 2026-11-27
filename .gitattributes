@@ -1,0 +1,6 @@
+# Preserve exact published document and font bytes.
+*.pdf binary
+*.epub binary
+*.ttf binary
+# Preserve the unmodified upstream license text.
+assets/fiction/fonts/OFL.txt whitespace=-blank-at-eol

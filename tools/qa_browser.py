@@ -146,7 +146,6 @@ try:
                     heroHeight:document.querySelector(".hero")?.getBoundingClientRect().height||0,
                     heroTopicLinks:document.querySelectorAll(".hero__topics a").length,
                     projectLinks:[...document.querySelectorAll("a.project-card")].map(a=>a.getAttribute("href")),
-                    fictionStatic:!!document.querySelector("article#project-fiction") && !document.querySelector("#project-fiction a"),
                     projectCardHeights:[...document.querySelectorAll(".project-card")].map(a=>a.getBoundingClientRect().height),
                     wordmarkInstances:document.querySelectorAll('img[src*="k2040-approved-horizontal-wordmark"]').length,
                     profileLinks:document.querySelectorAll(".directory-item[href]").length,
@@ -185,7 +184,7 @@ try:
                             ("latest news link not pointing to its post",result))
                 if pathname=="/":
                     require(result["projectCards"]==3,("project cards",result))
-                    require(result["heroTopicLinks"]==0 and result["projectLinks"]==["/gaming/","/android/"] and result["fictionStatic"],("project card links",result))
+                    require(result["heroTopicLinks"]==0 and result["projectLinks"]==["/gaming/","/fiction/","/android/"],("project card links",result))
                     require(all(44<=h<=300 for h in result["projectCardHeights"]),("compact project cards",result))
                     require(result["wordmarkInstances"]==1,("duplicate logo",result))
                     require(0 < result["heroHeight"] <= (420 if result["width"]>820 else 660),
@@ -207,7 +206,7 @@ try:
                         require(escaped=="false","Escape failed to close navigation")
                         time.sleep(.35)
                 if pathname=="/links/":
-                    require(result["profileLinks"]==10,("active external links",result))
+                    require(result["profileLinks"]==11,("active external links",result))
                     directory=b.js('''
                       const header=document.querySelector(".directory-intro");
                       const profiles=document.querySelector("#profile-title").closest("section");

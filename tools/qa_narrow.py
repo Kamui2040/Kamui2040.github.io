@@ -122,6 +122,8 @@ CASES += [(f"/gaming/mods/{m['slug']}/", 320, "de") for m in json.loads((ROOT/"g
 
 CASES += [("/android/", 280, "de"),("/android/apps/", 320, "fr"),("/android/news/", 280, "es")]+[(f"/android/apps/{a['slug']}/",320,"pt-PT") for a in json.loads((ROOT/"android/catalog.json").read_text())["apps"]]
 
+CASES += [("/fiction/",280,"de"),("/fiction/telanas/",320,"fr"),("/fiction/telanas/dragon-knight/",280,"pt-PT"),("/fiction/telanas/dragon-knight/volume-01/",320,"es")]
+
 server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), Handler)
 threading.Thread(target=server.serve_forever, daemon=True).start()
 try:

@@ -1,0 +1,1168 @@
+{
+  "schemaVersion": 1,
+  "world": "telanas",
+  "story": "dragon-knight",
+  "book": "volume-01",
+  "locales": [
+    "en",
+    "de"
+  ],
+  "references": {
+    "en": [
+      {
+        "anchor": "dk-v01-p-twins-hatch",
+        "entry": "twin-dragons",
+        "text": "Two young dragons",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-p-first-shard",
+        "entry": "shard",
+        "text": "first shard",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01",
+        "paragraphAnchor": "dk-v01-ch01-en-p002",
+        "referenceId": "dk-v01-ch01-calists-village-reference",
+        "paragraphSha256": "97df02f7d257c0b24e322c105011cbbae09dd8d62e491be60a01935afbf0b8a6",
+        "entry": "calists-village",
+        "text": "Elwendun",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01",
+        "paragraphAnchor": "dk-v01-ch01-en-p003",
+        "referenceId": "dk-v01-ch01-elwen-river-reference",
+        "paragraphSha256": "54229cf45df2da18f6b1e7e21e3d151072858beb961bc615688cb57aa772d366",
+        "entry": "elwen-river",
+        "text": "Elwen",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01",
+        "paragraphAnchor": "dk-v01-ch01-en-p003",
+        "referenceId": "dk-v01-ch01-old-woods-reference",
+        "paragraphSha256": "54229cf45df2da18f6b1e7e21e3d151072858beb961bc615688cb57aa772d366",
+        "entry": "old-woods",
+        "text": "Old Forest",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01-calist",
+        "entry": "calist",
+        "text": "Calist",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01-calist",
+        "paragraphAnchor": "dk-v01-ch01-en-p009",
+        "referenceId": "dk-v01-ch01-border-fort-reference",
+        "paragraphSha256": "b9e3562c68868036e71555a9ddb13610f723563d44ce202d91743f93b5ec38f2",
+        "entry": "border-fort",
+        "text": "Dunbreyn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01-calist",
+        "paragraphAnchor": "dk-v01-ch01-en-p009",
+        "referenceId": "dk-v01-ch01-breyn-river-reference",
+        "paragraphSha256": "b9e3562c68868036e71555a9ddb13610f723563d44ce202d91743f93b5ec38f2",
+        "entry": "breyn-river",
+        "text": "Breyn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01-corvin",
+        "entry": "corvin",
+        "text": "Corvin",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01-alden",
+        "entry": "alden",
+        "text": "Alden",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01-alden",
+        "paragraphAnchor": "dk-v01-ch01-en-p076",
+        "referenceId": "dk-v01-ch01-goblins-reference",
+        "paragraphSha256": "af9bc9fd38c66f3ca7cc4674c70175eec94f1b83a87a779715072c6b0c7d6d12",
+        "entry": "goblins",
+        "text": "goblins",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01-alden-war-gear",
+        "entry": "alden-chainmail",
+        "text": "chainmail",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch02-eryn",
+        "entry": "eryn",
+        "text": "Eryn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch02-eryn",
+        "entry": "joric",
+        "text": "Joric Fenner",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch02-eryn",
+        "entry": "nalia",
+        "text": "Nalia Reed",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch02-eryn",
+        "entry": "tarin",
+        "text": "Tarin Vale",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch02-eryn",
+        "paragraphAnchor": "dk-v01-ch02-en-p442",
+        "referenceId": "dk-v01-ch02-south-road-town-reference",
+        "paragraphSha256": "6dcfb715de031274a0688586db888c47cc0a87efd90560ef8e3f1ab527009eda",
+        "entry": "south-road-town",
+        "text": "Caerbreyn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03",
+        "paragraphAnchor": "dk-v01-ch03-en-p010",
+        "referenceId": "dk-v01-ch03-joric-reference",
+        "paragraphSha256": "a703350d51f4b13d6ec33e7e333614f36dff6a6ba8035176c4942fac879a3564",
+        "entry": "joric",
+        "text": "Joric",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03",
+        "paragraphAnchor": "dk-v01-ch03-en-p010",
+        "referenceId": "dk-v01-ch03-nalia-reference",
+        "paragraphSha256": "a703350d51f4b13d6ec33e7e333614f36dff6a6ba8035176c4942fac879a3564",
+        "entry": "nalia",
+        "text": "Nalia",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03",
+        "paragraphAnchor": "dk-v01-ch03-en-p010",
+        "referenceId": "dk-v01-ch03-tessa-reference",
+        "paragraphSha256": "a703350d51f4b13d6ec33e7e333614f36dff6a6ba8035176c4942fac879a3564",
+        "entry": "tessa",
+        "text": "Tessa",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03-town-arrival",
+        "entry": "south-road-town",
+        "text": "Caerbreyn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03-border-warning",
+        "paragraphAnchor": "dk-v01-ch03-en-p110",
+        "referenceId": "dk-v01-ch03-heddan-reference",
+        "paragraphSha256": "f167b96796fb709e7a1eba966c97d91cdf24844cf9eeed0a0788864f9f47dfb3",
+        "entry": "heddan",
+        "text": "Heddan",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03-bram",
+        "entry": "bram",
+        "text": "Bram",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03-bram",
+        "paragraphAnchor": "dk-v01-ch03-en-p213",
+        "referenceId": "dk-v01-ch03-garran-reference",
+        "paragraphSha256": "a3c9d6859329a8860358882b46f3a8b6b498f55ecccff36e83f0ead0e88940d5",
+        "entry": "garran",
+        "text": "Garran",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03-town-fight",
+        "paragraphAnchor": "dk-v01-ch03-en-p514",
+        "referenceId": "dk-v01-ch03-dwarves-reference",
+        "paragraphSha256": "4770e935c068bf52f64fe8b32aba91913ba85b9364bb919ca54cf979f255866e",
+        "entry": "dwarves",
+        "text": "dwarf",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03-town-fight",
+        "paragraphAnchor": "dk-v01-ch03-en-p516",
+        "referenceId": "dk-v01-ch03-market-leaf-arrow-necklace-reference",
+        "paragraphSha256": "df45bf589f452935373ad7b184b08202ea3a392809ebfe233798c680e7dfc1d1",
+        "entry": "market-leaf-arrow-necklace",
+        "text": "leaf-and-arrow necklace",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03-town-fight",
+        "paragraphAnchor": "dk-v01-ch03-en-p523",
+        "referenceId": "dk-v01-ch03-mira-reference",
+        "paragraphSha256": "36b463005fec3619c6da05388b1b1ed972a4ffb7da2a80f88a6ecafd155c5272",
+        "entry": "mira",
+        "text": "Mira Pell",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03-town-fight",
+        "paragraphAnchor": "dk-v01-ch03-en-p751",
+        "referenceId": "dk-v01-ch03-tarin-reference",
+        "paragraphSha256": "d40134f2bd6c54afed0b13a6a12efdc3b1145697d014002b52e06a12db0d4e14",
+        "entry": "tarin",
+        "text": "Tarin",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch04-first-independent-work",
+        "paragraphAnchor": "dk-v01-ch04-en-p168",
+        "referenceId": "dk-v01-ch04-mara-reference",
+        "paragraphSha256": "42832b4dfad750222d18a04f559c5e66f9879ca8a97e459e40957db5231cf7d8",
+        "entry": "mara",
+        "text": "Mara",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch04-nessa",
+        "entry": "nessa",
+        "text": "Nessa",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch04-nessa",
+        "paragraphAnchor": "dk-v01-ch04-en-p424",
+        "referenceId": "dk-v01-ch04-harlan-reference",
+        "paragraphSha256": "5f3e8f336d154b51ac63ba5d72ebf12fbed637945696e1d941e80dfa608954de",
+        "entry": "harlan",
+        "text": "Harlan",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch05-goblins",
+        "paragraphAnchor": "dk-v01-ch05-en-p217",
+        "referenceId": "dk-v01-ch05-harlan-reference",
+        "paragraphSha256": "e2f57c82d376f6baf89392d31267b1d95948d90b76927655bd83f3c99a8e9987",
+        "entry": "harlan",
+        "text": "Harlan",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch05-goblins",
+        "paragraphAnchor": "dk-v01-ch05-en-p225",
+        "referenceId": "dk-v01-ch05-bren-reference",
+        "paragraphSha256": "09fd914bc4d6bfda8b79ca0ea7b173cf7a0abab5f9fa1d7a862c713d423ffb19",
+        "entry": "bren",
+        "text": "Bren",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch05-goblins",
+        "paragraphAnchor": "dk-v01-ch05-en-p225",
+        "referenceId": "dk-v01-ch05-goblins-reference",
+        "paragraphSha256": "09fd914bc4d6bfda8b79ca0ea7b173cf7a0abab5f9fa1d7a862c713d423ffb19",
+        "entry": "goblins",
+        "text": "goblins",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch05-pull-confession",
+        "paragraphAnchor": "dk-v01-ch05-en-p286",
+        "referenceId": "dk-v01-ch05-old-woods-reference",
+        "paragraphSha256": "e963f5a41b5879739d3b481ce5c624e52b4fc4b80e61eed8b2e0f96928f9c091",
+        "entry": "old-woods",
+        "text": "old woods",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch06",
+        "paragraphAnchor": "dk-v01-ch06-en-p002",
+        "referenceId": "dk-v01-ch06-bram-reference",
+        "paragraphSha256": "43d568f549a2f6f8e6bdc9c4d3d81168b00d5e924eb78040136e6e7bc81a333c",
+        "entry": "bram",
+        "text": "Bram",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch06-apprentice-moves",
+        "paragraphAnchor": "dk-v01-ch06-en-p250",
+        "referenceId": "dk-v01-ch06-joric-reference",
+        "paragraphSha256": "1bbdd0b9d9ac892c010a7962fe050e7590a27cfd3e541dc96e92af0f7f781e7b",
+        "entry": "joric",
+        "text": "Joric",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch06-apprentice-moves",
+        "paragraphAnchor": "dk-v01-ch06-en-p251",
+        "referenceId": "dk-v01-ch06-nalia-reference",
+        "paragraphSha256": "03c33190a6dcdf73d0557fb2a534fdd4015c43768bd1f91c4e8c35f2bcbc64be",
+        "entry": "nalia",
+        "text": "Nalia",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch06-apprentice-moves",
+        "paragraphAnchor": "dk-v01-ch06-en-p252",
+        "referenceId": "dk-v01-ch06-tarin-reference",
+        "paragraphSha256": "4e223084ac5572fb4a308d5854d75b3c5a4bb5d55cd071693c09ce96bb0384f1",
+        "entry": "tarin",
+        "text": "Tarin",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch06-apprentice-moves",
+        "paragraphAnchor": "dk-v01-ch06-en-p253",
+        "referenceId": "dk-v01-ch06-eryn-reference",
+        "paragraphSha256": "81b525235eb1b6aa846648fc6adb67bb21bacb460b1cbaa6476196c23f188e35",
+        "entry": "eryn",
+        "text": "Eryn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch06-apprentice-moves",
+        "paragraphAnchor": "dk-v01-ch06-en-p337",
+        "referenceId": "dk-v01-ch06-nessa-reference",
+        "paragraphSha256": "a49c49135dd1ebd28b070a0d3d428fc37b4ae8002f8f5692936e60f1eab28ec2",
+        "entry": "nessa",
+        "text": "Nessa",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07",
+        "paragraphAnchor": "dk-v01-ch07-en-p001",
+        "referenceId": "dk-v01-ch07-alden-reference",
+        "paragraphSha256": "a941e08722c8db2bfba9f9d521a7173d6b4937a5c8da9a558ba3d4c818b517a8",
+        "entry": "alden",
+        "text": "Alden",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07",
+        "paragraphAnchor": "dk-v01-ch07-en-p026",
+        "referenceId": "dk-v01-ch07-garran-reference",
+        "paragraphSha256": "ec42577a152b57168b3adc11b5af85b83dac1a0fb361e0c83397e1427e799c08",
+        "entry": "garran",
+        "text": "Garran",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07-calist-runs-forge",
+        "paragraphAnchor": "dk-v01-ch07-en-p110",
+        "referenceId": "dk-v01-ch07-tessa-reference",
+        "paragraphSha256": "4c0095716fd98a27d52b6d40d4d03c6469c1238bccf0198be97f062d39848fec",
+        "entry": "tessa",
+        "text": "Tessa",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07-calist-runs-forge",
+        "paragraphAnchor": "dk-v01-ch07-en-p223",
+        "referenceId": "dk-v01-ch07-edrin-reference",
+        "paragraphSha256": "c1d34a98ad74b817910552d60a1150d7a6f01f4f0c0c7978b9a8825e46818d7f",
+        "entry": "edrin",
+        "text": "Edrin",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07-calist-runs-forge",
+        "paragraphAnchor": "dk-v01-ch07-en-p249",
+        "referenceId": "dk-v01-ch07-eryn-bow-leaf-reference",
+        "paragraphSha256": "26b832f64beab699f97219ec3fa13479b63408c5e49f1007b038e7e2cf6beca4",
+        "entry": "eryn-bow-leaf",
+        "text": "little wooden leaf",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07-calist-runs-forge",
+        "paragraphAnchor": "dk-v01-ch07-en-p330",
+        "referenceId": "dk-v01-ch07-orcs-reference",
+        "paragraphSha256": "433712e1e4fe1d806bfa6a5c9d2ed46e83b0d50cbf302f65fb1a51f980d63a41",
+        "entry": "orcs",
+        "text": "orcs",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07-calist-runs-forge",
+        "paragraphAnchor": "dk-v01-ch07-en-p350",
+        "referenceId": "dk-v01-ch07-south-road-town-reference",
+        "paragraphSha256": "84f79c2bd775e652915804374d0ecaca75f0dc1e189b794ba999df08a9400ce8",
+        "entry": "south-road-town",
+        "text": "Caerbreyn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07-calist-runs-forge",
+        "paragraphAnchor": "dk-v01-ch07-en-p379",
+        "referenceId": "dk-v01-ch07-merek-reference",
+        "paragraphSha256": "995f83f9bba3e445c6f424567ebfddd2dc56a346ee313103081f588335f39d80",
+        "entry": "merek",
+        "text": "Merek",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07-calist-runs-forge",
+        "paragraphAnchor": "dk-v01-ch07-en-p380",
+        "referenceId": "dk-v01-ch07-oren-reference",
+        "paragraphSha256": "9df961e10a56932fcaee416d38248f73bd56be8ab32128efc839df1404bca7c6",
+        "entry": "oren",
+        "text": "Oren",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07-calist-runs-forge",
+        "paragraphAnchor": "dk-v01-ch07-en-p393",
+        "referenceId": "dk-v01-ch07-morcant-reference",
+        "paragraphSha256": "1b9c57d08c58120b1afc174876e77bb2a67ae96b02d08a738a03cd1ca1008540",
+        "entry": "morcant",
+        "text": "Morcant",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07-calist-runs-forge",
+        "paragraphAnchor": "dk-v01-ch07-en-p399",
+        "referenceId": "dk-v01-ch07-old-woods-reference",
+        "paragraphSha256": "fa9caa230fe30f5008d5cc9c8db75e22f1bced264968bcd99f51fde91a07c6ec",
+        "entry": "old-woods",
+        "text": "old woods",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch08-nessa-dies",
+        "entry": "nessa",
+        "text": "Nessa",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch08-nessa-dies",
+        "paragraphAnchor": "dk-v01-ch08-en-p057",
+        "referenceId": "dk-v01-ch08-eryn-reference",
+        "paragraphSha256": "a2bb52fd6b1c3761e5c6dad9766777413f0588a8fb5d9007b44f8d97824b9fcc",
+        "entry": "eryn",
+        "text": "Eryn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch08-nessa-dies",
+        "paragraphAnchor": "dk-v01-ch08-en-p059",
+        "referenceId": "dk-v01-ch08-bren-reference",
+        "paragraphSha256": "735fe406768d37a2a730c5ebbd50c51d1dbf80bd5b82406482c82d8ca2d9daf8",
+        "entry": "bren",
+        "text": "Bren",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch08-nessa-dies",
+        "paragraphAnchor": "dk-v01-ch08-en-p059",
+        "referenceId": "dk-v01-ch08-edrin-reference",
+        "paragraphSha256": "735fe406768d37a2a730c5ebbd50c51d1dbf80bd5b82406482c82d8ca2d9daf8",
+        "entry": "edrin",
+        "text": "Edrin",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch08-nessa-dies",
+        "paragraphAnchor": "dk-v01-ch08-en-p059",
+        "referenceId": "dk-v01-ch08-harlan-reference",
+        "paragraphSha256": "735fe406768d37a2a730c5ebbd50c51d1dbf80bd5b82406482c82d8ca2d9daf8",
+        "entry": "harlan",
+        "text": "Harlan",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch08-nessa-dies",
+        "paragraphAnchor": "dk-v01-ch08-en-p128",
+        "referenceId": "dk-v01-ch08-goblins-reference",
+        "paragraphSha256": "79e592a607abb52bdded1c496eb3f79757aaf1b428cba2bf86d0e58773e8ae61",
+        "entry": "goblins",
+        "text": "goblins",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch08-hunters-depart",
+        "paragraphAnchor": "dk-v01-ch08-en-p161",
+        "referenceId": "dk-v01-ch08-renn-reference",
+        "paragraphSha256": "5373f2865e10f411f007d9a085336cd914be45b83eae77d2cd052289e9610a84",
+        "entry": "renn",
+        "text": "Renn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch08-ambush-return",
+        "paragraphAnchor": "dk-v01-ch08-en-p196",
+        "referenceId": "dk-v01-ch08-kell-reference",
+        "paragraphSha256": "59b55843fff40e125f1e24a9bcacc984f47458cb1b719e5f3a4fd878f7d81889",
+        "entry": "kell",
+        "text": "Kell",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch08-necklace-grief",
+        "paragraphAnchor": "dk-v01-ch08-en-p441",
+        "referenceId": "dk-v01-ch08-leaf-arrow-pendant-reference",
+        "paragraphSha256": "d27e689b59376a5dfc969dc38c15ecdf4a28d263f4afefd4b52cc952894f2b4e",
+        "entry": "leaf-arrow-pendant",
+        "text": "pendant",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch09",
+        "paragraphAnchor": "dk-v01-ch09-en-p002",
+        "referenceId": "dk-v01-ch09-mara-reference",
+        "paragraphSha256": "36cfc9e504206605c86763c23105f30404123482eb1998f134cbe1c32acf66c8",
+        "entry": "mara",
+        "text": "Mara",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch09",
+        "paragraphAnchor": "dk-v01-ch09-en-p110",
+        "referenceId": "dk-v01-ch09-corvin-reference",
+        "paragraphSha256": "f14faf3b497a872063c232491a5120ea26f672786d9d8d9b98783b69b6d91a1a",
+        "entry": "corvin",
+        "text": "Corvin",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch09",
+        "paragraphAnchor": "dk-v01-ch09-en-p167",
+        "referenceId": "dk-v01-ch09-morcant-reference",
+        "paragraphSha256": "b8e99c635462c2974720a5b69764090a6019de290c4a4d0db8ca11e0d997acf1",
+        "entry": "morcant",
+        "text": "Morcant",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch09-enlist-decision",
+        "paragraphAnchor": "dk-v01-ch09-en-p493",
+        "referenceId": "dk-v01-ch09-breynach-reference",
+        "paragraphSha256": "f303de08340bf2090cdaaeab2e2eda7e14b621d70e0c633e43816ffef89212b0",
+        "entry": "breynach",
+        "text": "Breynach",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch09-enlist-decision",
+        "paragraphAnchor": "dk-v01-ch09-en-p493",
+        "referenceId": "dk-v01-ch09-south-road-town-reference",
+        "paragraphSha256": "f303de08340bf2090cdaaeab2e2eda7e14b621d70e0c633e43816ffef89212b0",
+        "entry": "south-road-town",
+        "text": "Caerbreyn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch09-clasp",
+        "entry": "leaf-arrow-pendant",
+        "text": "pendant",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch09-chainmail-sword",
+        "paragraphAnchor": "dk-v01-ch09-en-p605",
+        "referenceId": "dk-v01-ch09-alden-chainmail-reference",
+        "paragraphSha256": "96754f11cf870c73028e21ed082b143383d55dbe1a9f1e08a9cb388ea12ffb43",
+        "entry": "alden-chainmail",
+        "text": "chainmail",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch09-chainmail-sword",
+        "paragraphAnchor": "dk-v01-ch09-en-p634",
+        "referenceId": "dk-v01-ch09-alden-sword-reference",
+        "paragraphSha256": "4ec3aa73315cbd134af53bf23029dc1682f75cbf43ede96a95a3473e43c5a0ee",
+        "entry": "alden-sword",
+        "text": "sword",
+        "occurrence": 1
+      }
+    ],
+    "de": [
+      {
+        "anchor": "dk-v01-p-twins-hatch",
+        "entry": "twin-dragons",
+        "text": "zwei junge Drachen",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-p-first-shard",
+        "entry": "shard",
+        "text": "erste Scherbe",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01",
+        "paragraphAnchor": "dk-v01-ch01-de-p002",
+        "referenceId": "dk-v01-ch01-calists-village-reference",
+        "paragraphSha256": "12547c8a42a8fe0411ebf71431f5c5bc8b306ec0c83958cff02885a0ebd68fbb",
+        "entry": "calists-village",
+        "text": "Elwendun",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01",
+        "paragraphAnchor": "dk-v01-ch01-de-p003",
+        "referenceId": "dk-v01-ch01-elwen-river-reference",
+        "paragraphSha256": "c6a5d1273f17814a840f27c36b62d3eed0226a3349a965379d377c11fc1a2302",
+        "entry": "elwen-river",
+        "text": "Elwen",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01",
+        "paragraphAnchor": "dk-v01-ch01-de-p003",
+        "referenceId": "dk-v01-ch01-old-woods-reference",
+        "paragraphSha256": "c6a5d1273f17814a840f27c36b62d3eed0226a3349a965379d377c11fc1a2302",
+        "entry": "old-woods",
+        "text": "Alte Wald",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01-calist",
+        "entry": "calist",
+        "text": "Calist",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01-calist",
+        "paragraphAnchor": "dk-v01-ch01-de-p009",
+        "referenceId": "dk-v01-ch01-border-fort-reference",
+        "paragraphSha256": "061857401036df24f8229d4ec3676950dcba39af074d78318236fa01a8246596",
+        "entry": "border-fort",
+        "text": "Dunbreyn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01-calist",
+        "paragraphAnchor": "dk-v01-ch01-de-p009",
+        "referenceId": "dk-v01-ch01-breyn-river-reference",
+        "paragraphSha256": "061857401036df24f8229d4ec3676950dcba39af074d78318236fa01a8246596",
+        "entry": "breyn-river",
+        "text": "Breyn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01-corvin",
+        "entry": "corvin",
+        "text": "Corvin",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01-alden",
+        "entry": "alden",
+        "text": "Alden",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01-alden",
+        "paragraphAnchor": "dk-v01-ch01-de-p076",
+        "referenceId": "dk-v01-ch01-goblins-reference",
+        "paragraphSha256": "1c0b65669c870bc0727bae87f8f0c8cd322b4a1271abdb8e2973eee5370d4e03",
+        "entry": "goblins",
+        "text": "Goblins",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch01-alden-war-gear",
+        "entry": "alden-chainmail",
+        "text": "Kettenhemd",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch02-eryn",
+        "entry": "eryn",
+        "text": "Eryn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch02-eryn",
+        "entry": "joric",
+        "text": "Joric Fenner",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch02-eryn",
+        "entry": "nalia",
+        "text": "Nalia Reed",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch02-eryn",
+        "entry": "tarin",
+        "text": "Tarin Vale",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch02-eryn",
+        "paragraphAnchor": "dk-v01-ch02-de-p442",
+        "referenceId": "dk-v01-ch02-south-road-town-reference",
+        "paragraphSha256": "433644de802739ef3318a6b4681ab2d503b7699061b4dd4cb970fe25c1244fa7",
+        "entry": "south-road-town",
+        "text": "Caerbreyn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03",
+        "paragraphAnchor": "dk-v01-ch03-de-p010",
+        "referenceId": "dk-v01-ch03-joric-reference",
+        "paragraphSha256": "57dc70cc391da0f3193afca0ac676aeb6d051037fa33be387567e2382bb341d1",
+        "entry": "joric",
+        "text": "Joric",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03",
+        "paragraphAnchor": "dk-v01-ch03-de-p010",
+        "referenceId": "dk-v01-ch03-nalia-reference",
+        "paragraphSha256": "57dc70cc391da0f3193afca0ac676aeb6d051037fa33be387567e2382bb341d1",
+        "entry": "nalia",
+        "text": "Nalia",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03",
+        "paragraphAnchor": "dk-v01-ch03-de-p010",
+        "referenceId": "dk-v01-ch03-tessa-reference",
+        "paragraphSha256": "57dc70cc391da0f3193afca0ac676aeb6d051037fa33be387567e2382bb341d1",
+        "entry": "tessa",
+        "text": "Tessa",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03-town-arrival",
+        "entry": "south-road-town",
+        "text": "Caerbreyn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03-border-warning",
+        "paragraphAnchor": "dk-v01-ch03-de-p110",
+        "referenceId": "dk-v01-ch03-heddan-reference",
+        "paragraphSha256": "4bb7fb22b18754133b7cf9d610d1c0acc011c491c8ec7ab8b310f71e2b9e2f9b",
+        "entry": "heddan",
+        "text": "Heddan",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03-bram",
+        "entry": "bram",
+        "text": "Bram",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03-bram",
+        "paragraphAnchor": "dk-v01-ch03-de-p213",
+        "referenceId": "dk-v01-ch03-garran-reference",
+        "paragraphSha256": "43c1a0929cde4f41ba3692e11d47881b4f2340313453a3b4aaea309d354d72b0",
+        "entry": "garran",
+        "text": "Garran",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03-town-fight",
+        "paragraphAnchor": "dk-v01-ch03-de-p514",
+        "referenceId": "dk-v01-ch03-dwarves-reference",
+        "paragraphSha256": "b14d92746c7a35dfd684df78d4a9550b65007112a9edec5ca0069ab47f766694",
+        "entry": "dwarves",
+        "text": "Zwerg",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03-town-fight",
+        "paragraphAnchor": "dk-v01-ch03-de-p516",
+        "referenceId": "dk-v01-ch03-market-leaf-arrow-necklace-reference",
+        "paragraphSha256": "00feffab087613841c57cbf77c6dbfb411cd436c26c02cdf2d3601d25fe65ae1",
+        "entry": "market-leaf-arrow-necklace",
+        "text": "Halskette mit Blatt und Pfeil",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03-town-fight",
+        "paragraphAnchor": "dk-v01-ch03-de-p523",
+        "referenceId": "dk-v01-ch03-mira-reference",
+        "paragraphSha256": "2a0cba190df343c920169204dbc69c1d51f5fb6d6423904aa28e994f7d188106",
+        "entry": "mira",
+        "text": "Mira Pell",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch03-town-fight",
+        "paragraphAnchor": "dk-v01-ch03-de-p751",
+        "referenceId": "dk-v01-ch03-tarin-reference",
+        "paragraphSha256": "c65cbbe9c0f1dc7fc13708c3cb643ff4e9ae5cbcc7b4031b9d86213db6333817",
+        "entry": "tarin",
+        "text": "Tarin",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch04-first-independent-work",
+        "paragraphAnchor": "dk-v01-ch04-de-p168",
+        "referenceId": "dk-v01-ch04-mara-reference",
+        "paragraphSha256": "ee2def2a0546b7cfb1c9e70a4a8cb09a2e661e49939be065e379a9b4d5ac50a9",
+        "entry": "mara",
+        "text": "Mara",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch04-nessa",
+        "entry": "nessa",
+        "text": "Nessa",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch04-nessa",
+        "paragraphAnchor": "dk-v01-ch04-de-p424",
+        "referenceId": "dk-v01-ch04-harlan-reference",
+        "paragraphSha256": "23170fb59b2ae629432b4dda9395bf4d61c9afba64f2b2b8bb2591325fed7bde",
+        "entry": "harlan",
+        "text": "Harlan",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch05-goblins",
+        "paragraphAnchor": "dk-v01-ch05-de-p216",
+        "referenceId": "dk-v01-ch05-harlan-reference",
+        "paragraphSha256": "98813cf9a4a6a07f9db7b4fb2c4eb5656f9249fbcc8bc07041557f10b53b2731",
+        "entry": "harlan",
+        "text": "Harlan",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch05-goblins",
+        "paragraphAnchor": "dk-v01-ch05-de-p224",
+        "referenceId": "dk-v01-ch05-bren-reference",
+        "paragraphSha256": "cc07e07725fc6234642abbf2be478ec9648e1dede2b670d04c33d63d0a200b48",
+        "entry": "bren",
+        "text": "Bren",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch05-goblins",
+        "paragraphAnchor": "dk-v01-ch05-de-p224",
+        "referenceId": "dk-v01-ch05-goblins-reference",
+        "paragraphSha256": "cc07e07725fc6234642abbf2be478ec9648e1dede2b670d04c33d63d0a200b48",
+        "entry": "goblins",
+        "text": "Goblins",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch05-pull-confession",
+        "paragraphAnchor": "dk-v01-ch05-de-p285",
+        "referenceId": "dk-v01-ch05-old-woods-reference",
+        "paragraphSha256": "da1ab4b9b9cc954ac7196a8e34ea4bb0f28c701f17256fb956a888b368b41f02",
+        "entry": "old-woods",
+        "text": "alten Wald",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch06",
+        "paragraphAnchor": "dk-v01-ch06-de-p002",
+        "referenceId": "dk-v01-ch06-bram-reference",
+        "paragraphSha256": "06f9327c7cadb4ee4adc4790c324649a375b4fa9f69e6b11654d48a529ca4522",
+        "entry": "bram",
+        "text": "Bram",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch06-apprentice-moves",
+        "paragraphAnchor": "dk-v01-ch06-de-p250",
+        "referenceId": "dk-v01-ch06-joric-reference",
+        "paragraphSha256": "197a169159064e58ad3031393f8a32065071b031a4b3ac266bac3c9d056fe631",
+        "entry": "joric",
+        "text": "Joric",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch06-apprentice-moves",
+        "paragraphAnchor": "dk-v01-ch06-de-p251",
+        "referenceId": "dk-v01-ch06-nalia-reference",
+        "paragraphSha256": "98c178a82e99da037dc9edcd540a43af3f1d17f5c1d74646263fe513c8296c61",
+        "entry": "nalia",
+        "text": "Nalia",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch06-apprentice-moves",
+        "paragraphAnchor": "dk-v01-ch06-de-p252",
+        "referenceId": "dk-v01-ch06-tarin-reference",
+        "paragraphSha256": "ea545cef66c2405fa6554470619ee65c684b8ed7d4cb9d024c25ac3e96da6048",
+        "entry": "tarin",
+        "text": "Tarin",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch06-apprentice-moves",
+        "paragraphAnchor": "dk-v01-ch06-de-p253",
+        "referenceId": "dk-v01-ch06-eryn-reference",
+        "paragraphSha256": "9bd0135b4b31670c5d47081fa0d0641bfb18b78acba481cf6b548b922f48e442",
+        "entry": "eryn",
+        "text": "Eryn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch06-apprentice-moves",
+        "paragraphAnchor": "dk-v01-ch06-de-p337",
+        "referenceId": "dk-v01-ch06-nessa-reference",
+        "paragraphSha256": "d8255692b78789beefcb5dca1d2662c4b417b0558c769dc9676ca60c4395b1f8",
+        "entry": "nessa",
+        "text": "Nessa",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07",
+        "paragraphAnchor": "dk-v01-ch07-de-p001",
+        "referenceId": "dk-v01-ch07-alden-reference",
+        "paragraphSha256": "f7e5b9b7470cc107f58f1e2af278c59843f15de9dab2f26eae0f94e4ac3e49e0",
+        "entry": "alden",
+        "text": "Alden",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07",
+        "paragraphAnchor": "dk-v01-ch07-de-p026",
+        "referenceId": "dk-v01-ch07-garran-reference",
+        "paragraphSha256": "b8444ca1699117442c3f23d21667a8c405abfea4ad6590c9a0e27caf161ae87f",
+        "entry": "garran",
+        "text": "Garran",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07-calist-runs-forge",
+        "paragraphAnchor": "dk-v01-ch07-de-p110",
+        "referenceId": "dk-v01-ch07-tessa-reference",
+        "paragraphSha256": "1668cfef7e94fd661e9a3162b9d37f819f7b11c404dd680d3320ca2237ef217f",
+        "entry": "tessa",
+        "text": "Tessa",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07-calist-runs-forge",
+        "paragraphAnchor": "dk-v01-ch07-de-p223",
+        "referenceId": "dk-v01-ch07-edrin-reference",
+        "paragraphSha256": "06f882d5a9d68ae29a44c6f8c503d7d7faad84572880d5c33ceee1ada386a0d0",
+        "entry": "edrin",
+        "text": "Edrin",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07-calist-runs-forge",
+        "paragraphAnchor": "dk-v01-ch07-de-p249",
+        "referenceId": "dk-v01-ch07-eryn-bow-leaf-reference",
+        "paragraphSha256": "b74c9d2d89bbc458f096e63974a96ea98c53451a98e1d5188183190909ba2afe",
+        "entry": "eryn-bow-leaf",
+        "text": "kleine Holzblatt",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07-calist-runs-forge",
+        "paragraphAnchor": "dk-v01-ch07-de-p330",
+        "referenceId": "dk-v01-ch07-orcs-reference",
+        "paragraphSha256": "08958deda76a58c58f0e0947ca145d337743f9f3bb992eea4095915d42a3964b",
+        "entry": "orcs",
+        "text": "Orks",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07-calist-runs-forge",
+        "paragraphAnchor": "dk-v01-ch07-de-p350",
+        "referenceId": "dk-v01-ch07-south-road-town-reference",
+        "paragraphSha256": "2ba976ce1e38d17bf6b717b664833361d5b6693db90356a50043365931b99a94",
+        "entry": "south-road-town",
+        "text": "Caerbreyn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07-calist-runs-forge",
+        "paragraphAnchor": "dk-v01-ch07-de-p379",
+        "referenceId": "dk-v01-ch07-merek-reference",
+        "paragraphSha256": "e3d9c13de2eb520ec5024831b60836b2e5ee89716489fa95a00770a5da98b09b",
+        "entry": "merek",
+        "text": "Merek",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07-calist-runs-forge",
+        "paragraphAnchor": "dk-v01-ch07-de-p380",
+        "referenceId": "dk-v01-ch07-oren-reference",
+        "paragraphSha256": "c7b68f2fbefa7d63e7c854425192ae697804fc1fc98582fdfb65691f113f0924",
+        "entry": "oren",
+        "text": "Oren",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07-calist-runs-forge",
+        "paragraphAnchor": "dk-v01-ch07-de-p393",
+        "referenceId": "dk-v01-ch07-morcant-reference",
+        "paragraphSha256": "e59ae57e0e84c3cc15d1f58b181d8c6d93bc6fbe50dc0fc682de29e99cdc93ea",
+        "entry": "morcant",
+        "text": "Morcant",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch07-calist-runs-forge",
+        "paragraphAnchor": "dk-v01-ch07-de-p399",
+        "referenceId": "dk-v01-ch07-old-woods-reference",
+        "paragraphSha256": "06e1673ca9348e904cb5d3830b6ab968e22e2e7401c53a5bf76f74951e6cbd4b",
+        "entry": "old-woods",
+        "text": "alten Wald",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch08-nessa-dies",
+        "entry": "nessa",
+        "text": "Nessa",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch08-nessa-dies",
+        "paragraphAnchor": "dk-v01-ch08-de-p057",
+        "referenceId": "dk-v01-ch08-eryn-reference",
+        "paragraphSha256": "00b45cd02792092ce83d7a9515fe595844c125dcff3a588a29a5c3a15f54eff0",
+        "entry": "eryn",
+        "text": "Eryn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch08-nessa-dies",
+        "paragraphAnchor": "dk-v01-ch08-de-p059",
+        "referenceId": "dk-v01-ch08-bren-reference",
+        "paragraphSha256": "fa9389aeb82f63b6fbcd76ae0ebcc5f6cca3166aec63f47000e875a08215c237",
+        "entry": "bren",
+        "text": "Bren",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch08-nessa-dies",
+        "paragraphAnchor": "dk-v01-ch08-de-p059",
+        "referenceId": "dk-v01-ch08-edrin-reference",
+        "paragraphSha256": "fa9389aeb82f63b6fbcd76ae0ebcc5f6cca3166aec63f47000e875a08215c237",
+        "entry": "edrin",
+        "text": "Edrin",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch08-nessa-dies",
+        "paragraphAnchor": "dk-v01-ch08-de-p059",
+        "referenceId": "dk-v01-ch08-harlan-reference",
+        "paragraphSha256": "fa9389aeb82f63b6fbcd76ae0ebcc5f6cca3166aec63f47000e875a08215c237",
+        "entry": "harlan",
+        "text": "Harlan",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch08-nessa-dies",
+        "paragraphAnchor": "dk-v01-ch08-de-p128",
+        "referenceId": "dk-v01-ch08-goblins-reference",
+        "paragraphSha256": "cf5089bb7a34558fddde9546af4a8bc25d6ac04f0e4c32f671b3e6e70e5c8157",
+        "entry": "goblins",
+        "text": "Goblins",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch08-hunters-depart",
+        "paragraphAnchor": "dk-v01-ch08-de-p161",
+        "referenceId": "dk-v01-ch08-renn-reference",
+        "paragraphSha256": "62e36ca1e21b55613d153ddb75de779787f37b55bce020dc4fa3251c9ba94018",
+        "entry": "renn",
+        "text": "Renn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch08-ambush-return",
+        "paragraphAnchor": "dk-v01-ch08-de-p196",
+        "referenceId": "dk-v01-ch08-kell-reference",
+        "paragraphSha256": "c60438316e1967545a59aa66c90e13a4148f18975d013e8bc75dc6689338a903",
+        "entry": "kell",
+        "text": "Kell",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch08-necklace-grief",
+        "paragraphAnchor": "dk-v01-ch08-de-p441",
+        "referenceId": "dk-v01-ch08-leaf-arrow-pendant-reference",
+        "paragraphSha256": "1390198d7404d7092a29aa5c60dce1330d1d240b7f4b3556e9573c6fca6b8567",
+        "entry": "leaf-arrow-pendant",
+        "text": "Anhänger",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch09",
+        "paragraphAnchor": "dk-v01-ch09-de-p002",
+        "referenceId": "dk-v01-ch09-mara-reference",
+        "paragraphSha256": "f44a9b228921373d7ffdf0f4f533645fb27fb3e856b8223d982cbc6ab9b7485d",
+        "entry": "mara",
+        "text": "Mara",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch09",
+        "paragraphAnchor": "dk-v01-ch09-de-p110",
+        "referenceId": "dk-v01-ch09-corvin-reference",
+        "paragraphSha256": "5fe883306a2b31bd17f58879984ee5999164c17c82d24d53346385526d06d8c2",
+        "entry": "corvin",
+        "text": "Corvin",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch09",
+        "paragraphAnchor": "dk-v01-ch09-de-p167",
+        "referenceId": "dk-v01-ch09-morcant-reference",
+        "paragraphSha256": "abd3a9248002f77c1ca2d0ca5af35901f68c3e54b6cea6307c309d66b54532d3",
+        "entry": "morcant",
+        "text": "Morcant",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch09-enlist-decision",
+        "paragraphAnchor": "dk-v01-ch09-de-p493",
+        "referenceId": "dk-v01-ch09-breynach-reference",
+        "paragraphSha256": "7fb79b4bd7d75ccb0acf3f2866f56eddd20d0e74f6d98eb514195f7103f8bd5e",
+        "entry": "breynach",
+        "text": "Breynach",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch09-enlist-decision",
+        "paragraphAnchor": "dk-v01-ch09-de-p493",
+        "referenceId": "dk-v01-ch09-south-road-town-reference",
+        "paragraphSha256": "7fb79b4bd7d75ccb0acf3f2866f56eddd20d0e74f6d98eb514195f7103f8bd5e",
+        "entry": "south-road-town",
+        "text": "Caerbreyn",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch09-clasp",
+        "entry": "leaf-arrow-pendant",
+        "text": "Anhänger",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch09-chainmail-sword",
+        "paragraphAnchor": "dk-v01-ch09-de-p605",
+        "referenceId": "dk-v01-ch09-alden-chainmail-reference",
+        "paragraphSha256": "69d278b24325b2a07e582fab0992ec4291b71624e71375e7f0ea6205a9c0f866",
+        "entry": "alden-chainmail",
+        "text": "Kettenhemd",
+        "occurrence": 1
+      },
+      {
+        "anchor": "dk-v01-ch09-chainmail-sword",
+        "paragraphAnchor": "dk-v01-ch09-de-p634",
+        "referenceId": "dk-v01-ch09-alden-sword-reference",
+        "paragraphSha256": "d27b48c41c237522883c1e189b82fcee666382cea74f97622aa4c5075b439a6a",
+        "entry": "alden-sword",
+        "text": "Schwert",
+        "occurrence": 1
+      }
+    ]
+  }
+}
