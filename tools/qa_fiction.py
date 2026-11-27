@@ -41,8 +41,29 @@ with tempfile.TemporaryDirectory(prefix='k2040-reading-qa-') as profile:
   ok('title and illustration facing spread',b.js('return document.querySelectorAll("#reader-pages .reader-sheet").length===2&&!!document.querySelector(".reader-sheet:first-child h2")&&!!document.querySelector(".reader-sheet:nth-child(2) img")'))
   b.screenshot('reader-spread-opening.png')
   b.js('document.getElementById("reader-next").click();return true;')
-  wait('return document.querySelector("#reader-pages p[data-anchor]")!==null')
+  ok('physical turn starts with two paper faces',b.js('return LibraryPageTurn.busy&&!!document.querySelector(".reader-page-turn-front")&&!!document.querySelector(".reader-page-turn-back")'))
+  ok('physical turn retains original reading position',b.js('return document.getElementById("reader-position").textContent.includes("1 /")'))
+  wait('return !LibraryPageTurn.busy&&document.querySelector("#reader-pages p[data-anchor]")!==null')
+  ok('physical turn commits and cleans its layer',b.js('return !document.querySelector(".reader-page-turn-layer")&&document.getElementById("reader-position").textContent.includes("3 /")'))
   ok('page turn shows prose',b.js('return [...document.querySelectorAll("#reader-pages .reader-sheet")].every(p=>p.scrollHeight<=p.clientHeight+2)'))
+  def edge_click(direction, adjacent=False):
+   b.js("const direction="+str(direction)+",adjacent="+json.dumps(adjacent)+";"+"""
+     const r=document.querySelector("#reader-pages").getBoundingClientRect();
+     const x=direction<0?r.left+(adjacent?-8:8):r.right+(adjacent?8:-8);
+     const y=r.top+r.height*.55;
+     const target=document.elementFromPoint(x,y);
+     if(!target)throw Error("Missing page navigation target");
+     target.dispatchEvent(new MouseEvent("click",{bubbles:true,clientX:x,clientY:y,button:0}));
+     return true;
+   """)
+  edge_click(-1,True)
+  ok('left adjacent space starts backward turn',b.js('return LibraryPageTurn.busy&&document.querySelector(".reader-page-turn-layer").dataset.turnSide==="left"'))
+  wait('return !LibraryPageTurn.busy')
+  ok('left adjacent space returns one spread',b.js('return document.getElementById("reader-position").textContent.includes("1 /")'))
+  edge_click(1)
+  ok('right page edge starts forward turn',b.js('return LibraryPageTurn.busy&&document.querySelector(".reader-page-turn-layer").dataset.turnSide==="right"'))
+  wait('return !LibraryPageTurn.busy')
+  ok('right page edge advances one spread',b.js('return document.getElementById("reader-position").textContent.includes("3 /")'))
   b.js('document.getElementById("reader-bookmark").click();return true;')
   ok('bookmark saved',b.js('return document.querySelectorAll(".reader-mark").length===1'))
   saved=b.js('return JSON.parse(localStorage.getItem("library-reader-position-v2")).books["telanas/dragon-knight/volume-01"].en')
@@ -110,7 +131,12 @@ with tempfile.TemporaryDirectory(prefix='k2040-reading-qa-') as profile:
        const pos=document.querySelector("#reader-position").textContent.match(/(\d+) \/ (\d+)$/);
        if(!pos||Number(pos[1])+sheets.length>Number(pos[2])){done({ids,over,count});return;}
        document.querySelector("#reader-next").click();
-       setTimeout(check,0);
+       // Exercise the real turn commit for every page, without spending a
+       // second on each of the hundreds of already-tested animations.
+       const layer=document.querySelector(".reader-page-turn-layer");
+       if(layer)layer.getAnimations({subtree:true}).forEach(a=>a.finish());
+       function afterTurn(){if(LibraryPageTurn.busy)setTimeout(afterTurn,10);else check();}
+       setTimeout(afterTurn,0);
       }check();""","args":[chapter["id"]]})["value"]
     expected=[chapter["id"]]+[x["id"] for x in chapter["blocks"] if x["type"]=="illustration"]+[x["id"] for x in chapter["blocks"] if x["type"]!="illustration"]
     assert out["ids"]==expected,(lang,chapter["id"],len(out["ids"]),len(expected))
