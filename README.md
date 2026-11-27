@@ -9,6 +9,7 @@ The public website for K2040, with an introduction, project overview, a short bl
 - links/ — verified profiles and support links
 - news/ — current announcements across the websites
 - android/ — Android landing page, released app catalogue, detail pages and news; authored in android/catalog.json and android/posts.json
+- fiction/ — The Library, world and series portals, released book and edition catalogue; authored in fiction/catalog.json, with asset integrity records in fiction/media.json
 - gaming/ — Gaming landing page, mod catalogue, detail pages and news; catalogue and announcements are authored in gaming/catalog.json and gaming/posts.json
 - relaunch.css, relaunch.js, relaunch-copy.js — shared responsive visual system and five locales
 - about/posts.json — editable blog content
@@ -21,10 +22,12 @@ The gaming homepage highlights the latest confirmed release using the date of th
 
 ## Validate
 
-node --test tests/relaunch.test.cjs
+node --test tests/relaunch.test.cjs tests/fiction-reading.test.cjs
 
 Firefox-specific layout checks: python3 tools/qa_browser.py <temporary-output-directory> and python3 tools/qa_narrow.py <temporary-output-directory>.
 
 The website uses only the new approved branding. Older release/news feeds are deliberately disconnected. New gaming, Android and fiction sections belong in this repository and use the same shared page generator, navigation, localization, themes and central News. Build them anew; retain only verified release facts and approved media from older sites. Link to authoritative external release platforms rather than duplicating downloads.
 
 The Android homepage features a confirmed release when a new announcement is marked as a release in android/posts.json; otherwise it highlights a released app without claiming a new release. Distribution-channel version labels are kept separate. Historical notes remain on app detail pages.
+
+The Library uses only released reader editions, curated reference data and original illustrations. Reading languages are English and German; the surrounding catalogue has five interface languages. The reader and Lexicon share a visibility model. Run `python3 tools/qa_fiction.py <temporary-output-directory>` for interactive Firefox checks and exhaustive chapter pagination.

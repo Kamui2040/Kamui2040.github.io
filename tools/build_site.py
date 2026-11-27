@@ -13,6 +13,7 @@ import re
 from datetime import date
 import gaming
 import android
+import fiction
 
 ROOT=Path(__file__).resolve().parent.parent
 DEST=json.loads((ROOT/"relaunch-destinations.json").read_text())
@@ -27,6 +28,7 @@ for key, url in DEST.items():
 LANGS=("en","de","pt-PT","es","fr")
 GAMING=gaming.load(ROOT,LANGS)
 ANDROID=android.load(ROOT,LANGS)
+FICTION=fiction.load(ROOT)
 NOTE_DATA=json.loads((ROOT/"about/posts.json").read_text(encoding="utf-8"))
 assert isinstance(NOTE_DATA,list)
 seen_slugs=set()
@@ -96,6 +98,8 @@ def nav_link(uri: str, key: str, fallback: str, current: bool=False) -> str:
 def head(kind: str, title: str, description: str, uri: str) -> str:
     editorial_script=('  <script defer src="/relaunch-site-news.js"></script>\n' if kind in ("home","news","gaming","gamingNews","android","androidNews") else "")
     gaming_assets=('  <link rel="stylesheet" href="/gaming/gaming.css">\n  <script defer src="/gaming/gallery.js"></script>\n' if kind.startswith(("gaming","android")) else "")
+    fiction_assets='  <link rel="stylesheet" href="/fiction/fiction.css">\n' if kind.startswith("fiction") else ""
+    reading_assets='  <link rel="stylesheet" href="/fiction/runtime/reading.css">\n  <script defer src="/fiction/runtime/model.js"></script>\n  <script defer src="/fiction/runtime/reading.js"></script>\n' if kind in ("fictionReader","fictionLexicon") else ""
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -113,8 +117,8 @@ def head(kind: str, title: str, description: str, uri: str) -> str:
   <link rel="icon" href="/assets/icons/k2040-home.webp" type="image/webp">
   <link rel="stylesheet" href="/relaunch.css">
   <script defer src="/relaunch-copy.js"></script>
-{editorial_script}{gaming_assets}  <script defer src="/relaunch.js"></script>
-  <title>{escape(title)}</title>
+{editorial_script}{gaming_assets}{fiction_assets}  <script defer src="/relaunch.js"></script>
+{reading_assets}  <title>{escape(title)}</title>
 </head>
 <body data-page="{kind}">
 <a class="skip-link" href="#main">{copy("controls.skip","Skip to content")}</a>
@@ -131,8 +135,13 @@ def header(kind: str) -> str:
         items=[("/gaming/","gaming.home","Gaming","gaming"),("/gaming/mods/","gaming.mods","Mods","gamingMods"),("/gaming/news/","gaming.news","Gaming news","gamingNews"),("/","gaming.main","K2040 home","main")]
     if kind.startswith("android"):
         items=[("/android/","android.home","Android","android"),("/android/apps/","android.apps","Apps","androidApps"),("/android/news/","android.news","Android news","androidNews"),("/","gaming.main","K2040 home","main")]
+    if kind.startswith("fiction"):
+        items=[("/fiction/","fiction.title","The Library","fiction"),("/fiction/telanas/","fiction.world","Telanas","fictionWorld"),("/fiction/telanas/dragon-knight/","fiction.books","Books","fictionSeries"),("/fiction/telanas/lexicon/","fiction.lexicon","Lexicon","fictionLexicon")]
     def links(mobile=False):
-        return "\n".join(nav_link(uri,key,label,(kind==target or (kind=="gamingMod" and target=="gamingMods") or (kind=="gamingArticle" and target=="gamingNews") or (kind=="androidApp" and target=="androidApps") or (kind=="androidArticle" and target=="androidNews")) and target!="home") for uri,key,label,target in items)
+        return "\n".join(nav_link(uri,key,label,(kind==target or (kind=="gamingMod" and target=="gamingMods") or (kind=="gamingArticle" and target=="gamingNews") or (kind=="androidApp" and target=="androidApps") or (kind=="androidArticle" and target=="androidNews") or (kind=="fictionBook" and target=="fictionSeries")) and target!="home") for uri,key,label,target in items)
+    language_options='<option value="en">EN</option><option value="de">DE</option>'
+    if kind not in ("fictionReader","fictionLexicon"):
+        language_options+='<option value="pt-PT">PT</option><option value="es">ES</option><option value="fr">FR</option>'
     return f'''<header class="masthead" data-menu-open="false">
   <div class="masthead__inner shell">
     <a class="brand" href="/" aria-label="K2040 Projects — home"><img src="/assets/k2040-approved-horizontal-wordmark.avif" width="856" height="245" alt="K2040" decoding="async"></a>
@@ -141,7 +150,7 @@ def header(kind: str) -> str:
     </nav>
     <div class="header-tools">
       <select class="control language-select" data-language data-copy-aria="controls.language" aria-label="Language">
-        <option value="en">EN</option><option value="de">DE</option><option value="pt-PT">PT</option><option value="es">ES</option><option value="fr">FR</option>
+        {language_options}
       </select>
       <button type="button" class="control theme-btn" data-theme-toggle aria-label="Switch theme" aria-pressed="false"><span>Dark</span></button>
       <button type="button" class="control menu-btn" data-menu-toggle aria-label="Menu" data-copy-aria="controls.menu" aria-controls="mobile-site-nav" aria-expanded="false">{copy("controls.menu","Menu")}</button>
@@ -154,9 +163,10 @@ def header(kind: str) -> str:
   </nav>
 </header>
 <nav class="site-switch shell" aria-label="K2040 websites">
-  {nav_link("/","gaming.main","K2040 home",not kind.startswith(("gaming","android")))}
+  {nav_link("/","gaming.main","K2040 home",not kind.startswith(("gaming","android","fiction")))}
   {nav_link("/gaming/","gaming.home","Gaming",kind.startswith("gaming"))}
   {nav_link("/android/","android.home","Android",kind.startswith("android"))}
+  {nav_link("/fiction/","fiction.title","The Library",kind.startswith("fiction"))}
 </nav>'''
 
 def footer() -> str:
@@ -182,7 +192,7 @@ def section_heading(eyebrow_key: str, eyebrow: str, title_key: str, title: str, 
     </div></div>'''
 
 def project_card(topic_id: str, title_key: str, title: str, desc_key: str, desc: str) -> str:
-    route={"gaming":("/gaming/","gaming.explore","Explore gaming"),"android":("/android/","android.explore","Explore apps")}.get(topic_id)
+    route={"fiction":("/fiction/","fiction.exploreLibrary","Explore the Library"),"gaming":("/gaming/","gaming.explore","Explore gaming"),"android":("/android/","android.explore","Explore apps")}.get(topic_id)
     heading=f"project-{topic_id}-heading"
     description=f"project-{topic_id}-description"
     content=f'<h3 id="{heading}">{copy(title_key,title)}</h3><p id="{description}">{copy(desc_key,desc)}</p>'
@@ -268,7 +278,7 @@ def directory() -> str:
     <p class="directory-hint">{copy("links.projectsNote","These sites will return as the relaunch continues.")}</p>
     <div class="directory-grid">
       <a class="directory-item" href="/gaming/"><strong>{copy("project.gaming","Game projects")}</strong><span>{copy("gaming.explore","Explore gaming")}</span></a>
-      {directory_entry(copy("project.fiction","Fantasy fiction"),copy("project.offline","Coming soon"),disabled=True)}
+      <a class="directory-item" href="/fiction/"><strong>{copy("project.fiction","Fantasy fiction")}</strong><span>{copy("fiction.exploreLibrary","Explore the Library")}</span></a>
       <a class="directory-item" href="/android/"><strong>{copy("project.android","Android apps")}</strong><span>{copy("android.explore","Explore apps")}</span></a>
     </div>
   </section>
@@ -362,6 +372,7 @@ def main() -> None:
         pages[f"about/notes/{post['slug']}/index.html"]=note_page(post)
     pages.update(gaming.pages(GAMING,LANGS,head,header,footer,copy,localized))
     pages.update(android.pages(ANDROID,LANGS,head,header,footer,copy,localized))
+    pages.update(fiction.pages(FICTION,LANGS,head,header,footer,copy))
     for name, html in pages.items():
         path=ROOT/name
         path.parent.mkdir(parents=True,exist_ok=True)

@@ -1,0 +1,152 @@
+[
+  {
+    "path": "/assets/fiction/telanas/hero-daylight-v1.webp",
+    "sha256": "2699d18cbf88840b7a3ac2788eaa20a6fdf099f38824fbc7d9b13cd2bb15d71b",
+    "bytes": 601562,
+    "kind": "artwork"
+  },
+  {
+    "path": "/assets/fiction/telanas/hero-dusk-v1.webp",
+    "sha256": "40c1bdeb28f37ece533a689e6b4be908f0f672047e2648b7d4b5f9691f2c4918",
+    "bytes": 395348,
+    "kind": "artwork"
+  },
+  {
+    "path": "/assets/fiction/telanas/lexicon-library-daylight-v1.webp",
+    "sha256": "12634a8335df072de3d10476ed8abdaaadebd89db064a035be46cdb7ebeed984",
+    "bytes": 867156,
+    "kind": "artwork"
+  },
+  {
+    "path": "/assets/fiction/telanas/lexicon-library-dusk-v1.webp",
+    "sha256": "cd928b2c353b060a062797f41fb9abd4fff56abf91832d4c60e84c6ad3371c7d",
+    "bytes": 582744,
+    "kind": "artwork"
+  },
+  {
+    "path": "/assets/fiction/telanas/volume-01-cover.png",
+    "sha256": "ce68bcb2bec6edef3a06aa983ef333783efe655749a8ef8383f8ca85ad962c45",
+    "bytes": 2570385,
+    "kind": "artwork"
+  },
+  {
+    "path": "/fiction/editions/the-dragon-knight-volume-01-home-en.pdf",
+    "sha256": "0cee0cd478e149c4b3fac44baaf84cf81b6ae5ae9e84fcbce5f36f0239658680",
+    "bytes": 56232391,
+    "kind": "edition"
+  },
+  {
+    "path": "/fiction/editions/the-dragon-knight-volume-01-home-en.epub",
+    "sha256": "04ada79c7ff823c077785b9635e3abf20414584afc5d91ad13275ec1b704a64e",
+    "bytes": 5291315,
+    "kind": "edition"
+  },
+  {
+    "path": "/fiction/editions/der-drachenritter-band-01-zuhause-de.pdf",
+    "sha256": "66315147f7d64cd0cedb43b20974350484699094621097c2d8182f95cc9c582e",
+    "bytes": 56274824,
+    "kind": "edition"
+  },
+  {
+    "path": "/fiction/editions/der-drachenritter-band-01-zuhause-de.epub",
+    "sha256": "9802c8cfb92afe692f43f375f1898bc5cf9e22dd6f392be81d083fc003502caa",
+    "bytes": 5305599,
+    "kind": "edition"
+  },
+  {
+    "path": "/fiction/content/telanas/dragon-knight/volume-01/book.json",
+    "sha256": "4da976a3cefc07d12c5620df198e703b2058c0ac1a9e4b980a42a20d8d62b777",
+    "bytes": 8660,
+    "kind": "reader-manifest"
+  },
+  {
+    "path": "/fiction/content/telanas/dragon-knight/volume-01/afterword.json",
+    "sha256": "b93213550d487876f7040b59135beb40379178e6e3ae0a34e1f7cd81a2f48a4c",
+    "bytes": 9896,
+    "kind": "released-content"
+  },
+  {
+    "path": "/fiction/content/telanas/dragon-knight/volume-01/contextual-lexicon.json",
+    "sha256": "dcc01ba20c491b754d458eeef394459a76b89ddcd8c5d653ce910d22b0d9dd55",
+    "bytes": 41201,
+    "kind": "released-content"
+  },
+  {
+    "path": "/fiction/content/telanas/dragon-knight/volume-01/editions/en.json",
+    "sha256": "8136f355626d0a028337d67353270fc3a2f78472008e8a21edb181ac9bee54d7",
+    "bytes": 820593,
+    "kind": "released-content"
+  },
+  {
+    "path": "/fiction/content/telanas/dragon-knight/volume-01/editions/de.json",
+    "sha256": "aafb32f57902020631e07c36a7bf5231fa9d8adc25bef11fd1cd217c1538de80",
+    "bytes": 852960,
+    "kind": "released-content"
+  },
+  {
+    "path": "/fiction/content/telanas/dragon-knight/volume-01/illustrations/Band 1 - Approved Primordial Cosmos.png",
+    "sha256": "a219fd936526db2b0eb4da48064f6624005478d25fa5edfb6e27a80063bc4314",
+    "bytes": 3199077,
+    "kind": "illustration"
+  },
+  {
+    "path": "/fiction/content/telanas/dragon-knight/volume-01/illustrations/Band 1 - Approved Village Illustration Reference.png",
+    "sha256": "990eb48cba2a9c3ec39e00bdf30530b3e4c0c4f3760da3a95278f3f02b809074",
+    "bytes": 3951889,
+    "kind": "illustration"
+  },
+  {
+    "path": "/fiction/content/telanas/dragon-knight/volume-01/illustrations/Band 1 - Approved Old Forest Entrance.png",
+    "sha256": "8875ef3de1bcd50608a9e2b51d7b3ed2659c899c7645ecc04772d631b653c17e",
+    "bytes": 2948491,
+    "kind": "illustration"
+  },
+  {
+    "path": "/fiction/content/telanas/dragon-knight/volume-01/illustrations/Band 1 - Approved Town Entrance.png",
+    "sha256": "793b89c8edb5351ecca10f653fd48c49e1b3fc586a5c2d05e991dfa7e32227f6",
+    "bytes": 4075814,
+    "kind": "illustration"
+  },
+  {
+    "path": "/fiction/content/telanas/dragon-knight/volume-01/illustrations/Band 1 - Approved Alden Smithy.png",
+    "sha256": "1170409207e630f56756ed96231031ddb8481b25191c74ec735ca3355c017737",
+    "bytes": 2953544,
+    "kind": "illustration"
+  },
+  {
+    "path": "/fiction/content/telanas/dragon-knight/volume-01/illustrations/Band 1 - Approved Forest Camp.png",
+    "sha256": "7d34cbad2f79a128bf21a46a4acb8fabd3e77a0267e79502aabe5724bdfe0bbe",
+    "bytes": 2772404,
+    "kind": "illustration"
+  },
+  {
+    "path": "/fiction/content/telanas/dragon-knight/volume-01/illustrations/Band 1 - Approved Apprentice.png",
+    "sha256": "17802ba8d5caef46542240a0d6d6696d02072dc53285f6d780be7d7d205be37c",
+    "bytes": 3133348,
+    "kind": "illustration"
+  },
+  {
+    "path": "/fiction/content/telanas/dragon-knight/volume-01/illustrations/Band 1 - Approved Long Winter.png",
+    "sha256": "b6d4aa0b4470731e5749eea201810d24f7ec7fe1dab4e824d5541fa481b8d0d7",
+    "bytes": 3604873,
+    "kind": "illustration"
+  },
+  {
+    "path": "/fiction/content/telanas/dragon-knight/volume-01/illustrations/Band 1 - Approved What Remains.png",
+    "sha256": "9653e9148ff56d421a0926e6e6a114a67bca791189159c792a817d00d6dcc6c8",
+    "bytes": 2917659,
+    "kind": "illustration"
+  },
+  {
+    "path": "/fiction/content/telanas/dragon-knight/volume-01/illustrations/Band 1 - Approved The Choice.png",
+    "sha256": "f651e98106ccf50b430cd1626fa5d6a7a5bf3c33b828f244ce8b824be69c1adf",
+    "bytes": 2902577,
+    "kind": "illustration"
+  },
+  {
+    "path": "/fiction/content/telanas/lexicon.json",
+    "sha256": "cbbdad7d660d0fe5908aacda86c0f0fc6c5f380fab1f0f9eeb0c59a64ac0f213",
+    "bytes": 232536,
+    "kind": "released-content"
+  }
+]

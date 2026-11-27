@@ -21,6 +21,7 @@
     root.dataset.theme = rememberedTheme;
   }
   let language = preferred();
+  if (["fictionReader","fictionLexicon"].includes(page) && !["en","de"].includes(language)) language="en";
   // One local, generated news index. Gaming articles are authored once.
   const siteUpdates=Array.isArray(window.K2040_SITE_NEWS) ? window.K2040_SITE_NEWS : [];
   const updates=page.startsWith("gaming") ? siteUpdates.filter(item=>item.projectId==="game-projects") : page.startsWith("android") ? siteUpdates.filter(item=>item.projectId==="android-apps") : siteUpdates;

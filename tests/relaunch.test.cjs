@@ -179,14 +179,12 @@ test("Game projects section name is consistent across pages and translations",()
  }
  assert.equal((pages.home.match(/data-copy="project.gaming">Game projects/g)||[]).length,1);
 });
-test("Project selection uses full-card links with fiction non-clickable",()=>{
+test("Project selection uses full-card links for all three websites",()=>{
  const html=pages.home;
- for(const id of ["gaming","android"]){
+ for(const id of ["gaming","fiction","android"]){
   assert.ok(html.includes('<a class="project-card" id="project-'+id+'" href="/'+id+'/"'),id);
   assert.ok(html.includes('aria-labelledby="project-'+id+'-heading"'),id);
  }
- assert.ok(html.includes('<article class="project-card" id="project-fiction">'));
- assert.ok(html.includes('data-copy="project.offline">Coming soon'));
  assert.ok(html.includes('data-copy="project.title">Projects'));
  assert.ok(!html.includes('hero__topics'));
 });
@@ -290,7 +288,7 @@ test("Unverified platforms and offline project sites are non-clickable",()=>{
  for(const name of ["Patreon","TikTok",">X<"]){
   assert.ok(html.includes(name),name);
  }
- assert.equal((html.match(/class="directory-item directory-item--unavailable"/g)||[]).length,3);
+ assert.equal((html.match(/class="directory-item directory-item--unavailable"/g)||[]).length,2);
  assert.ok(html.includes('class="directory-item" href="/gaming/"'));
  assert.ok(html.includes('href="https://www.patreon.com/cw/k2040"'));
  assert.ok(!html.includes('href="https://kamui2040.github.io/K2040-Gaming-Mods/'));
@@ -384,7 +382,7 @@ test("News dates sorted and unsafe links filtered in UI logic",()=>{
 test("Static builder is reproducible",()=>{
  const files=["index.html","news/index.html","links/index.html","about/index.html",
   "about/notes/why-i-started-making-things/index.html",
-  "about/notes/site-and-social-relaunch/index.html","relaunch-site-news.js",...["gaming/index.html","gaming/mods/index.html","gaming/news/index.html"],...JSON.parse(file("gaming/catalog.json")).mods.map(m=>"gaming/mods/"+m.slug+"/index.html"),...JSON.parse(file("gaming/posts.json")).map(p=>"gaming/news/"+p.slug+"/index.html"),"android/index.html","android/apps/index.html","android/news/index.html",...JSON.parse(file("android/catalog.json")).apps.map(a=>"android/apps/"+a.slug+"/index.html")];
+  "about/notes/site-and-social-relaunch/index.html","relaunch-site-news.js",...["gaming/index.html","gaming/mods/index.html","gaming/news/index.html"],...JSON.parse(file("gaming/catalog.json")).mods.map(m=>"gaming/mods/"+m.slug+"/index.html"),...JSON.parse(file("gaming/posts.json")).map(p=>"gaming/news/"+p.slug+"/index.html"),"android/index.html","android/apps/index.html","android/news/index.html",...JSON.parse(file("android/catalog.json")).apps.map(a=>"android/apps/"+a.slug+"/index.html"),"fiction/index.html","fiction/telanas/index.html","fiction/telanas/dragon-knight/index.html","fiction/telanas/dragon-knight/volume-01/index.html","fiction/telanas/dragon-knight/volume-01/read/index.html","fiction/telanas/lexicon/index.html"];
  const before=files.map(digest);
  const out=spawnSync("python3",["tools/build_site.py"],{cwd:root,encoding:"utf8"});
  assert.equal(out.status,0,out.stderr);
@@ -538,6 +536,12 @@ test("Runtime page metadata is valid across every generated page and locale, inc
  const js=file("relaunch.js");
  for(const p of walk(root)){
   const html=fs.readFileSync(p,"utf8");
+  if(path.relative(root,p).startsWith("The-Library/")){
+   const target=html.match(/content="0;url=(\/fiction\/[^"]*)"/)?.[1];
+   assert.ok(target&&fs.existsSync(path.join(root,target,"index.html")),p);
+   assert.ok(html.includes('rel="canonical" href="https://kamui2040.github.io'+target+'"'),p);
+   continue;
+  }
   const page=html.match(/data-page="([^"]+)"/)[1];
   const title=decode(html.match(/<title>([^<]+)<\/title>/)[1]);
   const description=decode(html.match(/<meta name="description" content="([^"]+)"/)[1]);
@@ -572,4 +576,18 @@ test("APKPure listings match each released Android app package",()=>{
   assert.equal(links[0].version,undefined);
   assert.ok(file("android/apps/"+a.slug+"/index.html").includes('href="'+expected+'"'));
  }
+});
+
+test("Library catalogue preserves released edition languages, exact files and confirmed English stores",()=>{
+ const b=JSON.parse(file("fiction/catalog.json")).worlds[0].series[0].books[0];
+ assert.deepEqual(b.editions.map(e=>e.language),["en","de"]);
+ assert.deepEqual(b.editions.map(e=>e.pages),[301,315]);
+ const html=file("fiction/telanas/dragon-knight/volume-01/index.html");
+ for(const e of b.editions)for(const f of e.files){
+  assert.equal(digest(f.path.slice(1)),f.sha256);
+  assert.ok(html.includes('href="'+f.path+'" download'));
+ }
+ for(const store of b.stores){assert.equal(store.language,"en");assert.ok(html.includes(store.url));}
+ for(const m of JSON.parse(file("fiction/media.json")))assert.equal(digest(m.path.slice(1)),m.sha256);
+ for(const d of Object.values(translations))assert.equal(Object.keys(d.fiction).length,26);
 });

@@ -9,3 +9,7 @@ Gaming is a distinct website under /gaming/, with its own primary navigation and
 Use tools/build_site.py to generate shared HTML pages; keep the five locales and browser routes consistent. Only show verified profile/download links. Keep current News distinct from historical release records, and never import old project feeds.
 
 Before accepting changes, run source, link, localization, navigation, responsive and accessibility checks as relevant. Preserve the public release identity and keep old data out of the new site.
+
+## Fiction publication boundary
+
+Only explicitly released fiction, approved illustrations and verified edition links belong in the public catalogue. Preserve separate complete language editions, semantic chapter/block IDs, illustrations, and back matter. Do not copy private source metadata, unreleased lore, or prototype geography. Reader and Lexicon use one visibility model; gate entry existence, summaries, details, relationships, search and curated contextual links before rendering. Reader progress and bookmarks are semantic, not rendered page numbers. Validate complete pagination and spoiler visibility before publication.
