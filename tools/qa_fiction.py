@@ -150,6 +150,32 @@ with tempfile.TemporaryDirectory(prefix='k2040-reading-qa-') as profile:
   b.js('document.querySelector("#reader-pages #dk-v01-ch01-calist .reader-inline-ref").click();return true;')
   ok("contextual reference opens an eligible entry",b.js('return document.querySelector("#fiction-entry-dialog").open'))
   title=b.js('return document.querySelector("#fiction-entry-heading").textContent')
+  b.js('document.getElementById("fiction-entry-dialog").close();return true;')
+  wait('return !document.querySelector("#fiction-entry-dialog").open')
+  b.js("""
+    const term=document.querySelector("#reader-pages #dk-v01-ch01-calist .reader-inline-ref");
+    term.dispatchEvent(new PointerEvent("pointerover",{bubbles:true,pointerType:"mouse"}));
+    return true;
+  """)
+  wait('return !document.querySelector("#reader-quick-view").hidden')
+  ok("compact preview matches visible entry without related entries",b.js('return document.querySelector("#reader-quick-view strong").textContent==='+json.dumps(title)+'&&document.querySelectorAll("#reader-quick-view p").length===1&&!document.querySelector("#reader-quick-view a,#reader-quick-view ul,#reader-quick-view section")'))
+  b.js('document.dispatchEvent(new KeyboardEvent("keydown",{key:"Escape",bubbles:true}));return true;')
+  ok("preview dismissal clears text",b.js('return document.querySelector("#reader-quick-view").hidden&&!document.querySelector("#reader-quick-view").textContent'))
+  # Test the CSS fullscreen fallback independently of the platform fullscreen permission.
+  b.js('Object.defineProperty(document.documentElement,"requestFullscreen",{value:undefined,configurable:true});document.getElementById("reader-fullscreen").click();return true;')
+  wait('return document.body.classList.contains("reader-immersive")&&!!document.querySelector("#reader-pages #dk-v01-ch01-calist")')
+  ok("immersive mode preserves semantic anchor",b.js('return !!document.querySelector("#reader-pages #dk-v01-ch01-calist")'))
+  b.js('document.body.dispatchEvent(new PointerEvent("pointermove",{bubbles:true,pointerType:"mouse",clientY:3}));return true;')
+  wait('return getComputedStyle(document.querySelector(".reader-top-dock")).opacity==="1"')
+  ok("top edge reveals fullscreen exit",b.js('return document.getElementById("reader-fullscreen").getAttribute("aria-pressed")==="true"'))
+  b.js('document.body.dispatchEvent(new PointerEvent("pointermove",{bubbles:true,pointerType:"mouse",clientY:innerHeight-3}));return true;')
+  wait('return getComputedStyle(document.querySelector(".reader-bottom-dock")).opacity==="1"')
+  ok("bottom edge reveals page controls",b.js('return getComputedStyle(document.querySelector(".reader-top-dock")).opacity==="0"'))
+  b.js('document.body.dispatchEvent(new PointerEvent("pointermove",{bubbles:true,pointerType:"mouse",clientY:innerHeight/2}));return true;')
+  wait('return getComputedStyle(document.querySelector(".reader-bottom-dock")).opacity==="0"')
+  b.js('document.dispatchEvent(new KeyboardEvent("keydown",{key:"Escape",bubbles:true}));return true;')
+  wait('return !document.body.classList.contains("reader-immersive")')
+  ok("escape restores normal reading view",b.js('return !document.querySelector(".reader-top-dock")&&!!document.querySelector(".reader-chrome")'))
   go(lex+"?entry=calist")
   ok("reader and Lexicon share visible entry",b.js('return document.querySelector("#fiction-entry-dialog").open&&document.querySelector("#fiction-entry-heading").textContent')==title)
   print("PASS complete reader regression:",len(checks),"interaction checks",flush=True)

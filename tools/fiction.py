@@ -73,6 +73,7 @@ def pages(data,langs,head,header,footer,copy):
         <label class="reading-field">{text("layout","Layout")}<select id="reader-layout"><option value="spread" data-reading-copy="spread">Book spread</option><option value="single" data-reading-copy="single">Single page</option><option value="continuous" data-reading-copy="continuous">Continuous</option></select></label>
         <details class="reader-popover"><summary data-reading-copy="bookmarks">Bookmarks</summary><div class="reader-popover-panel" id="reader-marks"></div></details>
         <button type="button" id="reader-bookmark" class="reading-button" aria-pressed="false">Save place</button>
+        <button type="button" id="reader-fullscreen" class="reading-button" aria-pressed="false" data-reading-copy="fullscreen">Fullscreen</button>
         <details class="reader-settings"><summary data-reading-copy="settings">Reading settings</summary>
           <div class="reading-settings-grid">
            <label class="reading-field">{text("theme","Page theme")}<select id="reader-pref-theme"><option value="dark" data-reading-copy="dark">Dark</option><option value="light" data-reading-copy="light">Light</option><option value="parchment" data-reading-copy="parchment">Parchment</option></select></label>
@@ -86,7 +87,7 @@ def pages(data,langs,head,header,footer,copy):
       <div class="reader-workspace">
 
         <section class="reader-stage"><div id="reader-pages" class="reader-pages" aria-label="Book pages"></div><div id="reader-probe" aria-hidden="true" inert></div>
-        <div class="reader-pagination"><button type="button" id="reader-prev" class="reading-button" data-reading-copy="previous">Previous</button><span id="reader-position" aria-live="polite"></span><button type="button" id="reader-next" class="reading-button" data-reading-copy="next">Next</button></div><div id="reader-completion" aria-live="polite"></div></section>
+        <div class="reader-bottom-dock"><div class="reader-pagination"><button type="button" id="reader-prev" class="reading-button" data-reading-copy="previous">Previous</button><span id="reader-position" aria-live="polite"></span><button type="button" id="reader-next" class="reading-button" data-reading-copy="next">Next</button></div><div id="reader-completion" aria-live="polite"></div></div></section>
       </div>
     </div>{dialog}'''
     reader_header=f'''<header class="reader-chrome shell">

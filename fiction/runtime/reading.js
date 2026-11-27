@@ -15,8 +15,8 @@
   const storage={getItem:k=>{try{return localStorage.getItem(k);}catch{return memory.get(k)||null;}},setItem:(k,v)=>{memory.set(k,v);try{localStorage.setItem(k,v);}catch{}}};
   const lang=()=>root.lang==="de"?"de":"en";
   const words={
-    en:{contents:"Contents",bookmark:"Save place",remove:"Remove",bookmarks:"Bookmarks",noBookmarks:"No saved places yet.",previous:"Previous",next:"Next",spread:"Book spread",single:"Single page",continuous:"Continuous",layout:"Layout",settings:"Reading settings",theme:"Page theme",light:"Light",dark:"Dark",parchment:"Parchment",typeface:"Typeface",serif:"Book serif",sans:"Sans serif",size:"Text size",spacing:"Line spacing",progress:"Chapter completion",ask:"Ask",automatic:"Automatic",manual:"Manual",finish:"Mark chapter finished",finished:"Chapter completed",read:"Read",lexicon:"Lexicon",back:"Back to book",error:"The released content could not be loaded.",all:"All",search:"Search visible entries",noResults:"No matching entries.",order:"Sort order",appearance:"First appearance",alphabetical:"Alphabetical",chronological:"Chronological",through:"Spoilers through",none:"No completed chapters",full:"Full spoilers",relationships:"Relationships",revealed:"Revealed book details",close:"Close",volumeComplete:"Volume completed",page:"Page",noEdition:"This edition is unavailable."},
-    de:{contents:"Inhalt",bookmark:"Stelle speichern",remove:"Entfernen",bookmarks:"Lesezeichen",noBookmarks:"Noch keine gespeicherten Stellen.",previous:"Zurück",next:"Weiter",spread:"Doppelseite",single:"Einzelseite",continuous:"Fortlaufend",layout:"Lesemodus",settings:"Leseeinstellungen",theme:"Seitendesign",light:"Hell",dark:"Dunkel",parchment:"Pergament",typeface:"Schriftart",serif:"Buch-Serifenschrift",sans:"Sans-Serif",size:"Textgröße",spacing:"Zeilenabstand",progress:"Kapitelabschluss",ask:"Nachfragen",automatic:"Automatisch",manual:"Manuell",finish:"Kapitel als gelesen markieren",finished:"Kapitel abgeschlossen",read:"Lesen",lexicon:"Lexikon",back:"Zum Buch",error:"Der veröffentlichte Inhalt konnte nicht geladen werden.",all:"Alle",search:"Sichtbare Einträge durchsuchen",noResults:"Keine passenden Einträge.",order:"Sortierung",appearance:"Erstes Auftreten",alphabetical:"Alphabetisch",chronological:"Chronologisch",through:"Spoiler bis",none:"Keine abgeschlossenen Kapitel",full:"Alle Spoiler",relationships:"Beziehungen",revealed:"Enthüllte Buchdetails",close:"Schließen",volumeComplete:"Band abgeschlossen",page:"Seite",noEdition:"Diese Ausgabe ist nicht verfügbar."}
+    en:{fullscreen:"Fullscreen",exitFullscreen:"Exit fullscreen",topControls:"Show top controls",bottomControls:"Show bottom controls",contents:"Contents",bookmark:"Save place",remove:"Remove",bookmarks:"Bookmarks",noBookmarks:"No saved places yet.",previous:"Previous",next:"Next",spread:"Book spread",single:"Single page",continuous:"Continuous",layout:"Layout",settings:"Reading settings",theme:"Page theme",light:"Light",dark:"Dark",parchment:"Parchment",typeface:"Typeface",serif:"Book serif",sans:"Sans serif",size:"Text size",spacing:"Line spacing",progress:"Chapter completion",ask:"Ask",automatic:"Automatic",manual:"Manual",finish:"Mark chapter finished",finished:"Chapter completed",read:"Read",lexicon:"Lexicon",back:"Back to book",error:"The released content could not be loaded.",all:"All",search:"Search visible entries",noResults:"No matching entries.",order:"Sort order",appearance:"First appearance",alphabetical:"Alphabetical",chronological:"Chronological",through:"Spoilers through",none:"No completed chapters",full:"Full spoilers",relationships:"Relationships",revealed:"Revealed book details",close:"Close",volumeComplete:"Volume completed",page:"Page",noEdition:"This edition is unavailable."},
+    de:{fullscreen:"Vollbild",exitFullscreen:"Vollbild verlassen",topControls:"Obere Steuerung anzeigen",bottomControls:"Untere Steuerung anzeigen",contents:"Inhalt",bookmark:"Stelle speichern",remove:"Entfernen",bookmarks:"Lesezeichen",noBookmarks:"Noch keine gespeicherten Stellen.",previous:"Zurück",next:"Weiter",spread:"Doppelseite",single:"Einzelseite",continuous:"Fortlaufend",layout:"Lesemodus",settings:"Leseeinstellungen",theme:"Seitendesign",light:"Hell",dark:"Dunkel",parchment:"Pergament",typeface:"Schriftart",serif:"Buch-Serifenschrift",sans:"Sans-Serif",size:"Textgröße",spacing:"Zeilenabstand",progress:"Kapitelabschluss",ask:"Nachfragen",automatic:"Automatisch",manual:"Manuell",finish:"Kapitel als gelesen markieren",finished:"Kapitel abgeschlossen",read:"Lesen",lexicon:"Lexikon",back:"Zum Buch",error:"Der veröffentlichte Inhalt konnte nicht geladen werden.",all:"Alle",search:"Sichtbare Einträge durchsuchen",noResults:"Keine passenden Einträge.",order:"Sortierung",appearance:"Erstes Auftreten",alphabetical:"Alphabetisch",chronological:"Chronologisch",through:"Spoiler bis",none:"Keine abgeschlossenen Kapitel",full:"Alle Spoiler",relationships:"Beziehungen",revealed:"Enthüllte Buchdetails",close:"Schließen",volumeComplete:"Band abgeschlossen",page:"Seite",noEdition:"Diese Ausgabe ist nicht verfügbar."}
   };
   const t=k=>words[lang()][k]||k;
   let book,data,afterword,context,model,editionCache={},p,bookKey;
@@ -37,6 +37,7 @@
   const entryURL=id=>lexicon+"?entry="+encodeURIComponent(id);
   const passageURL=l=>reader+"#"+encodeURIComponent(l.anchor);
   function showEntry(id,updateURL=false){
+    window.LibraryReadingView?.hidePreview();
     const e=visibleEntry(id);if(!e)return false;
     openedEntry=id;
     const d=$("#fiction-entry-dialog"),content=$("#fiction-entry-content");
@@ -66,7 +67,10 @@
   }
   function localize(){
     document.querySelectorAll("[data-reading-copy]").forEach(e=>{e.textContent=t(e.dataset.readingCopy);});
-    if(isReader)$("[data-language]").setAttribute("aria-label",lang()==="de"?"Sprache":"Language");
+    if(isReader){
+      $("[data-language]").setAttribute("aria-label",lang()==="de"?"Sprache":"Language");
+      window.LibraryReadingView?.localize();
+    }
     document.querySelectorAll("[data-reading-placeholder]").forEach(e=>{e.placeholder=t(e.dataset.readingPlaceholder);});
   }
   function lexRender(){
@@ -283,6 +287,7 @@
   }
   async function go(anchor,scroll=true,last=false){
     if(!model)return;
+    window.LibraryReadingView?.hidePreview();
     window.LibraryPageTurn?.cancel();
     navigating=true;
     const id=M.resolve(model,anchor);
@@ -294,7 +299,8 @@
     if(epoch!==renderEpoch)return;
     const stage=$("#reader-pages");
     const top=stage.getBoundingClientRect().top+window.scrollY;
-    $("#reader-area").style.setProperty("--sheet-height",Math.max(420,Math.floor(window.innerHeight-top-76))+"px");
+    const immersive=document.body.classList.contains("reader-immersive");
+    $("#reader-area").style.setProperty("--sheet-height",Math.max(420,Math.floor(window.innerHeight-top-(immersive?8:76)))+"px");
     if(layout==="continuous")drawContinuous(id);
     else{
       stage.className="reader-pages"+(spread()?" reader-spread":"");
@@ -304,6 +310,7 @@
   }
   function turn(direction){
     if(!model||navigating||window.LibraryPageTurn?.busy||$("#fiction-entry-dialog").open)return;
+    window.LibraryReadingView?.hidePreview();
     if(layout==="continuous"){const i=section+direction;if(i>=-1&&i<model.sections.length)go(i<0?"contents":model.sections[i].id);return;}
     let destinationSection=section,destinationPages=pages,target=pageIndex+direction*step();
     if(target<0||target>=pages.length){
@@ -332,7 +339,7 @@
   function pageSurfaceClick(event){
     if(!model||navigating||layout==="continuous"||event.defaultPrevented||event.button!==0||
        event.altKey||event.ctrlKey||event.metaKey||event.shiftKey||$("#fiction-entry-dialog").open)return;
-    if(!(event.target instanceof Element)||event.target.closest("button,a,input,select,textarea,summary,label,dialog,[role=button],[contenteditable=true],.reader-toolbar,.reader-pagination,#reader-completion,.reader-chrome"))return;
+    if(!(event.target instanceof Element)||event.target.closest("button,a,input,select,textarea,summary,label,dialog,[role=button],[contenteditable=true],.reader-toolbar,.reader-pagination,#reader-completion,.reader-chrome,.reader-top-dock,.reader-bottom-dock,.reader-edge-tab"))return;
     const selection=window.getSelection();
     if(selection&&!selection.isCollapsed&&selection.toString().trim())return;
     const rect=$("#reader-pages").getBoundingClientRect();
@@ -344,6 +351,7 @@
   }
   async function loadEdition(){
     window.LibraryPageTurn?.cancel();
+    window.LibraryReadingView?.hidePreview();
     const prior=model,old=current,l=lang();
     const edition=editionCache[l]||(editionCache[l]=await get(base+book.editions[l]));
     if(l!==lang())return;
@@ -369,6 +377,12 @@
         returnFocus=null;
       });
       if(isReader){
+        window.LibraryReadingView?.init({
+          lookup:id=>{refreshProfile();return visibleEntry(id);},
+          translate:t,
+          relayout:()=>{if(model)go(current,false);},
+          isBusy:()=>navigating||Boolean(window.LibraryPageTurn?.busy)||$("#fiction-entry-dialog").open
+        });
         $("#reader-prev").addEventListener("click",()=>turn(-1));$("#reader-next").addEventListener("click",()=>turn(1));
         $("#reader-bookmark").addEventListener("click",()=>toggleMark());
         $("#reader-chapter").addEventListener("change",e=>go(e.target.value));
@@ -393,7 +407,7 @@
       }
       $("[data-language]").addEventListener("change",()=>isReader?loadEdition():lexRender());
       document.addEventListener("click",e=>{for(const d of document.querySelectorAll(".reader-popover[open],.reader-settings[open]"))if(!d.contains(e.target))d.open=false;});
-      window.addEventListener("storage",e=>{if(e.key===M.key){refreshProfile();if(!isReader)lexRender();else {window.LibraryPageTurn?.cancel();refreshInline();if($("#fiction-entry-dialog").open&&openedEntry&&!showEntry(openedEntry))$("#fiction-entry-dialog").close();}}});
+      window.addEventListener("storage",e=>{if(e.key===M.key){refreshProfile();if(!isReader)lexRender();else {window.LibraryReadingView?.hidePreview();window.LibraryPageTurn?.cancel();refreshInline();if($("#fiction-entry-dialog").open&&openedEntry&&!showEntry(openedEntry))$("#fiction-entry-dialog").close();}}});
       document.body.dataset.readingReady="true";
     }catch(error){console.error(error);$("#reading-error").textContent=t("error");document.body.dataset.readingReady="error";}
   }
