@@ -100,6 +100,8 @@ def head(kind: str, title: str, description: str, uri: str) -> str:
     gaming_assets=('  <link rel="stylesheet" href="/gaming/gaming.css">\n  <script defer src="/gaming/gallery.js"></script>\n' if kind.startswith(("gaming","android")) else "")
     fiction_assets='  <link rel="stylesheet" href="/fiction/fiction.css">\n' if kind.startswith("fiction") else ""
     reading_assets='  <link rel="stylesheet" href="/fiction/runtime/reading.css">\n  <script defer src="/fiction/runtime/model.js"></script>\n  <script defer src="/fiction/runtime/reading.js"></script>\n' if kind in ("fictionReader","fictionLexicon") else ""
+    if kind=="fictionReader":
+        reading_assets+='  <link rel="stylesheet" href="/fiction/runtime/page-turn.css">\n  <script defer src="/fiction/runtime/page-turn.js"></script>\n'
     return f'''<!doctype html>
 <html lang="en">
 <head>

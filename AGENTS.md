@@ -13,3 +13,5 @@ Before accepting changes, run source, link, localization, navigation, responsive
 ## Fiction publication boundary
 
 Only explicitly released fiction, approved illustrations and verified edition links belong in the public catalogue. Preserve separate complete language editions, semantic chapter/block IDs, illustrations, and back matter. Do not copy private source metadata, unreleased lore, or prototype geography. Reader and Lexicon use one visibility model; gate entry existence, summaries, details, relationships, search and curated contextual links before rendering. Reader progress and bookmarks are semantic, not rendered page numbers. Validate complete pagination and spoiler visibility before publication.
+
+Preserve the physical page-turn animation in paged Reader layouts, with left/right page and adjacent-space navigation. Ignore text selections, contextual Lexicon terms and other controls; keep continuous reading and reduced-motion preferences free of page-turn animation. Validate the animation and navigation in a real browser before accepting Reader changes.
